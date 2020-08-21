@@ -1,39 +1,29 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   window.onload = function (){
-    checkWindowSize()
-    checkOrientation()
+    checkDisplay()
   }
 
   window.onresize = function(){
-    checkWindowSize()
-    checkOrientation()
+    checkDisplay()
   }
 
-  function checkWindowSize(){
+  function checkDisplay(){
     var windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
     var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 
     if (windowWidth < windowHeight){
+      // Portrait
       document.documentElement.style.setProperty('--oSize', '70vw')
       document.documentElement.style.setProperty('--fontSizeHello', '4vw')
-    } else {
-      document.documentElement.style.setProperty('--oSize', '70vh')
-      document.documentElement.style.setProperty('--fontSizeHello', '4vh')
-    }
-  }
-
-  function checkOrientation() {
-    if(window.innerHeight > window.innerWidth){
-      // console.log('Portrait')
       $('.landscape').addClass('hidden')
       $('.portrait').removeClass('hidden')
-
     } else {
-      // console.log('Landscape')
+      // Landscape
+      document.documentElement.style.setProperty('--oSize', '70vh')
+      document.documentElement.style.setProperty('--fontSizeHello', '4vh')
       $('.landscape').removeClass('hidden')
       $('.portrait').addClass('hidden')
-
     }
   }
 

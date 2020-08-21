@@ -15,8 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
     clearInterval(designImagePlayer)
   }
 
-
-
   const designImages = [
     'http://www.orjon.com/images/design/cisco2015.jpg',
     'http://www.orjon.com/images/design/nouTable.jpg',

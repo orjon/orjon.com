@@ -5,7 +5,6 @@ $(() => {
   const navIcons = document.querySelectorAll('.navIcon')
   const navText = document.querySelector('.navText')
 
-
   navIcons.forEach(icon => {
     icon.addEventListener('mouseover', (e) => {
       if ($(e.target).hasClass('code')) {
@@ -46,8 +45,5 @@ $(() => {
     $('.electronics').attr('src', './images/nav/navElectronicsOFF.png')
     $('.face').attr('src', './images/nav/navFaceOFF.png')
   }
-
-
-
 
 })

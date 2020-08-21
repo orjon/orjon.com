@@ -1,9 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-
   const oCircle = document.querySelector('#circleWhite')
   const helloText = document.querySelector('#hello')
-
 
 
   oCircle.addEventListener('mouseover', () => {
