@@ -1,0 +1,85 @@
+nav {
+    @include flexRowSpaceBetween();
+    width:  100%;
+    padding-top: $navPaddingTouchTB;
+    padding-bottom: $navPaddingTouchTB;
+    padding-left: $navPaddingTouchLR;
+    padding-right: $navPaddingTouchLR;
+    font-size: (var(--fontSizeHello));
+    color: black;
+    background-color: $colorNavBackground;
+
+    a {
+      @include flexColumnCenter();
+      border: $devBorder solid red;
+      width: $navIconCircleSmall;
+      height: $navIconCircleSmall;
+      border-radius: 50%;
+    }
+
+
+
+    .leftSide {
+      @include flexRowStartCenter();
+      width: 100%;
+      border: $devBorder solid black;
+      a {
+        margin-right: $navPaddingTouchLR;
+      }
+
+    }
+    .rightSide {
+      @include flexRowEnd();
+      border: $devBorder solid black;
+    }
+
+    .navIcon {
+      width: $navIconWidthSmall;
+      height: $navIconHeightSmall;
+      border: $devBorder solid orange;
+      // filter: invert(.5);
+    }
+
+    .navText{
+      width: 100%;
+      padding-left: 5px;
+      padding-right: 0px;
+      margin-right: 0px;
+      vertical-align: center;
+      font-size: $fontSizeNavSmall;
+      border: $devBorder solid magenta;
+    }
+
+    .me {
+      text-align: right;
+    }
+
+
+    .hidden {
+      display: none;
+    }
+
+    @media (pointer: fine) {
+      a {
+        width: $navIconCircle;
+        height:$navIconCircle;
+        border-radius: 50%;
+        border: 2px solid rgba(0,0,0,0);
+
+      }
+
+      .navIcon {
+        width: $navIconWidth;
+        height: $navIconHeight;
+        border: $devBorder solid orange;
+      }
+
+      .navText{
+        padding-left: $navTextPadding;
+        font-size: $fontSizeNav;
+      }
+
+    }
+
+
+}

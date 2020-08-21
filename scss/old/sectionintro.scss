@@ -1,0 +1,155 @@
+$animDist1: -16;
+$animDist2: -43;
+$animDist3: -82;
+$animDist4: 17;
+$animDist5: 55;
+$animDist6: 97;
+
+
+$animDistXMult: .1;
+$animDistYMult: .01;
+// (var(--oSize)): 95%;
+
+
+
+.introWrapper{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: $devBorder solid orange;
+}
+
+
+
+
+
+#hello {
+  font-size: (var(--fontSizeHello));
+  text-shadow: 00px 0px 4px  white;
+  p {
+      text-decoration: none;
+      color: $colorHello;
+      transform: scale(-1, 1); //backwards
+  }
+
+}
+
+#circleRed {
+  position: absolute;
+  will-change: position;
+  fill: $circlePink;
+  border: $devBorder solid $circlePink;
+}
+
+#circleCyanUnderlay {
+  position: absolute;
+  will-change: position;
+  fill: rgba(255,255,255,1);
+}
+
+#circleCyan {
+  position: absolute;
+  will-change: position;
+  fill: $circleBlue;
+  border: $devBorder solid $circleBlue;
+}
+
+#circleWhiteUnderlay {
+  position: absolute;
+  fill: rgba(255,255,255,1);
+}
+
+
+#circleWhite {
+  position: absolute;
+  a{
+    fill: $circleWhite;
+    border: $devBorder solid $circleWhite;
+  }
+}
+
+
+.animateRed {
+	-webkit-animation: animateRed 10.5s ease-in-out infinite alternate-reverse both;
+	        animation: animateRed 10.5s ease-in-out infinite alternate-reverse both;
+}
+
+.animateCyan {
+	-webkit-animation: animateCyan 8.3s ease-in-out infinite alternate-reverse both;
+	        animation: animateCyan 8.3s ease-in-out infinite alternate-reverse both;
+}
+
+
+@keyframes animateRed {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateX($animDist6 * $animDistXMult * 1px);
+            transform: translateX($animDist6 * $animDistXMult * 1px);
+  }
+  40% {
+    -webkit-transform: translateY($animDist3 * $animDistYMult * 1px);
+            transform: translateY($animDist3 * $animDistYMult * 1px);
+  }
+  50% {
+    -webkit-transform: translateX($animDist2 * $animDistXMult * 1px);
+            transform: translateX($animDist2 * $animDistXMult * 1px);
+  }
+  75% {
+    -webkit-transform: translateX($animDist5 * $animDistXMult * 1px);
+            transform: translateX($animDist5 * $animDistXMult * 1px);
+  }
+  90% {
+    -webkit-transform: translateY($animDist5 * $animDistYMult * 1px);
+            transform: translateY($animDist5 * $animDistYMult * 1px);
+  }
+  100% {
+    -webkit-transform: translateX($animDist1 * $animDistXMult * 1px);
+            transform: translateX($animDist1 * $animDistXMult * 1px);
+
+  }
+}
+
+
+@keyframes animateCyan {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateX($animDist2 * $animDistXMult * 1px);
+            transform: translateX($animDist2 * $animDistXMult * 1px);
+  }
+  30% {
+    -webkit-transform: translateY($animDist6 * $animDistYMult * 1px);
+            transform: translateY($animDist6 * $animDistYMult * 1px);
+  }
+  45% {
+    -webkit-transform: translateX($animDist6 * $animDistXMult * 1px);
+            transform: translateX($animDist6 * $animDistXMult * 1px);
+  }
+  60% {
+    -webkit-transform: translateY($animDist2 * $animDistYMult * 1px);
+            transform: translateY($animDist2 * $animDistYMult * 1px);
+  }
+  80% {
+    -webkit-transform: translateX($animDist3 * $animDistXMult * 1px);
+            transform: translateX($animDist3 * $animDistXMult * 1px);
+  }
+  100% {
+    -webkit-transform: translateX($animDist5 * $animDistXMult * 1px);
+            transform: translateX($animDist5 * $animDistXMult * 1px);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}

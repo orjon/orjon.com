@@ -1,0 +1,11 @@
+node_modules/
+source/
+
+.env
+
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db

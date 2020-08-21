@@ -1,0 +1,105 @@
+
+#bio {
+  width: 95%;
+  max-height: 100%;
+  max-width: 1000px;
+  overflow-y: auto;
+  border: $devBorder solid yellow;
+
+  @media (min-width: $mediaWidth1) {
+    width: 90%;
+  }
+  @media (min-width: $mediaWidth2) {
+    width: 80%;
+
+  }
+  @media (min-width: $mediaWidth3) {
+    width: 75%;
+  }
+
+  .detailsWrapper{
+    width: 100%;
+    justify-content: flex-start;
+    border: $devBorder solid salmon;
+
+    .name {
+      font-size: $fontBioName;
+      border: $devBorder solid cyan;
+    }
+    .strapline {
+      font-size: $fontBioStrapline;
+      border: $devBorder solid cyan;
+    }
+    .qualification {
+      font-size: $fontBioQualification;
+      border: $devBorder solid cyan;
+    }
+    .contact {
+      padding: 10px 0;
+      @include flexRowCenter();
+      justify-content: flex-start;
+      font-size: $fontBioContact;
+      border: $devBorder solid cyan;
+      a {
+          text-decoration: none;
+          color: black;
+          padding-top: 5px;
+      }
+      i {
+        padding-right: 10px;
+        color: black;
+      }
+      .contactText, .contactIcons {
+        @include flexColumnTopLeft();
+        border: $devBorder solid yellow;
+      }
+      .contactText {
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+  }
+
+
+  .bioTextWrapper {
+    border: $devBorder solid lime;
+    border-top: 1px solid $textBright;
+    font-size: $fontBioText;
+    @include flexColumnTopLeft();
+
+    .bioText {
+      // font-family: sans-serif;
+      color: black;
+      border: $devBorder solid purple;
+      padding-top: 25px;
+      text-align: justify;
+    }
+  }
+
+  .techIconsWrapper{
+    padding-top: 30px;
+    border: $devBorder solid yellow;
+    justify-content: center;
+
+    img {
+      width: 5vw;
+      max-width:100px;
+      min-width: 55px;
+      margin: 5px 5px;
+
+      @media (min-width: $mediaWidth1) {
+        min-width: 70px;
+      }
+      @media (min-width: $mediaWidth2) {
+      }
+      @media (min-width: $mediaWidth3) {
+      }
+    }
+  }
+
+  .techIconsWrapper::after {
+    content: "";
+    flex: auto;
+  }
+
+}

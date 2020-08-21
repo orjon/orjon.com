@@ -1,0 +1,179 @@
+$imageWidth: 90%;
+$imageHeight: 90%;
+
+$fontColor: #333;
+$fontSizeTimeLabel: 17px;
+
+.top {
+  width: 100%;
+  height: 100%;
+  @include flexColumnCenter();
+  border: $devBorder solid red;
+}
+
+.container {
+  width: $imageWidth;
+  max-width: 1750px;
+  height: $imageHeight;
+  background-image: url("../images/design/cisco2015.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: $devBorder solid cyan;
+}
+
+.hidden {
+  display: none;
+}
+
+.navArrows.landscape {
+  .navArrow {
+    height: 5vh;
+    height: 40px;
+    border: $devBorder solid cyan;
+    will-change: opacity;
+    opacity: .25;
+    transition-timing-function: ease-in;
+    -webkit-transition: opacity $navFadeOutSpeed;
+    transition: opacity $navFadeOutSpeed;
+    &:hover {
+      opacity: 1;
+      transition-timing-function: ease-out;
+      -webkit-transition: opacity $navFadeInSpeed;
+      transition: opacity $navFadeInSpeed;
+    }
+  }
+  .left {
+    position: fixed;
+    top: 50%;
+    left: 2vw;
+    transform: translate(0%, -50%);
+  }
+  .right {
+    position: fixed;
+    top: 50%;
+    right:2vw;
+    transform: translate(0%, -50%);
+  }
+
+  .navPlayPause {
+    border: $devBorder solid pink;
+    position: fixed;
+    top: 92%;
+    right:2vw;
+    transform: translate(0%, -50%);
+    img {
+      height: $navIconHeight;
+      border: $devBorder solid red;
+    }
+    .autoPlay {
+      border: $devBorder solid cyan;
+      will-change: opacity;
+      opacity: .25;
+      transition-timing-function: ease-in;
+      -webkit-transition: opacity $navFadeOutSpeed;
+      transition: opacity $navFadeOutSpeed;
+      &:hover {
+        opacity: 1;
+        transition-timing-function: ease-out;
+        -webkit-transition: opacity $navFadeInSpeed;
+        transition: opacity $navFadeInSpeed;
+      }
+    }
+  }
+}
+
+
+.bottom {
+  padding-bottom: 1.5%;
+  width: $imageWidth;
+  @include flexColumnCenter();
+  border: $devBorder solid green;
+  color: $fontColor;
+  font-family: 'Montserrat', monospace;
+
+  .description {
+    border: $devBorder solid pink;
+    font-size: $fontSizeTimeLabel;
+    text-align: center;
+
+    .descriptionText {
+      font-size: $fontSizeNormal;
+      padding-top: .25em;
+      border: $devBorder solid pink;
+    }
+
+    .descriptionTech {
+      font-family: sans-serif;
+      font-size: $fontSizeSmall;
+      padding-top: .25em;
+      color: $textDim;
+      border: $devBorder solid pink;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+
+  .navArrows.portrait {
+    padding-bottom: 1.5%;
+    width: 100%;
+    border: $devBorder solid orange;
+    @include flexRowCenter;
+    .navPlayPause {
+      border: $devBorder solid pink;
+      padding-top: .55em;
+      img {
+        height: $navIconWidth;
+        border: $devBorder solid red;
+      }
+      .autoPlay {
+        border: $devBorder solid cyan;
+        will-change: opacity;
+        opacity: .25;
+        transition-timing-function: ease-in;
+        -webkit-transition: opacity $navFadeOutSpeed;
+        transition: opacity $navFadeOutSpeed;
+        &:hover {
+          opacity: 1;
+          transition-timing-function: ease-out;
+          -webkit-transition: opacity $navFadeInSpeed;
+          transition: opacity $navFadeInSpeed;
+        }
+      }
+    }
+
+    .navArrow {
+      margin: .55em 5%;
+      height: $navIconHeight;
+      border: $devBorder solid cyan;
+      will-change: opacity;
+      opacity: .25;
+      transition-timing-function: ease-in;
+      -webkit-transition: opacity $navFadeOutSpeed;
+      transition: opacity $navFadeOutSpeed;
+      &:hover {
+        opacity: 1;
+        transition-timing-function: ease-out;
+        -webkit-transition: opacity $navFadeInSpeed;
+        transition: opacity $navFadeInSpeed;
+      }
+      .left {
+        display: inline-block;
+        padding: 10%;
+      }
+      .right {
+        display: inline-block;
+        padding: 10%;
+      }
+    }
+  }
+
+
+  @media (min-width: 1200px) {
+    // .navArrow {
+    //   display: block;
+    // }
+  }
+
+}

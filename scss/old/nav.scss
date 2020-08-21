@@ -1,0 +1,72 @@
+.navTop {
+  @include flexRowCenter();
+  align-items: flex-end;
+  height: 5vh;
+  width: 100%;
+  border: $devBorder solid magenta;
+}
+
+.navLeft {
+  @include flexRowCenter();
+
+  height: 100%;
+  width: 5vh;
+  border: $devBorder solid magenta;
+  a {
+    -ms-transform: rotate(270deg); /* IE 9 */
+    -webkit-transform: rotate(270deg); /* Safari */
+    transform: rotate(270deg); /* Standard syntax */
+  }
+}
+
+.navRight {
+  @include flexRowCenter();
+
+  height: 100%;
+  width: 5vh;
+  border: $devBorder solid magenta;
+  a {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg); /* Standard syntax */
+  }
+}
+
+.navBottom {
+  @include flexRowCenter();
+  align-items:flex-start;
+  height: 5vh;
+  width: 100%;
+
+  border: $devBorder solid magenta;
+  a {
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Safari */
+      transform: rotate(180deg); /* Standard syntax */
+  }
+
+}
+
+
+.navArrow {
+  display: none;
+  height: 2.5vh;
+  border: $devBorder solid cyan;
+  opacity: 0.2;
+  transition-timing-function: ease-in;
+  -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+  transition: opacity 2s;
+
+  &:hover {
+    opacity: 0.95;
+    transition-timing-function: ease-out;
+    -webkit-transition: opacity .2s; /* For Safari 3.1 to 6.0 */
+    transition: opacity .2s;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navArrow {
+    display: block;
+  }
+}

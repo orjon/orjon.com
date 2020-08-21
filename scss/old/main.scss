@@ -1,0 +1,73 @@
+:root {
+  --oSize: 70vh;
+  --fontSizeHello: 4vh;
+}
+
+@import 'variables';
+@import 'flexLayouts';
+@import 'nav';
+@import 'sectionintro';
+@import 'sectionbio';
+@import 'sectionprojects';
+@import 'footer';
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  overflow-x:hidden;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $textBright;
+  background-color: $colorBackground;
+  font-weight: $fontWeight;
+  min-height:100vh;
+  @include flexColumnCenter();
+}
+
+.o {
+  width:  (var(--oSize));
+  height: (var(--oSize));
+}
+
+body::-webkit-scrollbar {
+  width: 0 !important
+}
+
+section {
+  width: 99%;
+  @include flexColumnCenter();
+  border: $devBorder solid white;
+}
+
+.projectWrapper {
+  height: 90vh;
+  width: 90%;
+  @include flexRowOverflow();
+  border: $devBorder solid orange;
+}
+
+.bioWrapper {
+  width: 80%;
+  display:block;
+  align-content: center;
+  border: $devBorder solid orange;
+}
+
+@media (min-width: $mediaWidth25) {
+  .bioWrapper{
+    display:flex;
+    height: 90vh;
+  }
+}
+
+
+@media (min-width: $mediaWidth5) {
+  .bioWrapper{
+    width: 70%;
+  }
+}

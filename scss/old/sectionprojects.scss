@@ -1,0 +1,120 @@
+
+.projectTile{
+  width: 100%;
+  height: 66.6%;
+  @include flexColumnTopCenter();
+  border: $devBorder solid yellow;
+}
+@media (min-height: $mediaHeight1) {
+  .projectTile{
+    height: 66%;
+  }
+}
+
+@media (min-height: $mediaHeight2) {
+  .projectTile{
+    width: 33.3%;
+    height: 40%;
+  }
+}
+@media (min-height: $mediaHeight3) {
+  .projectTile{
+    height: 20%;
+  }
+}
+
+@media (min-width: $mediaWidth1) {
+  .projectTile{
+    width: 100%;
+  }
+}
+
+@media (min-width: $mediaWidth2) {
+  .projectTile{
+    width: 50%;
+  }
+}
+@media (min-width: $mediaWidth3) {
+  .projectTile{
+    width: 33.3%;
+  }
+}
+@media (min-width: $mediaWidth5) {
+  .projectTile{
+    width: 33.3%;
+    height: 50%;
+  }
+}
+
+.iconWrapper{
+  width: 75%;
+  height: 60%;
+  @include flexColumnCenter();
+  border: $devBorder solid salmon;
+}
+
+.icon {
+  @include flexColumnCenter();
+  width: $iconProject;
+  transition-timing-function: ease-in;
+  -webkit-transition: width 0.15s; /* For Safari 3.1 to 6.0 */
+  transition: width 0.15s;
+  border: $devBorder solid cyan;
+}
+.icon:hover {
+  width: $iconProjectHover;
+  transition-timing-function: ease-out;
+  -webkit-transition: width 0.1s; /* For Safari 3.1 to 6.0 */
+  transition: width 0.1s;
+}
+
+
+.projectTextWrapper {
+  width: 100%;
+  border: $devBorder solid lime;
+  font-size: $fontProjectText;
+  @include flexColumnTopCenter();
+
+  .projectText {
+    width: 85%;
+    font-family: sans-serif;
+    color: $textBright;
+    border: $devBorder solid purple;
+    border-top: 1px solid $textBright;
+    padding-top: 15px;
+    text-align: justify;
+  }
+  .projectTech {
+    width: 85%;
+    padding-right: 5px;
+    font-family: sans-serif;
+    color: $textNormal;
+    border: $devBorder solid yellow;
+    padding-top: 10px;
+  }
+
+  i {
+    font-size: $fontProjectGitHub;
+  }
+
+  a {
+    padding-top: 5px;
+    width: 100%;
+    border: $devBorder solid cyan;
+    color: $textNormal;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: $fontProjectTech;
+    transition-timing-function: ease-in;
+    -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
+    transition: color 1s;
+  }
+  a:hover {
+    color: $textBright;
+    transition-timing-function: ease-out;
+    -webkit-transition: color .1s; /* For Safari 3.1 to 6.0 */
+    transition: color .1s;
+    text-decoration: none;
+  }
+
+}

@@ -1,0 +1,84 @@
+.bioWrapper{
+  width: 100%;
+  @include flexColumnCenterLeft();
+  border: $devBorder solid yellow;
+}
+
+
+.detailsWrapper{
+  width: 100%;
+  justify-content: flex-start;
+  border: $devBorder solid salmon;
+
+  .name {
+    font-size: $fontBioName;
+    border: $devBorder solid cyan;
+  }
+  .strapline {
+    font-size: $fontBioStrapline;
+    border: $devBorder solid cyan;
+  }
+  .qualification {
+    font-size: $fontBioQualification;
+    border: $devBorder solid cyan;
+  }
+  .contact {
+    padding: 10px 0;
+    @include flexRowCenter();
+    justify-content: flex-start;
+    font-size: $fontBioContact;
+    border: $devBorder solid cyan;
+    a {
+        text-decoration: none;
+        color: white;
+        padding-top: 5px;
+    }
+    i {
+      padding-right: 10px;
+    }
+    .contactText, .contactIcons {
+      @include flexColumnTopLeft();
+      border: $devBorder solid yellow;
+    }
+    .contactText {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}
+
+
+.bioTextWrapper {
+  border: $devBorder solid lime;
+  border-top: 1px solid $textBright;
+  font-size: $fontBioText;
+  @include flexColumnTopLeft();
+
+  .bioText {
+    // font-family: sans-serif;
+    color: $textBright;
+    border: $devBorder solid purple;
+    padding-top: 25px;
+    text-align: justify;
+  }
+}
+
+.techIconsWrapper{
+  padding-top: 50px;
+  @include flexRowSpaceBetweenCenter();
+  border: $devBorder solid yellow;
+
+  img {
+    width: 5vw;
+    max-width:100px;
+    min-width: 80px;
+    margin: 10px 5px;
+    -webkit-filter: invert(1); /* safari 6.0 - 9.0 */
+    filter: invert(1);
+  }
+}
+
+.techIconsWrapper::after {
+  content: "";
+  flex: auto;
+}
