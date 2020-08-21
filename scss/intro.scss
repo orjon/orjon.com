@@ -227,7 +227,7 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
 }
 
 #hello {
-  @media (pointer: course) {
+  @media (pointer: none) {
       display: none;
   }
 }

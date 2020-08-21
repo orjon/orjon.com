@@ -298,7 +298,7 @@ nav .hidden {
   transition: opacity 1s;
 }
 
-@media (pointer: course) {
+@media (pointer: none) {
   #hello {
     display: none;
   }
