@@ -1,23 +1,18 @@
 footer {
 
   #displayVersion {
-      color: $textDim;
-      position: fixed;
-      bottom: 0.5%;
-      left: 0.5%;
-      font-family: sans-serif;
-      font-size: $fontSize;
-
-      text-decoration: none;
-      color: $textFooter;
-      font-family: sans-serif;
+    color: $textFooter;
+    position: fixed;
+    bottom: 0.5%;
+    left: 0.5%;
+    font-size: $fontSize;
+    text-decoration: none;
+    color: $textFooter;
   }
 
   #displayVersion a {
       text-decoration: none;
       color: $textFooter;
-      font-family: sans-serif;
-
   }
 
   #displayContact a {
@@ -26,7 +21,6 @@ footer {
       position: fixed;
       bottom: 0.5%;
       right: 0.5%;
-      font-family: sans-serif;
       font-size: $fontSize;
   }
 

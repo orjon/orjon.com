@@ -740,20 +740,17 @@ nav .hidden {
 }
 
 footer #displayVersion {
-  color: #999;
+  color: #ccc;
   position: fixed;
   bottom: 0.5%;
   left: 0.5%;
-  font-family: sans-serif;
   font-size: 1.6222222222vh;
   text-decoration: none;
   color: #ccc;
-  font-family: sans-serif;
 }
 footer #displayVersion a {
   text-decoration: none;
   color: #ccc;
-  font-family: sans-serif;
 }
 footer #displayContact a {
   text-decoration: none;
@@ -761,7 +758,6 @@ footer #displayContact a {
   position: fixed;
   bottom: 0.5%;
   right: 0.5%;
-  font-family: sans-serif;
   font-size: 1.6222222222vh;
 }
 
