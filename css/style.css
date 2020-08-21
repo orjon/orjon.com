@@ -702,6 +702,7 @@ nav .hidden {
   align-items: flex-start;
 }
 #bio .bioTextWrapper {
+  margin-top: 15px;
   border: 0px solid lime;
   border-top: 1px solid #AAA;
   font-size: 1em;
@@ -713,7 +714,7 @@ nav .hidden {
 #bio .bioTextWrapper .bioText {
   color: black;
   border: 0px solid purple;
-  padding-top: 25px;
+  padding-top: 15px;
   text-align: justify;
 }
 #bio .techIconsWrapper {

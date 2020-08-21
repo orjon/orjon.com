@@ -62,6 +62,7 @@
 
 
   .bioTextWrapper {
+    margin-top: $bioPadding;
     border: $devBorder solid lime;
     border-top: 1px solid $textBright;
     font-size: $fontBioText;
@@ -71,7 +72,7 @@
       // font-family: sans-serif;
       color: black;
       border: $devBorder solid purple;
-      padding-top: 25px;
+      padding-top: $bioPadding;
       text-align: justify;
     }
   }
