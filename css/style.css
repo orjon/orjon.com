@@ -390,11 +390,10 @@ nav .hidden {
   justify-content: center;
   align-items: center;
   border: 0px solid cyan;
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 #code .iconWrapper .icon img, #electronics .iconWrapper .icon img {
-  max-width: 100%;
   height: 75%;
   transition-timing-function: ease-in;
   transition: height 0.15s;
@@ -405,7 +404,6 @@ nav .hidden {
   transition: height 0.2s;
 }
 #code .iconWrapper .icon img.large, #electronics .iconWrapper .icon img.large {
-  max-width: 100%;
   height: 65%;
   transition-timing-function: ease-outin;
   transition: height 0.15s;

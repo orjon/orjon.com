@@ -2,13 +2,7 @@
   display: none;
 }
 
-// #code {
-//   @include flexRowSpaceBetweenWrap();
-// }
 
-// #electronics {
-//   @include flexRowCenterWrap();
-// }
 
 #code, #electronics {
   width: 100%;
@@ -19,11 +13,6 @@
   overflow-y: auto;
   border: $devBorder solid blue;
 
-  // @include flexColumnTopCenter();
-  // @media (pointer: fine) {
-  //   @include flexRowSpaceBetweenWrap();
-  //   margin: 0 auto;
-  // }
 
   @include flexRowSpaceBetweenCenterWrap();
   margin: 0 auto;
@@ -68,10 +57,9 @@
     .icon {
       @include flexColumnCenter();
       border: $devBorder solid cyan;
-      width: 100%;
+      width: auto;
       height: 100%;
       img{
-        max-width: 100%;
         height: $iconProject;
         transition-timing-function: ease-in;
         transition: height .15s;
@@ -82,7 +70,6 @@
         }
       }
       img.large{
-        max-width: 100%;
         height: $iconProjectLarge;
         transition-timing-function: ease-outin;
         transition: height .15s;
