@@ -318,8 +318,20 @@ nav .hidden {
     opacity: 1;
   }
 }
-#code.hidden, #electronics.hidden {
-  display: none;
+#code {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#electronics {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #code, #electronics {
@@ -330,11 +342,6 @@ nav .hidden {
   padding: 20px;
   overflow-y: auto;
   border: 0px solid blue;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
   margin: 0 auto;
 }
 #code .projectTile, #electronics .projectTile {
@@ -493,7 +500,6 @@ nav .hidden {
 }
 
 .navArrows.landscape .navArrow {
-  height: 5vh;
   height: 40px;
   border: 0px solid cyan;
   will-change: opacity;
@@ -508,17 +514,16 @@ nav .hidden {
   -webkit-transition: opacity 0.1s;
   transition: opacity 0.1s;
 }
-.navArrows.landscape .left {
+.navArrows.landscape .left, .navArrows.landscape .right {
   position: fixed;
   top: 50%;
-  left: 2vw;
   transform: translate(0%, -50%);
 }
+.navArrows.landscape .left {
+  left: 2vw;
+}
 .navArrows.landscape .right {
-  position: fixed;
-  top: 50%;
   right: 2vw;
-  transform: translate(0%, -50%);
 }
 .navArrows.landscape .navPlayPause {
   border: 0px solid pink;
@@ -578,7 +583,6 @@ nav .hidden {
   display: none;
 }
 .bottom .navArrows.portrait {
-  padding-bottom: 1.5%;
   width: 100%;
   border: 0px solid orange;
   display: flex;
@@ -588,16 +592,16 @@ nav .hidden {
 }
 .bottom .navArrows.portrait .navPlayPause {
   border: 0px solid pink;
-  padding-top: 0.55em;
 }
 .bottom .navArrows.portrait .navPlayPause img {
-  height: 35px;
+  height: 26.25px;
   border: 0px solid red;
 }
 .bottom .navArrows.portrait .navPlayPause .autoPlay {
   border: 0px solid cyan;
   will-change: opacity;
   opacity: 0.25;
+  margin: 0.55em 5%;
   transition-timing-function: ease-in;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;

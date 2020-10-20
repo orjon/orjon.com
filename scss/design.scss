@@ -28,7 +28,6 @@ $fontSizeTimeLabel: 17px;
 
 .navArrows.landscape {
   .navArrow {
-    height: 5vh;
     height: 40px;
     border: $devBorder solid cyan;
     will-change: opacity;
@@ -43,17 +42,18 @@ $fontSizeTimeLabel: 17px;
       transition: opacity $navFadeInSpeed;
     }
   }
-  .left {
+  
+  .left, .right  {
     position: fixed;
     top: 50%;
-    left: 2vw;
     transform: translate(0%, -50%);
   }
+
+  .left  {
+    left: 2vw;
+  }
   .right {
-    position: fixed;
-    top: 50%;
     right:2vw;
-    transform: translate(0%, -50%);
   }
 
   .navPlayPause {
@@ -116,21 +116,21 @@ $fontSizeTimeLabel: 17px;
   }
 
   .navArrows.portrait {
-    padding-bottom: 1.5%;
+    // padding-bottom: 1.5%;
     width: 100%;
     border: $devBorder solid orange;
     @include flexRowCenter;
     .navPlayPause {
       border: $devBorder solid pink;
-      padding-top: .55em;
       img {
-        height: $navIconWidth;
+        height: $navIconWidth*.75;
         border: $devBorder solid red;
       }
       .autoPlay {
         border: $devBorder solid cyan;
         will-change: opacity;
         opacity: .25;
+        margin: .55em 5%;
         transition-timing-function: ease-in;
         -webkit-transition: opacity $navFadeOutSpeed;
         transition: opacity $navFadeOutSpeed;

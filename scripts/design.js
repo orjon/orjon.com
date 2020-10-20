@@ -185,9 +185,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   $('.autoPlay').mouseout(function() {
     if (autoForward) {
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
-    } else {
       $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+    } else {
+      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
     }
   })
 
@@ -198,10 +198,10 @@ window.addEventListener('DOMContentLoaded', () => {
       incrementDesignImage()
       clearInterval(designImagePlayer)
       designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
     } else {
       clearInterval(designImagePlayer)
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
     }
   })
 

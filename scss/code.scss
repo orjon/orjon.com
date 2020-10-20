@@ -1,8 +1,10 @@
-#code.hidden, #electronics.hidden{
-  display: none;
+
+#code {
+  @include flexRowSpaceBetweenCenterWrap();
+} #electronics {
+
+  @include flexRowCenterWrap();
 }
-
-
 
 #code, #electronics {
   width: 100%;
@@ -12,9 +14,6 @@
   padding: $contentPaddingSide;
   overflow-y: auto;
   border: $devBorder solid blue;
-
-
-  @include flexRowSpaceBetweenCenterWrap();
   margin: 0 auto;
 
   .projectTile{

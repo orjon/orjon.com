@@ -9,17 +9,19 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function checkDisplay(){
-    var windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-    var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    let windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    let windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 
     if (windowWidth < windowHeight){
       // Portrait
+      console.log('Screen orientation: Portrait')
       document.documentElement.style.setProperty('--oSize', '70vw')
       document.documentElement.style.setProperty('--fontSizeHello', '4vw')
       $('.landscape').addClass('hidden')
       $('.portrait').removeClass('hidden')
     } else {
       // Landscape
+      console.log('Screen orientation: Landscape')
       document.documentElement.style.setProperty('--oSize', '70vh')
       document.documentElement.style.setProperty('--fontSizeHello', '4vh')
       $('.landscape').removeClass('hidden')
