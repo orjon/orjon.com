@@ -175,34 +175,34 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-  $('.autoPlay').mouseover(function() {
-    if (autoForward) {
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
-    } else {
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
-    }
-  })
+  // $('.autoPlay').mouseover(function() {
+  //   if (autoForward) {
+  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+  //   } else {
+  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+  //   }
+  // })
 
-  $('.autoPlay').mouseout(function() {
-    if (autoForward) {
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
-    } else {
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
-    }
-  })
+  // $('.autoPlay').mouseout(function() {
+  //   if (autoForward) {
+  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+  //   } else {
+  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+  //   }
+  // })
 
-  $('.autoPlay').mousedown(function() {
-    autoForward = !autoForward
-    console.log(autoForward)
-    if (autoForward) {
-      incrementDesignImage()
-      clearInterval(designImagePlayer)
-      designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
-    } else {
-      clearInterval(designImagePlayer)
-      $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
-    }
-  })
+  // $('.autoPlay').mousedown(function() {
+  //   autoForward = !autoForward
+  //   console.log(autoForward)
+  //   if (autoForward) {
+  //     incrementDesignImage()
+  //     clearInterval(designImagePlayer)
+  //     designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
+  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+  //   } else {
+  //     clearInterval(designImagePlayer)
+  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+  //   }
+  // })
 
 })

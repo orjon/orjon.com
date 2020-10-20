@@ -434,7 +434,7 @@ nav .hidden {
   width: 100%;
   font-family: sans-serif;
   color: black;
-  font-size: 0.9em;
+  font-size: 1em;
   border-top: 0px solid #AAA;
   padding-bottom: 10px;
 }
@@ -442,7 +442,7 @@ nav .hidden {
   width: 100%;
   padding-right: 5px;
   font-family: sans-serif;
-  font-size: 0.75em;
+  font-size: 0.9em;
   border: 0px solid yellow;
   padding-bottom: 10px;
 }
@@ -457,20 +457,20 @@ nav .hidden {
 #code .projectTextWrapper a, #electronics .projectTextWrapper a {
   width: 100%;
   border: 0px solid cyan;
-  color: #333;
+  color: #888;
   text-decoration: none;
   font-family: sans-serif;
   transition-timing-function: ease-in;
-  -webkit-transition: color 1s;
+  -webkit-transition: color 0.2s;
   /* For Safari 3.1 to 6.0 */
-  transition: color 1s;
+  transition: color 0.2s;
 }
 #code .projectTextWrapper a:hover, #electronics .projectTextWrapper a:hover {
-  color: #AAA;
+  color: black;
   transition-timing-function: ease-out;
-  -webkit-transition: color 0.1s;
+  -webkit-transition: color 0.15s;
   /* For Safari 3.1 to 6.0 */
-  transition: color 0.1s;
+  transition: color 0.15s;
   text-decoration: none;
 }
 
@@ -552,7 +552,7 @@ nav .hidden {
 }
 
 .bottom {
-  padding-bottom: 1.5%;
+  padding-bottom: 20px;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -576,13 +576,14 @@ nav .hidden {
   font-family: sans-serif;
   font-size: 0.9em;
   padding-top: 0.25em;
-  color: #999;
+  color: #888;
   border: 0px solid pink;
 }
 .bottom .hidden {
   display: none;
 }
 .bottom .navArrows.portrait {
+  padding-top: 20px;
   width: 100%;
   border: 0px solid orange;
   display: flex;
