@@ -16,36 +16,36 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const designImages = [
-    'http://www.orjon.com/images/design/cisco2015.jpg',
-    'http://www.orjon.com/images/design/nouTable.jpg',
-    'http://www.orjon.com/images/design/foreshore.jpg',
-    'http://www.orjon.com/images/design/statoil.jpg',
-    'http://www.orjon.com/images/design/emidlands.jpg',
-    'http://www.orjon.com/images/design/honestlyGood.jpg',
-    'http://www.orjon.com/images/design/cisco2016.jpg',
-    'http://www.orjon.com/images/design/cisco2017.jpg',
-    'http://www.orjon.com/images/design/chix.jpg',
-    'http://www.orjon.com/images/design/chess.jpg',
-    'http://www.orjon.com/images/design/bhunga.jpg',
-    'http://www.orjon.com/images/design/fairmont.jpg',
-    'http://www.orjon.com/images/design/ho1.jpg',
-    'http://www.orjon.com/images/design/infiniti.jpg',
-    'http://www.orjon.com/images/design/operaHouse.jpg',
-    'http://www.orjon.com/images/design/knife.jpg',
-    'http://www.orjon.com/images/design/knifePlan.jpg',
-    'http://www.orjon.com/images/design/laptopStand.jpg',
-    'http://www.orjon.com/images/design/office01.jpg',
-    'http://www.orjon.com/images/design/oman.jpg',
-    'http://www.orjon.com/images/design/ortBridge.jpg',
-    'http://www.orjon.com/images/design/redBull.jpg',
-    'http://www.orjon.com/images/design/samsung.jpg',
-    'http://www.orjon.com/images/design/powerBuoy.jpg',
-    'http://www.orjon.com/images/design/sony.jpg',
-    'http://www.orjon.com/images/design/winxo.jpg',
-    'http://www.orjon.com/images/design/t2Snooze.jpg',
-    'http://www.orjon.com/images/design/vamiziPlan.jpg',
-    'http://www.orjon.com/images/design/kite.jpg',
-    'http://www.orjon.com/images/design/hermanus.jpg'
+    '/images/design/cisco2015.jpg',
+    '/images/design/nouTable.jpg',
+    '/images/design/foreshore.jpg',
+    '/images/design/statoil.jpg',
+    '/images/design/emidlands.jpg',
+    '/images/design/honestlyGood.jpg',
+    '/images/design/cisco2016.jpg',
+    '/images/design/cisco2017.jpg',
+    '/images/design/chix.jpg',
+    '/images/design/chess.jpg',
+    '/images/design/bhunga.jpg',
+    '/images/design/fairmont.jpg',
+    '/images/design/ho1.jpg',
+    '/images/design/infiniti.jpg',
+    '/images/design/operaHouse.jpg',
+    '/images/design/knife.jpg',
+    '/images/design/knifePlan.jpg',
+    '/images/design/laptopStand.jpg',
+    '/images/design/office01.jpg',
+    '/images/design/oman.jpg',
+    '/images/design/ortBridge.jpg',
+    '/images/design/redBull.jpg',
+    '/images/design/samsung.jpg',
+    '/images/design/powerBuoy.jpg',
+    '/images/design/sony.jpg',
+    '/images/design/winxo.jpg',
+    '/images/design/t2Snooze.jpg',
+    '/images/design/vamiziPlan.jpg',
+    '/images/design/kite.jpg',
+    '/images/design/hermanus.jpg'
   ]
   const designLabels = [
     'Internet of Everything, CiscoLive! 2015 : Milan',
@@ -177,17 +177,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // $('.autoPlay').mouseover(function() {
   //   if (autoForward) {
-  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+  //     $(this).attr('src', '/images/nav/navLoopStop.png')
   //   } else {
-  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+  //     $(this).attr('src', '/images/nav/navLoop.png')
   //   }
   // })
 
   // $('.autoPlay').mouseout(function() {
   //   if (autoForward) {
-  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+  //     $(this).attr('src', '/images/nav/navLoopStop.png')
   //   } else {
-  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+  //     $(this).attr('src', '/images/nav/navLoop.png')
   //   }
   // })
 
@@ -198,10 +198,10 @@ window.addEventListener('DOMContentLoaded', () => {
   //     incrementDesignImage()
   //     clearInterval(designImagePlayer)
   //     designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
-  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoopStop.png')
+  //     $(this).attr('src', '/images/nav/navLoopStop.png')
   //   } else {
   //     clearInterval(designImagePlayer)
-  //     $(this).attr('src', 'http://www.orjon.com/images/nav/navLoop.png')
+  //     $(this).attr('src', '/images/nav/navLoop.png')
   //   }
   // })
 
