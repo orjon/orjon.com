@@ -773,6 +773,7 @@ footer #displayContact a {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::-webkit-scrollbar {
