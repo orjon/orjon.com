@@ -89,5 +89,5 @@ a {
   position: absolute;
   bottom: 0.5%;
   right: 0.5%;
-  font-size: calc(var(--fontSize) / 45);
+  font-size: 8pt;
 }
