@@ -1,52 +1,51 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const arrows = document.querySelectorAll('.navArrow');
 
-  const arrows = document.querySelectorAll('.navArrow')
+  const designImageLabel = document.querySelector('.descriptionText');
+  const designImageTech = document.querySelector('.descriptionTech');
 
-  const designImageLabel = document.querySelector('.descriptionText')
-  const designImageTech = document.querySelector('.descriptionTech')
+  const autoIncrementSpeed = 5000;
 
-  const autoIncrementSpeed = 5000
-
-  let imageNo = 0
-  let autoForward = true
-  let designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
+  let imageNo = 0;
+  let autoForward = true;
+  let designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed);
 
   if (!autoForward) {
-    clearInterval(designImagePlayer)
+    clearInterval(designImagePlayer);
   }
 
   const designImages = [
-    '/images/design/cisco2015.jpg',
-    '/images/design/nouTable.jpg',
-    '/images/design/foreshore.jpg',
-    '/images/design/statoil.jpg',
-    '/images/design/emidlands.jpg',
-    '/images/design/honestlyGood.jpg',
-    '/images/design/cisco2016.jpg',
-    '/images/design/cisco2017.jpg',
-    '/images/design/chix.jpg',
-    '/images/design/chess.jpg',
-    '/images/design/bhunga.jpg',
-    '/images/design/fairmont.jpg',
-    '/images/design/ho1.jpg',
-    '/images/design/infiniti.jpg',
-    '/images/design/operaHouse.jpg',
-    '/images/design/knife.jpg',
-    '/images/design/knifePlan.jpg',
-    '/images/design/laptopStand.jpg',
-    '/images/design/office01.jpg',
-    '/images/design/oman.jpg',
-    '/images/design/ortBridge.jpg',
-    '/images/design/redBull.jpg',
-    '/images/design/samsung.jpg',
-    '/images/design/powerBuoy.jpg',
-    '/images/design/sony.jpg',
-    '/images/design/winxo.jpg',
-    '/images/design/t2Snooze.jpg',
-    '/images/design/vamiziPlan.jpg',
-    '/images/design/kite.jpg',
-    '/images/design/hermanus.jpg'
-  ]
+    '../images/design/cisco2015.jpg',
+    '../images/design/nouTable.jpg',
+    '../images/design/foreshore.jpg',
+    '../images/design/statoil.jpg',
+    '../images/design/emidlands.jpg',
+    '../images/design/honestlyGood.jpg',
+    '../images/design/cisco2016.jpg',
+    '../images/design/cisco2017.jpg',
+    '../images/design/chix.jpg',
+    '../images/design/chess.jpg',
+    '../images/design/bhunga.jpg',
+    '../images/design/fairmont.jpg',
+    '../images/design/ho1.jpg',
+    '../images/design/infiniti.jpg',
+    '../images/design/operaHouse.jpg',
+    '../images/design/knife.jpg',
+    '../images/design/knifePlan.jpg',
+    '../images/design/laptopStand.jpg',
+    '../images/design/office01.jpg',
+    '../images/design/oman.jpg',
+    '../images/design/ortBridge.jpg',
+    '../images/design/redBull.jpg',
+    '../images/design/samsung.jpg',
+    '../images/design/powerBuoy.jpg',
+    '../images/design/sony.jpg',
+    '../images/design/winxo.jpg',
+    '../images/design/t2Snooze.jpg',
+    '../images/design/vamiziPlan.jpg',
+    '../images/design/kite.jpg',
+    '../images/design/hermanus.jpg',
+  ];
   const designLabels = [
     'Internet of Everything, CiscoLive! 2015 : Milan',
     'Angle Desk',
@@ -77,8 +76,8 @@ window.addEventListener('DOMContentLoaded', () => {
     'Swissport Snooze Lounge : Heathrow Terminal 2',
     'Vamizi Villa Plan : Vamizi Island, Mozambique',
     'Kite Buddy : Motorized kite launching handles',
-    'Hermanus Market Stall : Hermanus, South Africa'
-  ]
+    'Hermanus Market Stall : Hermanus, South Africa',
+  ];
 
   const designTechs = [
     'Layout, Design, Visualisation, Technical Documentation, On-Site : AutoCAD, 3ds Max, V-Ray, Photoshop',
@@ -110,84 +109,86 @@ window.addEventListener('DOMContentLoaded', () => {
     'Layout, Design, Visualisation, Technical Documentation : AutoCAD, 3ds Max, V-Ray, Photoshop',
     'Visualisation : AutoCAD, Photoshop',
     'Design, Visualisation, Technical Documentation : AutoCAD, 3ds Max, V-Ray, Photoshop',
-    'Design, Visualisation, Technical Documentation : AutoCAD, 3ds Max, V-Ray, Photoshop'
-  ]
+    'Design, Visualisation, Technical Documentation : AutoCAD, 3ds Max, V-Ray, Photoshop',
+  ];
 
-
-  arrows.forEach(arrow => {
+  arrows.forEach((arrow) => {
     arrow.addEventListener('mousedown', (e) => {
-      clearInterval(designImagePlayer)
+      clearInterval(designImagePlayer);
       if (autoForward) {
-        designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
+        designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed);
       }
       if ($(e.target).hasClass('right')) {
-        incrementDesignImage()
+        incrementDesignImage();
       } else if ($(e.target).hasClass('left')) {
-        decrementDesignImage()
+        decrementDesignImage();
       }
-    })
-  })
+    });
+  });
 
-
-  $('#designImage').mousedown(function() {
-    clearInterval(designImagePlayer)
+  $('#designImage').mousedown(function () {
+    clearInterval(designImagePlayer);
     if (autoForward) {
-      designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
+      designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed);
     }
-    incrementDesignImage()
-  })
+    incrementDesignImage();
+  });
 
   function autoIncrementImage() {
-    $('#designImage').fadeTo('slow', 0, function() {
-      imageNo++
-      if (imageNo >= (designImages.length)) {
-        imageNo= 0
-      }
-      designImageLabel.innerHTML=designLabels[imageNo]
-      designImageTech.innerHTML=designTechs[imageNo]
-      $(this).css('background-image', 'url(' + designImages[imageNo] + ')')
-    }).fadeTo('slow', 1)
+    $('#designImage')
+      .fadeTo('slow', 0, function () {
+        imageNo++;
+        if (imageNo >= designImages.length) {
+          imageNo = 0;
+        }
+        designImageLabel.innerHTML = designLabels[imageNo];
+        designImageTech.innerHTML = designTechs[imageNo];
+        $(this).css('background-image', 'url(' + designImages[imageNo] + ')');
+      })
+      .fadeTo('slow', 1);
   }
 
-  function incrementDesignImage(){
-    $('#designImage').fadeTo('fast', 0, function() {
-      imageNo++
-      if (imageNo >= (designImages.length)) {
-        imageNo= 0
-      }
-      designImageLabel.innerHTML=designLabels[imageNo]
-      designImageTech.innerHTML=designTechs[imageNo]
-      $(this).css('background-image', 'url(' + designImages[imageNo] + ')')
-    }).fadeTo('fast', 1)
+  function incrementDesignImage() {
+    $('#designImage')
+      .fadeTo('fast', 0, function () {
+        imageNo++;
+        if (imageNo >= designImages.length) {
+          imageNo = 0;
+        }
+        designImageLabel.innerHTML = designLabels[imageNo];
+        designImageTech.innerHTML = designTechs[imageNo];
+        $(this).css('background-image', 'url(' + designImages[imageNo] + ')');
+      })
+      .fadeTo('fast', 1);
   }
 
-  function decrementDesignImage(){
-    $('#designImage').fadeTo('fast', 0, function() {
-      imageNo--
-      if (imageNo < 0) {
-        imageNo= (designImages.length-1)
-      }
-      designImageLabel.innerHTML=designLabels[imageNo]
-      designImageTech.innerHTML=designTechs[imageNo]
-      $(this).css('background-image', 'url(' + designImages[imageNo] + ')')
-    }).fadeTo('fast', 1)
+  function decrementDesignImage() {
+    $('#designImage')
+      .fadeTo('fast', 0, function () {
+        imageNo--;
+        if (imageNo < 0) {
+          imageNo = designImages.length - 1;
+        }
+        designImageLabel.innerHTML = designLabels[imageNo];
+        designImageTech.innerHTML = designTechs[imageNo];
+        $(this).css('background-image', 'url(' + designImages[imageNo] + ')');
+      })
+      .fadeTo('fast', 1);
   }
-
-
 
   // $('.autoPlay').mouseover(function() {
   //   if (autoForward) {
-  //     $(this).attr('src', '/images/nav/navLoopStop.png')
+  //     $(this).attr('src', '../images/nav/navLoopStop.png')
   //   } else {
-  //     $(this).attr('src', '/images/nav/navLoop.png')
+  //     $(this).attr('src', '../images/nav/navLoop.png')
   //   }
   // })
 
   // $('.autoPlay').mouseout(function() {
   //   if (autoForward) {
-  //     $(this).attr('src', '/images/nav/navLoopStop.png')
+  //     $(this).attr('src', '../images/nav/navLoopStop.png')
   //   } else {
-  //     $(this).attr('src', '/images/nav/navLoop.png')
+  //     $(this).attr('src', '../images/nav/navLoop.png')
   //   }
   // })
 
@@ -198,11 +199,10 @@ window.addEventListener('DOMContentLoaded', () => {
   //     incrementDesignImage()
   //     clearInterval(designImagePlayer)
   //     designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
-  //     $(this).attr('src', '/images/nav/navLoopStop.png')
+  //     $(this).attr('src', '../images/nav/navLoopStop.png')
   //   } else {
   //     clearInterval(designImagePlayer)
-  //     $(this).attr('src', '/images/nav/navLoop.png')
+  //     $(this).attr('src', '../images/nav/navLoop.png')
   //   }
   // })
-
-})
+});
