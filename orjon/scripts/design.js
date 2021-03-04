@@ -15,36 +15,36 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const designImages = [
-    '../images/design/cisco2015.jpg',
-    '../images/design/nouTable.jpg',
-    '../images/design/foreshore.jpg',
-    '../images/design/statoil.jpg',
-    '../images/design/emidlands.jpg',
-    '../images/design/honestlyGood.jpg',
-    '../images/design/cisco2016.jpg',
-    '../images/design/cisco2017.jpg',
-    '../images/design/chix.jpg',
-    '../images/design/chess.jpg',
-    '../images/design/bhunga.jpg',
-    '../images/design/fairmont.jpg',
-    '../images/design/ho1.jpg',
-    '../images/design/infiniti.jpg',
-    '../images/design/operaHouse.jpg',
-    '../images/design/knife.jpg',
-    '../images/design/knifePlan.jpg',
-    '../images/design/laptopStand.jpg',
-    '../images/design/office01.jpg',
-    '../images/design/oman.jpg',
-    '../images/design/ortBridge.jpg',
-    '../images/design/redBull.jpg',
-    '../images/design/samsung.jpg',
-    '../images/design/powerBuoy.jpg',
-    '../images/design/sony.jpg',
-    '../images/design/winxo.jpg',
-    '../images/design/t2Snooze.jpg',
-    '../images/design/vamiziPlan.jpg',
-    '../images/design/kite.jpg',
-    '../images/design/hermanus.jpg',
+    '../orjon/images/design/cisco2015.jpg',
+    '../orjon/images/design/nouTable.jpg',
+    '../orjon/images/design/foreshore.jpg',
+    '../orjon/images/design/statoil.jpg',
+    '../orjon/images/design/emidlands.jpg',
+    '../orjon/images/design/honestlyGood.jpg',
+    '../orjon/images/design/cisco2016.jpg',
+    '../orjon/images/design/cisco2017.jpg',
+    '../orjon/images/design/chix.jpg',
+    '../orjon/images/design/chess.jpg',
+    '../orjon/images/design/bhunga.jpg',
+    '../orjon/images/design/fairmont.jpg',
+    '../orjon/images/design/ho1.jpg',
+    '../orjon/images/design/infiniti.jpg',
+    '../orjon/images/design/operaHouse.jpg',
+    '../orjon/images/design/knife.jpg',
+    '../orjon/images/design/knifePlan.jpg',
+    '../orjon/images/design/laptopStand.jpg',
+    '../orjon/images/design/office01.jpg',
+    '../orjon/images/design/oman.jpg',
+    '../orjon/images/design/ortBridge.jpg',
+    '../orjon/images/design/redBull.jpg',
+    '../orjon/images/design/samsung.jpg',
+    '../orjon/images/design/powerBuoy.jpg',
+    '../orjon/images/design/sony.jpg',
+    '../orjon/images/design/winxo.jpg',
+    '../orjon/images/design/t2Snooze.jpg',
+    '../orjon/images/design/vamiziPlan.jpg',
+    '../orjon/images/design/kite.jpg',
+    '../orjon/images/design/hermanus.jpg',
   ];
   const designLabels = [
     'Internet of Everything, CiscoLive! 2015 : Milan',
@@ -178,17 +178,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // $('.autoPlay').mouseover(function() {
   //   if (autoForward) {
-  //     $(this).attr('src', '../images/nav/navLoopStop.png')
+  //     $(this).attr('src', '../orjon/images/nav/navLoopStop.png')
   //   } else {
-  //     $(this).attr('src', '../images/nav/navLoop.png')
+  //     $(this).attr('src', '../orjon/images/nav/navLoop.png')
   //   }
   // })
 
   // $('.autoPlay').mouseout(function() {
   //   if (autoForward) {
-  //     $(this).attr('src', '../images/nav/navLoopStop.png')
+  //     $(this).attr('src', '../orjon/images/nav/navLoopStop.png')
   //   } else {
-  //     $(this).attr('src', '../images/nav/navLoop.png')
+  //     $(this).attr('src', '../orjon/images/nav/navLoop.png')
   //   }
   // })
 
@@ -199,10 +199,10 @@ window.addEventListener('DOMContentLoaded', () => {
   //     incrementDesignImage()
   //     clearInterval(designImagePlayer)
   //     designImagePlayer = setInterval(autoIncrementImage, autoIncrementSpeed)
-  //     $(this).attr('src', '../images/nav/navLoopStop.png')
+  //     $(this).attr('src', '../orjon/images/nav/navLoopStop.png')
   //   } else {
   //     clearInterval(designImagePlayer)
-  //     $(this).attr('src', '../images/nav/navLoop.png')
+  //     $(this).attr('src', '../orjon/images/nav/navLoop.png')
   //   }
   // })
 });

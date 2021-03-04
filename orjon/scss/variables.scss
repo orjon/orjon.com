@@ -32,11 +32,10 @@ $navTextPadding: 5px;
 $navHover: #999;
 $navOHeight: 35px;
 
-$navFadeOutSpeed: .3s;
-$navFadeInSpeed: .1s;
+$navFadeOutSpeed: 0.3s;
+$navFadeInSpeed: 0.1s;
 
 $bioPadding: 15px;
-
 
 $contentPaddingSide: 20px;
 
@@ -52,7 +51,7 @@ $colorNavBackground: white;
 
 $textFooter: #ccc;
 $textNormal: black;
-$textBright: #AAA;
+$textBright: #aaa;
 $textDim: #888;
 $textDimmer: #333;
 
@@ -60,13 +59,12 @@ $fontScreenReference: 73vh;
 $fontSize: ($fontScreenReference/45);
 $fontWeight: 300;
 $fontSizeNormal: 1em;
-$fontSizeSmall: .9em;
-$fontSizeMini: .8em;
+$fontSizeSmall: 0.9em;
+$fontSizeMini: 0.8em;
 $fontSizeNavSmall: 17px;
 $fontSizeNav: 25px;
 
-$colorHello: #AAA;
-
+$colorHello: #aaa;
 
 $projectDividingLines: black;
 
@@ -76,27 +74,47 @@ $iconProjectHover: $iconProject + 10%;
 $iconProjectLarge: $iconProject - 10%;
 $iconProjectHoverLarge: $iconProjectLarge + 10%;
 
-
-
 $fontBioName: 2.5em;
 $fontBioStrapline: 1.5em;
 $fontBioQualification: 1em;
 $fontBioContact: $fontSizeNormal;
 $fontBioText: $fontSizeNormal;
 
-
-
 $navArrowPadding: 0;
 
-.width10 {width: 10%};
-.width13 {width: 13%};
-.width15 {width: 15%};
-.width20 {width: 20%};
-.width25 {width: 25%};
-.width30 {width: 30%};
-.width40 {width: 40%};
-.width50 {width: 50%};
-.width65 {width: 65%};
-.width75 {width: 75%};
-.width90 {width: 90%};
-.width100 {width: 100%};
+.width10 {
+  width: 10%;
+}
+.width13 {
+  width: 13%;
+}
+.width15 {
+  width: 15%;
+}
+.width20 {
+  width: 20%;
+}
+.width25 {
+  width: 25%;
+}
+.width30 {
+  width: 30%;
+}
+.width40 {
+  width: 40%;
+}
+.width50 {
+  width: 50%;
+}
+.width65 {
+  width: 65%;
+}
+.width75 {
+  width: 75%;
+}
+.width90 {
+  width: 90%;
+}
+.width100 {
+  width: 100%;
+}

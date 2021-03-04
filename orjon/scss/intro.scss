@@ -5,23 +5,21 @@ $animDist4: 17;
 $animDist5: 55;
 $animDist6: 97;
 
+$animDistXMult: 0.4;
+$animDistYMult: 0.3;
 
-$animDistXMult: .4;
-$animDistYMult: .3;
+$circleTransparency: 0.8;
 
-$circleTransparency: .8;
-
-$circlePink: rgba(255,0,255,1);
-$circleBlue: rgba(0,220,235,$circleTransparency);
-$circleGreen: rgba(0,220,100,$circleTransparency);
-$circleGreen: rgba(153,255,62,$circleTransparency);
-$circleWhite: rgba(255,255,255,$circleTransparency);
+$circlePink: rgba(255, 0, 255, 1);
+$circleBlue: rgba(0, 220, 235, $circleTransparency);
+$circleGreen: rgba(0, 220, 100, $circleTransparency);
+$circleGreen: rgba(153, 255, 62, $circleTransparency);
+$circleWhite: rgba(255, 255, 255, $circleTransparency);
 // $circleWhite: rgba(0,0,0,.95);
 
 #intro.hidden {
   display: none;
 }
-
 
 #intro {
   width: 100%;
@@ -30,19 +28,18 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
   position: relative;
   border: $devBorder solid orange;
 
-
-
   #circleRed {
     position: absolute;
     will-change: position;
     fill: $circlePink;
     border: $devBorder solid $circlePink;
+    filter: drop-shadow(0 0 0.75rem rgba(255, 0, 255, 0.75));
   }
 
   #circleCyanUnderlay {
     position: absolute;
     will-change: position;
-    fill: rgba(255,255,255,1);
+    fill: rgba(255, 255, 255, 1);
   }
 
   #circleCyan {
@@ -50,6 +47,7 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
     will-change: position;
     fill: $circleBlue;
     border: $devBorder solid $circleBlue;
+    filter: drop-shadow(0 0 0.5rem rgba(0, 220, 235, 0.75));
   }
 
   #circleGreen {
@@ -57,25 +55,22 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
     will-change: position;
     fill: $circleGreen;
     border: $devBorder solid $circleGreen;
+    filter: drop-shadow(0 0 0.25rem rgb(62, 255, 62, 1));
   }
-
 
   #circleWhiteUnderlay {
     position: absolute;
-    fill: rgba(255,255,255,1);
+    fill: rgba(255, 255, 255, 1);
   }
-
 
   #circleWhite {
     position: absolute;
-    a{
+    filter: drop-shadow(0 0 3rem rgba(255, 255, 255, 0.5));
+    a {
       border: $devBorder solid $circleWhite;
-      fill: rgba(255,255,255,1);
+      fill: rgba(255, 255, 255, 1);
     }
-
   }
-
-
 
   // .animateRed {
   // 	-webkit-animation: animateRed 30s ease-in-out infinite alternate-reverse both;
@@ -93,38 +88,41 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
   // }
 
   .animateRed {
-  	-webkit-animation: animateRed 15s ease-in-out infinite alternate-reverse both;
-  	        animation: animateRed 15s ease-in-out infinite alternate-reverse both;
+    -webkit-animation: animateRed 15s ease-in-out infinite alternate-reverse
+      both;
+    animation: animateRed 15s ease-in-out infinite alternate-reverse both;
   }
 
   .animateCyan {
-  	-webkit-animation: animateCyan 20s ease-in-out infinite alternate-reverse both;
-  	        animation: animateCyan 20s ease-in-out infinite alternate-reverse both;
+    -webkit-animation: animateCyan 20s ease-in-out infinite alternate-reverse
+      both;
+    animation: animateCyan 20s ease-in-out infinite alternate-reverse both;
   }
 
   .animateGreen {
-  	-webkit-animation: animateGreen 30s ease-in-out infinite alternate-reverse both;
-  	        animation: animateGreen 30s ease-in-out infinite alternate-reverse both;
+    -webkit-animation: animateGreen 30s ease-in-out infinite alternate-reverse
+      both;
+    animation: animateGreen 30s ease-in-out infinite alternate-reverse both;
   }
 
   @keyframes animateRed {
     0% {
       -webkit-transform: translateX(0);
-              transform: translateX(0);
+      transform: translateX(0);
       -webkit-transform: translateY(0);
-              transform: translateY(0);
+      transform: translateY(0);
     }
     25% {
       -webkit-transform: translateX($animDist3 * $animDistXMult * 1px);
-              transform: translateX($animDist3 * $animDistXMult * 1px);
+      transform: translateX($animDist3 * $animDistXMult * 1px);
     }
     40% {
       -webkit-transform: translateY($animDist6 * $animDistYMult * 1px);
-              transform: translateY($animDist6 * $animDistYMult * 1px);
+      transform: translateY($animDist6 * $animDistYMult * 1px);
     }
     60% {
       -webkit-transform: translateX($animDist2 * $animDistXMult * 1px);
-              transform: translateX($animDist2 * $animDistXMult * 1px);
+      transform: translateX($animDist2 * $animDistXMult * 1px);
     }
     // 75% {
     //   -webkit-transform: translateX($animDist4 * $animDistXMult * 1px);
@@ -132,90 +130,89 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
     // }
     90% {
       -webkit-transform: translateY($animDist5 * $animDistYMult * 1px);
-              transform: translateY($animDist5 * $animDistYMult * 1px);
+      transform: translateY($animDist5 * $animDistYMult * 1px);
     }
     100% {
       -webkit-transform: translateX($animDist1 * $animDistXMult * 1px);
-              transform: translateX($animDist1 * $animDistXMult * 1px);
-
+      transform: translateX($animDist1 * $animDistXMult * 1px);
     }
   }
-
 
   @keyframes animateCyan {
     0% {
       -webkit-transform: translateX(0);
-              transform: translateX(0);
+      transform: translateX(0);
       -webkit-transform: translateY(0);
-              transform: translateY(0);
+      transform: translateY(0);
     }
     25% {
       -webkit-transform: translateX($animDist2 * $animDistXMult * 1px);
-              transform: translateX($animDist2 * $animDistXMult * 1px);
+      transform: translateX($animDist2 * $animDistXMult * 1px);
     }
     30% {
       -webkit-transform: translateY($animDist6 * $animDistYMult * 1px);
-              transform: translateY($animDist6 * $animDistYMult * 1px);
+      transform: translateY($animDist6 * $animDistYMult * 1px);
     }
     45% {
       -webkit-transform: translateX($animDist6 * $animDistXMult * 1px);
-              transform: translateX($animDist6 * $animDistXMult * 1px);
+      transform: translateX($animDist6 * $animDistXMult * 1px);
     }
     60% {
       -webkit-transform: translateY($animDist2 * $animDistYMult * 1px);
-              transform: translateY($animDist2 * $animDistYMult * 1px);
+      transform: translateY($animDist2 * $animDistYMult * 1px);
     }
     80% {
       -webkit-transform: translateX($animDist3 * $animDistXMult * 1px);
-              transform: translateX($animDist3 * $animDistXMult * 1px);
+      transform: translateX($animDist3 * $animDistXMult * 1px);
     }
     100% {
       -webkit-transform: translateX($animDist5 * $animDistXMult * 1px);
-              transform: translateX($animDist5 * $animDistXMult * 1px);
+      transform: translateX($animDist5 * $animDistXMult * 1px);
       -webkit-transform: translateY(0);
-              transform: translateY(0);
+      transform: translateY(0);
     }
   }
 
   @keyframes animateGreen {
     0% {
       -webkit-transform: translateX(0);
-              transform: translateX(0);
+      transform: translateX(0);
       -webkit-transform: translateY(0);
-              transform: translateY(0);
+      transform: translateY(0);
     }
     25% {
       -webkit-transform: translateX($animDist1 * $animDistXMult * 1px);
-              transform: translateX($animDist1 * $animDistXMult * 1px);
+      transform: translateX($animDist1 * $animDistXMult * 1px);
     }
     30% {
       -webkit-transform: translateY($animDist4 * $animDistYMult * 1px);
-              transform: translateY($animDist4 * $animDistYMult * 1px);
+      transform: translateY($animDist4 * $animDistYMult * 1px);
     }
     45% {
       -webkit-transform: translateX($animDist6 * $animDistXMult * 1px);
-              transform: translateX($animDist6 * $animDistXMult * 1px);
+      transform: translateX($animDist6 * $animDistXMult * 1px);
     }
     60% {
       -webkit-transform: translateY($animDist3 * $animDistYMult * 1px);
-              transform: translateY($animDist3 * $animDistYMult * 1px);
+      transform: translateY($animDist3 * $animDistYMult * 1px);
     }
     80% {
       -webkit-transform: translateX($animDist2 * $animDistXMult * 1px);
-              transform: translateX($animDist2 * $animDistXMult * 1px);
+      transform: translateX($animDist2 * $animDistXMult * 1px);
     }
     100% {
       -webkit-transform: translateX($animDist1 * $animDistXMult * 1px);
-              transform: translateX($animDist1 * $animDistXMult * 1px);
+      transform: translateX($animDist1 * $animDistXMult * 1px);
       -webkit-transform: translateY(0);
-              transform: translateY(0);
+      transform: translateY(0);
     }
   }
 }
 
-#hello, #helloTouch  {
+#hello,
+#helloTouch {
   font-size: (var(--fontSizeHello));
-  text-shadow: 00px 0px 4px  white;
+  text-shadow: 00px 0px 4px white;
   color: black;
   text-decoration: none;
 
@@ -223,18 +220,17 @@ $circleWhite: rgba(255,255,255,$circleTransparency);
   opacity: 1;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
-
 }
 
 #hello {
   @media (pointer: none) {
-      display: none;
+    display: none;
   }
 }
 
 #helloTouch {
   @media (pointer: fine) {
-      display: none;
+    display: none;
   }
 }
 
