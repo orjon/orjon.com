@@ -33,7 +33,9 @@ $circleWhite: rgba(255, 255, 255, $circleTransparency);
     will-change: position;
     fill: $circlePink;
     border: $devBorder solid $circlePink;
+    // backdrop-filter: blur(2px);
     filter: drop-shadow(0 0 0.75rem rgba(255, 0, 255, 0.75));
+    mix-blend-mode: lighten;
   }
 
   #circleCyanUnderlay {
@@ -47,6 +49,8 @@ $circleWhite: rgba(255, 255, 255, $circleTransparency);
     will-change: position;
     fill: $circleBlue;
     border: $devBorder solid $circleBlue;
+    // mix-blend-mode: lighten;
+    // backdrop-filter: blur(2px);
     filter: drop-shadow(0 0 0.5rem rgba(0, 220, 235, 0.75));
   }
 
@@ -55,13 +59,15 @@ $circleWhite: rgba(255, 255, 255, $circleTransparency);
     will-change: position;
     fill: $circleGreen;
     border: $devBorder solid $circleGreen;
+    // backdrop-filter: blur(2px);
+    mix-blend-mode: lighten;
     filter: drop-shadow(0 0 0.25rem rgb(62, 255, 62, 1));
   }
 
-  #circleWhiteUnderlay {
-    position: absolute;
-    fill: rgba(255, 255, 255, 1);
-  }
+  // #circleWhiteUnderlay {
+  //   position: absolute;
+  //   fill: rgba(255, 255, 255, 1);
+  // }
 
   #circleWhite {
     position: absolute;
@@ -73,18 +79,21 @@ $circleWhite: rgba(255, 255, 255, $circleTransparency);
   }
 
   // .animateRed {
-  // 	-webkit-animation: animateRed 30s ease-in-out infinite alternate-reverse both;
-  // 	        animation: animateRed 30s ease-in-out infinite alternate-reverse both;
+  //   -webkit-animation: animateRed 30s ease-in-out infinite alternate-reverse
+  //     both;
+  //   animation: animateRed 30s ease-in-out infinite alternate-reverse both;
   // }
 
   // .animateCyan {
-  // 	-webkit-animation: animateCyan 50s ease-in-out infinite alternate-reverse both;
-  // 	        animation: animateCyan 50s ease-in-out infinite alternate-reverse both;
+  //   -webkit-animation: animateCyan 50s ease-in-out infinite alternate-reverse
+  //     both;
+  //   animation: animateCyan 50s ease-in-out infinite alternate-reverse both;
   // }
 
   // .animateGreen {
-  // 	-webkit-animation: animateGreen 70s ease-in-out infinite alternate-reverse both;
-  // 	        animation: animateGreen 70s ease-in-out infinite alternate-reverse both;
+  //   -webkit-animation: animateGreen 70s ease-in-out infinite alternate-reverse
+  //     both;
+  //   animation: animateGreen 70s ease-in-out infinite alternate-reverse both;
   // }
 
   .animateRed {

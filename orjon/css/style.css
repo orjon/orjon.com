@@ -150,6 +150,7 @@ nav .hidden {
   fill: fuchsia;
   border: 0px solid fuchsia;
   filter: drop-shadow(0 0 0.75rem rgba(255, 0, 255, 0.75));
+  mix-blend-mode: lighten;
 }
 #intro #circleCyanUnderlay {
   position: absolute;
@@ -168,11 +169,8 @@ nav .hidden {
   will-change: position;
   fill: rgba(153, 255, 62, 0.8);
   border: 0px solid rgba(153, 255, 62, 0.8);
+  mix-blend-mode: lighten;
   filter: drop-shadow(0 0 0.25rem #3eff3e);
-}
-#intro #circleWhiteUnderlay {
-  position: absolute;
-  fill: white;
 }
 #intro #circleWhite {
   position: absolute;
