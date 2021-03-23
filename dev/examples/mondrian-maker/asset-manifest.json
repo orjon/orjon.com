@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dev/examples/mondrian-maker/static/css/main.850e2d78.chunk.css",
+    "main.js": "/dev/examples/mondrian-maker/static/js/main.9482a946.chunk.js",
+    "main.js.map": "/dev/examples/mondrian-maker/static/js/main.9482a946.chunk.js.map",
+    "runtime-main.js": "/dev/examples/mondrian-maker/static/js/runtime-main.788877c1.js",
+    "runtime-main.js.map": "/dev/examples/mondrian-maker/static/js/runtime-main.788877c1.js.map",
+    "static/js/2.fd9a3a66.chunk.js": "/dev/examples/mondrian-maker/static/js/2.fd9a3a66.chunk.js",
+    "static/js/2.fd9a3a66.chunk.js.map": "/dev/examples/mondrian-maker/static/js/2.fd9a3a66.chunk.js.map",
+    "index.html": "/dev/examples/mondrian-maker/index.html",
+    "precache-manifest.c7b43ba1c8ff0cafee3cff5c7747af5f.js": "/dev/examples/mondrian-maker/precache-manifest.c7b43ba1c8ff0cafee3cff5c7747af5f.js",
+    "service-worker.js": "/dev/examples/mondrian-maker/service-worker.js",
+    "static/css/main.850e2d78.chunk.css.map": "/dev/examples/mondrian-maker/static/css/main.850e2d78.chunk.css.map",
+    "static/js/2.fd9a3a66.chunk.js.LICENSE.txt": "/dev/examples/mondrian-maker/static/js/2.fd9a3a66.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.788877c1.js",
+    "static/js/2.fd9a3a66.chunk.js",
+    "static/css/main.850e2d78.chunk.css",
+    "static/js/main.9482a946.chunk.js"
+  ]
+}

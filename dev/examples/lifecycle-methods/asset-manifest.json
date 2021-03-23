@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dev/examples/lifecycle-methods/static/css/main.0e77f03f.chunk.css",
+    "main.js": "/dev/examples/lifecycle-methods/static/js/main.90661a4c.chunk.js",
+    "main.js.map": "/dev/examples/lifecycle-methods/static/js/main.90661a4c.chunk.js.map",
+    "runtime-main.js": "/dev/examples/lifecycle-methods/static/js/runtime-main.607d30d1.js",
+    "runtime-main.js.map": "/dev/examples/lifecycle-methods/static/js/runtime-main.607d30d1.js.map",
+    "static/js/2.1c59e484.chunk.js": "/dev/examples/lifecycle-methods/static/js/2.1c59e484.chunk.js",
+    "static/js/2.1c59e484.chunk.js.map": "/dev/examples/lifecycle-methods/static/js/2.1c59e484.chunk.js.map",
+    "index.html": "/dev/examples/lifecycle-methods/index.html",
+    "precache-manifest.1037304c7a53ae025af11a45a67b8aff.js": "/dev/examples/lifecycle-methods/precache-manifest.1037304c7a53ae025af11a45a67b8aff.js",
+    "service-worker.js": "/dev/examples/lifecycle-methods/service-worker.js",
+    "static/css/main.0e77f03f.chunk.css.map": "/dev/examples/lifecycle-methods/static/css/main.0e77f03f.chunk.css.map",
+    "static/js/2.1c59e484.chunk.js.LICENSE.txt": "/dev/examples/lifecycle-methods/static/js/2.1c59e484.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.607d30d1.js",
+    "static/js/2.1c59e484.chunk.js",
+    "static/css/main.0e77f03f.chunk.css",
+    "static/js/main.90661a4c.chunk.js"
+  ]
+}

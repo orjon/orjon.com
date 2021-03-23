@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dev/examples/lottery/static/css/main.73f1abbe.chunk.css",
+    "main.js": "/dev/examples/lottery/static/js/main.094ad133.chunk.js",
+    "main.js.map": "/dev/examples/lottery/static/js/main.094ad133.chunk.js.map",
+    "runtime-main.js": "/dev/examples/lottery/static/js/runtime-main.56c23915.js",
+    "runtime-main.js.map": "/dev/examples/lottery/static/js/runtime-main.56c23915.js.map",
+    "static/js/2.1a8fd348.chunk.js": "/dev/examples/lottery/static/js/2.1a8fd348.chunk.js",
+    "static/js/2.1a8fd348.chunk.js.map": "/dev/examples/lottery/static/js/2.1a8fd348.chunk.js.map",
+    "index.html": "/dev/examples/lottery/index.html",
+    "precache-manifest.1ed3c6e1211fd7fa8a89191d18461080.js": "/dev/examples/lottery/precache-manifest.1ed3c6e1211fd7fa8a89191d18461080.js",
+    "service-worker.js": "/dev/examples/lottery/service-worker.js",
+    "static/css/main.73f1abbe.chunk.css.map": "/dev/examples/lottery/static/css/main.73f1abbe.chunk.css.map",
+    "static/js/2.1a8fd348.chunk.js.LICENSE.txt": "/dev/examples/lottery/static/js/2.1a8fd348.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.56c23915.js",
+    "static/js/2.1a8fd348.chunk.js",
+    "static/css/main.73f1abbe.chunk.css",
+    "static/js/main.094ad133.chunk.js"
+  ]
+}

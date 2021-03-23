@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <link href='css/main.css' type='text/css' rel='stylesheet'>
+    <meta charset='utf-8'>
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <header>
+      <h1>HTML Forms</h1>
+    </header>
+    <main>
+      <form class='width25'>
+        <div class='form-row'>
+          <label for='fieldA'>First Name</label>
+          <input type='text' id='fieldA'></input>
+        </div>
+
+        <div class='form-row'>
+          <label for='fieldB'>Surname</label>
+          <input type='text' id='fieldB'></input>
+        </div>
+
+        <div class='form-row right'>
+            <button class='submit' type='submit'>Submit</button>
+        </div>
+      </form>
+
+      <form class='width25'>
+        Please enter your name:
+        <div class='form-row'>
+          <input type='text' placeholder='First Name' id='fieldA'></input>
+        </div>
+
+        <div class='form-row'>
+          <input type='text' placeholder='Surname' id='fieldB'></input>
+        </div>
+
+        <div class='form-row right'>
+            <button class='submit' type='submit'>Submit</button>
+        </div>
+      </form>
+
+      <form class='width50'>
+        <div class='form-row'>
+          <label for='fieldB'>A radio button</label>
+          <input type='radio' id='fieldB'>
+        </div>
+
+        <div class='form-row'>
+          <label for='fieldC'>Colour Picker</label>
+          <input type='color' value='#00F900' id='fieldC'>
+        </div>
+
+        <div class='form-row'>
+          <label for='fieldD'>Password</label>
+          <input type='password' id='fieldD'>
+        </div>
+
+        <div class='form-row'>
+          <label for='fieldE'>Range</label>
+          <input type='range' min='1' max='100' id='fieldE'>
+        </div>
+
+        <div class='form-row'>
+          <label for='fieldF'>Selection from list</label>
+          <select id='fieldF'>
+            <option value='Happy'>Pretty happy</option>
+            <option value='VeryHappy'>Very happy</option>
+            <option value='ExtremelyHappy'>Extremely happy</option>
+            <option value='CouldntBeHappier'>Couldn't be happier</option>
+          </select>
+        </div>
+
+        <div class='form-row right'>
+          <button class='reset' type='reset'>Reset</button>
+          <button class='submit' type='submit'>Submit</button>
+        </div>
+
+
+      </form>
+    </main>
+  </body>
+</html>
