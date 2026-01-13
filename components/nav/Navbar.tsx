@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Menu from './Menu'
+import BurgerMenu from './BurgerMenu'
 
 const Navbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
@@ -11,20 +12,15 @@ const Navbar = () => {
   return (
     <nav className='flex flex-col  bg-slate-400'>
       <div className='flex flex-row justify-between '>
-        <button className='ml-2'>
-          <Link href='/'>
-            <h1 className='text-2xl font-bold'>orjon.com</h1>
-          </Link>
-        </button>
+        <Link href='/'>
+          <h1 className='ml-2 text-2xl font-bold'>orjon.com</h1>
+        </Link>
 
-        <button
-          onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}
-          className='mr-2 cursor-pointer hidden md:block'
-        >
-          <Link href='/me'>
-            <h1 className='text-lg font-bold'>me</h1>
-          </Link>
-        </button>
+        <Link href='/me'>
+          <h1 className='mr-2 cursor-pointer hidden md:block text-lg font-bold'>
+            me
+          </h1>
+        </Link>
 
         <button
           onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}
@@ -38,8 +34,8 @@ const Navbar = () => {
           />
         </button>
       </div>
-
       <Menu />
+      <BurgerMenu />
     </nav>
   )
 }

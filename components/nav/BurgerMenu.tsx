@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-const Menu = () => {
+const BurgerMenu = () => {
   return (
-    <div className='hidden md:flex px-2  flex-row gap-4 bg-slate-600'>
+    <div className='md:hidden px-2 flex flex-col text-center gap-4 bg-slate-600'>
       <Link href='/code'>
         <h1 className='text-lg font-bold'>code</h1>
       </Link>
@@ -15,4 +15,4 @@ const Menu = () => {
     </div>
   )
 }
-export default Menu
+export default BurgerMenu
