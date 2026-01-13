@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-bai-jamjuree), sans-serif;
 }
+
+.devBorder {
+  @apply border-red-500/50 border;
+}
