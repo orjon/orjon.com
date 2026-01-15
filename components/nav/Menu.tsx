@@ -1,28 +1,33 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import CurrentTime from '../CurrentTime'
 
 const routes = [
   {
     name: 'code',
     href: '/code',
-    icon: '/icons/nav/code.png'
+    iconOff: '/icons/nav/codeOFF.png',
+    iconOn: '/icons/nav/codeON.png'
   },
   {
     name: 'design',
     href: '/design',
-    icon: '/icons/nav/design.png'
+    iconOff: '/icons/nav/designOFF.png',
+    iconOn: '/icons/nav/designON.png'
   },
   {
     name: 'electronics',
     href: '/electronics',
-    icon: '/icons/nav/electronics.png'
+    iconOff: '/icons/nav/electronicsOFF.png',
+    iconOn: '/icons/nav/electronicsON.png'
   }
 ]
 
 const buttonBaseStyle =
-  'group w-40 splitGrey duration-100 bg-[linear-gradient(to_bottom,var(--color-grey050)_50%,var(--color-grey500)_50%)]'
+  'group w-90 splitGrey duration-100 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuBottom)_50%)]'
 const buttonStyle =
-  'block w-full p-1 bg-grey300 rounded-[1px] duration-100 shadow-[inset_0px_0px_1px_0px_var(--color-grey400)]'
+  'block flex flex-row gap-2 items-center p-1 bg-grey300 rounded-[3px] duration-100 shadow-[inset_0px_0px_1px_0px_var(--color-grey400)]'
 
 const Menu = () => {
   const pathname = usePathname()
@@ -31,28 +36,32 @@ const Menu = () => {
     <div key={route.name} className={`${buttonBaseStyle}`}>
       <Link
         href={route.href}
-        className={`${buttonStyle} ${
+        className={`${buttonStyle} px-2 ${
           pathname === route.href
             ? `mb-0 mt-1 text-${route.name}`
-            : 'mb-1 mt-0 text-grey050'
+            : 'mb-2 mt-0 text-grey050'
         } `}
       >
+        <Image
+          src={pathname === route.href ? route.iconOn : route.iconOff}
+          alt={route.name}
+          width={30}
+          height={30}
+        />
         {route.name}
       </Link>
     </div>
   ))
   return (
     <div className='hidden md:flex flex-row bg-grey300 text-grey050 text-lg font-medium'>
-      <div className='group w-[8px] splitGrey  duration-100'>
-        <div className='block w-full p-1 rounded-r-[1px] bg-grey300 mb-2 text-grey300'>
-          .
+      <div className={`${buttonBaseStyle} w-[8px]`}>
+        <div className={`${buttonStyle} w-[8px] rounded-l-none px-0`}>
+          &nbsp;
         </div>
       </div>
       {menuItems}
-      <div className='group w-full splitGrey  duration-100'>
-        <div className='block w-full p-1 rounded-l-[1px] bg-grey300 mb-2 text-grey300'>
-          nothing to see here...
-        </div>
+      <div className={`${buttonBaseStyle} w-full`}>
+        <div className={`${buttonStyle} rounded-r-none`}>&nbsp;</div>
       </div>
     </div>
   )

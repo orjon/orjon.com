@@ -16,6 +16,9 @@
   --design: #6adbe9;
   --electronics: #99ff3e;
   --me: #ffde00;
+  --titleBar: #eaeaea;
+  --menuTop: #888888;
+  --menuBottom: #494949;
 }
 
 @theme inline {
@@ -31,6 +34,8 @@
   --color-grey700: var(--grey700);
   --color-grey800: var(--grey800);
   --color-grey900: var(--grey900);
+  --color-menuTop: var(--menuTop);
+  --color-menuBottom: var(--menuBottom);
   --color-code: var(--code);
   --color-design: var(--design);
   --color-electronics: var(--electronics);
@@ -67,12 +72,4 @@ body {
 
 .absoluteCenter {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-}
-
-.splitGrey {
-  @apply bg-[linear-gradient(to_bottom,var(--color-grey050)_50%,var(--color-grey500)_50%)];
-}
-
-.splitGreyp {
-  @apply bg-[linear-gradient(to_bottom,green_50%,red_50%)];
 }
