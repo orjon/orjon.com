@@ -72,3 +72,7 @@ body {
 .splitGrey {
   @apply bg-[linear-gradient(to_bottom,var(--color-grey050)_50%,var(--color-grey500)_50%)];
 }
+
+.splitGreyp {
+  @apply bg-[linear-gradient(to_bottom,green_50%,red_50%)];
+}

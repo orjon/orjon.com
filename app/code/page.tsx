@@ -1,8 +1,8 @@
-const ProjectsPage = () => {
+const CodePage = () => {
   return (
     <div>
-      <h1>Projects Page</h1>
+      <h1>Code Page</h1>
     </div>
   )
 }
-export default ProjectsPage
+export default CodePage
