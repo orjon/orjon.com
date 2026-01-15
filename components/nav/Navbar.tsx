@@ -11,10 +11,10 @@ const Navbar = () => {
 
   return (
     <div className='relative'>
-      <nav className='flex flex-col bg-grey050'>
+      <nav className='flex flex-col bg-titleBar'>
         <div className='flex flex-row justify-between items-center'>
           <Link href='/'>
-            <h1 className='ml-2 text-2xl font-bold'>orjon.com</h1>
+            <h1 className='ml-2 text-2xl font-bold text-menuText'>orjon.com</h1>
           </Link>
 
           <Link

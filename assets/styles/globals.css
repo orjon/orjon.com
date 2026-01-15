@@ -4,8 +4,11 @@
   --background: white;
   --grey050: #eaeaea;
   --grey100: #b4b4b4;
+  --grey150: #999999;
   --grey200: #888888;
+  --grey250: #777777;
   --grey300: #686868;
+  --grey350: #585858;
   --grey400: #494949;
   --grey500: #343434;
   --grey600: #232323;
@@ -16,9 +19,11 @@
   --design: #6adbe9;
   --electronics: #99ff3e;
   --me: #ffde00;
-  --titleBar: #eaeaea;
-  --menuTop: #888888;
-  --menuBottom: #494949;
+  --titleBar: var(--grey050);
+  --menuText: var(--grey800);
+  --menuTop: var(--grey100);
+  --menuBottom: var(--grey200);
+  --menuShadow: var(--grey300);
 }
 
 @theme inline {
@@ -34,8 +39,9 @@
   --color-grey700: var(--grey700);
   --color-grey800: var(--grey800);
   --color-grey900: var(--grey900);
+  --color-titleBar: var(--grey050);
+  --color-menuText: var(--menuText);
   --color-menuTop: var(--menuTop);
-  --color-menuBottom: var(--menuBottom);
   --color-code: var(--code);
   --color-design: var(--design);
   --color-electronics: var(--electronics);

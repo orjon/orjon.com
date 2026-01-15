@@ -25,21 +25,20 @@ const routes = [
 ]
 
 const buttonBaseStyle =
-  'group w-90 splitGrey duration-100 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuBottom)_50%)]'
+  'relative group w-90 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuBottom)_50%)] shadow-[inset_0px_-1px_2px_0px_var(--menuShadow)]'
 const buttonStyle =
-  'block flex flex-row gap-2 items-center p-1 bg-grey300 rounded-[3px] duration-100 shadow-[inset_0px_0px_1px_0px_var(--color-grey400)]'
+  'block flex flex-row gap-2 items-center p-1 bg-menuTop rounded-[4px] duration-100 ease-out transition-[margin] shadow-[inset_0px_-1px_2px_0px_var(--menuBottom)]'
 
 const Menu = () => {
   const pathname = usePathname()
 
   const menuItems = routes.map((route) => (
     <div key={route.name} className={`${buttonBaseStyle}`}>
+      <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
       <Link
         href={route.href}
-        className={`${buttonStyle} px-2 ${
-          pathname === route.href
-            ? `mb-0 mt-1 text-${route.name}`
-            : 'mb-2 mt-0 text-grey050'
+        className={`relative z-10 ${buttonStyle} px-2 ${
+          pathname === route.href ? `mb-0 mt-1` : 'mb-2 mt-0'
         } `}
       >
         <Image
@@ -53,15 +52,21 @@ const Menu = () => {
     </div>
   ))
   return (
-    <div className='hidden md:flex flex-row bg-grey300 text-grey050 text-lg font-medium'>
+    <div className='hidden md:flex flex-row text-lg font-medium text-menuText'>
       <div className={`${buttonBaseStyle} w-[8px]`}>
-        <div className={`${buttonStyle} w-[8px] rounded-l-none px-0`}>
+        <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
+        <div
+          className={`relative z-10 ${buttonStyle} w-[8px] rounded-l-none px-0`}
+        >
           &nbsp;
         </div>
       </div>
       {menuItems}
       <div className={`${buttonBaseStyle} w-full`}>
-        <div className={`${buttonStyle} rounded-r-none`}>&nbsp;</div>
+        <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
+        <div className={`relative z-10 ${buttonStyle} rounded-r-none`}>
+          &nbsp;
+        </div>
       </div>
     </div>
   )
