@@ -19,18 +19,22 @@ const routes = [
   }
 ]
 
-const buttonStyles =
-  'block w-full p-1 bg-grey300 mb-2 mt-0 rounded-[1px] group-hover:mb-0 group-hover:mt-1 duration-100 shadow-[inset_0px_0px_1px_0px_var(--color-grey400)]'
+const buttonBaseStyle =
+  'group w-40 splitGrey duration-100 bg-[linear-gradient(to_bottom,var(--color-grey050)_50%,var(--color-grey500)_50%)]'
+const buttonStyle =
+  'block w-full p-1 bg-grey300 rounded-[1px] duration-100 shadow-[inset_0px_0px_1px_0px_var(--color-grey400)]'
 
 const Menu = () => {
   const pathname = usePathname()
 
   const menuItems = routes.map((route) => (
-    <div key={route.name} className='group w-40 splitGrey duration-100'>
+    <div key={route.name} className={`${buttonBaseStyle}`}>
       <Link
         href={route.href}
-        className={`${buttonStyles} ${
-          pathname === route.href ? 'text-code mb-0 mt-1' : 'text-grey050'
+        className={`${buttonStyle} ${
+          pathname === route.href
+            ? `mb-0 mt-1 text-${route.name}`
+            : 'mb-1 mt-0 text-grey050'
         } `}
       >
         {route.name}
