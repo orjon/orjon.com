@@ -1,8 +1,12 @@
-const CodePage = () => {
-  return (
-    <div>
-      <h1 className='text-code'>Code Page</h1>
-    </div>
-  )
+import ProjectsView from '@/app/code/ProjectsView'
+
+const CodePage = async ({
+  searchParams
+}: {
+  searchParams: Promise<{ view?: string }>
+}) => {
+  const { view = 'tile' } = await searchParams
+
+  return <ProjectsView initialView={view === 'tile' ? 'tile' : 'card'} />
 }
 export default CodePage

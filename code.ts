@@ -1,9 +1,10 @@
 import { Project, Technology } from './app/types'
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     slug: 'buttonStyler',
-    title: 'Button styler & CSS generator',
+    title: 'Button Styler',
+    description: 'Button styler & CSS generator',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -11,12 +12,13 @@ const projects: Project[] = [
       Technology.Sass
     ],
     github: 'https://github.com/orjon/buttonstyler',
-    live: 'https://www.orjon.com/buttonstyler',
-    icon: '../orjon/images/buttonStyler.png'
+    www: 'https://www.orjon.com/buttonstyler',
+    icon: '/tiles/buttonStyler.png'
   },
   {
     slug: 'covidTracker',
-    title: 'Covid19 stats tracker.',
+    title: 'Covid19 Tracker',
+    description: 'Covid19 stats tracker.',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -29,12 +31,13 @@ const projects: Project[] = [
       Technology.Heroku
     ],
     github: 'https://github.com/orjon/covid19',
-    live: 'https://www.orjon.com/covid19',
-    icon: '../orjon/images/covid19tracker.jpg'
+    www: 'https://www.orjon.com/covid19',
+    icon: '/tiles/covid19tracker.jpg'
   },
   {
     slug: 'tubeInfo',
-    title: 'Full stack real-time London Underground information.',
+    title: 'London Underground Information',
+    description: 'Full stack real-time London Underground information.',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -46,12 +49,13 @@ const projects: Project[] = [
       Technology.MapBox
     ],
     github: 'https://github.com/orjon/TubeInfo',
-    live: 'https://www.orjon.com/tubeinfo/',
-    icon: '../orjon/images/thetube.png'
+    www: 'https://www.orjon.com/tubeinfo/',
+    icon: '/tiles/thetube.png'
   },
   {
     slug: 'tetris',
-    title:
+    title: 'Tetris Revisited',
+    description:
       "Modern interpretation of the classic 1980's puzzle game with original styling and music.",
     technologies: [
       Technology.HTML,
@@ -60,12 +64,13 @@ const projects: Project[] = [
       Technology.jQuery
     ],
     github: 'https://github.com/orjon/tetris',
-    live: 'https://www.orjon.com/tetris/',
-    icon: '../orjon/images/tetris.png'
+    www: 'https://www.orjon.com/tetris/',
+    icon: '/tiles/tetris.png'
   },
   {
     slug: 'colorClock',
-    title: 'Unique interactive colour-clock.',
+    title: 'Colour Clock',
+    description: 'Unique interactive colour-clock.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -73,12 +78,13 @@ const projects: Project[] = [
       Technology.jQuery
     ],
     github: 'https://github.com/orjon/colorclock',
-    live: 'https://www.orjon.com/colorclock/',
-    icon: '../orjon/images/clock.png'
+    www: 'https://www.orjon.com/colorclock/',
+    icon: '/tiles/clock.png'
   },
   {
     slug: 'department3D',
-    title: 'Department3D company website',
+    title: 'department3D',
+    description: 'Department3D company website',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -86,12 +92,13 @@ const projects: Project[] = [
       Technology.jQuery
     ],
     github: 'https://github.com/orjon/department3D',
-    live: 'http://www.department3D.com',
-    icon: '../orjon/images/department3D.png'
+    www: 'http://www.department3D.com',
+    icon: '/tiles/department3D.png'
   },
   {
     slug: 'whackAMole',
-    title:
+    title: 'Whack-a-Mole',
+    description:
       'Whack-a-Mole game. How many little critters can you get in 60 seconds?',
     technologies: [
       Technology.HTML,
@@ -100,12 +107,13 @@ const projects: Project[] = [
       Technology.jQuery
     ],
     github: 'https://github.com/orjon/whack-a-mole',
-    live: 'https://www.orjon.com/mole/',
-    icon: '../orjon/images/whackamole.png'
+    www: 'https://www.orjon.com/mole/',
+    icon: '/tiles/whackamole.png'
   },
   {
     slug: 'weather',
-    title: 'Interactive weather map.',
+    title: "It's the Weather!",
+    description: 'Interactive weather map.',
     technologies: [
       Technology.React,
       Technology.Sass,
@@ -117,20 +125,22 @@ const projects: Project[] = [
       Technology.Yarn
     ],
     github: 'https://github.com/orjon/weather',
-    live: 'https://www.orjon.com/weather/',
-    icon: '../orjon/images/weather.png'
+    www: 'https://www.orjon.com/weather/',
+    icon: '/tiles/weather.png'
   },
   {
     slug: 'stripedHorse',
-    title: 'Striped Horse Resources company website',
+    title: 'Striped Horse Resources',
+    description: 'Striped Horse Resources company website',
     technologies: [Technology.React, Technology.Sass],
     github: 'https://github.com/orjon/striped-horse',
-    live: 'http://www.striped-horse.com',
-    icon: '../orjon/images/stripedHorse.png'
+    www: 'http://www.striped-horse.com',
+    icon: '/tiles/stripedHorse.png'
   },
   {
     slug: 'countries',
-    title: 'World country list with flag, statistics and wiki links.',
+    title: 'World Countries',
+    description: 'World country list with flag, statistics and wiki links.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -139,12 +149,13 @@ const projects: Project[] = [
       Technology.Ajax
     ],
     github: 'https://github.com/orjon/countries',
-    live: 'https://www.orjon.com/countries/',
-    icon: '../orjon/images/countries.png'
+    www: 'https://www.orjon.com/countries/',
+    icon: '/tiles/countries.png'
   },
   {
     slug: 'project4',
-    title: 'Full stack book-keeping application with unique navigation.',
+    title: 'project4',
+    description: 'Full stack book-keeping application with unique navigation.',
     technologies: [
       Technology.React,
       Technology.Sass,
@@ -158,20 +169,23 @@ const projects: Project[] = [
       Technology.Yarn
     ],
     github: 'https://github.com/orjon/project4',
-    live: 'https://www.orjon.com/project4/',
-    icon: '../orjon/images/project4.png'
+    www: 'https://www.orjon.com/project4/',
+    icon: '/tiles/project4.png'
   },
   {
     slug: 'rockPaperScissors',
-    title: 'Rock Paper Scissors & Rock Paper Scissors Lizard Spock games.',
+    title: 'Rock Paper Scissors',
+    description:
+      'Rock Paper Scissors & Rock Paper Scissors Lizard Spock games.',
     technologies: [Technology.HTML, Technology.Sass, Technology.JavaScript],
     github: 'https://github.com/orjon/RockPaperScissors',
-    live: 'https://www.orjon.com/rockpaperscissors/',
-    icon: '../orjon/images/hand_select_rock-white.png'
+    www: 'https://www.orjon.com/rockpaperscissors/',
+    icon: '/tiles/hand_select_rock-white.png'
   },
   {
     slug: 'orjoncom',
-    title: 'This portfolio website',
+    title: 'orjon.com',
+    description: 'This portfolio website',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -179,12 +193,13 @@ const projects: Project[] = [
       Technology.jQuery
     ],
     github: 'https://github.com/orjon/orjon.com',
-    live: './',
-    icon: '../orjon/images/orjoncom.png'
+    www: './',
+    icon: '/tiles/orjoncom.png'
   },
   {
     slug: 'booker',
-    title: 'Full stack social book-sharing application.',
+    title: 'Booker',
+    description: 'Full stack social book-sharing application.',
     technologies: [
       Technology.React,
       Technology.MongoDB,
@@ -197,15 +212,17 @@ const projects: Project[] = [
       Technology.Yarn
     ],
     github: 'https://github.com/orjon/booker',
-    live: 'https://www.orjon.com/booker/',
-    icon: '../orjon/images/booker.png'
+    www: 'https://www.orjon.com/booker/',
+    icon: '/tiles/booker.png'
   },
   {
     slug: 'daftpunk',
-    title: 'Daft Punk sample trigger-board with adjustable playback speed.',
+    title: 'Daft Punk Trigger Board',
+    description:
+      'Daft Punk sample trigger-board with adjustable playback speed.',
     technologies: [Technology.HTML, Technology.CSS, Technology.JavaScript],
     github: 'https://github.com/orjon/daftpunk',
-    live: 'https://www.orjon.com/daftpunk/',
-    icon: '../orjon/images/daftpunk.png'
+    www: 'https://www.orjon.com/daftpunk/',
+    icon: '/tiles/daftpunk.png'
   }
 ]

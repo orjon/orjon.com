@@ -19,11 +19,14 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html>
-      <body className={`${baiJamjuree.variable} antialiased`}>
+    <html className='h-screen bg-blue-200'>
+      <body
+        className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
+      >
         <Navbar />
-
-        {children}
+        <main className='w-full flex flex-col flex-1 overflow-auto'>
+          {children}
+        </main>
       </body>
     </html>
   )

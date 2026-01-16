@@ -13,11 +13,11 @@ const Navbar = () => {
   const isMe = pathname === '/me'
 
   return (
-    <div className='relative'>
+    <header className='relative'>
       <nav className='flex flex-col bg-titleBar'>
-        <div className='flex flex-row justify-between items-center'>
+        <div className='flex flex-row justify-between items-center  px-2'>
           <Link href='/'>
-            <h1 className='ml-2 text-2xl font-bold'>orjon.com</h1>
+            <h1 className='text-2xl font-bold'>orjon.com</h1>
           </Link>
 
           <div className='flex flex-row-reverse items-center'>
@@ -47,7 +47,7 @@ const Navbar = () => {
               </div>
             </Link>
             <h1
-              className={`ml-1 text-lg select-none font-medium transition-opacity opacity-0 duration-200  ${
+              className={`ml-1 text-lg select-none font-medium transition-opacity opacity-0 duration-200 ${
                 isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
               }`}
             >
@@ -57,12 +57,12 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}
-            className='group mr-1 cursor-pointer md:hidden'
+            className='group cursor-pointer md:hidden'
           >
-            <div className='relative h-[34px] w-[34px]'>
+            <div className='relative h-[34px] w-[24px]'>
               <Image
-                src='/icons/nav/burgerMenu.png'
-                className={`absoluteCenter transition-opacity ${
+                src='/icons/nav/burgerMenu2.png'
+                className={`absolute-center transition-opacity ${
                   isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
                 } duration-150 `}
                 alt='face'
@@ -71,7 +71,7 @@ const Navbar = () => {
               />
               <Image
                 src='/icons/nav/burgerMenuClose.png'
-                className={`absoluteCenter transition-opacity ${
+                className={`absolute-center transition-opacity ${
                   isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
                 } duration-150`}
                 alt='face'
@@ -83,13 +83,8 @@ const Navbar = () => {
         </div>
         <Menu />
       </nav>
-      <BurgerMenu
-        burgerMenu={{
-          isOpen: isBurgerMenuOpen,
-          setIsOpen: setIsBurgerMenuOpen
-        }}
-      />
-    </div>
+      <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
+    </header>
   )
 }
 export default Navbar

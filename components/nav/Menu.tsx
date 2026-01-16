@@ -1,28 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import CurrentTime from '../CurrentTime'
-
-const routes = [
-  {
-    name: 'code',
-    href: '/code',
-    iconOff: '/icons/nav/codeOFF.png',
-    iconOn: '/icons/nav/codeON.png'
-  },
-  {
-    name: 'design',
-    href: '/design',
-    iconOff: '/icons/nav/designOFF.png',
-    iconOn: '/icons/nav/designON.png'
-  },
-  {
-    name: 'electronics',
-    href: '/electronics',
-    iconOff: '/icons/nav/electronicsOFF.png',
-    iconOn: '/icons/nav/electronicsON.png'
-  }
-]
+// import CurrentTime from '../CurrentTime'
+import { menuItems } from '@/app/constants'
 
 const buttonBaseStyle =
   'relative group w-90 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuBottom)_50%)] shadow-[inset_0px_-1px_2px_0px_var(--menuShadow)]'
@@ -32,25 +12,30 @@ const buttonStyle =
 const Menu = () => {
   const pathname = usePathname()
 
-  const menuItems = routes.map((route) => (
-    <div key={route.name} className={`${buttonBaseStyle}`}>
-      <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
-      <Link
-        href={route.href}
-        className={`relative z-10 ${buttonStyle} px-2 ${
-          pathname === route.href ? `mb-0 mt-1` : 'mb-2 mt-0'
-        } `}
-      >
-        <Image
-          src={pathname === route.href ? route.iconOn : route.iconOff}
-          alt={route.name}
-          width={30}
-          height={30}
-        />
-        {route.name}
-      </Link>
-    </div>
-  ))
+  const menu = menuItems
+    .filter((menuItem) => !menuItem.titleBar)
+    .map((menuItem) => (
+      <div key={menuItem.name} className={`${buttonBaseStyle}`}>
+        <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
+        <Link
+          href={menuItem.href}
+          className={`relative z-10 ${buttonStyle} px-2 ${
+            pathname === menuItem.href ? `mb-0 mt-1` : 'mb-2 mt-0'
+          } `}
+        >
+          <Image
+            src={
+              pathname === menuItem.href ? menuItem.iconOn : menuItem.iconOff
+            }
+            alt={menuItem.name}
+            width={30}
+            height={30}
+          />
+          {menuItem.name}
+        </Link>
+      </div>
+    ))
+
   return (
     <div className='hidden md:flex flex-row text-lg font-medium text-menuText'>
       <div className={`${buttonBaseStyle} w-[8px]`}>
@@ -61,7 +46,7 @@ const Menu = () => {
           &nbsp;
         </div>
       </div>
-      {menuItems}
+      {menu}
       <div className={`${buttonBaseStyle} w-full`}>
         <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
         <div className={`relative z-10 ${buttonStyle} rounded-r-none`}>

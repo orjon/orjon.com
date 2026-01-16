@@ -72,10 +72,30 @@ body {
   font-family: var(--font-bai-jamjuree), sans-serif;
 }
 
-.devBorder {
+.dev {
   @apply border-red-500/50 border;
 }
 
 .absolute-center {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--menuTop) transparent;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: thin;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--menuTop);
+  border-radius: 50%;
 }
