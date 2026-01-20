@@ -40,18 +40,20 @@ const ProjectsView = ({ initialView }: { initialView: string }) => {
     )
   })
 
-  const minColWidth = view === 'tile' ? '250px' : '500px'
+  const gridCols = view === 'tile'? 'grid-cols-[repeat(auto-fit,minmax(300px,1fr))]'
+      : 'grid-cols-[repeat(auto-fit,minmax(500px,1fr))]'
+  
 
   useEffect(() => {
-    console.log(view, minColWidth)
-  }, [view, minColWidth])
+    console.log(view)
+  }, [view])
 
   return (
     <section>
       {viewLinks}:{view}
       <div className='flex flex-col flex-1 p-2 py-4'>
         <div
-          className={`grid gap-x-1 gap-y-6 grid-cols-[repeat(auto-fit,minmax(${minColWidth},1fr))]`}
+          className={`grid gap-x-1 gap-y-6 ${gridCols}`}
         >
           {projectList}
         </div>
