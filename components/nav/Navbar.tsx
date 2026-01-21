@@ -11,6 +11,11 @@ const Navbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
   const pathname = usePathname()
   const isMe = pathname === '/me'
+  const hideNavbar = pathname?.startsWith('/mobile-view')
+
+  if (hideNavbar) {
+    return null
+  }
 
   return (
     <header className='relative'>

@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   description: 'new nextjs website'
 }
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children, showMenu = true }: { children: React.ReactNode, showMenu: boolean }) => {
   return (
     <html className='h-screen bg-blue-200'>
       <body
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
-        <Navbar />
+        {showMenu && <Navbar />}
         <main className='w-full bg-gray-200 flex flex-col flex-1 overflow-auto'>
           {children}
         </main>

@@ -6,7 +6,8 @@ import Link from 'next/link'
 const ProjectTile = ({ project }: { project: Project }) => {
   return (
     <Link
-      href={project.www}
+      // href={project.www}
+      href={`/mobile-view/${project.slug}`}
       key={project.slug}
       className='w-full h-full p-4 aspect-square bg-white rounded-3xl shadow-md hover-scale-105'
     >
