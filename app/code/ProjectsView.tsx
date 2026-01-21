@@ -40,8 +40,8 @@ const ProjectsView = ({ initialView }: { initialView: string }) => {
     )
   })
 
-  const gridCols = view === 'tile'? 'grid-cols-[repeat(auto-fit,minmax(300px,1fr))]'
-      : 'grid-cols-[repeat(auto-fit,minmax(500px,1fr))]'
+  const gridCols = view === 'tile'? 'gap-8 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]'
+      : 'px-4 gap-6 grid-cols-[repeat(auto-fit,minmax(550px,1fr))]'
   
 
   useEffect(() => {
@@ -49,11 +49,14 @@ const ProjectsView = ({ initialView }: { initialView: string }) => {
   }, [view])
 
   return (
-    <section>
+    <section className='code'>
+      <div className="flex flex-1">
       {viewLinks}:{view}
-      <div className='flex flex-col flex-1 p-2 py-4'>
+      </div> 
+      
+      <div className='h-full flex flex-col flex-1 p-4'>
         <div
-          className={`grid gap-x-1 gap-y-6 ${gridCols}`}
+          className={`h-full grid place-items-center ${gridCols}`}
         >
           {projectList}
         </div>

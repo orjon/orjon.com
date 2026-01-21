@@ -76,6 +76,41 @@ body {
   @apply border-red-500/50 border;
 }
 
+.b-red{
+  @apply border-red-500/50 border;
+}
+.b-green{
+  @apply border-green-500/50 border;
+}
+.b-blue{
+  @apply border-blue-500/50 border;
+}
+.b-yellow{
+  @apply border-yellow-500/50 border;
+}
+.b-purple{
+  @apply border-purple-500/50 border;
+}
+.b-orange{
+  @apply border-orange-500/50 border;
+}
+.b-pink{
+  @apply border-pink-500/50 border;
+}
+.b-gray{
+  @apply border-gray-500/50 border;
+}
+
+.hover-scale-105{
+  @apply hover:scale-105 duration-250 hover:shadow-xl;
+}
+
+.hover-scale-102{
+  @apply hover:scale-102 duration-250 hover:shadow-xl;
+}
+
+
+
 .absolute-center {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
 }

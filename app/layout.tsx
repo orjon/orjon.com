@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
         <Navbar />
-        <main className='w-full flex flex-col flex-1 overflow-auto'>
+        <main className='w-full bg-gray-200 flex flex-col flex-1 overflow-auto'>
           {children}
         </main>
       </body>

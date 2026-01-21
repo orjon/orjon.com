@@ -15,9 +15,9 @@ const Navbar = () => {
   return (
     <header className='relative'>
       <nav className='flex flex-col bg-titleBar'>
-        <div className='flex flex-row justify-between items-center  px-2'>
+        <div className='flex flex-row justify-between items-center px-2'>
           <Link href='/'>
-            <h1 className='text-2xl font-bold'>_____.com</h1>
+            <h1 className='text-2xl font-bold'>orjon.com</h1>
           </Link>
 
           <div className='flex flex-row-reverse items-center'>
