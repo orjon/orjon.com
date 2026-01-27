@@ -1,8 +1,8 @@
-import { Project, Technology } from './app/types'
+import { Project, Technology } from '../app/types'
 
 export const projects: Project[] = [
   {
-    slug: 'buttonStyler',
+    slug: 'buttonstyler',
     title: 'Button Styler',
     description: 'Button styler & CSS generator',
     technologies: [
@@ -16,7 +16,7 @@ export const projects: Project[] = [
     icon: '/tiles/buttonStyler.png'
   },
   {
-    slug: 'covidTracker',
+    slug: 'covid19',
     title: 'Covid19 Tracker',
     description: 'Covid19 stats tracker.',
     technologies: [
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     icon: '/tiles/covid19tracker.jpg'
   },
   {
-    slug: 'tubeInfo',
+    slug: 'tubeinfo',
     title: 'London Underground Information',
     description: 'Full stack real-time London Underground information.',
     technologies: [
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     icon: '/tiles/tetris.png'
   },
   {
-    slug: 'colorClock',
+    slug: 'colorclock',
     title: 'Colour Clock',
     description: 'Unique interactive colour-clock.',
     technologies: [

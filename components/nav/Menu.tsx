@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation'
 import { menuItems } from '@/app/constants'
 
 const buttonBaseStyle =
-  'relative group w-90 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuBottom)_50%)] shadow-[inset_0px_-1px_2px_0px_var(--menuShadow)]'
+  'relative group w-90 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
 const buttonStyle =
-  'block flex flex-row gap-2 items-center p-1 bg-menuTop rounded-[4px] duration-100 ease-out transition-[margin] shadow-[inset_0px_-1px_2px_0px_var(--menuBottom)]'
+  'block flex flex-row gap-2 items-center p-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] '
 
 const Menu = () => {
   const pathname = usePathname()
@@ -19,13 +19,12 @@ const Menu = () => {
         <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
         <Link
           href={menuItem.href}
-          className={`relative z-10 ${buttonStyle} px-2 ${
-            pathname === menuItem.href ? `mb-0 mt-1` : 'mb-2 mt-0'
-          } `}
+          className={`relative z-10 ${buttonStyle} px-2 ${pathname === menuItem.href ? `` : ''
+            } `}
         >
           <Image
             src={
-              pathname === menuItem.href ? menuItem.iconOn : menuItem.iconOff
+              pathname.startsWith(menuItem.href) ? menuItem.iconOn : menuItem.iconOff
             }
             alt={menuItem.name}
             width={30}
@@ -38,6 +37,7 @@ const Menu = () => {
 
   return (
     <div className='hidden md:flex flex-row text-lg font-medium text-menuText'>
+
       <div className={`${buttonBaseStyle} w-[8px]`}>
         <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
         <div
@@ -46,7 +46,9 @@ const Menu = () => {
           &nbsp;
         </div>
       </div>
+
       {menu}
+
       <div className={`${buttonBaseStyle} w-full`}>
         <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
         <div className={`relative z-10 ${buttonStyle} rounded-r-none`}>

@@ -24,7 +24,7 @@ const Layout = ({ children, showMenu = true }: { children: React.ReactNode, show
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
         {showMenu && <Navbar />}
-        <main className='w-full bg-gray-200 flex flex-col flex-1 overflow-auto'>
+        <main className='w-full h-full bg-grey075 flex flex-col flex-1 overflow-auto'>
           {children}
         </main>
       </body>

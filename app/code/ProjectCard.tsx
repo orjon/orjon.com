@@ -14,7 +14,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
 
     <Link href={www} key={slug} className='w-full h-full bg-white p-4 rounded-lg shadow-md hover-scale-102'>
-      <article className="w-full h-full flex items-center gap-2">
+      <article className="w-full h-full flex flex-col md:flex-row items-center gap-4">
         <div className='flex-none flex flex-col items-center justify-center h-[125px] w-[200px] relative'>
           {icon && (
             <Image

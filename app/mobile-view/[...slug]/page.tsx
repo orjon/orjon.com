@@ -1,3 +1,5 @@
+import MockupPhone from "@/app/mobile-view/MockupPhone"
+
 const MobileViewPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
 
@@ -6,12 +8,8 @@ const MobileViewPage = async ({ params }: { params: Promise<{ slug: string }> })
     return <div>No slug provided</div>
   }
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
-      <iframe
-        src={`https://www.orjon.com/${slug}`}
-        className="w-[30%] h-[95%] border-0"
-        allow="fullscreen"
-      />
+    <div className="w-full h-full bg-grey700 flex flex-col items-center justify-center">
+      <MockupPhone slug={slug} />
     </div>
 
   )

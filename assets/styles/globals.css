@@ -3,6 +3,7 @@
 :root {
   --background: white;
   --grey050: #eaeaea;
+  --grey075: #d4d4d4;
   --grey100: #b4b4b4;
   --grey150: #999999;
   --grey200: #888888;
@@ -15,14 +16,18 @@
   --grey700: #1e1e1e;
   --grey800: #191919;
   --grey900: #111111;
+  --textDefault: var(--grey800);
   --code: #ea3ff7;
   --design: #6adbe9;
   --electronics: #99ff3e;
   --me: #ffde00;
   --titleBar: var(--grey050);
-  --menuText: var(--grey800);
-  --menuTop: var(--grey100);
-  --menuBottom: var(--grey200);
+  --menuText: var(--grey700);
+  /* --menuText: var(--code); */
+  --menuButton: var(--grey100);
+  --menuButtonDark: var(--grey200);
+
+  --menuTab: var(--grey075);
   --menuShadow: var(--grey300);
 }
 
@@ -30,6 +35,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-grey050: var(--grey050);
+  --color-grey075: var(--grey075);
   --color-grey100: var(--grey100);
   --color-grey200: var(--grey200);
   --color-grey300: var(--grey300);
@@ -39,9 +45,15 @@
   --color-grey700: var(--grey700);
   --color-grey800: var(--grey800);
   --color-grey900: var(--grey900);
+  --color-textDefault: var(--textDefault);
   --color-titleBar: var(--grey050);
   --color-menuText: var(--menuText);
-  --color-menuTop: var(--menuTop);
+  --color-menuButton: var(--menuButton);
+  --color-menuButtonDark: var(--menuButtonDark);
+  --color-menuShadow: var(--menuShadow);
+
+  --color-menuTab: var(--menuTab);
+  --color-menuTabSelected: var(--menuTabSelected);
   --color-code: var(--code);
   --color-design: var(--design);
   --color-electronics: var(--electronics);
@@ -68,49 +80,62 @@
 
 body {
   background: var(--background);
-  color: var(--grey800);
+  /* color: var(--grey800); */
+  color: red;
   font-family: var(--font-bai-jamjuree), sans-serif;
 }
 
+.content-1600 {
+  max-width: 1600px;
+  @apply mx-auto w-full;
+}
+
+.content-1400 {
+  max-width: 1400px;
+  @apply mx-auto w-full;
+}
+
+.content-1000 {
+  max-width: 1000px;
+  @apply mx-auto w-full;
+}
 
 .dev {
   @apply border-red-500/50 border;
 }
 
-.b-red{
+.b-red {
   @apply border-red-500/50 border;
 }
-.b-green{
+.b-green {
   @apply border-green-500/50 border;
 }
-.b-blue{
+.b-blue {
   @apply border-blue-500/50 border;
 }
-.b-yellow{
+.b-yellow {
   @apply border-yellow-500/50 border;
 }
-.b-purple{
+.b-purple {
   @apply border-purple-500/50 border;
 }
-.b-orange{
+.b-orange {
   @apply border-orange-500/50 border;
 }
-.b-pink{
+.b-pink {
   @apply border-pink-500/50 border;
 }
-.b-gray{
+.b-gray {
   @apply border-gray-500/50 border;
 }
 
-.hover-scale-105{
-  @apply hover:scale-105 duration-250 hover:shadow-xl;
-}
-
-.hover-scale-102{
+.hover-scale-102 {
   @apply hover:scale-102 duration-250 hover:shadow-xl;
 }
 
-
+.hover-scale-105 {
+  @apply hover:scale-105 duration-250 hover:shadow-xl;
+}
 
 .absolute-center {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
@@ -119,7 +144,7 @@ body {
 /* Firefox scrollbar styling */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--menuTop) transparent;
+  scrollbar-color: var(--menuButton) transparent;
 }
 
 ::-webkit-scrollbar {
@@ -132,6 +157,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--menuTop);
+  background: var(--menuButton);
   border-radius: 50%;
 }
