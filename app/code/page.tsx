@@ -1,18 +1,15 @@
 'use client'
 
-import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import { projects } from '@/data/code'
 import ProjectTile from '@/app/code/ProjectTile'
 import ProjectCard from '@/app/code/ProjectCard'
-import ProjectViewSelector from '@/app/code/ProjectViewSelector'
 
 
 const CodePage = () => {
   const searchParams = useSearchParams()
-  const initialView = searchParams.get('view') || 'tile'
-  const [view, setView] = useState(initialView)
+  const view = searchParams.get('view') || 'tile'
 
   const projectList = projects.map((project) => {
     return view === 'tile' ? (
@@ -27,12 +24,10 @@ const CodePage = () => {
 
 
   return (
-    <section className='code content-1600 h-full p-4 md:p-8 pb-0'>
-      <div className='w-full h-full flex flex-col'>
+    <section className='code content-1600 h-full p-4 md:p-8 pb-0 b-red'>
+      <div className='w-full h-full flex flex-col b-blue'>
 
-        <ProjectViewSelector setView={setView} />
-
-        <div className='flex-1 flex items-center pb-4 md:pb-8'>
+        <div className='flex-1 flex items-center pb-4 md:pb-8 b-green'>
           <div
             className={`w-full grid place-items-center ${gridCols}`}
           >

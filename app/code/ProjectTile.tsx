@@ -2,10 +2,6 @@ import { Project } from '@/app/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { HiOutlineDeviceMobile } from "react-icons/hi";
-import { MdOutlineDesktopWindows } from "react-icons/md";
-
-
 const ProjectTile = ({ project }: { project: Project }) => {
   return (
     <Link
@@ -28,14 +24,7 @@ const ProjectTile = ({ project }: { project: Project }) => {
             />
           )}
         </div>
-        {/* <div>
-          <div className='text-base font-medium text-center'>{project.title}</div>
-          <div className='flex flex-row items-center justify-center gap-2'>
-            Preview
-            <HiOutlineDeviceMobile className='inline-block text-2xl' />
-            <MdOutlineDesktopWindows className='inline-block text-2xl' />
-          </div>
-        </div> */}
+
         <div className='text-base font-medium text-center'>{project.title}</div>
 
       </article>

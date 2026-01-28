@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 
-import { Bai_Jamjuree } from 'next/font/google'
+import { CurrentProjectProvider } from '@/app/code/CurrentProjectContext'
+
 import Navbar from '@/app/nav/Navbar'
 
 import '@/assets/styles/globals.css'
+import { Bai_Jamjuree } from 'next/font/google'
 
 const baiJamjuree = Bai_Jamjuree({
   variable: '--font-bai-jamjuree',
@@ -23,10 +25,12 @@ const Layout = ({ children, showMenu = true }: { children: React.ReactNode, show
       <body
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
-        {showMenu && <Navbar />}
-        <main className='w-full h-full bg-grey075 flex flex-col flex-1 overflow-auto'>
-          {children}
-        </main>
+        <CurrentProjectProvider>
+          {showMenu && <Navbar />}
+          <main className='w-full h-full bg-grey075 flex flex-col flex-1 overflow-auto'>
+            {children}
+          </main>
+        </CurrentProjectProvider>
       </body>
     </html>
   )

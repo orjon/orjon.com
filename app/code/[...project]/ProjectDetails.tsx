@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Project } from '../types'
+import { Project } from '../../types'
+
+import { HiOutlineDeviceMobile } from "react-icons/hi";
+import { MdOutlineDesktopWindows } from "react-icons/md";
+
 
 const ProjectDetails = ({ project }: { project: Project }) => {
   const { icon, title, www, description, technologies } = project
@@ -31,6 +35,13 @@ const ProjectDetails = ({ project }: { project: Project }) => {
           <div className="flex flex-col items-start justify-start">
             <div className='text-base font-medium text-center'>{title}</div>
             <div className='text-sm text-gray-500'>{description}</div>
+          </div>
+          <div>
+            <div className='flex flex-row items-center justify-center gap-2'>
+              Preview
+              <HiOutlineDeviceMobile className='inline-block text-2xl' />
+              <MdOutlineDesktopWindows className='inline-block text-2xl' />
+            </div>
           </div>
           <div className="flex flex-col items-start justify-start">
             <div>{www}</div>

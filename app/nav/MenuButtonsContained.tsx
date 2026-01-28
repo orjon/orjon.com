@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 // import CurrentTime from '../CurrentTime'
 import { menuItems } from '@/app/constants'
+import ProjectViewSelector from './ProjectViewSelector'
 
 const buttonBaseStyle =
   'relative group w-90 bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
@@ -13,7 +14,6 @@ const buttonStyle =
 
 const preButton = (
   <div className={`${buttonBaseStyle} w-full h-full`}>
-    <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
     <div
       className={`relative z-10 ${buttonStyle} w-full rounded-l-none border-l-0`}
     >
@@ -24,7 +24,6 @@ const preButton = (
 
 const buttonBar = (
   <div className={`${buttonBaseStyle} w-full`}>
-    <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
     <div className={`relative z-10 mb-2  ${buttonStyle} rounded-none border-x-0 `}>
       &nbsp;
     </div>
@@ -33,10 +32,10 @@ const buttonBar = (
 
 const postButton = (
   <div className={`${buttonBaseStyle} w-full h-full`}>
-    <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
-    <div className={`relative z-10 mb-2  ${buttonStyle} rounded-r-none border-r-0`}>
-      &nbsp;
+    <div className={`relative z-10 mb-2 pr-4 ${buttonStyle} rounded-r-none border-r-0`}>
+      &nbsp;<ProjectViewSelector />
     </div>
+
   </div>
 )
 
@@ -47,7 +46,6 @@ const MenuButtons = () => {
     .filter((menuItem) => !menuItem.titleBar)
     .map((menuItem) => (
       <div key={menuItem.name} className={`${buttonBaseStyle}`}>
-        <div className='absolute z-0 bg-titleBar w-full h-1/2'></div>
         <Link
           href={menuItem.href}
           className={`relative z-10 ${buttonStyle} px-2 ${pathname.startsWith(menuItem.href) ? `mb-0 mt-1` : 'mb-2 mt-0'
@@ -83,9 +81,11 @@ const MenuButtons = () => {
       <div className="bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)] h-full w-full flex justify-center items-center">
         {menu}
         {postButton}
+
       </div>
 
       {buttonBar}
+
     </div>
 
 

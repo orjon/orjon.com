@@ -1,21 +1,18 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
 
+import { useCurrentProject } from '@/app/code/CurrentProjectContext'
 
-import ProjectViewSelector from '@/app/code/ProjectViewSelector'
-import ProjectDetails from '@/app/code/ProjectDetails'
-
+import ProjectDetails from '@/app/code/[...project]/ProjectDetails'
 import { projects, CURRENT_PROJECT_KEY } from '@/data/code'
 
 
 const ProjectPage = () => {
-
   const params = useParams()
+  const { setCurrentProject } = useCurrentProject()
 
   const projectIndex = Object.fromEntries(projects.map((project, index) => [project.slug, index]))
 
@@ -34,6 +31,7 @@ const ProjectPage = () => {
   })
 
   useEffect(() => {
+    setCurrentProject(initialProject)
     window.localStorage.setItem(CURRENT_PROJECT_KEY, initialProject)
   }, [initialProject])
 
@@ -58,20 +56,17 @@ const ProjectPage = () => {
 
   useEffect(() => {
     if (!emblaApi) return
-
-    if (!isReady) {
-      setIsReady(true)
-    }
+    if (!isReady) setIsReady(true)
 
     const onSelect = () => {
       const index = emblaApi.selectedScrollSnap()
       const slug = projects[index].slug
+      setCurrentProject(slug)
       window.localStorage.setItem(CURRENT_PROJECT_KEY, slug)
       window.history.replaceState(null, '', `/code/${slug}`)
     }
 
     emblaApi.on('select', onSelect)
-
     return () => {
       emblaApi.off('select', onSelect)
     }
@@ -82,8 +77,6 @@ const ProjectPage = () => {
   return (
     <section className='code embla content-1600 h-full p-4 md:p-8 pb-0 b-red'>
       <div className='w-full h-full flex flex-col b-green'>
-
-        <ProjectViewSelector setView={() => { }} />
 
         <div className='flex-1 flex items-center pb-4 md:pb-8'>
           <div ref={emblaRef} className={`embla__viewport overflow-hidden ${isReady ? 'opacity-100' : 'opacity-0'}`}>
