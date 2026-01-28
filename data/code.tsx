@@ -1,5 +1,10 @@
 import { Project, Technology } from '../app/types'
 
+import { BiGridAlt, BiCarousel } from "react-icons/bi";
+import { TbLayoutList } from "react-icons/tb";
+
+export const CURRENT_PROJECT_KEY = 'current-project'
+
 export const projects: Project[] = [
   {
     slug: 'buttonstyler',
@@ -224,5 +229,24 @@ export const projects: Project[] = [
     github: 'https://github.com/orjon/daftpunk',
     www: 'https://www.orjon.com/daftpunk/',
     icon: '/tiles/daftpunk.png'
+  }
+]
+
+export const projectViewOptions = [
+  {
+    value: 'tile',
+    href: '/code?view=tile',
+    icon: <BiGridAlt />
+  },
+  {
+    value: 'card',
+    href: '/code?view=card',
+    icon: <TbLayoutList />
+
+  },
+  {
+    value: 'carousel',
+    href: `/code/${projects[0].slug}`,
+    icon: <BiCarousel />
   }
 ]

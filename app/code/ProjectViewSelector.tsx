@@ -1,41 +1,32 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-import { BiGridAlt, BiCarousel } from "react-icons/bi";
-import { TbLayoutList } from "react-icons/tb";
-
-import { projects } from '@/data/code'
+import { projectViewOptions, CURRENT_PROJECT_KEY } from '@/data/code'
 
 
-const views = [
-  {
-    value: 'tile',
-    href: '?view=tile',
-    icon: <BiGridAlt />
-  },
-  {
-    value: 'card',
-    href: '?view=card',
-    icon: <TbLayoutList />
-
-  },
-  {
-    value: 'carousel',
-    href: projects[0].slug,
-    icon: <BiCarousel />
-  }
-]
 
 const ProjectViewSelector = ({ setView }: { setView: (view: string) => void }) => {
 
-  const viewLinks = views.map((view) => {
-    const { value, href, icon } = view
+  const [carouselHref, setCarouselHref] = useState(projectViewOptions.find(view => view.value === 'carousel')?.href)
+
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    window.localStorage.getItem(CURRENT_PROJECT_KEY) && setCarouselHref(`/code/${window.localStorage.getItem(CURRENT_PROJECT_KEY)}`)
+  }, [])
+
+
+  const viewLinks = projectViewOptions.map((view) => {
+    const { value, icon } = view
+    let href = value === 'carousel' && carouselHref ? carouselHref : view.href
+
     return (
       <Link
         key={value}
         className='flex align-center items-center text-2xl px-1 hover:scale-120 duration-150'
-        href={`/code/${href}`}
+        href={href}
         onClick={() => setView(value)}>
         {icon}
       </Link>

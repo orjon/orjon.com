@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { Bai_Jamjuree } from 'next/font/google'
-import Navbar from '@/components/nav/Navbar'
+import Navbar from '@/app/nav/Navbar'
 
 import '@/assets/styles/globals.css'
 
