@@ -13,6 +13,7 @@ const CurrentProjectContext = createContext<CurrentProjectContextValue | undefin
 
 export const CurrentProjectProvider = ({ children }: { children: ReactNode }) => {
   const [currentProject, setCurrentProject] = useState(projects[0].slug)
+
   return (
     <CurrentProjectContext.Provider value={{ currentProject, setCurrentProject }}>
       {children}

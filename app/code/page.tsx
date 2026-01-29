@@ -28,9 +28,7 @@ const CodePage = () => {
       <div className='w-full h-full flex flex-col b-blue'>
 
         <div className='flex-1 flex items-center pb-4 md:pb-8 b-green'>
-          <div
-            className={`w-full grid place-items-center ${gridCols}`}
-          >
+          <div className={`w-full grid place-items-center ${gridCols}`}>
             {projectList}
           </div>
         </div>

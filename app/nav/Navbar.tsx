@@ -89,7 +89,6 @@ const Navbar = () => {
 
         <MenuButtonsContained />
 
-
       </nav>
       <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
     </header>

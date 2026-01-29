@@ -16,19 +16,22 @@
   --grey700: #1e1e1e;
   --grey800: #191919;
   --grey900: #111111;
-  --textDefault: var(--grey800);
+
+  --textDefault: var(--grey600);
+
   --code: #ea3ff7;
   --design: #6adbe9;
   --electronics: #99ff3e;
   --me: #ffde00;
+
   --titleBar: var(--grey050);
+
   --menuText: var(--grey700);
-  /* --menuText: var(--code); */
   --menuButton: var(--grey100);
   --menuButtonDark: var(--grey200);
+  --menuShadow: var(--grey300);
 
   --menuTab: var(--grey075);
-  --menuShadow: var(--grey300);
 }
 
 @theme inline {
@@ -81,7 +84,8 @@
 body {
   background: var(--background);
   /* color: var(--grey800); */
-  color: red;
+  /* color: red; */
+  color: var(--textDefault);
   font-family: var(--font-bai-jamjuree), sans-serif;
 }
 

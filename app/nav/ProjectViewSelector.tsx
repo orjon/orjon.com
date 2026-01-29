@@ -1,38 +1,37 @@
 'use client'
 
-import { useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-import { useCurrentProject } from '@/app/code/CurrentProjectContext'
+import { getLocalStorageValue } from '@/app/utils'
 
-import { projectViewOptions, CURRENT_PROJECT_KEY } from '@/data/code'
+import { CURRENT_PROJECT_KEY, projects } from '@/data/code'
+import { BiGridAlt, BiCarousel } from "react-icons/bi";
+import { TbLayoutList } from "react-icons/tb";
 
 
 const ProjectViewSelector = () => {
 
-  const { currentProject, setCurrentProject } = useCurrentProject()
+  const router = useRouter()
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    window.localStorage.getItem(CURRENT_PROJECT_KEY) && setCurrentProject(window.localStorage.getItem(CURRENT_PROJECT_KEY)!)
-  }, [])
+  const handleCarouselClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    const slug = getLocalStorageValue(CURRENT_PROJECT_KEY, projects[0].slug)
+    router.push(`/code/${slug}`)
+  }
 
-
-  const viewLinks = projectViewOptions.map((view) => {
-    const { value, icon } = view
-    let href = value === 'carousel' && currentProject ? `/code/${currentProject}` : view.href
-    return (
-      <Link
-        key={value}
-        href={href}
-        className='flex align-center items-center text-2xl px-1 hover:scale-120 duration-150'>
-        {icon}
-      </Link>
-    )
-  })
+  const linkStyles = 'flex align-center items-center text-2xl px-1 hover:scale-120 duration-150'
 
   return (
-    <div className='absolute z-20 mr-2 right-0 group flex align-center items-center'>{viewLinks}</div>
+    <div className='absolute z-20 mr-2 right-0 group flex align-center items-center'>
+      <Link href="/code?view=tile" className={linkStyles}><BiGridAlt /></Link>
+      <Link href="/code?view=card" className={linkStyles}><TbLayoutList /></Link>
+      <Link href="/code/project..." className={linkStyles} onClick={handleCarouselClick}>
+        <BiCarousel />
+      </Link>
+    </div>
   )
 }
 export default ProjectViewSelector
+
+

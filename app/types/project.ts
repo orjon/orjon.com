@@ -7,5 +7,7 @@ export interface Project {
   technologies: Technology[]
   github: string
   www: string
+  responsive: boolean
   icon?: string
+  screenshots?: string[]
 }

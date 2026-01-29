@@ -1,7 +1,4 @@
-import { Project, Technology } from '../app/types'
-
-import { BiGridAlt, BiCarousel } from "react-icons/bi";
-import { TbLayoutList } from "react-icons/tb";
+import { Project, Technology } from '@/app/types'
 
 export const CURRENT_PROJECT_KEY = 'current-project'
 
@@ -18,7 +15,9 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/buttonstyler',
     www: 'https://www.orjon.com/buttonstyler',
+    responsive: false,
     icon: '/tiles/buttonStyler.png'
+
   },
   {
     slug: 'covid19',
@@ -37,6 +36,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/covid19',
     www: 'https://www.orjon.com/covid19',
+    responsive: true,
     icon: '/tiles/covid19tracker.jpg'
   },
   {
@@ -55,6 +55,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/TubeInfo',
     www: 'https://www.orjon.com/tubeinfo/',
+    responsive: true,
     icon: '/tiles/thetube.png'
   },
   {
@@ -70,6 +71,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/tetris',
     www: 'https://www.orjon.com/tetris/',
+    responsive: true,
     icon: '/tiles/tetris.png'
   },
   {
@@ -84,6 +86,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/colorclock',
     www: 'https://www.orjon.com/colorclock/',
+    responsive: true,
     icon: '/tiles/clock.png'
   },
   {
@@ -98,6 +101,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/department3D',
     www: 'http://www.department3D.com',
+    responsive: true,
     icon: '/tiles/department3D.png'
   },
   {
@@ -113,6 +117,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/whack-a-mole',
     www: 'https://www.orjon.com/mole/',
+    responsive: true,
     icon: '/tiles/whackamole.png'
   },
   {
@@ -131,6 +136,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/weather',
     www: 'https://www.orjon.com/weather/',
+    responsive: true,
     icon: '/tiles/weather.png'
   },
   {
@@ -140,6 +146,7 @@ export const projects: Project[] = [
     technologies: [Technology.React, Technology.Sass],
     github: 'https://github.com/orjon/striped-horse',
     www: 'http://www.striped-horse.com',
+    responsive: true,
     icon: '/tiles/stripedHorse.png'
   },
   {
@@ -155,6 +162,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/countries',
     www: 'https://www.orjon.com/countries/',
+    responsive: true,
     icon: '/tiles/countries.png'
   },
   {
@@ -175,7 +183,9 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/project4',
     www: 'https://www.orjon.com/project4/',
-    icon: '/tiles/project4.png'
+    responsive: true,
+    icon: '/tiles/project4.png',
+    screenshots: ['p4ScreenshotClients.jpg', 'p4ScreenshotExpense.jpg', 'p4ScreenshotExpenses.jpg', 'p4ScreenshotInvoice.jpg', 'p4ScreenshotInvoices.jpg', 'p4ScreenshotProjectNew.jpg', 'p4ScreenshotProjects.jpg', 'p4ScreenshotSuppliers.jpg',]
   },
   {
     slug: 'rockPaperScissors',
@@ -185,6 +195,7 @@ export const projects: Project[] = [
     technologies: [Technology.HTML, Technology.Sass, Technology.JavaScript],
     github: 'https://github.com/orjon/RockPaperScissors',
     www: 'https://www.orjon.com/rockpaperscissors/',
+    responsive: true,
     icon: '/tiles/hand_select_rock-white.png'
   },
   {
@@ -199,6 +210,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/orjon.com',
     www: './',
+    responsive: true,
     icon: '/tiles/orjoncom.png'
   },
   {
@@ -218,6 +230,7 @@ export const projects: Project[] = [
     ],
     github: 'https://github.com/orjon/booker',
     www: 'https://www.orjon.com/booker/',
+    responsive: true,
     icon: '/tiles/booker.png'
   },
   {
@@ -228,25 +241,7 @@ export const projects: Project[] = [
     technologies: [Technology.HTML, Technology.CSS, Technology.JavaScript],
     github: 'https://github.com/orjon/daftpunk',
     www: 'https://www.orjon.com/daftpunk/',
+    responsive: false,
     icon: '/tiles/daftpunk.png'
-  }
-]
-
-export const projectViewOptions = [
-  {
-    value: 'tile',
-    href: '/code?view=tile',
-    icon: <BiGridAlt />
-  },
-  {
-    value: 'card',
-    href: '/code?view=card',
-    icon: <TbLayoutList />
-
-  },
-  {
-    value: 'carousel',
-    href: `/code/${projects[0].slug}`,
-    icon: <BiCarousel />
   }
 ]

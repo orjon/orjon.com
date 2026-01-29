@@ -2,14 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Project } from '../types'
 
+import ProjectTechnologies from './ProjectTechnologies'
+
 const ProjectCard = ({ project }: { project: Project }) => {
   const { slug, icon, title, www, description, technologies } = project
-
-  const projectTechnologies = technologies.sort((a, b) => a.localeCompare(b)).map(technology => {
-    return (
-      <li key={technology} className="text-white font-medium bg-gray-400 rounded-sm px-2 py-px">{technology}</li>
-    )
-  })
 
   return (
     <Link
@@ -36,7 +32,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
           <div className="flex flex-col items-start justify-start">
             <div>{www}</div>
-            <ul className="flex flex-wrap text-[12px] gap-1">{projectTechnologies}</ul>
+            <ProjectTechnologies project={project} />
           </div>
         </div>
       </article>
