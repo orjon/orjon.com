@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -11,22 +12,31 @@ import { TbLayoutList } from "react-icons/tb";
 
 
 const ProjectViewSelector = () => {
-
   const router = useRouter()
+
+  const getCarouselHref = () => `/code/${getLocalStorageValue(CURRENT_PROJECT_KEY, projects[0].slug)}`
+
+  const [carouselHref, setCarouselHref] = useState(() => getCarouselHref())
+
+  const handleCarouselMouseEnter = () => setCarouselHref(getCarouselHref())
 
   const handleCarouselClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    const slug = getLocalStorageValue(CURRENT_PROJECT_KEY, projects[0].slug)
-    router.push(`/code/${slug}`)
+    router.push(getCarouselHref())
   }
 
-  const linkStyles = 'flex align-center items-center text-2xl px-1 hover:scale-120 duration-150'
+  const linkStyle = 'flex align-center items-center text-2xl px-1 hover:scale-120 duration-150'
 
   return (
     <div className='absolute z-20 mr-2 right-0 group flex align-center items-center'>
-      <Link href="/code?view=tile" className={linkStyles}><BiGridAlt /></Link>
-      <Link href="/code?view=card" className={linkStyles}><TbLayoutList /></Link>
-      <Link href="/code/project..." className={linkStyles} onClick={handleCarouselClick}>
+      <Link href="/code?view=tile" className={linkStyle}><BiGridAlt /></Link>
+      <Link href="/code?view=card" className={linkStyle}><TbLayoutList /></Link>
+      <Link
+        href={carouselHref}
+        className={linkStyle}
+        onMouseEnter={handleCarouselMouseEnter}
+        onClick={handleCarouselClick}
+      >
         <BiCarousel />
       </Link>
     </div>

@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 
-import { CurrentProjectProvider } from '@/app/code/CurrentProjectContext'
-
 import Navbar from '@/app/nav/Navbar'
 
 import '@/assets/styles/globals.css'
@@ -25,12 +23,12 @@ const Layout = ({ children, showMenu = true }: { children: React.ReactNode, show
       <body
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
-        <CurrentProjectProvider>
-          {showMenu && <Navbar />}
-          <main className='w-full h-full bg-grey075 flex flex-col flex-1 overflow-auto'>
-            {children}
-          </main>
-        </CurrentProjectProvider>
+
+        {showMenu && <Navbar />}
+        <main className='w-full h-full bg-grey075 flex flex-col flex-1 overflow-auto'>
+          {children}
+        </main>
+
       </body>
     </html>
   )

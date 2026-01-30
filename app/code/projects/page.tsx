@@ -6,8 +6,6 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 import { useMountLogger } from '@/app/hooks/useMountLogger'
 
-import { useCurrentProject } from '@/app/code/CurrentProjectContext'
-
 import ProjectDetails from '@/app/code/[...project]/ProjectDetails'
 import { projects, CURRENT_PROJECT_KEY } from '@/data/code'
 
@@ -41,8 +39,6 @@ const ProjectsPage = () => {
   })
 
   useEffect(() => {
-    console.log('Effect 1')
-    // setCurrentProject(initialProject)
     window.localStorage.setItem(CURRENT_PROJECT_KEY, initialProject)
   }, [initialProject])
 
@@ -73,9 +69,7 @@ const ProjectsPage = () => {
     const onSelect = () => {
       const index = emblaApi.selectedScrollSnap()
       const slug = projects[index].slug
-      // setCurrentProject(slug)
       window.localStorage.setItem(CURRENT_PROJECT_KEY, slug)
-      // window.history.replaceState(null, '', `/code/${slug}`)
       router.replace(
         `${pathname}?project=${slug}`,
         { scroll: false }
