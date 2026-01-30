@@ -25,7 +25,7 @@ const Layout = ({ children, showMenu = true }: { children: React.ReactNode, show
       >
 
         {showMenu && <Navbar />}
-        <main className='w-full h-full bg-grey075 flex flex-col flex-1 overflow-auto'>
+        <main className='flex-1 w-full max-h-full bg-grey075 flex flex-col overflow-hidden'>
           {children}
         </main>
 

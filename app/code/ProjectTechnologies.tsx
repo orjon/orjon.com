@@ -14,7 +14,7 @@ const ProjectTechnologies = ({ project, large = false }: { project: Project, lar
   })
 
   return (
-    <ul className={`flex flex-wrap text-[12px] gap-${large ? '2' : '1'} b-blue`}>{projectTechnologies}</ul>
+    <ul className={`flex flex-wrap text-[12px] gap-${large ? '2' : '1'}`}>{projectTechnologies}</ul>
   )
 }
 

@@ -6,16 +6,20 @@ import ImageCarousel from '@/components/ImageCarousel'
 import ProjectLiveLinks from '../ProjectLiveLinks';
 import ProjectTechnologies from '../ProjectTechnologies';
 
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
-const ProjectDetails = ({ project }: { project: Project }) => {
+
+const ProjectDetails = ({ project, index, total, goToPrev, goToNext }: { project: Project, index: number, total: number, goToPrev: () => void, goToNext: () => void }) => {
   const { icon, title, www, description, screenshots } = project
 
   // project.screenshots && console.log(project.screenshots)
 
   return (
-    <div className='w-full bg-white p-4 md:p-6 rounded-lg shadow-md'>
-      <article className="w-full h-full flex flex-col md:flex-row gap-4">
-        <div className='flex-none flex flex-col items-start justify-center h-[125px] w-[200px] relative b-red'>
+    <div className='ProjectDetails w-full bg-white p-4 md:p-6 rounded-lg shadow-md flex flex-col gap-4 md:gap-6'>
+      <article className="flex flex-1 gap-4 md:gap-6">
+
+        <div className='flex-none flex flex-col items-start justify-center h-[125px] w-[200px] relative'>
           {icon && (
             <Image
               src={icon}
@@ -27,7 +31,8 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             />
           )}
         </div>
-        <div className='flex flex-col gap-4 md:gap-6 w-full h-full items-start place-content-between b-red'>
+
+        <div className='flex-1 flex flex-col gap-4 md:gap-6'>
           <div className="flex w-full flex-col items-start justify-start gap-2">
             <div className='text-xl md:text-3xl font-bold text-center'>{title}</div>
             <div className='text-sm md:text-lg '>{description}</div>
@@ -37,22 +42,19 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             <ProjectLiveLinks project={project} />
             <div className='text-lg md:text-xl font-medium'>Technologies</div>
             <ProjectTechnologies project={project} large={true} />
-
-
           </div>
-          {/* <div>
-            <div className='flex flex-row items-center justify-center gap-2'>
-              Preview
-              <HiOutlineDeviceMobile className='inline-block text-2xl' />
-              <MdOutlineDesktopWindows className='inline-block text-2xl' />
-            </div>
-          </div> */}
-          {/* <div className="w-full h-full">
-            <Image src={`/images/code/project4/screenshots/p4ScreenshotClients.jpg`} alt={`Image`} fill className='object-contain' />
-          </div> */}
 
         </div>
       </article>
+      <div className="w-full group flex align-center user-select-none justify-between gap-8 text-menuText font-medium">
+        <div
+          onClick={goToPrev}
+          className='embla__prev flex flex-1 cursor-pointer text-2xl p-2 justify-center hover-scale-120'><FaArrowLeftLong /></div>
+        <div className='text-2xl'>{index + 1}<span className='text-menuButton'> | </span>{total}</div>
+        <div
+          onClick={goToNext}
+          className='embla__next flex flex-1 cursor-pointer text-2xl p-2 justify-center hover-scale-120'><FaArrowRightLong /></div>
+      </div>
     </div>
 
   )

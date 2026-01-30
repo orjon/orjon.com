@@ -55,7 +55,7 @@ const MenuButtons = () => {
         <div className={`relative z-10 ${buttonStyle} w-full rounded-l-none border-l-0`}>&nbsp;</div>
       </div>
 
-      <div className="h-full w-full flex justify-center items-center bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)] b-red">
+      <div className="h-full w-full flex justify-center items-center bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]">
         {menu}
         <div className={`${buttonBaseStyle} relative w-full h-full`}>
           <div className={`z-10 mb-2 pr-4 ${buttonStyle} rounded-r-none border-r-0`}>

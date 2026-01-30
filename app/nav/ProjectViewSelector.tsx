@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -10,13 +10,17 @@ import { CURRENT_PROJECT_KEY, projects } from '@/data/code'
 import { BiGridAlt, BiCarousel } from "react-icons/bi";
 import { TbLayoutList } from "react-icons/tb";
 
+const defaultProject = projects[0].slug
+
 
 const ProjectViewSelector = () => {
   const router = useRouter()
 
-  const getCarouselHref = () => `/code/${getLocalStorageValue(CURRENT_PROJECT_KEY, projects[0].slug)}`
+  const getCarouselHref = () => `/code/${getLocalStorageValue(CURRENT_PROJECT_KEY, defaultProject)}`
 
-  const [carouselHref, setCarouselHref] = useState(() => getCarouselHref())
+  const [carouselHref, setCarouselHref] = useState(`/code/${defaultProject}`)
+
+  useEffect(() => setCarouselHref(getCarouselHref()), [])
 
   const handleCarouselMouseEnter = () => setCarouselHref(getCarouselHref())
 

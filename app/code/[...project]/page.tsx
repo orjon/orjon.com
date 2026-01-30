@@ -1,20 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
 
 import { useMountLogger } from '@/app/hooks/useMountLogger'
-import { useCurrentProject } from '@/app/code/CurrentProjectContext'
+
+import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils'
 
 import ProjectDetails from '@/app/code/[...project]/ProjectDetails'
 import { projects, CURRENT_PROJECT_KEY } from '@/data/code'
 
+const defaultProject = projects[0].slug
 
 const ProjectPage = () => {
   const params = useParams()
-  // const { setCurrentProject } = useCurrentProject()
-
 
   useMountLogger('ProjectPage ORIGINAL')
   console.log('reloading: ProjectPage ORIGINAL')
@@ -25,20 +25,19 @@ const ProjectPage = () => {
 
   const [initialProject] = useState(() => {
     const urlSlug = params.project?.[0]
-    if (urlSlug && projectIndex[urlSlug]) return urlSlug
+    if (urlSlug && projectIndex[urlSlug]) {
+      setLocalStorageValue(CURRENT_PROJECT_KEY, urlSlug)
+      return urlSlug
+    }
 
     if (typeof window !== 'undefined') {
-      const stored = window.localStorage.getItem(CURRENT_PROJECT_KEY)
+      const stored = getLocalStorageValue(CURRENT_PROJECT_KEY)
       if (stored && projectIndex[stored]) return stored
     }
 
-    return projects[0].slug
+    setLocalStorageValue(CURRENT_PROJECT_KEY, defaultProject)
+    return defaultProject
   })
-
-  useEffect(() => {
-    console.log('Effect 1')
-    window.localStorage.setItem(CURRENT_PROJECT_KEY, initialProject)
-  }, [])
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     startIndex: projectIndex[initialProject],
@@ -50,60 +49,80 @@ const ProjectPage = () => {
   const goToPrev = () => emblaApi?.scrollPrev()
   const goToNext = () => emblaApi?.scrollNext()
 
-  const allProjects = projects.map((project) => {
-    return (
-      <div key={project.slug} className='embla__slide flex-[0_0_100%] pl-10'>
-        <ProjectDetails project={project} />
-      </div>
-    )
-  })
-
+  const slideRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     console.log('Effect 2')
     if (!emblaApi) return
     if (!isReady) setIsReady(true)
 
-    const onSelect = () => {
+    const updateCurrentProject = () => {
       const index = emblaApi.selectedScrollSnap()
       const slug = projects[index].slug
-      window.localStorage.setItem(CURRENT_PROJECT_KEY, slug)
+      setLocalStorageValue(CURRENT_PROJECT_KEY, slug)
       window.history.replaceState(null, '', `/code/${slug}`)
     }
 
-    emblaApi.on('settle', onSelect)
+    const resetScrollPositions = () => {
+      const index = emblaApi.selectedScrollSnap()
+      slideRefs.current.forEach((el, i) => {
+        if (i !== index) el?.scrollTo({ top: 0 })
+      })
+    }
+
+    emblaApi.on('settle', updateCurrentProject)
+    emblaApi.on('select', resetScrollPositions)
     return () => {
-      emblaApi.off('settle', onSelect)
+      emblaApi.off('settle', updateCurrentProject)
+      emblaApi.off('select', resetScrollPositions)
     }
 
   }, [emblaApi])
 
+  useEffect(() => {
+    if (!emblaApi) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        emblaApi.scrollPrev()
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        emblaApi.scrollNext()
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [emblaApi])
+
+  const allProjects = projects.map((project, index) => {
+    return (
+      <div
+        key={project.slug}
+        ref={(el) => { slideRefs.current[index] = el }}
+        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-4 md:p-8 flex flex-col'
+      >
+        <div className='min-h-full flex items-center justify-center shrink-0'>
+          <ProjectDetails project={project} index={index} total={projects.length} goToPrev={goToPrev} goToNext={goToNext} />
+        </div>
+      </div>
+    )
+  })
+
 
   return (
-    <section className='code embla content-1600 h-full p-4 md:p-8 pb-0 b-red'>
-      <div className='w-full h-full flex flex-col b-green'>
+    <section className='code embla content-1600 flex-1 max-h-full flex flex-col'>
 
-        <div className='flex-1 flex items-center pb-4 md:pb-8'>
-          <div ref={emblaRef} className={`embla__viewport overflow-hidden ${isReady ? 'opacity-100' : 'opacity-0'}`}>
-            <div className='embla__container flex items-center -ml-10' style={{ touchAction: 'pan-y pinch-zoom' }}>
-              {allProjects}
-            </div>
-          </div>
+      <div
+        ref={emblaRef}
+        className={`embla__viewport h-full max-h-full overflow-x-hidden min-h-0 ${isReady ? 'opacity-100' : 'opacity-0'} `}>
+        <div
+          className='embla__container h-full max-h-full flex items-start'
+          style={{ touchAction: 'pan-y pinch-zoom' }}>
+          {allProjects}
         </div>
-
-        <div className="w-full group flex align-center justify-between gap-8 text-menuText font-medium text-lg mt-4 md:mt-8">
-          <div
-            onClick={goToPrev}
-            className='embla__prev flex flex-1 bg-white shadow-md p-2 rounded-lg justify-center'>Prev</div>
-          <div
-            onClick={goToNext}
-            className='embla__next flex flex-1 bg-white shadow-md p-2 rounded-lg justify-center'>Next</div>
-        </div>
-
       </div>
 
     </section>
   )
 }
 export default ProjectPage
-

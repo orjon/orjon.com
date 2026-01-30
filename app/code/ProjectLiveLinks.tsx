@@ -15,7 +15,7 @@ const ProjectLiveLinks = ({ project }: { project: Project }) => {
   responsive && links.push({ label: 'mobile', href: www, icon: <HiOutlineDeviceMobile /> })
 
   return (
-    <div className="w-full flex items-center gap-2 b-blue">
+    <div className="w-full flex items-center gap-2">
       {links.map(({ label, icon, href }) => (
         <Link
           key={label}

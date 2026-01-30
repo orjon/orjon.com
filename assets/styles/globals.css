@@ -87,6 +87,7 @@ body {
   /* color: red; */
   color: var(--textDefault);
   font-family: var(--font-bai-jamjuree), sans-serif;
+  overflow: scroll;
 }
 
 .content-1600 {
@@ -105,32 +106,38 @@ body {
 }
 
 .dev {
-  @apply border-red-500/50 border;
+  @apply border-red-500 border;
 }
 
 .b-red {
-  @apply border-red-500/50 border;
+  @apply border-red-500 border;
 }
 .b-green {
-  @apply border-green-500/50 border;
+  @apply border-green-500 border;
 }
 .b-blue {
-  @apply border-blue-500/50 border;
+  @apply border-blue-500 border-2;
 }
 .b-yellow {
-  @apply border-yellow-500/50 border;
+  @apply border-yellow-500 border;
 }
 .b-purple {
-  @apply border-purple-500/50 border;
+  @apply border-purple-500 border;
 }
 .b-orange {
-  @apply border-orange-500/50 border;
+  @apply border-orange-500 border;
 }
 .b-pink {
-  @apply border-pink-500/50 border;
+  @apply border-pink-500 border;
 }
 .b-gray {
-  @apply border-gray-500/50 border;
+  @apply border-gray-500 border;
+}
+.b-white {
+  @apply border-white border;
+}
+.b-black {
+  @apply border-black border;
 }
 
 .hover-scale-102 {
@@ -139,6 +146,10 @@ body {
 
 .hover-scale-105 {
   @apply hover:scale-105 duration-250 hover:shadow-xl;
+}
+
+.hover-scale-120 {
+  @apply hover:scale-120 duration-150;
 }
 
 .absolute-center {

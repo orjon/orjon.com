@@ -7,14 +7,15 @@ import ProjectLiveLinks from '../ProjectLiveLinks';
 import ProjectTechnologies from '../ProjectTechnologies';
 
 
-const ProjectDetails = ({ project }: { project: Project }) => {
+const ProjectDetailsScroll = ({ project }: { project: Project }) => {
   const { icon, title, www, description, screenshots } = project
 
   // project.screenshots && console.log(project.screenshots)
 
   return (
-    <div className='w-full bg-white p-4 md:p-6 rounded-lg shadow-md'>
-      <article className="w-full h-full flex flex-col md:flex-row gap-4">
+    <div className='ProjectDetailsScroll w-full max-h-full bg-white p-4 md:p-6 rounded-lg shadow-md flex flex-col'>
+      <article className="flex flex-1 gap-4 b-orange overflow-auto">
+
         <div className='flex-none flex flex-col items-start justify-center h-[125px] w-[200px] relative b-red'>
           {icon && (
             <Image
@@ -27,7 +28,8 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             />
           )}
         </div>
-        <div className='flex flex-col gap-4 md:gap-6 w-full h-full items-start place-content-between b-red'>
+
+        <div className='flex-1 flex flex-col gap-4 md:gap-6 overflow-auto b-red'>
           <div className="flex w-full flex-col items-start justify-start gap-2">
             <div className='text-xl md:text-3xl font-bold text-center'>{title}</div>
             <div className='text-sm md:text-lg '>{description}</div>
@@ -58,4 +60,4 @@ const ProjectDetails = ({ project }: { project: Project }) => {
   )
 }
 
-export default ProjectDetails
+export default ProjectDetailsScroll
