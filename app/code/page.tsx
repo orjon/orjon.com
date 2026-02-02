@@ -24,10 +24,10 @@ const CodePage = () => {
 
 
   return (
-    <section className='code content-1600 h-full p-4 md:p-8 pb-0 b-red'>
-      <div className='w-full h-full flex flex-col b-blue'>
+    <section className='code content-1600 h-full p-4 md:p-8 pb-0 overflow-y-auto'>
+      <div className='w-full h-full flex flex-col'>
 
-        <div className='flex-1 flex items-center pb-4 md:pb-8 b-green'>
+        <div className='flex-1 flex items-center pb-4 md:pb-8'>
           <div className={`w-full grid place-items-center ${gridCols}`}>
             {projectList}
           </div>

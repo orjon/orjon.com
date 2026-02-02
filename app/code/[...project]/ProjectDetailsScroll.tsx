@@ -39,21 +39,9 @@ const ProjectDetailsScroll = ({ project }: { project: Project }) => {
             <ProjectLiveLinks project={project} />
             <div className='text-lg md:text-xl font-medium'>Technologies</div>
             <ProjectTechnologies project={project} large={true} />
-
-
           </div>
-          {/* <div>
-            <div className='flex flex-row items-center justify-center gap-2'>
-              Preview
-              <HiOutlineDeviceMobile className='inline-block text-2xl' />
-              <MdOutlineDesktopWindows className='inline-block text-2xl' />
-            </div>
-          </div> */}
-          {/* <div className="w-full h-full">
-            <Image src={`/images/code/project4/screenshots/p4ScreenshotClients.jpg`} alt={`Image`} fill className='object-contain' />
-          </div> */}
-
         </div>
+
       </article>
     </div>
 

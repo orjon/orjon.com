@@ -2,6 +2,8 @@ import { Project, Technology } from '@/app/types'
 
 export const CURRENT_PROJECT_KEY = 'current-project'
 
+export const SCREENSHOT_PATH = '/images/code'
+
 export const projects: Project[] = [
   {
     slug: 'buttonstyler',
@@ -147,7 +149,17 @@ export const projects: Project[] = [
     github: 'https://github.com/orjon/striped-horse',
     www: 'http://www.striped-horse.com',
     responsive: true,
-    icon: '/tiles/stripedHorse.png'
+    icon: '/tiles/stripedHorse.png',
+    screenshots: [
+      'striped-horse1.png',
+      'striped-horse2.png',
+      'striped-horse3.png',
+      'striped-horse4.png',
+      'striped-horse5.png',
+      'striped-horse6.png',
+      'striped-horse7.png',
+      'striped-horse8.png',
+    ]
   },
   {
     slug: 'countries',
@@ -196,7 +208,18 @@ export const projects: Project[] = [
     github: 'https://github.com/orjon/RockPaperScissors',
     www: 'https://www.orjon.com/rockpaperscissors/',
     responsive: true,
-    icon: '/tiles/hand_select_rock-white.png'
+    icon: '/tiles/hand_select_rock-white.png',
+    screenshots: [
+      'rockPaperScissors1.png',
+      'rockPaperScissors2.png',
+      'rockPaperScissors3.png',
+      'rockPaperScissors4.png',
+      'rockPaperScissors5.png',
+      'rockPaperScissors6.png',
+      'rockPaperScissors7.png',
+      'rockPaperScissors8.png',
+      'rockPaperScissors9.png'
+    ]
   },
   {
     slug: 'orjoncom',
@@ -242,6 +265,9 @@ export const projects: Project[] = [
     github: 'https://github.com/orjon/daftpunk',
     www: 'https://www.orjon.com/daftpunk/',
     responsive: false,
-    icon: '/tiles/daftpunk.png'
+    icon: '/tiles/daftpunk.png',
+    screenshots: [
+      'daftpunk.png'
+    ]
   }
 ]

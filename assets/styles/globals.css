@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+/* breakpoints
+  sm: 640px
+  md: 768px
+  lg: 1024px
+  xl: 1280px */
+
 :root {
   --background: white;
   --grey050: #eaeaea;
@@ -87,7 +93,7 @@ body {
   /* color: red; */
   color: var(--textDefault);
   font-family: var(--font-bai-jamjuree), sans-serif;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .content-1600 {
