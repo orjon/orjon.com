@@ -9,42 +9,42 @@ import { useMountLogger } from '@/app/hooks/useMountLogger'
 
 import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils'
 
-import ProjectDetails from '@/app/code/[...project]/ProjectDetails'
-import { projects, CURRENT_PROJECT_KEY } from '@/data/code'
+import CodeProject from '@/app/code/[...project]/CodeProjectDetails'
+import { codeProjects, CODE_PROJECT_KEY } from '@/data/code'
 
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 
-const defaultProject = projects[0].slug
+const defaultProject = codeProjects[0].slug
 
 const TWEEN_FACTOR_BASE = 1
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max)
 
-const ProjectPage = () => {
+const CodeProjectPage = () => {
   const params = useParams()
 
-  useMountLogger('ProjectPage ORIGINAL')
-  console.log('reloading: ProjectPage ORIGINAL')
+  useMountLogger('CodeProjectPage ORIGINAL')
+  console.log('reloading: CodeProjectPage ORIGINAL')
 
-  const projectIndex = Object.fromEntries(projects.map((project, index) => [project.slug, index]))
+  const projectIndex = Object.fromEntries(codeProjects.map((project, index) => [project.slug, index]))
 
   const [isReady, setIsReady] = useState(false)
 
   const [initialProject] = useState(() => {
     const urlSlug = params.project?.[0]
     if (urlSlug && projectIndex[urlSlug]) {
-      setLocalStorageValue(CURRENT_PROJECT_KEY, urlSlug)
+      setLocalStorageValue(CODE_PROJECT_KEY, urlSlug)
       return urlSlug
     }
 
     if (typeof window !== 'undefined') {
-      const stored = getLocalStorageValue(CURRENT_PROJECT_KEY)
+      const stored = getLocalStorageValue(CODE_PROJECT_KEY)
       if (stored && projectIndex[stored]) return stored
     }
 
-    setLocalStorageValue(CURRENT_PROJECT_KEY, defaultProject)
+    setLocalStorageValue(CODE_PROJECT_KEY, defaultProject)
     return defaultProject
   })
 
@@ -134,8 +134,8 @@ const ProjectPage = () => {
 
     const updateCurrentProject = () => {
       const index = emblaApi.selectedScrollSnap()
-      const slug = projects[index].slug
-      setLocalStorageValue(CURRENT_PROJECT_KEY, slug)
+      const slug = codeProjects[index].slug
+      setLocalStorageValue(CODE_PROJECT_KEY, slug)
       window.history.replaceState(null, '', `/code/${slug}`)
     }
 
@@ -170,7 +170,7 @@ const ProjectPage = () => {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [emblaApi])
 
-  const allProjects = projects.map((project, index) => {
+  const allProjects = codeProjects.map((project, index) => {
     return (
       <div
         key={project.slug}
@@ -178,7 +178,7 @@ const ProjectPage = () => {
         className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-4 md:p-8 flex flex-col'
       >
         <div className='min-h-full flex items-center justify-center shrink-0'>
-          <ProjectDetails project={project} />
+          <CodeProject project={project} />
         </div>
       </div>
     )
@@ -210,4 +210,4 @@ const ProjectPage = () => {
     </section>
   )
 }
-export default ProjectPage
+export default CodeProjectPage

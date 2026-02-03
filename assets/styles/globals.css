@@ -7,7 +7,6 @@
   xl: 1280px */
 
 :root {
-  --background: white;
   --grey050: #eaeaea;
   --grey075: #d4d4d4;
   --grey100: #b4b4b4;
@@ -23,6 +22,7 @@
   --grey800: #191919;
   --grey900: #111111;
 
+  --background: var(--grey075);
   --textDefault: var(--grey600);
 
   --code: #ea3ff7;

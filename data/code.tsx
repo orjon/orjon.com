@@ -1,10 +1,10 @@
-import { Project, Technology } from '@/app/types'
+import { CodeProject, Technology } from '@/app/types'
 
-export const CURRENT_PROJECT_KEY = 'current-project'
+export const CODE_PROJECT_KEY = 'code'
 
 export const SCREENSHOT_PATH = '/images/code'
 
-export const projects: Project[] = [
+export const codeProjects: CodeProject[] = [
   {
     slug: 'buttonstyler',
     title: 'Button Styler',

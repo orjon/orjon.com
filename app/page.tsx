@@ -1,10 +1,6 @@
-import Image from 'next/image'
+import { redirect } from 'next/navigation';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  )
+  redirect('/code');
 }
 export default HomePage

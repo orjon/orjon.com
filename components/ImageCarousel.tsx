@@ -30,9 +30,12 @@ export const ImageCarousel = ({ path, images, options }: { path: string, images:
 
   const slides = images.map((image, index) => {
     return (
-      <div key={index} className='embla__slide flex-[0_0_100%] cursor-w-resize p-4'>
-        <Image src={`${screenshotPath}/${image}`} alt={`Image ${index}`} width={1500} height={500} className='mx-auto object-contain drop-shadow-lg' />
+      <div key={index} className='embla__slide flex-[0_0_100%] cursor-w-resize px-1 pb-4'>
+        <Image src={`${screenshotPath}/${image}`} alt={`Image ${index}`} width={1500} height={500} className='mx-auto object-contain drop-shadow-md' />
       </div>
+      // <div key={index} className='embla__slide flex-[0_0_100%] cursor-w-resize px-1 pb-4'>
+      //   <Image src={`${screenshotPath}/${image}`} alt={`Image ${index}`} width={1500} height={500} className='mx-auto object-contain border border-menuButtonDark' />
+      // </div>
     )
   })
 
@@ -64,13 +67,13 @@ export const ImageCarousel = ({ path, images, options }: { path: string, images:
       </div>
 
 
-      {slides.length > 1 && <div className="flex gap-3">
+      {slides.length > 1 && <div className="flex">
         {slides.map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => scrollTo(index)}
-            className={`h-3 w-3 cursor-pointer rounded-full ${index === selectedIndex ? 'bg-textDefault' : 'bg-menuButton'
+            className={`p-2 h-3 w-3 cursor-pointer rounded-full hover:bg-textDefault hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
               }`}
             aria-label={`Go to slide ${index + 1}`}
           />

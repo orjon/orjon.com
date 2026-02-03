@@ -6,17 +6,17 @@ import { useRouter } from 'next/navigation'
 
 import { getLocalStorageValue } from '@/app/utils'
 
-import { CURRENT_PROJECT_KEY, projects } from '@/data/code'
+import { CODE_PROJECT_KEY, codeProjects } from '@/data/code'
 import { BiGridAlt, BiCarousel } from "react-icons/bi";
 import { TbLayoutList } from "react-icons/tb";
 
-const defaultProject = projects[0].slug
+const defaultProject = codeProjects[0].slug
 
 
 const ProjectViewSelector = () => {
   const router = useRouter()
 
-  const getCarouselHref = () => `/code/${getLocalStorageValue(CURRENT_PROJECT_KEY, defaultProject)}`
+  const getCarouselHref = () => `/code/${getLocalStorageValue(CODE_PROJECT_KEY, defaultProject)}`
 
   const [carouselHref, setCarouselHref] = useState(`/code/${defaultProject}`)
 
