@@ -1,14 +1,14 @@
 import Image from 'next/image'
 
-import { CodeProject } from '@/app/types'
+import { CodeProject, ElectronicsProject } from '@/app/types'
 
 import Section from '@/components/Section'
 import ImageCarousel from '@/components/ImageCarousel'
 import Pills from '@/components/Pills';
-import { PreviewLinks, GitHubLink } from '@/app/code/[...project]/Links';
+import { PreviewLinks, GitHubLink } from '@/components/Links'
 
-const CodeProjectDetails = ({ project }: { project: CodeProject }) => {
-  const { slug, icon, title, description, screenshots, technologies } = project
+const ProjectDetails = ({ project }: { project: CodeProject | ElectronicsProject }) => {
+  const { slug, icon, title, description, technologies, github } = project
 
   return (
     <div className='CodeProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 max-w-[1000px]'>
@@ -35,10 +35,16 @@ const CodeProjectDetails = ({ project }: { project: CodeProject }) => {
 
             <div className="flex w-full h-full sm:h-auto flex-col items-start justify-evenly sm:justify-start gap-1 md:gap-2">
               <div className='text-sm sm:text-base md:text-lg'>{description}</div>
-              {screenshots && <Section title="Screenshots">
-                <ImageCarousel images={screenshots} path={slug} />
-              </Section>
-              }
+              {'screenshots' in project && (
+                <Section title="Screenshots">
+                  <ImageCarousel images={project.screenshots} path={slug} />
+                </Section>
+              )}
+              {'images' in project && (
+                <Section title="Images">
+                  <ImageCarousel images={project.images} path={slug} />
+                </Section>
+              )}
             </div>
 
 
@@ -50,11 +56,13 @@ const CodeProjectDetails = ({ project }: { project: CodeProject }) => {
             </Section>
             <div className="w-full flex flex-col lg:flex-row lg:justify-between gap-1 md:gap-2">
               <Section title="Code">
-                <GitHubLink project={project} />
+                <GitHubLink href={github} />
               </Section>
-              <Section title="Preview">
-                <PreviewLinks project={project} />
-              </Section>
+              {'www' in project && (
+                <Section title="Preview">
+                  <PreviewLinks www={project.www} responsive={project.responsive ?? false} />
+                </Section>
+              )}
             </div>
           </div>
         </div>
@@ -66,4 +74,4 @@ const CodeProjectDetails = ({ project }: { project: CodeProject }) => {
   )
 }
 
-export default CodeProjectDetails
+export default ProjectDetails

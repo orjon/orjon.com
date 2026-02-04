@@ -10,11 +10,11 @@ import { useMountLogger } from '@/app/hooks/useMountLogger'
 import { setLocalStorageValue, getLocalStorageValue, numberWithinRange } from '@/app/utils'
 
 import ProjectDetails from '@/components/ProjectDetails'
-import { codeProjects, CODE_PROJECT_KEY } from '@/data/code'
+import { electronicsProjects, ELECTRONICS_PROJECT_KEY } from '@/data/electronics'
 
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6"
 
-const defaultProject = codeProjects[0].slug
+const defaultProject = electronicsProjects[0].slug
 
 const TWEEN_FACTOR_BASE = 1
 
@@ -26,23 +26,23 @@ const CodeProjectPage = () => {
   useMountLogger('CodeProjectPage ORIGINAL')
   console.log('reloading: CodeProjectPage ORIGINAL')
 
-  const projectIndex = Object.fromEntries(codeProjects.map((project, index) => [project.slug, index]))
+  const projectIndex = Object.fromEntries(electronicsProjects.map((project, index) => [project.slug, index]))
 
   const [isReady, setIsReady] = useState(false)
 
   const [initialProject] = useState(() => {
     const urlSlug = params.project?.[0]
     if (urlSlug && projectIndex[urlSlug]) {
-      setLocalStorageValue(CODE_PROJECT_KEY, urlSlug)
+      setLocalStorageValue(ELECTRONICS_PROJECT_KEY, urlSlug)
       return urlSlug
     }
 
     if (typeof window !== 'undefined') {
-      const stored = getLocalStorageValue(CODE_PROJECT_KEY)
+      const stored = getLocalStorageValue(ELECTRONICS_PROJECT_KEY)
       if (stored && projectIndex[stored]) return stored
     }
 
-    setLocalStorageValue(CODE_PROJECT_KEY, defaultProject)
+    setLocalStorageValue(ELECTRONICS_PROJECT_KEY, defaultProject)
     return defaultProject
   })
 
@@ -131,8 +131,8 @@ const CodeProjectPage = () => {
 
     const updateCurrentProject = () => {
       const index = emblaApi.selectedScrollSnap()
-      const slug = codeProjects[index].slug
-      setLocalStorageValue(CODE_PROJECT_KEY, slug)
+      const slug = electronicsProjects[index].slug
+      setLocalStorageValue(ELECTRONICS_PROJECT_KEY, slug)
       window.history.replaceState(null, '', `/code/${slug}`)
     }
 
@@ -167,7 +167,7 @@ const CodeProjectPage = () => {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [emblaApi])
 
-  const allProjects = codeProjects.map((project, index) => {
+  const allProjects = electronicsProjects.map((project, index) => {
     return (
       <div
         key={project.slug}

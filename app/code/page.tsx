@@ -3,19 +3,21 @@
 import { useSearchParams } from 'next/navigation'
 
 import { codeProjects } from '@/data/code'
-import CodeTile from '@/app/code/CodeTile'
-import CodeCard from '@/app/code/CodeCard'
+import ProjectTile from '@/components/ProjectTile'
+import ProjectCard from '@/components/ProjectCard'
 
+const path = '/code'
 
 const CodePage = () => {
   const searchParams = useSearchParams()
   const view = searchParams.get('view') || 'tile'
 
   const projectList = codeProjects.map((project) => {
+    const { slug, title, icon, description, technologies } = project
     return view === 'tile' ? (
-      <CodeTile key={project.slug} project={project} />
+      <ProjectTile key={slug} path={path} slug={slug} title={title} icon={icon} />
     ) : (
-      <CodeCard key={project.slug} project={project} />
+      <ProjectCard key={slug} path={path} slug={slug} title={title} icon={icon} description={description} technologies={technologies} />
     )
   })
 
@@ -24,7 +26,7 @@ const CodePage = () => {
 
 
   return (
-    <section className='code content-1600 h-full p-4 md:p-8 pb-0 overflow-y-auto'>
+    <section className='CodePage content-1600 h-full p-4 md:p-8 pb-0 overflow-y-auto'>
       <div className='w-full h-full flex flex-col'>
 
         <div className='flex-1 flex items-center pb-4 md:pb-8'>

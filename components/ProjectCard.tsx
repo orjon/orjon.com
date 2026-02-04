@@ -1,16 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CodeProject } from '../types'
 
-import Pills from '../../components/Pills'
+import { Technology } from '@/app/types'
 
-const CodeProjectCard = ({ project }: { project: CodeProject }) => {
-  const { slug, icon, title, www, description, technologies } = project
+import Pills from './Pills'
+
+const ProjectCard = ({ path, slug, title, icon, description, technologies }: { path: string, slug: string, title: string, icon: string, description: string, technologies: Technology[] }) => {
 
   return (
     <Link
-      key={slug}
-      href={`/code/${project.slug}`}
+      href={`${path}/${slug}`}
       className='w-full h-full bg-white p-4 rounded-2xl shadow-md hover-scale-102'>
       <article className="w-full h-full flex flex-col md:flex-row items-center gap-4">
         <div className='flex-none flex flex-col items-center justify-center h-[125px] w-[200px] relative'>
@@ -31,7 +30,7 @@ const CodeProjectCard = ({ project }: { project: CodeProject }) => {
             <div className='text-sm text-gray-500'>{description}</div>
           </div>
           <div className="flex flex-col items-start justify-start">
-            <div>{www}</div>
+            {/* <div>{www}</div> */}
             <Pills data={technologies} />
           </div>
         </div>
@@ -41,4 +40,4 @@ const CodeProjectCard = ({ project }: { project: CodeProject }) => {
   )
 }
 
-export default CodeProjectCard
+export default ProjectCard

@@ -1,20 +1,18 @@
-import { CodeProject } from '@/app/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const CodeTile = ({ project }: { project: CodeProject }) => {
+const ProjectTile = ({ path, slug, title, icon }: { path: string, slug: string, title: string, icon: string }) => {
   return (
     <Link
-      href={`/code/${project.slug}`}
-      key={project.slug}
-      className='w-full h-full p-4 aspect-square bg-white rounded-2xl shadow-md hover-scale-105'
+      href={`${path}/${slug}`}
+      className='ProjectTile w-full h-full p-4 aspect-square bg-white rounded-2xl shadow-md hover-scale-105'
     >
       <article className='w-full h-full flex flex-col items-center justify-center gap-6'>
         <div className='flex flex-col items-center justify-center w-3/4 aspect-4/3 relative'>
-          {project.icon && (
+          {icon && (
             <Image
-              src={project.icon}
-              alt={project.title}
+              src={icon}
+              alt={title}
               fill
               className='w-full h-full object-contain'
               sizes='500px'
@@ -23,7 +21,7 @@ const CodeTile = ({ project }: { project: CodeProject }) => {
           )}
         </div>
 
-        <div className='text-base font-medium text-center'>{project.title}</div>
+        <div className='text-base font-medium text-center'>{title}</div>
 
       </article>
     </Link>
@@ -31,4 +29,4 @@ const CodeTile = ({ project }: { project: CodeProject }) => {
 
   )
 }
-export default CodeTile
+export default ProjectTile

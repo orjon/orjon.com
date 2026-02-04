@@ -23,5 +23,9 @@ export enum Technology {
   SQLAlchemy = 'SQLAlchemy',
   Marshmallow = 'Marshmallow',
   Bulma = 'Bulma',
-  Mongoose = 'Mongoose'
+  Mongoose = 'Mongoose',
+  PIC = 'PIC',
+  Arduino = 'Arduino',
+  Electronics = 'Electronics',
+  ESP32 = 'ESP32'
 }

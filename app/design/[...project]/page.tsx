@@ -187,7 +187,7 @@ const DesignProjectPage = () => {
 
 
   return (
-    <section className='design embla relative content-1600 flex-1 max-h-full flex flex-col'>
+    <section className='DesignProjectPage embla relative content-1600 flex-1 max-h-full flex flex-col'>
 
       <div
         ref={emblaProjectRef}

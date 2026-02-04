@@ -6,10 +6,10 @@ export interface CodeProject {
   description: string
   technologies: Technology[]
   github: string
+  icon: string
+  screenshots: string[]
   www: string
   responsive: boolean
-  icon?: string
-  screenshots?: string[]
 }
 
 export interface DesignProject {
@@ -19,4 +19,14 @@ export interface DesignProject {
   scope: Scopes[]
   software: Software[]
   image: string
+}
+
+export interface ElectronicsProject {
+  slug: string
+  title: string
+  description: string
+  technologies: Technology[]
+  github: string
+  icon: string
+  images: string[]
 }

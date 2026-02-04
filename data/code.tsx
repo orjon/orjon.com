@@ -18,8 +18,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/buttonstyler',
     www: 'https://www.orjon.com/buttonstyler',
     responsive: false,
-    icon: '/tiles/buttonStyler.png'
-
+    icon: '/tiles/buttonStyler.png',
+    screenshots: []
   },
   {
     slug: 'covid19',
@@ -39,7 +39,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/covid19',
     www: 'https://www.orjon.com/covid19',
     responsive: true,
-    icon: '/tiles/covid19tracker.jpg'
+    icon: '/tiles/covid19tracker.jpg',
+    screenshots: []
   },
   {
     slug: 'tubeinfo',
@@ -58,7 +59,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/TubeInfo',
     www: 'https://www.orjon.com/tubeinfo/',
     responsive: true,
-    icon: '/tiles/thetube.png'
+    icon: '/tiles/thetube.png',
+    screenshots: []
   },
   {
     slug: 'tetris',
@@ -74,7 +76,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/tetris',
     www: 'https://www.orjon.com/tetris/',
     responsive: true,
-    icon: '/tiles/tetris.png'
+    icon: '/tiles/tetris.png',
+    screenshots: []
   },
   {
     slug: 'colorclock',
@@ -89,7 +92,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/colorclock',
     www: 'https://www.orjon.com/colorclock/',
     responsive: true,
-    icon: '/tiles/clock.png'
+    icon: '/tiles/clock.png',
+    screenshots: []
   },
   {
     slug: 'department3D',
@@ -104,7 +108,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/department3D',
     www: 'http://www.department3D.com',
     responsive: true,
-    icon: '/tiles/department3D.png'
+    icon: '/tiles/department3D.png',
+    screenshots: []
   },
   {
     slug: 'whackAMole',
@@ -120,7 +125,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/whack-a-mole',
     www: 'https://www.orjon.com/mole/',
     responsive: true,
-    icon: '/tiles/whackamole.png'
+    icon: '/tiles/whackamole.png',
+    screenshots: []
   },
   {
     slug: 'weather',
@@ -139,7 +145,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/weather',
     www: 'https://www.orjon.com/weather/',
     responsive: true,
-    icon: '/tiles/weather.png'
+    icon: '/tiles/weather.png',
+    screenshots: []
   },
   {
     slug: 'stripedHorse',
@@ -175,7 +182,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/countries',
     www: 'https://www.orjon.com/countries/',
     responsive: true,
-    icon: '/tiles/countries.png'
+    icon: '/tiles/countries.png',
+    screenshots: []
   },
   {
     slug: 'project4',
@@ -234,7 +242,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/orjon.com',
     www: './',
     responsive: true,
-    icon: '/tiles/orjoncom.png'
+    icon: '/tiles/orjoncom.png',
+    screenshots: []
   },
   {
     slug: 'booker',
@@ -254,7 +263,8 @@ export const codeProjects: CodeProject[] = [
     github: 'https://github.com/orjon/booker',
     www: 'https://www.orjon.com/booker/',
     responsive: true,
-    icon: '/tiles/booker.png'
+    icon: '/tiles/booker.png',
+    screenshots: []
   },
   {
     slug: 'daftpunk',
