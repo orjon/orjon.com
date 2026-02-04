@@ -7,20 +7,18 @@ import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
 
 import { useMountLogger } from '@/app/hooks/useMountLogger'
 
-import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils'
+import { setLocalStorageValue, getLocalStorageValue, numberWithinRange } from '@/app/utils'
 
 import CodeProject from '@/app/code/[...project]/CodeProjectDetails'
 import { codeProjects, CODE_PROJECT_KEY } from '@/data/code'
 
-import { FaArrowRight } from "react-icons/fa6";
-import { FaArrowLeft } from "react-icons/fa6";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6"
 
 const defaultProject = codeProjects[0].slug
 
 const TWEEN_FACTOR_BASE = 1
 
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max)
+const navArrowStyle = "drop-shadow-md hover:drop-shadow-lg"
 
 const CodeProjectPage = () => {
   const params = useParams()
@@ -175,7 +173,7 @@ const CodeProjectPage = () => {
       <div
         key={project.slug}
         ref={(el) => { slideRefs.current[index] = el }}
-        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-4 md:p-8 flex flex-col'
+        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-8 md:p-10 flex flex-col'
       >
         <div className='min-h-full flex items-center justify-center shrink-0'>
           <CodeProject project={project} />
@@ -184,9 +182,8 @@ const CodeProjectPage = () => {
     )
   })
 
-
   return (
-    <section className='code embla relative content-1600 flex-1 max-h-full flex flex-col'>
+    <section className='code embla relative content-1600 bg-white sm:bg-grey075 flex-1 max-h-full flex flex-col'>
 
       <div
         ref={emblaProjectRef}
@@ -201,10 +198,14 @@ const CodeProjectPage = () => {
       <div className="absolute inset-0 z-10 flex items-center justify-between pointer-events-none">
         <div
           onClick={goToPrev}
-          className='embla__prev flex cursor-pointer text-2xl md:text-4xl pl-1 md:pl-2 justify-start hover-scale-120 pointer-events-auto'><FaArrowLeft className="drop-shadow-md hover:drop-shadow-lg" /></div>
+          className='embla__prev flex cursor-pointer text-4xl md:pl-1 justify-start hover-scale-120 pointer-events-auto'>
+          <FaAngleLeft className={navArrowStyle} />
+        </div>
         <div
           onClick={goToNext}
-          className='embla__next flex cursor-pointer text-2xl md:text-4xl pr-1 md:pr-2 justify-end hover-scale-120 pointer-events-auto'><FaArrowRight className="drop-shadow-md hover:drop-shadow-lg" /></div>
+          className='embla__next flex cursor-pointer text-4xl md:pr-1 justify-end hover-scale-120 pointer-events-auto'>
+          <FaAngleRight className={navArrowStyle} />
+        </div>
       </div>
 
     </section>

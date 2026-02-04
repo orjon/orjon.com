@@ -5,7 +5,7 @@ import { HiOutlineDeviceMobile } from "react-icons/hi";
 import { MdOutlineDesktopWindows } from "react-icons/md";
 import { FaGithub } from 'react-icons/fa';
 
-const projectLinkStyle = "flex-1 sm:max-w-[200px] lg:w-[200px] flex items-center justify-center gap-2 font-medium lg:font-semibold text-white text-base lg:text-lg py-2 lg:py-3 px-2 rounded-md duration-150"
+const projectLinkStyle = "flex-1 sm:max-w-[200px] lg:w-[200px] rounded-md p-1 md:p-2 flex items-center justify-center gap-2 font-medium md:font-semibold text-white text-lg duration-150"
 
 
 const PreviewLinks = ({ project }: { project: CodeProject }) => {

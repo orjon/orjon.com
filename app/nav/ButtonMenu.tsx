@@ -9,10 +9,10 @@ const buttonBaseStyle =
   'group bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
 
 const buttonStyle =
-  'group block flex flex-row gap-2 items-center py-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-1 border-menuButtonDark'
+  'group block flex flex-row gap-2 items-center py-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-menuButtonDark'
 
 
-const MenuButtons = () => {
+const ButtonMenu = () => {
   const pathname = usePathname()
   const isCodePage = pathname.startsWith('/code')
 
@@ -48,7 +48,7 @@ const MenuButtons = () => {
 
 
     <div
-      className="menu hidden overflow-x-hidden md:grid w-full items-center text-lg font-medium text-menuText shadow-sm"
+      className="ButtonMenu w-full hidden sm:grid overflow-x-hidden items-center text-lg font-medium text-menuText"
       style={{ gridTemplateColumns: 'minmax(0, 1fr) minmax(auto, 1600px) minmax(0, 1fr)' }}>
 
       <div className={`${buttonBaseStyle} relative w-full h-full`}>
@@ -74,4 +74,4 @@ const MenuButtons = () => {
 
   )
 }
-export default MenuButtons
+export default ButtonMenu

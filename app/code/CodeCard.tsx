@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CodeProject } from '../types'
 
-import ProjectTechnologies from '../../components/Pills'
+import Pills from '../../components/Pills'
 
 const CodeProjectCard = ({ project }: { project: CodeProject }) => {
   const { slug, icon, title, www, description, technologies } = project
@@ -32,7 +32,7 @@ const CodeProjectCard = ({ project }: { project: CodeProject }) => {
           </div>
           <div className="flex flex-col items-start justify-start">
             <div>{www}</div>
-            <ProjectTechnologies project={project} />
+            <Pills data={technologies} />
           </div>
         </div>
       </article>

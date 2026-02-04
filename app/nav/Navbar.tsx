@@ -4,11 +4,7 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import MenuButtons from './MenuButtons'
-import MenuButtonsContained from './MenuButtonsContained'
-import Menu from './Menu'
-import MenuTemplate from './MenuTemplate'
-import MenuTabs from './MenuTabs'
+import ButtonMenu from './ButtonMenu'
 import BurgerMenu from './BurgerMenu'
 
 const Navbar = () => {
@@ -22,7 +18,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className='relative'>
+    <header className='relative shadow-md'>
       <nav className='flex flex-col bg-titleBar text-menuText'>
         <div className='content-1600 flex flex-row justify-between items-center px-2'>
           <Link href='/'>
@@ -32,11 +28,11 @@ const Navbar = () => {
           <div className='flex flex-row-reverse items-center'>
             <Link
               href='/me'
-              className='group peer flex-row items-center cursor-pointer hidden md:flex'
+              className='group peer flex-row items-center cursor-pointer hidden sm:flex'
             >
               <div className='relative h-[34px] w-[34px]'>
                 <Image
-                  src='/icons/nav/faceOFF.png'
+                  src='/icons/nav/faceOFF-large.png'
                   className={`absolute-center transition-opacity opacity-100 duration-100 ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
                     }`}
                   alt='face'
@@ -44,7 +40,7 @@ const Navbar = () => {
                   height={26}
                 />
                 <Image
-                  src='/icons/nav/faceON.png'
+                  src='/icons/nav/faceON-large.png'
                   className={`absolute-center transition-opacity opacity-0 duration-100 ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   alt='face'
@@ -53,18 +49,17 @@ const Navbar = () => {
                 />
               </div>
             </Link>
-            <h1
-              className={`ml-1 text-lg select-none font-medium transition-opacity opacity-0 duration-200 ${isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
+            <div
+              className={`hidden sm:block ml-1 text-lg select-none font-medium transition-opacity opacity-0 duration-200 ${isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
                 }`}
             >
               me
-            </h1>
+            </div>
           </div>
 
           <button
-
             onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}
-            className='group cursor-pointer md:hidden'
+            className='group cursor-pointer sm:hidden'
           >
             <div className='relative h-[34px] w-[24px]'>
               <Image
@@ -87,10 +82,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        <MenuButtonsContained />
-
+        <ButtonMenu />
+        <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
       </nav>
-      <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
     </header>
   )
 }

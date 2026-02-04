@@ -10,3 +10,9 @@ export const getLocalStorageValue = (
   if (typeof window === 'undefined') return defaultValue
   return window.localStorage.getItem(key) || defaultValue
 }
+
+export const numberWithinRange = (
+  number: number,
+  min: number,
+  max: number
+): number => Math.min(Math.max(number, min), max)

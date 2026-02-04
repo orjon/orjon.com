@@ -1,11 +1,12 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
+
+import { GoDot, GoDotFill } from "react-icons/go";
 
 import { SCREENSHOT_PATH } from '@/data/code'
 import Image from 'next/image'
@@ -67,13 +68,13 @@ export const ImageCarousel = ({ path, images, options }: { path: string, images:
       </div>
 
 
-      {slides.length > 1 && <div className="flex">
+      {slides.length > 1 && <div className="flex gap-2 md:gap-3 lg:gap-5">
         {slides.map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => scrollTo(index)}
-            className={`p-2 h-3 w-3 cursor-pointer rounded-full hover:bg-textDefault hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
+            className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
               }`}
             aria-label={`Go to slide ${index + 1}`}
           />

@@ -12,10 +12,12 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
   return (
     <div className='DesignProjectDetails w-full bg-white p-6 rounded-2xl shadow-md flex flex-col gap-4 md:gap-6 max-w-[1000px]'>
       <article className={`${slug} flex w-full flex-col gap-1 md:gap-2`}>
+        <div className="w-full flex flex-col ">
+          <div className='w-full text-xl sm:text-2xl md:text-3xl font-bold'>{title}</div>
+          {subTitle && <div className='text-sm sm:text-base md:text-lg'>{subTitle}</div>}
+        </div>
 
-        <div className='w-full text-center sm:text-left text-xl sm:text-2xl md:text-3xl font-bold'>{title}</div>
-        {subTitle && <div className='text-sm sm:text-base md:text-lg'>{subTitle}</div>}
-        <div className='w-full relative'>
+        <div className='w-full py-2'>
           <Image
             src={image}
             alt={title}
@@ -26,11 +28,10 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
           />
         </div>
         <Section title="Project scope">
-          <div className='text-sm sm:text-base md:text-lg'>{scope}</div>
+          <div className='text-sm sm:text-base md:text-lg'>{scope.join(', ')}</div>
         </Section>
         <Section title="Software">
           <Pills data={software} responsive={true} />
-          {/* <div className='text-sm sm:text-base md:text-lg'>{software}</div> */}
         </Section>
 
       </article>
