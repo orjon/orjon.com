@@ -6,9 +6,6 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
-import { GoDot, GoDotFill } from "react-icons/go";
-
-import { SCREENSHOT_PATH } from '@/data/code'
 import Image from 'next/image'
 
 const OPTIONS: EmblaOptionsType = { loop: true, duration: 30, skipSnaps: false, watchDrag: false }
@@ -27,18 +24,11 @@ export const ImageCarousel = ({ path, images, options }: { path: string, images:
     [emblaApi]
   )
 
-  const screenshotPath = `${SCREENSHOT_PATH}/${path}`
-
-  const slides = images.map((image, index) => {
-    return (
-      <div key={index} className='embla__slide flex-[0_0_100%] cursor-w-resize px-1 pb-4'>
-        <Image src={`${screenshotPath}/${image}`} alt={`Image ${index}`} width={1500} height={500} className='mx-auto object-contain drop-shadow-md' />
-      </div>
-      // <div key={index} className='embla__slide flex-[0_0_100%] cursor-w-resize px-1 pb-4'>
-      //   <Image src={`${screenshotPath}/${image}`} alt={`Image ${index}`} width={1500} height={500} className='mx-auto object-contain border border-menuButtonDark' />
-      // </div>
-    )
-  })
+  const slides = images.map((image, index) =>
+    <div key={index} className='embla__slide flex-[0_0_100%] cursor-w-resize px-1 pb-4'>
+      <Image src={`${path}/${image}`} alt={`Image ${index}`} width={1500} height={500} className='max-h-[50vh] mx-auto object-contain drop-shadow-md' />
+    </div>
+  )
 
   useEffect(() => {
     if (!emblaApi) return

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-import { menuItems } from '@/app/constants'
+import { menuItems } from '@/data'
 
 const BurgerMenu = ({
   isOpen,
@@ -14,33 +14,37 @@ const BurgerMenu = ({
 
   const pathname = usePathname()
 
-  const burgerMenu = menuItems.map((menuItem) => (
-    <Link
-      key={menuItem.name}
-      href={menuItem.href}
-      onClick={() => setIsOpen(false)}
-      className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'
-        } ${pathname.startsWith(menuItem.href) ? 'bg-menuButton' : 'none'}`}
-    >
-      <div className="relative w-[30px] h-[26px]">
-        <Image
-          src={menuItem.iconOff}
-          alt={menuItem.name}
-          width={30}
-          height={26}
-          className={`absolute inset-0 transition-opacity ${pathname.startsWith(menuItem.href) ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
-        />
-        <Image
-          src={menuItem.iconOn}
-          alt={menuItem.name}
-          width={30}
-          height={26}
-          className={`absolute inset-0 transition-opacity ${pathname.startsWith(menuItem.href) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-        />
-      </div>
-      <div className="w-30">{menuItem.name}</div>
-    </Link>
-  ))
+  const burgerMenu = menuItems.map((menuItem) => {
+    const href = `/${menuItem.name}`
+    const path = pathname.startsWith(href)
+    return (
+      <Link
+        key={menuItem.name}
+        href={href}
+        onClick={() => setIsOpen(false)}
+        className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'
+          } ${path ? 'bg-menuButton' : 'none'}`}
+      >
+        <div className="relative w-[30px] h-[26px]">
+          <Image
+            src={menuItem.iconOff}
+            alt={menuItem.name}
+            width={30}
+            height={26}
+            className={`absolute inset-0 transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
+          />
+          <Image
+            src={menuItem.iconOn}
+            alt={menuItem.name}
+            width={30}
+            height={26}
+            className={`absolute inset-0 transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+          />
+        </div>
+        <div className="w-30">{menuItem.name}</div>
+      </Link>
+    )
+  })
 
   return (
     <div

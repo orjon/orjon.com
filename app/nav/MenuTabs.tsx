@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 // import CurrentTime from '../CurrentTime'
-import { menuItems } from '@/app/constants'
+import { menuItems } from '@/data'
 
 
 const tabStyle =
@@ -14,26 +14,29 @@ const MenuTabs = () => {
 
   const menu = menuItems
     .filter((menuItem) => !menuItem.titleBar)
-    .map((menuItem) => (
+    .map((menuItem) => {
+      const href = `/${menuItem.name}`
+      const path = pathname.startsWith(href)
+      return (
+        <Link
+          key={menuItem.name}
+          href={href}
+          className={`${tabStyle} w-90 px-2 border ${path ? 'border-b-menuTab' : 'border-grey200 border-b-black'
+            } `}
+        >
+          <Image
+            src={
+              path ? menuItem.iconOn : menuItem.iconOff
+            }
+            alt={menuItem.name}
+            width={30}
+            height={30}
+          />
+          {menuItem.name}
+        </Link>
 
-      <Link
-        key={menuItem.name}
-        href={menuItem.href}
-        className={`${tabStyle} w-90 px-2 border ${pathname === menuItem.href ? 'border-b-menuTab' : 'border-grey200 border-b-black'
-          } `}
-      >
-        <Image
-          src={
-            pathname === menuItem.href ? menuItem.iconOn : menuItem.iconOff
-          }
-          alt={menuItem.name}
-          width={30}
-          height={30}
-        />
-        {menuItem.name}
-      </Link>
-
-    ))
+      )
+    })
 
   return (
 

@@ -9,7 +9,8 @@ export const electronicsProjects: ElectronicsProject[] = [
     description: 'Random pattern clock.',
     technologies: [Technology.Electronics, Technology.PIC, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     github: 'https://github.com/orjon/timeframe.web',
-    icon: '/tiles/timeFrame.png'
+    icon: '/tiles/timeFrame.png',
+    images: ['timeFrame_circuit.jpg', 'timeFrame_explain1.jpg', 'timeFrame_explain2.jpg', 'timeFrame_explain3.jpg', 'timeFrame_explain4.jpg']
   },
   {
     slug: 'colorone',
@@ -17,7 +18,8 @@ export const electronicsProjects: ElectronicsProject[] = [
     description: 'Minimalist color clock.',
     technologies: [Technology.Electronics, Technology.Arduino, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     github: 'https://github.com/orjon/colorone.web',
-    icon: '/tiles/colorOne.png'
+    icon: '/tiles/colorOne.png',
+    images: []
   },
   {
     slug: 'colortwo',
@@ -25,7 +27,8 @@ export const electronicsProjects: ElectronicsProject[] = [
     description: 'Abstract color clock.',
     technologies: [Technology.Electronics, Technology.Arduino, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     github: 'https://github.com/orjon/colortwo.web',
-    icon: '/tiles/colorTwo.png'
+    icon: '/tiles/colorTwo.png',
+    images: ['colorTwo_explode01.jpg', 'colorTwo_explode07.jpg', 'colorTwo_explode08.jpg']
   },
   {
     slug: 'aboutTime',
@@ -33,6 +36,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     description: 'Approximate clock.',
     technologies: [Technology.Electronics, Technology.PIC, Technology.ESP32, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     github: 'https://github.com/orjon/abouttime',
-    icon: '/tiles/aboutTime.png'
+    icon: '/tiles/aboutTime.png',
+    images: []
   }
 ]

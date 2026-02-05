@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-// import CurrentTime from '../CurrentTime'
-import { menuItems } from '@/app/constants'
+
+import { menuItems } from '@/data'
 import ProjectViewSelector from './ProjectViewSelector'
 
 const buttonBaseStyle =
@@ -18,31 +18,35 @@ const ButtonMenu = () => {
 
   const menu = menuItems
     .filter((menuItem) => !menuItem.titleBar)
-    .map((menuItem) => (
-      <div key={menuItem.name} className={`${buttonBaseStyle} min-w-[150px] `}>
-        <Link
-          href={menuItem.href}
-          className={`relative z-10 ${buttonStyle} px-2 ${pathname.startsWith(menuItem.href) ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
-          <div className="relative w-[30px] h-[26px]">
-            <Image
-              src={menuItem.iconOff}
-              alt={menuItem.name}
-              width={30}
-              height={30}
-              className={`absolute inset-0 transition-opacity ${pathname.startsWith(menuItem.href) ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
-            />
-            <Image
-              src={menuItem.iconOn}
-              alt={menuItem.name}
-              width={30}
-              height={30}
-              className={`absolute inset-0 transition-opacity ${pathname.startsWith(menuItem.href) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-            />
-          </div>
-          {menuItem.name}
-        </Link>
-      </div>
-    ))
+    .map((menuItem) => {
+      const href = `/${menuItem.name}`
+      const path = pathname.startsWith(href)
+      return (
+        <div key={menuItem.name} className={`${buttonBaseStyle} min-w-[150px] `}>
+          <Link
+            href={href}
+            className={`relative z-10 ${buttonStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
+            <div className="relative w-[30px] h-[26px]">
+              <Image
+                src={menuItem.iconOff}
+                alt={menuItem.name}
+                width={30}
+                height={30}
+                className={`absolute inset-0 transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
+              />
+              <Image
+                src={menuItem.iconOn}
+                alt={menuItem.name}
+                width={30}
+                height={30}
+                className={`absolute inset-0 transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+              />
+            </div>
+            {menuItem.name}
+          </Link>
+        </div>
+      )
+    })
 
   return (
 

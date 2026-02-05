@@ -1,3 +1,5 @@
+export * from './menu'
+
 export * from './electronics'
 export * from './code'
 export * from './design'

@@ -7,7 +7,7 @@ import ImageCarousel from '@/components/ImageCarousel'
 import Pills from '@/components/Pills';
 import { PreviewLinks, GitHubLink } from '@/components/Links'
 
-const ProjectDetails = ({ project }: { project: CodeProject | ElectronicsProject }) => {
+const ProjectDetails = ({ section, project }: { section: string, project: CodeProject | ElectronicsProject }) => {
   const { slug, icon, title, description, technologies, github } = project
 
   return (
@@ -37,12 +37,12 @@ const ProjectDetails = ({ project }: { project: CodeProject | ElectronicsProject
               <div className='text-sm sm:text-base md:text-lg'>{description}</div>
               {'screenshots' in project && (
                 <Section title="Screenshots">
-                  <ImageCarousel images={project.screenshots} path={slug} />
+                  <ImageCarousel images={project.screenshots} path={`/images/${section}/${slug}`} />
                 </Section>
               )}
               {'images' in project && (
                 <Section title="Images">
-                  <ImageCarousel images={project.images} path={slug} />
+                  <ImageCarousel images={project.images} path={`/images/${section}/${slug}`} />
                 </Section>
               )}
             </div>
