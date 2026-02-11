@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 import { DesignProject } from '@/app/types'
 
-import Section from '@/components/Section'
-import Pills from '@/components/Pills'
+import Section from '@/app/components/Section'
+import Pills from '@/app/components/Pills'
 
 
 const DesignProjectDetails = ({ project }: { project: DesignProject }) => {

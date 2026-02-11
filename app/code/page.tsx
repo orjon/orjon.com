@@ -2,22 +2,22 @@
 
 import { useSearchParams } from 'next/navigation'
 
-import { codeProjects } from '@/data/code'
-import ProjectTile from '@/components/ProjectTile'
-import ProjectCard from '@/components/ProjectCard'
+import { codeProjects } from '@/app/data/code'
+import { ProjectType } from '@/app/types'
 
-const path = '/code'
+import ProjectTile from '@/app/components/ProjectTile'
+import ProjectCard from '@/app/components/ProjectCard'
 
 const CodePage = () => {
   const searchParams = useSearchParams()
   const view = searchParams.get('view') || 'tile'
 
   const projectList = codeProjects.map((project) => {
-    const { slug, title, icon, description, technologies } = project
+    const { slug, title, description, technologies } = project
     return view === 'tile' ? (
-      <ProjectTile key={slug} path={path} slug={slug} title={title} icon={icon} />
+      <ProjectTile key={slug} projectType={ProjectType.CODE} slug={slug} title={title} />
     ) : (
-      <ProjectCard key={slug} path={path} slug={slug} title={title} icon={icon} description={description} technologies={technologies} />
+      <ProjectCard key={slug} projectType={ProjectType.CODE} slug={slug} title={title} description={description} technologies={technologies} />
     )
   })
 

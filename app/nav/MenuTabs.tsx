@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 // import CurrentTime from '../CurrentTime'
-import { menuItems } from '@/data'
+import { menuItems } from '@/app/data'
 
 
 const tabStyle =

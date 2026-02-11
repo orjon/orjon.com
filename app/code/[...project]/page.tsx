@@ -1,15 +1,21 @@
-import { codeProjects } from '@/data/code'
-import { sections } from '@/app/types'
 
-import ProjectsCarousel from '@/components/ProjectsCarousel'
+import { codeProjects } from '@/app/data/code'
+import { ProjectType } from '@/app/types'
+
+import ProjectsCarousel from '@/app/components/ProjectsCarousel'
+import { getProjectImages } from '@/app/utils/server'
 
 
 const CodeProjectsPage = () => {
 
-  const section = sections.code
+  const projects = codeProjects.map((project) => ({
+    ...project,
+    images: getProjectImages(project.slug)
+  }))
 
   return (
-    <ProjectsCarousel section={section} projects={codeProjects} />
+    <ProjectsCarousel section={ProjectType.CODE} projects={projects} />
   )
 }
+
 export default CodeProjectsPage

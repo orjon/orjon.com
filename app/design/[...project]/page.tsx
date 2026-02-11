@@ -7,10 +7,10 @@ import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
 
 import { useMountLogger } from '@/app/hooks/useMountLogger'
 
-import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils'
+import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
 
 import DesignProjectCard from '@/app/design/[...project]/DesignProjectDetails'
-import { designProjects, DESIGN_PROJECT_KEY } from '@/data/design'
+import { designProjects, DESIGN_PROJECT_KEY } from '@/app/data/design'
 
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6"
 

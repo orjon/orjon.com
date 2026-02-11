@@ -1,32 +1,34 @@
 import { Technology, Scopes, Software } from '@/app/types'
 
-export interface CodeProject {
+export enum ProjectType {
+  ELECTRONICS = 'electronics',
+  CODE = 'code',
+  DESIGN = 'design'
+}
+
+interface Project {
   slug: string
   title: string
   description: string
   technologies: Technology[]
   github: string
-  icon: string
-  screenshots: string[]
+  images?: string[]
+}
+
+export type ElectronicsProject = Project & {
+  type: 'electronics'
+  demo?: string
+}
+
+export type CodeProject = Project & {
+  type: 'code'
   www: string
   responsive: boolean
 }
 
-export interface DesignProject {
-  slug: string
-  title: string
+export type DesignProject = Project & {
   subTitle?: string
   scope: Scopes[]
   software: Software[]
   image: string
-}
-
-export interface ElectronicsProject {
-  slug: string
-  title: string
-  description: string
-  technologies: Technology[]
-  github: string
-  icon: string
-  images: string[]
 }

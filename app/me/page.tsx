@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { technologyIcons, technologyIconPath, contactInfo } from '@/data'
+import { technologyIcons, technologyIconPath, contactInfo } from '@/app/data'
 
 const contactDetails = contactInfo.map((item) => (
   <div className='flex align-center items-center' key={item.href}>

@@ -1,17 +1,19 @@
-'use client'
+import { electronicsProjects } from '@/app/data/electronics'
+import { ProjectType } from '@/app/types'
 
-
-import { electronicsProjects } from '@/data/electronics'
-import { sections } from '@/app/types'
-
-import ProjectsCarousel from '@/components/ProjectsCarousel'
+import ProjectsCarousel from '@/app/components/ProjectsCarousel'
+import { getProjectImages } from '@/app/utils/server'
 
 
 const ElectronicsProjectsPage = () => {
-  const section = sections.electronics
+
+  const projects = electronicsProjects.map((project) => ({
+    ...project,
+    images: getProjectImages(project.slug)
+  }))
 
   return (
-    <ProjectsCarousel section={section} projects={electronicsProjects} />
+    <ProjectsCarousel section={ProjectType.ELECTRONICS} projects={projects} />
   )
 }
 export default ElectronicsProjectsPage

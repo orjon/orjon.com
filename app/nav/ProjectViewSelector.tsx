@@ -4,21 +4,22 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { getLocalStorageValue } from '@/app/utils'
-
-import { CODE_PROJECT_KEY, codeProjects } from '@/data/code'
+import { getLocalStorageValue } from '@/app/utils/client'
+import { ProjectType } from '@/app/types'
+import { codeProjects } from '@/app/data/code'
 import { BiGridAlt, BiCarousel } from "react-icons/bi";
 import { TbLayoutList } from "react-icons/tb";
 
 const defaultProject = codeProjects[0].slug
+const projectType = ProjectType.CODE
 
 
 const ProjectViewSelector = () => {
   const router = useRouter()
 
-  const getCarouselHref = () => `/code/${getLocalStorageValue(CODE_PROJECT_KEY, defaultProject)}`
+  const getCarouselHref = () => `/${projectType}/${getLocalStorageValue(projectType, defaultProject)}`
 
-  const [carouselHref, setCarouselHref] = useState(`/code/${defaultProject}`)
+  const [carouselHref, setCarouselHref] = useState(`/${projectType}/${defaultProject}`)
 
   useEffect(() => setCarouselHref(getCarouselHref()), [])
 
@@ -33,8 +34,8 @@ const ProjectViewSelector = () => {
 
   return (
     <div className='absolute z-20 mr-2 right-0 group flex align-center items-center'>
-      <Link href="/code?view=tile" className={linkStyle}><BiGridAlt /></Link>
-      <Link href="/code?view=card" className={linkStyle}><TbLayoutList /></Link>
+      <Link href={`/${projectType}?view=tile`} className={linkStyle}><BiGridAlt /></Link>
+      <Link href={`/${projectType}?view=card`} className={linkStyle}><TbLayoutList /></Link>
       <Link
         href={carouselHref}
         className={linkStyle}

@@ -1,7 +1,9 @@
+import { ProjectType } from './projects'
+
 export const sections = {
-  code: 'code',
-  design: 'design',
-  electronics: 'electronics',
+  [ProjectType.CODE]: ProjectType.CODE,
+  [ProjectType.DESIGN]: ProjectType.DESIGN,
+  [ProjectType.ELECTRONICS]: ProjectType.ELECTRONICS,
   me: 'me'
 }
 
