@@ -5,7 +5,8 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'buttonstyler',
     title: 'Button Styler',
-    description: 'Button styler & CSS generator',
+    // description: 'Button styler & CSS generator',
+    description: 'A development tool for styling buttons using commonly used CSS properties.\¶Adjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time. The generated CSS is ready to copy directly into your project.\¶Designed to streamline styling workflows and reduce CSS guesswork.',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -20,7 +21,8 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'covid19',
     title: 'Covid19 Tracker',
-    description: 'Covid19 stats tracker.',
+    description: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.\¶Users can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…',
+    note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static and no longer updates.',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -60,7 +62,7 @@ export const codeProjects: CodeProject[] = [
     slug: 'tetris',
     title: 'Tetris Revisited',
     description:
-      "Modern interpretation of the classic 1980's puzzle game with original styling and music.",
+      'Tetris is a recreation of the original 1980’s classic puzzle game.\¶Position falling blocks, of differing shapes, trying to complete horizontal lines in order to clear them from the grid. Points are awarded for each block placed, and every line cleared.\¶The speed at which blocks fall increases with the player’s score. The game ends when a player’s blocks reach the top of the grid.\¶The music and sound effects were kindly written for the game by Joe Lewis.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -75,7 +77,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'colorclock',
     title: 'Colour Clock',
-    description: 'Unique interactive colour-clock.',
+    description: 'A novel clock representing the time using just color.\¶The dragable hour indicators can be rotated to freely shift the current time’s color whilst still remaining accurate.\¶I have also built a working physical version of this clock.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -90,7 +92,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'department3d',
     title: 'department3D',
-    description: 'Department3D company website',
+    description: 'Image-rich company website with clean and minimal responsive styling.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -105,8 +107,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'whackamole',
     title: 'Whack-a-Mole',
-    description:
-      'Whack-a-Mole game. How many little critters can you get in 60 seconds?',
+    description: 'A 60-second, fast-paced whack-a-mole game with forced-perspective and gratuitously macabre graphics. Hammer popping-up moles before they vanish in this darkly playful test of reflexes.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -121,7 +122,8 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'weather',
     title: "It's the Weather!",
-    description: 'Interactive weather map.',
+    description: 'Explore the world’s weather at a glance with this interactive map.\¶Select a location to see detailed localized weather information, with clear, intuitive icons representing temperature, precipitation, and other conditions in real time.',
+    note: 'Update 2019-06-30: Originally this application displayed global weather data. A change in the OpenWeatherMap API now limits free weather data to 25 square degrees.',
     technologies: [
       Technology.React,
       Technology.Sass,
@@ -133,14 +135,13 @@ export const codeProjects: CodeProject[] = [
       Technology.Yarn
     ],
     github: 'https://github.com/orjon/weather',
-    www: 'https://www.orjon.com/weather/',
     responsive: true
   },
   {
     type: 'code',
     slug: 'stripedhorse',
     title: 'Striped Horse Resources',
-    description: 'Striped Horse Resources company website',
+    description: 'Corporate website for Striped Horse Resources Limited.',
     technologies: [Technology.React, Technology.Sass],
     github: 'https://github.com/orjon/striped-horse',
     www: 'http://www.striped-horse.com',
@@ -150,7 +151,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'countries',
     title: 'World Countries',
-    description: 'World country list with flag, statistics and wiki links.',
+    description: 'Search and filter a comprehensive list of countries, complete with flags and key statistics with links to relevant Wikipedia articles for more detailed information.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -180,7 +181,6 @@ export const codeProjects: CodeProject[] = [
       Technology.Yarn
     ],
     github: 'https://github.com/orjon/project4',
-    www: 'https://www.orjon.com/project4/',
     responsive: true
   },
   {
@@ -226,7 +226,6 @@ export const codeProjects: CodeProject[] = [
       Technology.Yarn
     ],
     github: 'https://github.com/orjon/booker',
-    www: 'https://www.orjon.com/booker/',
     responsive: true
   },
   {

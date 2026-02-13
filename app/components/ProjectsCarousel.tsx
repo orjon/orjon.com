@@ -182,7 +182,8 @@ const ProjectsCarousel = ({ section, projects }: { section: string, projects: Co
   })
 
   return (
-    <section className='ProjectCarousel embla relative content-1600 bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
+    // <section className='ProjectCarousel embla relative content-1600 bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
+    <section className='ProjectCarousel embla relative bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
 
       <div
         ref={emblaProjectRef}
@@ -194,7 +195,7 @@ const ProjectsCarousel = ({ section, projects }: { section: string, projects: Co
         </div>
       </div>
 
-      <div className="absolute inset-0 z-10 flex items-center justify-between pointer-events-none">
+      <div className="absolute inset-0 z-10 content-1600 flex items-center justify-between pointer-events-none">
         <div
           onClick={goToPrev}
           className='embla__prev flex cursor-pointer text-4xl md:pl-1 justify-start hover-scale-120 pointer-events-auto'>

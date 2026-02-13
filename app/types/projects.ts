@@ -10,9 +10,11 @@ interface Project {
   slug: string
   title: string
   description: string
+  note?: string
+  images?: string[]
+  imageAutoPlay?: boolean
   technologies: Technology[]
   github: string
-  images?: string[]
 }
 
 export type ElectronicsProject = Project & {
@@ -22,11 +24,13 @@ export type ElectronicsProject = Project & {
 
 export type CodeProject = Project & {
   type: 'code'
-  www: string
+  www?: string
   responsive: boolean
 }
 
-export type DesignProject = Project & {
+export type DesignProject = {
+  slug: string
+  title: string
   subTitle?: string
   scope: Scopes[]
   software: Software[]

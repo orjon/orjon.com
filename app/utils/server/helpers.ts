@@ -19,3 +19,6 @@ export const getProjectImages = (projectSlug: string): string[] => {
     return []
   }
 }
+
+export const isGif = (imagePath: string): boolean =>
+  imagePath?.toLowerCase().endsWith('.gif')

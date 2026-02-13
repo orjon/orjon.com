@@ -15,7 +15,5 @@ const MobileViewPage = async ({ params }: { params: Promise<{ slug: string }> })
   )
 }
 
-MobileViewPage.showMenu = false
-
 export default MobileViewPage
 
