@@ -6,7 +6,8 @@ import type { NextConfig } from 'next'
 // const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (basePath === '/staging' ? 'https://staging.orjon.com' : '')
 
 const nextConfig: NextConfig = {
-  basePath: '/staging'
+  basePath: '/staging',
+  assetPrefix: '/staging'
   // env: {
   //   NEXT_PUBLIC_BASE_PATH: basePath,
   //   ...(siteUrl && { NEXT_PUBLIC_SITE_URL: siteUrl }),
