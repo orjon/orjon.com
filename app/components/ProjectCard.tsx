@@ -1,4 +1,4 @@
-import { Image } from '@/app/components/Image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Technology } from '@/app/types'

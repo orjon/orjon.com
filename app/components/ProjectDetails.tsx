@@ -1,4 +1,4 @@
-import { Image } from '@/app/components/Image'
+import Image from 'next/image'
 
 import { CodeProject, ElectronicsProject, ProjectType } from '@/app/types'
 
