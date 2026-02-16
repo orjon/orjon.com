@@ -1,8 +1,19 @@
 import type { NextConfig } from 'next'
 
+const basePath = process.env.NODE_ENV === 'production' ? '/staging' : ''
+
 const nextConfig: NextConfig = {
-  // No basePath in dev (localhost:3000/); use /staging in production
-  basePath: process.env.NODE_ENV === 'production' ? '/staging' : '',
+  basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+  // Only use custom loader in production (when basePath is set). In dev, use default so /_next/image works.
+  ...(basePath && {
+    images: {
+      loader: 'custom',
+      loaderFile: './image-loader.js',
+    },
+  }),
 }
 
 export default nextConfig

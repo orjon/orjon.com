@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { technologyIcons, technologyIconPath, contactInfo } from '@/app/data'
+import { asset } from '@/app/lib/asset'
 
 const contactDetails = contactInfo.map((item) => (
   <div className='flex align-center items-center' key={item.href}>
@@ -15,7 +16,7 @@ const contactDetails = contactInfo.map((item) => (
 
 const technologyIconList = technologyIcons.map((item) => (
   <div key={item.name} className='w-full flex justify-center items-center'>
-    <img src={`${technologyIconPath}${item.icon}`} alt={item.name} />
+    <img src={asset(`${technologyIconPath}${item.icon}`)} alt={item.name} />
   </div>
 ))
 
