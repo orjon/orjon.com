@@ -16,7 +16,7 @@ const contactDetails = contactInfo.map((item) => (
 
 const technologyIconList = technologyIcons.map((item) => (
   <div key={item.name} className='w-full flex justify-center items-center'>
-    <img src={asset(`${technologyIconPath}${item.icon}`)} alt={item.name} />
+    <img src={asset(`${technologyIconPath}/${item.icon}`)} alt={item.name} />
   </div>
 ))
 

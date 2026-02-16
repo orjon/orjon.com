@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
-  // Only use custom loader in production (when basePath is set). In dev, use default so /_next/image works.
+  // Custom loader only: prepend basePath to the _next/image path; keep url param as /icons/... so the optimizer finds public files.
   ...(basePath && {
     images: {
       loader: 'custom',

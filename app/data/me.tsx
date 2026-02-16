@@ -1,6 +1,6 @@
 import { FaRegEnvelope, FaMobileAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
 
-export const technologyIconPath = '/images/techIcons/'
+export const technologyIconPath = '/icons/tech'
 
 export const technologyIcons = [
   {
