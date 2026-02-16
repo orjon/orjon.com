@@ -26,20 +26,22 @@ const ButtonMenu = () => {
           <Link
             href={href}
             className={`relative z-10 ${buttonStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
-            <div className="relative w-[30px] h-[26px]">
+            <div className="relative size-[30px] shrink-0">
               <Image
                 src={menuItem.iconOff}
                 alt={menuItem.name}
                 width={30}
                 height={30}
-                className={`absolute inset-0 transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
+                className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
+                style={{ width: 30, height: 30 }}
               />
               <Image
                 src={menuItem.iconOn}
                 alt={menuItem.name}
                 width={30}
                 height={30}
-                className={`absolute inset-0 transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                style={{ width: 30, height: 30 }}
               />
             </div>
             {menuItem.name}

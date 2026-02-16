@@ -33,19 +33,21 @@ const Navbar = () => {
               <div className='relative h-[34px] w-[34px]'>
                 <Image
                   src='/icons/nav/faceOFF-large.png'
-                  className={`absolute-center transition-opacity opacity-100 duration-100 ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
+                  className={`absolute-center size-full object-contain transition-opacity opacity-100 duration-100 ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
                     }`}
                   alt='face'
                   width={26}
                   height={26}
+                  style={{ width: 26, height: 26 }}
                 />
                 <Image
                   src='/icons/nav/faceON-large.png'
-                  className={`absolute-center transition-opacity opacity-0 duration-100 ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  className={`absolute-center size-full object-contain transition-opacity opacity-0 duration-100 ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   alt='face'
                   width={26}
                   height={26}
+                  style={{ width: 26, height: 26 }}
                 />
               </div>
             </Link>
@@ -64,19 +66,21 @@ const Navbar = () => {
             <div className='relative h-[34px] w-[24px]'>
               <Image
                 src='/icons/nav/burgerMenu2.png'
-                className={`absolute-center transition-opacity ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
+                className={`absolute-center size-full object-contain transition-opacity ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
                   } duration-150 `}
                 alt='face'
                 width={26}
                 height={26}
+                style={{ width: 26, height: 26 }}
               />
               <Image
                 src='/icons/nav/burgerMenuClose.png'
-                className={`absolute-center transition-opacity ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
+                className={`absolute-center size-full object-contain transition-opacity ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
                   } duration-150`}
                 alt='face'
                 width={26}
                 height={26}
+                style={{ width: 26, height: 26 }}
               />
             </div>
           </button>
