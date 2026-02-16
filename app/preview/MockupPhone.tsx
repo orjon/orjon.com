@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Image } from '@/app/components/Image'
 import { useRouter } from 'next/navigation'
 import { phoneRatios } from '@/app/constants'
 

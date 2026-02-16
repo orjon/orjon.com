@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Image } from '@/app/components/Image'
 import Link from 'next/link'
 
 import { imagePath } from '@/app/data/paths'

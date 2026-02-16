@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { Image } from '@/app/components/Image'
 import { usePathname } from 'next/navigation'
 
 import { menuItems } from '@/app/data'

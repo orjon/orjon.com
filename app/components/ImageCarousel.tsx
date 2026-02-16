@@ -6,7 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
-import Image from 'next/image'
+import { Image } from '@/app/components/Image'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,

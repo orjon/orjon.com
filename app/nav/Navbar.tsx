@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-import Image from 'next/image'
+import { Image } from '@/app/components/Image'
 import Link from 'next/link'
 import ButtonMenu from './ButtonMenu'
 import BurgerMenu from './BurgerMenu'

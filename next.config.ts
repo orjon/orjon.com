@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 
 const basePath = process.env.NODE_ENV === 'production' ? '/staging' : ''
 
-// When using basePath, the Image API fetches source images via HTTP. Set NEXT_PUBLIC_SITE_URL at build to override.
+// For basePath: set NEXT_PUBLIC_SITE_URL at build (e.g. https://staging.orjon.com) so the Image API can fetch source images via HTTP.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (basePath === '/staging' ? 'https://staging.orjon.com' : '')
 
 const nextConfig: NextConfig = {
