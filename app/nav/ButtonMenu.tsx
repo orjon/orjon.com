@@ -71,7 +71,7 @@ const ButtonMenu = () => {
         </div>
       </div>
 
-      <div className={`${buttonBaseStyle} relative w-full`}>
+      <div className={`${buttonBaseStyle} relative w-full h-full`}>
         <div className={`relative z-10 mb-2  ${buttonStyle} rounded-none border-x-0 `}>&nbsp;</div>
       </div>
 

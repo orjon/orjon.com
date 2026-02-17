@@ -14,6 +14,7 @@ const ProjectDetails = ({ section, project }: { section: string, project: CodePr
 
   const demo = 'demo' in project ? project.demo : undefined
   const www = 'www' in project ? project.www : undefined
+  const note = 'note' in project ? project.note : undefined
   const responsive = 'responsive' in project ? project.responsive : undefined
   let imageSectionTitle = section === ProjectType.CODE
     ? (images && images.length > 1 ? 'Screenshots' : 'Screenshot')
@@ -46,6 +47,7 @@ const ProjectDetails = ({ section, project }: { section: string, project: CodePr
               <div className='text-sm sm:text-base md:text-lg'>
                 <Paragraphs text={description} />
               </div>
+              {note && <div className='w-full text-menuButton italic text-xs sm:text-sm md:text-base'>{note}</div>}
               {demo && <iframe
                 src={demo}
                 className="w-full aspect-video border-0 rounded-lg"

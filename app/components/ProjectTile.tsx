@@ -19,7 +19,6 @@ const ProjectTile = ({ projectType, slug, title }: { projectType: string, slug: 
             fill
             className='w-full h-full object-contain'
             sizes='500px'
-          // quality={100}
           />
         </div>
 

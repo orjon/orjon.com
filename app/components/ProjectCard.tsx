@@ -22,7 +22,6 @@ const ProjectCard = ({ projectType, slug, title, description, technologies }: { 
             fill
             className='w-full h-full object-contain'
             sizes='500px'
-          // quality={100}
           />
         </div>
         <div className='flex flex-col w-full h-full items-start place-content-between'>

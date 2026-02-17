@@ -21,6 +21,8 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
           <Image
             src={image}
             alt={title}
+            placeholder='blur'
+            blurDataURL={image}
             width={1000}
             height={600}
             className='w-full h-auto object-contain'

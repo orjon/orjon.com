@@ -1,4 +1,17 @@
 # orjon.com
+
+### To do
+
+- **MVP**
+  - Notes formatting
+  - Project demos / Image carousel layout - (demo in carousel?)
+
+- **Nice to have**
+  - Mobile carousel switch to Y axis
+  - Mobile preview: Detection, project selelection, controls
+  - Image optimization / blur placeholder
+  - Technology filter.
+
 ### Next.js
 
 ### Getting Started
