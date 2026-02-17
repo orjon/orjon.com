@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Deploy to Droplet
         uses: appleboy/ssh-action@v1.0.3
@@ -18,6 +18,10 @@ jobs:
           script: |
             cd /var/www/staging
             git pull origin staging
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm install
+            nvm use
             npm install
             npm run build
             pm2 restart staging
