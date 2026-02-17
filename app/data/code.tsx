@@ -6,7 +6,7 @@ export const codeProjects: CodeProject[] = [
     slug: 'buttonstyler',
     title: 'Button Styler',
     // description: 'Button styler & CSS generator',
-    description: 'A development tool for styling buttons using commonly used CSS properties.\¶Adjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time. The generated CSS is ready to copy directly into your project.\¶Designed to streamline styling workflows and reduce CSS guesswork.',
+    description: 'A development tool for styling buttons using commonly used CSS properties.\nAdjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time. The generated CSS is ready to copy directly into your project.\nDesigned to streamline styling workflows and reduce CSS guesswork.',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -21,7 +21,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'covid19',
     title: 'Covid19 Tracker',
-    description: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.\¶Users can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…',
+    description: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.\nUsers can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…',
     note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static and no longer updates.',
     technologies: [
       Technology.React,
@@ -62,7 +62,7 @@ export const codeProjects: CodeProject[] = [
     slug: 'tetris',
     title: 'Tetris Revisited',
     description:
-      'Tetris is a recreation of the original 1980’s classic puzzle game.\¶Position falling blocks, of differing shapes, trying to complete horizontal lines in order to clear them from the grid. Points are awarded for each block placed, and every line cleared.\¶The speed at which blocks fall increases with the player’s score. The game ends when a player’s blocks reach the top of the grid.\¶The music and sound effects were kindly written for the game by Joe Lewis.',
+      'Tetris is a recreation of the original 1980’s classic puzzle game.\nPosition falling blocks, of differing shapes, trying to complete horizontal lines in order to clear them from the grid. Points are awarded for each block placed, and every line cleared.\nThe speed at which blocks fall increases with the player’s score. The game ends when a player’s blocks reach the top of the grid.\nThe music and sound effects were kindly written for the game by Joe Lewis.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -77,7 +77,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'colorclock',
     title: 'Colour Clock',
-    description: 'A novel clock representing the time using just color.\¶The dragable hour indicators can be rotated to freely shift the current time’s color whilst still remaining accurate.\¶I have also built a working physical version of this clock.',
+    description: 'A novel clock representing the time using just color.\nThe dragable hour indicators can be rotated to freely shift the current time’s color whilst still remaining accurate.\nI have also built a working physical version of this clock.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -122,7 +122,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'weather',
     title: "It's the Weather!",
-    description: 'Explore the world’s weather at a glance with this interactive map.\¶Select a location to see detailed localized weather information, with clear, intuitive icons representing temperature, precipitation, and other conditions in real time.',
+    description: 'Explore the world’s weather at a glance with this interactive map.\nSelect a location to see detailed localized weather information, with clear, intuitive icons representing temperature, precipitation, and other conditions in real time.',
     note: 'Update 2019-06-30: Originally this application displayed global weather data. A change in the OpenWeatherMap API now limits free weather data to 25 square degrees.',
     technologies: [
       Technology.React,
