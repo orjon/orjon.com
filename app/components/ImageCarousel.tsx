@@ -7,6 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
+import { isGif } from '@/app/utils/client'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -15,6 +16,8 @@ const OPTIONS: EmblaOptionsType = {
 }
 
 export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isActive = false }: { images: string[], hasBorder?: boolean, autoPlay?: boolean, isActive?: boolean }) => {
+
+  const isSlideshow = images.length > 1
 
   const border = {
     padding: hasBorder ? 'p-[1px]' : '',
@@ -51,22 +54,28 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isAc
   )
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi || !isSlideshow) return
     (autoPlay && isActive) ? autoplay.current.play() : autoplay.current.stop()
-  }, [emblaApi, autoPlay, isActive])
+  }, [emblaApi, autoplay, autoPlay, isActive])
 
-  const slides = images.map((image, index) =>
-    <div key={index} className={`embla__slide flex-[0_0_100%] cursor-w-resize flex items-center justify-center ${border.padding}`}>
-      <Image
-        src={image}
-        alt={`Image ${index}`}
-        width={1500} height={500}
-        loading={index === 0 ? 'eager' : 'lazy'}  // First eager, rest lazy
-        priority={index === 0}  // Prioritize first image
-        quality={60}
-        className={`max-h-[min(500px,50vh)] mx-auto object-contain ${border.class}`} />
-    </div>
-  )
+  const slides = images.map((image, index) => {
+
+    return (
+      <div key={index} className={`embla__slide flex-[0_0_100%] flex items-center justify-center ${border.padding}`}>
+        <Image
+          src={image}
+          alt={`Image ${index}`}
+          width={0} height={0}
+          sizes='100vw'
+          loading={index === 0 ? 'eager' : 'lazy'}
+          priority={index === 0 && !isGif(image)}
+          quality={60}
+          unoptimized={isGif(image)}
+          style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
+          className={`mx-auto object-contain ${border.class}`} />
+      </div>
+    )
+  })
 
   useEffect(() => {
     if (!emblaApi) return
@@ -82,17 +91,19 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isAc
     <div className="ImageCarousel w-full flex flex-col items-center">
       <div className="mx-auto embla flex flex-col items-center">
         <div ref={emblaImageRef} className="embla__viewport relative overflow-hidden w-full h-full">
-          <div className="embla__container flex w-full h-full max-w-[800px] relative z-0">
+          <div className="embla__container flex w-full h-full max-w-[900px] relative z-0">
             {slides}
           </div>
-          <div className="absolute inset-0 z-10 flex pointer-events-none">
-            <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
-            <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
-          </div>
+          {isSlideshow &&
+            <div className="absolute inset-0 z-10 flex pointer-events-none">
+              <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
+              <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
+            </div>
+          }
         </div>
 
 
-        {slides.length > 1 && <div className="ControlButtons pt-2 flex gap-2 md:gap-3 lg:gap-5">
+        {isSlideshow && <div className="ControlButtons pt-2 flex gap-2 md:gap-3 lg:gap-5">
           {slides.map((_, index) => (
             <button
               key={index}

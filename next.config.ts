@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp', 'image/avif'],
     // Ensure image optimization works with assetPrefix
-    unoptimized: false
+    unoptimized: false,
+    qualities: [24, 40, 60, 75]
   }
 }
 

@@ -16,3 +16,6 @@ export const numberWithinRange = (
   min: number,
   max: number
 ): number => Math.min(Math.max(number, min), max)
+
+export const isGif = (imagePath: string): boolean =>
+  imagePath?.toLowerCase().endsWith('.gif')

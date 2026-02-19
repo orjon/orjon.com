@@ -1,5 +1,4 @@
 import { electronicsProjects } from '@/app/data/electronics'
-import { ProjectType } from '@/app/types'
 
 import ProjectsCarousel from '@/app/components/ProjectsCarousel'
 import { getProjectImages } from '@/app/utils/server'
@@ -13,7 +12,7 @@ const ElectronicsProjectsPage = () => {
   }))
 
   return (
-    <ProjectsCarousel section={ProjectType.ELECTRONICS} projects={projects} />
+    <ProjectsCarousel projects={projects} />
   )
 }
 export default ElectronicsProjectsPage
