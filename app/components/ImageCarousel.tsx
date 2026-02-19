@@ -52,7 +52,7 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true }: { 
 
   const slides = images.map((image, index) =>
     <div key={index} className={`embla__slide flex-[0_0_100%] cursor-w-resize flex items-center justify-center ${border.padding}`}>
-      <Image src={image} alt={`Image ${index}`} width={1500} height={500} className={`max-h-[50vh] mx-auto object-contain ${border.class}`} />
+      <Image src={image} alt={`Image ${index}`} width={1500} height={500} className={`max-h-[min(500px,50vh)] mx-auto object-contain ${border.class}`} />
     </div>
   )
 

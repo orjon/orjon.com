@@ -5,8 +5,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'buttonstyler',
     title: 'Button Styler',
-    // description: 'Button styler & CSS generator',
-    description: 'A development tool for styling buttons using commonly used CSS properties.\nAdjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time. The generated CSS is ready to copy directly into your project.\nDesigned to streamline styling workflows and reduce CSS guesswork.',
+    description: 'A development tool for styling buttons using CSS properties. Adjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time.\nThe generated CSS is ready to copy directly into your project.',
     technologies: [
       Technology.React,
       Technology.Redux,
@@ -92,7 +91,7 @@ export const codeProjects: CodeProject[] = [
     type: 'code',
     slug: 'department3d',
     title: 'department3D',
-    description: 'Image-rich company website with clean and minimal responsive styling.',
+    description: 'Image-rich company website with clean, minimal navigation and responsive styling.',
     technologies: [
       Technology.HTML,
       Technology.Sass,
@@ -159,7 +158,7 @@ export const codeProjects: CodeProject[] = [
       Technology.jQuery,
       Technology.Ajax
     ],
-    github: 'https://github.com/orjon/countries',
+    github: 'https://github.com/orjon/World-Countries',
     www: 'https://www.orjon.com/countries/',
     responsive: true
   },
