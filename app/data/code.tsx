@@ -1,8 +1,8 @@
-import { CodeProject, Technology } from '@/app/types'
+import { ProjectType, CodeProject, Technology } from '@/app/types'
 
 export const codeProjects: CodeProject[] = [
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'buttonstyler',
     title: 'Button Styler',
     description: 'A development tool for styling buttons using CSS properties. Adjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time.\nThe generated CSS is ready to copy directly into your project.',
@@ -17,7 +17,7 @@ export const codeProjects: CodeProject[] = [
     responsive: false
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'covid19',
     title: 'Covid19 Tracker',
     description: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.\nUsers can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…',
@@ -38,7 +38,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'tubeinfo',
     title: 'London Underground Information',
     description: 'Full stack real-time London Underground information.',
@@ -57,7 +57,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'tetris',
     title: 'Tetris Revisited',
     description:
@@ -73,7 +73,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'colorclock',
     title: 'Colour Clock',
     description: 'A novel clock representing the time using just color.\nThe dragable hour indicators can be rotated to freely shift the current time’s color whilst still remaining accurate.\nI have also built a working physical version of this clock.',
@@ -88,7 +88,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'department3d',
     title: 'department3D',
     description: 'Image-rich company website with clean, minimal navigation and responsive styling.',
@@ -103,7 +103,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'whackamole',
     title: 'Whack-a-Mole',
     description: 'A 60-second, fast-paced whack-a-mole game with forced-perspective and gratuitously macabre graphics. Hammer popping-up moles before they vanish in this darkly playful test of reflexes.',
@@ -118,7 +118,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'weather',
     title: "It's the Weather!",
     description: 'Explore the world’s weather at a glance with this interactive map.\nSelect a location to see detailed localized weather information, with clear, intuitive icons representing temperature, precipitation, and other conditions in real time.',
@@ -137,7 +137,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'stripedhorse',
     title: 'Striped Horse Resources',
     description: 'Corporate website for Striped Horse Resources Limited.',
@@ -147,7 +147,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'countries',
     title: 'World Countries',
     description: 'Search and filter a comprehensive list of countries, complete with flags and key statistics with links to relevant Wikipedia articles for more detailed information.',
@@ -163,7 +163,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'project4',
     title: 'project4',
     description: 'Full stack book-keeping application with unique navigation.',
@@ -183,7 +183,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'rockpaperscissors',
     title: 'Rock Paper Scissors',
     description:
@@ -194,7 +194,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'orjoncom',
     title: 'orjon.com',
     description: 'This portfolio website',
@@ -209,7 +209,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'booker',
     title: 'Booker',
     description: 'Full stack social book-sharing application.',
@@ -228,7 +228,7 @@ export const codeProjects: CodeProject[] = [
     responsive: true
   },
   {
-    type: 'code',
+    projectType: ProjectType.CODE,
     slug: 'daftpunk',
     title: 'Daft Punk Trigger Board',
     description:

@@ -14,7 +14,7 @@ const OPTIONS: EmblaOptionsType = {
   watchDrag: false
 }
 
-export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true }: { images: string[], hasBorder?: boolean, autoPlay?: boolean }) => {
+export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isActive = false }: { images: string[], hasBorder?: boolean, autoPlay?: boolean, isActive?: boolean }) => {
 
   const border = {
     padding: hasBorder ? 'p-[1px]' : '',
@@ -23,8 +23,8 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true }: { 
 
   const autoplay = useRef(
     Autoplay({
-      playOnInit: autoPlay,
-      delay: 5000,
+      playOnInit: false,
+      delay: 4000,
       stopOnInteraction: false,
     })
   )
@@ -50,17 +50,27 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true }: { 
     [emblaApi]
   )
 
+  useEffect(() => {
+    if (!emblaApi) return
+    (autoPlay && isActive) ? autoplay.current.play() : autoplay.current.stop()
+  }, [emblaApi, autoPlay, isActive])
+
   const slides = images.map((image, index) =>
     <div key={index} className={`embla__slide flex-[0_0_100%] cursor-w-resize flex items-center justify-center ${border.padding}`}>
-      <Image src={image} alt={`Image ${index}`} width={1500} height={500} className={`max-h-[min(500px,50vh)] mx-auto object-contain ${border.class}`} />
+      <Image
+        src={image}
+        alt={`Image ${index}`}
+        width={1500} height={500}
+        loading={index === 0 ? 'eager' : 'lazy'}  // First eager, rest lazy
+        priority={index === 0}  // Prioritize first image
+        quality={60}
+        className={`max-h-[min(500px,50vh)] mx-auto object-contain ${border.class}`} />
     </div>
   )
 
   useEffect(() => {
     if (!emblaApi) return
-    const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedScrollSnap())
-    }
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
 
     emblaApi.on('select', onSelect)
     return () => {

@@ -1,45 +1,50 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
-import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
 
 import { useMountLogger } from '@/app/hooks/useMountLogger'
+import { useEmblaOpacityTween } from '@/app/hooks/useEmblaOpacityTween'
 
-import { setLocalStorageValue, getLocalStorageValue, numberWithinRange } from '@/app/utils/client'
+import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
 
 import ProjectDetails from '@/app/components/ProjectDetails'
 import { CodeProject, ElectronicsProject } from '@/app/types'
 
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa6"
 
-const TWEEN_FACTOR_BASE = 1.5
-
 const navArrowStyle = "drop-shadow-md hover:drop-shadow-lg"
+const defaultProjectIndex = 0
 
-const ProjectsCarousel = ({ section, projects }: { section: string, projects: CodeProject[] | ElectronicsProject[] }) => {
+const ProjectsCarousel = ({ projects }: { projects: CodeProject[] | ElectronicsProject[] }) => {
   const params = useParams()
 
   useMountLogger('ProjectsCarousel ORIGINAL')
   console.log('reloading: ProjectsCarousel ORIGINAL')
 
-  const defaultProject = projects[0].slug
+  const defaultProject = projects[defaultProjectIndex].slug
+  const section = projects[defaultProjectIndex].projectType
 
   const projectIndex = Object.fromEntries(projects.map((project, index) => [project.slug, index]))
 
   const [isReady, setIsReady] = useState(false)
+  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(defaultProjectIndex)
 
   const [initialProject] = useState(() => {
     const urlSlug = params.project?.[0]
     if (urlSlug && urlSlug in projectIndex) {
+      setCurrentProjectIndex(projectIndex[urlSlug])
       setLocalStorageValue(section, urlSlug)
       return urlSlug
     }
 
     if (typeof window !== 'undefined') {
       const stored = getLocalStorageValue(section)
-      if (stored && projectIndex[stored]) return stored
+      if (stored && projectIndex[stored]) {
+        setCurrentProjectIndex(projectIndex[stored])
+        return stored
+      }
     }
 
     setLocalStorageValue(section, defaultProject)
@@ -57,85 +62,23 @@ const ProjectsCarousel = ({ section, projects }: { section: string, projects: Co
   const goToNext = () => emblaApi?.scrollNext()
 
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
-  const tweenFactor = useRef(0)
 
-  const setTweenFactor = useCallback((api: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * api.scrollSnapList().length
-  }, [])
-
-  const tweenOpacity = useCallback(
-    (api: EmblaCarouselType, event?: EmblaEventType) => {
-      const engine = api.internalEngine()
-      const scrollProgress = api.scrollProgress()
-      const slidesInView = api.slidesInView()
-      const isScrollEvent = event === 'scroll'
-
-      api.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        const slidesInSnap = [snapIndex]
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return
-
-          let diffToTarget = scrollSnap - scrollProgress
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target()
-
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target)
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + scrollProgress)
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - scrollProgress)
-                }
-              }
-            })
-          }
-
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString()
-          const node = api.slideNodes()[slideIndex]
-          if (node) node.style.opacity = opacity
-        })
-      })
-    },
-    []
-  )
-
-  useEffect(() => {
-    if (!emblaApi) return
-
-    setTweenFactor(emblaApi)
-    tweenOpacity(emblaApi)
-
-    emblaApi
-      .on('reInit', setTweenFactor)
-      .on('reInit', tweenOpacity)
-      .on('scroll', tweenOpacity)
-      .on('slideFocus', tweenOpacity)
-
-    return () => {
-      emblaApi.off('reInit', setTweenFactor)
-      emblaApi.off('reInit', tweenOpacity)
-      emblaApi.off('scroll', tweenOpacity)
-      emblaApi.off('slideFocus', tweenOpacity)
-    }
-  }, [emblaApi, setTweenFactor, tweenOpacity])
+  useEmblaOpacityTween(emblaApi)
 
   useEffect(() => {
     if (!emblaApi) return
     if (!isReady) setIsReady(true)
 
+    // Save current project to localStorage and update URL
     const updateCurrentProject = () => {
       const index = emblaApi.selectedScrollSnap()
+      setCurrentProjectIndex(index)
       const slug = projects[index].slug
       setLocalStorageValue(section, slug)
       window.history.replaceState(null, '', `/${section}/${slug}`)
     }
 
+    // Reset all scroll positions when navigating between projects
     const resetScrollPositions = () => {
       const index = emblaApi.selectedScrollSnap()
       slideRefs.current.forEach((el, i) => {
@@ -167,6 +110,11 @@ const ProjectsCarousel = ({ section, projects }: { section: string, projects: Co
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [emblaApi])
 
+  useEffect(() => {
+    if (!emblaApi) return
+    console.log('currentProject:', currentProjectIndex, ' - ', projects[currentProjectIndex].slug)
+  }, [emblaApi, currentProjectIndex])
+
   const allProjects = projects.map((project, index) => {
     return (
       <div
@@ -175,14 +123,13 @@ const ProjectsCarousel = ({ section, projects }: { section: string, projects: Co
         className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-8 md:p-10 flex flex-col'
       >
         <div className='min-h-full flex items-center justify-center shrink-0'>
-          <ProjectDetails section={section} project={project} />
+          <ProjectDetails project={project} isActive={currentProjectIndex === index} />
         </div>
       </div>
     )
   })
 
   return (
-    // <section className='ProjectCarousel embla relative content-1600 bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
     <section className='ProjectCarousel embla relative bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
 
       <div

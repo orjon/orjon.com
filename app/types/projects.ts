@@ -18,12 +18,12 @@ interface Project {
 }
 
 export type ElectronicsProject = Project & {
-  type: 'electronics'
+  projectType: 'electronics'
   demo?: string
 }
 
 export type CodeProject = Project & {
-  type: 'code'
+  projectType: 'code'
   www?: string
   responsive: boolean
 }

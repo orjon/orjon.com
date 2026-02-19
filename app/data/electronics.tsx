@@ -1,10 +1,10 @@
-import { ElectronicsProject, Technology } from '@/app/types'
+import { ElectronicsProject, ProjectType, Technology } from '@/app/types'
 
 export const ELECTRONICS_PROJECT_KEY = 'electronics'
 
 export const electronicsProjects: ElectronicsProject[] = [
   {
-    type: 'electronics',
+    projectType: ProjectType.ELECTRONICS,
     slug: 'timeframe',
     title: 'Time Frame',
     description: 'Random pattern clock.',
@@ -13,7 +13,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     github: 'https://github.com/orjon/timeframe.web'
   },
   {
-    type: 'electronics',
+    projectType: ProjectType.ELECTRONICS,
     slug: 'colorone',
     title: 'ColorOne',
     description: 'Minimalist color clock.',
@@ -22,7 +22,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     github: 'https://github.com/orjon/colorone.web'
   },
   {
-    type: 'electronics',
+    projectType: ProjectType.ELECTRONICS,
     slug: 'colortwo',
     title: 'ColorTwo',
     demo: '/demo/colortwo/index.html',
@@ -31,7 +31,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     github: 'https://github.com/orjon/colortwo.web'
   },
   {
-    type: 'electronics',
+    projectType: ProjectType.ELECTRONICS,
     slug: 'abouttime',
     title: 'About Time',
     description: 'Approximate clock.',

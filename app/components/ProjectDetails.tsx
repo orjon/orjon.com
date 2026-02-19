@@ -9,16 +9,19 @@ import { PreviewLinks, GitHubLink } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
 import { imagePath } from '@/app/data/paths'
 
-const ProjectDetails = ({ section, project }: { section: string, project: CodeProject | ElectronicsProject }) => {
-  const { slug, title, description, images, imageAutoPlay, technologies, github } = project
+const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
+  const { projectType, slug, title, description, images, imageAutoPlay, technologies, github } = project
+
+  const isCodeProject = projectType === ProjectType.CODE
+  const hasMultipleImages = images && images.length > 1
 
   const demo = 'demo' in project ? project.demo : undefined
   const www = 'www' in project ? project.www : undefined
   const note = 'note' in project ? project.note : undefined
   const responsive = 'responsive' in project ? project.responsive : undefined
-  let imageSectionTitle = section === ProjectType.CODE
-    ? (images && images.length > 1 ? 'Screenshots' : 'Screenshot')
-    : (images && images.length > 1 ? 'Images' : 'Image')
+  let imageSectionTitle = isCodeProject
+    ? (hasMultipleImages ? 'Screenshots' : 'Screenshot')
+    : (hasMultipleImages ? 'Images' : 'Image')
 
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
@@ -54,7 +57,7 @@ const ProjectDetails = ({ section, project }: { section: string, project: CodePr
               />}
               {images && images.length > 0 && (
                 <Section title={imageSectionTitle}>
-                  <ImageCarousel images={images} autoPlay={imageAutoPlay} hasBorder={section === ProjectType.CODE ? true : false} />
+                  <ImageCarousel images={images} autoPlay={imageAutoPlay} isActive={isActive} hasBorder={isCodeProject ? true : false} />
                 </Section>
               )}
             </div>
