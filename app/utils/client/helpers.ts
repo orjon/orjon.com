@@ -1,4 +1,5 @@
-import { github } from '@/app/types/github'
+import { github } from '@/app/types'
+import { imagePath } from '@/app/data'
 
 export const setLocalStorageValue = (key: string, value: string) => {
   if (typeof window === 'undefined') return
@@ -28,4 +29,8 @@ export const getGithubLink = (repo: string) => {
 
 export const getCommits = (repo: string) => {
   return `${github.api}/${github.user}/${repo}/${github.commits}`
+}
+
+export const getIconPath = (slug: string) => {
+  return `${imagePath.projectIcon}/${slug}.png`
 }

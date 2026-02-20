@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { imagePath } from '@/app/data/paths'
+import { CodeProject, ElectronicsProject } from '@/app/types'
+import { getIconPath } from '@/app/utils/client'
 
-const ProjectTile = ({ projectType, slug, title }: { projectType: string, slug: string, title: string }) => {
-  const icon = `${imagePath.projectIcon}/${slug}.png`
+const ProjectTile = ({ project }: { project: CodeProject | ElectronicsProject }) => {
+
+  const { projectType, slug, title } = project
+
 
   return (
     <Link
@@ -14,7 +17,7 @@ const ProjectTile = ({ projectType, slug, title }: { projectType: string, slug: 
       <article className='w-full h-full flex flex-col items-center justify-center gap-6'>
         <div className='flex flex-col items-center justify-center w-3/4 aspect-4/3 relative'>
           <Image
-            src={icon}
+            src={getIconPath(slug)}
             alt={title}
             fill
             className='w-full h-full object-contain'
