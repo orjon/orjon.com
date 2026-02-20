@@ -3,7 +3,6 @@
 import { useSearchParams } from 'next/navigation'
 
 import { electronicsProjects } from '@/app/data'
-import { ProjectType } from '@/app/types'
 
 import ProjectTile from '@/app/components/ProjectTile'
 import ProjectCard from '@/app/components/ProjectCard'
@@ -15,11 +14,10 @@ const ElectronicsClient = () => {
   const view = searchParams.get('view') || 'tile'
 
   const projectList = electronicsProjects.map((project) => {
-    const { slug, title, description, technologies } = project
     return view === 'tile' ? (
-      <ProjectTile key={slug} projectType={ProjectType.ELECTRONICS} slug={slug} title={title} />
+      <ProjectTile key={project.slug} project={project} />
     ) : (
-      <ProjectCard key={slug} projectType={ProjectType.ELECTRONICS} slug={slug} title={title} description={description} technologies={technologies} />
+      <ProjectCard key={project.slug} project={project} />
     )
   })
 
