@@ -7,6 +7,10 @@
   xl: 1280px */
 
 :root {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
   --grey050: #eaeaea;
   --grey075: #d4d4d4;
   --grey100: #b4b4b4;

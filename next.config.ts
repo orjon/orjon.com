@@ -1,11 +1,11 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // basePath: '/staging',
-  assetPrefix: '/staging',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/staging' : '',
   images: {
     formats: ['image/webp', 'image/avif'],
-    // Ensure image optimization works with assetPrefix
+    // imageSizes: [50, 150, 300, 575, 655, 900],
+    // deviceSizes: [50, 150, 300, 575, 655, 900],
     unoptimized: false,
     qualities: [24, 40, 60, 75]
   }

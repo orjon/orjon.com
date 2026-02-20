@@ -25,4 +25,4 @@ jobs:
             nvm use
             npm install
             npm run build
-            pm2 restart staging
+            pm2 reload staging --update-env

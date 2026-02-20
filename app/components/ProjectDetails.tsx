@@ -7,10 +7,11 @@ import ImageCarousel from '@/app/components/ImageCarousel'
 import Pills from '@/app/components/Pills';
 import { PreviewLinks, GitHubLink } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
-import { imagePath } from '@/app/data/paths'
+import { imagePath } from '@/app/data'
+import { getGithubLink, getCommits } from '@/app/utils/client'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
-  const { projectType, slug, title, description, images, imageAutoPlay, technologies, github } = project
+  const { projectType, slug, title, description, images, imageAutoPlay, technologies, repo } = project
 
   const isCodeProject = projectType === ProjectType.CODE
   const hasMultipleImages = images && images.length > 1
@@ -48,9 +49,9 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
             <div className={`flex w-full h-auto flex-col items-start justify-evenly sm:justify-start ${sectionGap}`}>
               <div className='text-sm sm:text-base md:text-lg'>
-                <Paragraphs text={description} />
+                <Paragraphs text={description.top} />
               </div>
-              {note && <div className='w-full text-menuButton italic text-xs sm:text-sm md:text-base'>{note}</div>}
+
               {demo && <iframe
                 src={demo}
                 className="w-full aspect-video border-0 rounded-lg"
@@ -60,6 +61,10 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
                   <ImageCarousel images={images} autoPlay={imageAutoPlay} isActive={isActive} hasBorder={isCodeProject ? true : false} />
                 </Section>
               )}
+              {description.bottom && <div className='text-sm sm:text-base md:text-lg'>
+                <Paragraphs text={description.bottom} />
+              </div>}
+              {note && <div className='w-full text-menuButton italic text-xs sm:text-sm md:text-base'>{note}</div>}
             </div>
 
 
@@ -72,8 +77,9 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
             </Section>
 
             <div className={`Links flex w-full flex-col lg:flex-row lg:justify-between ${sectionGap}`}>
+              commits: {getCommits(repo).length}
               <Section title='Code'>
-                <GitHubLink href={github} />
+                <GitHubLink href={getGithubLink(repo)} />
               </Section>
               {www && (
                 <Section title='Preview'>

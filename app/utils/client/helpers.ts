@@ -1,3 +1,5 @@
+import { github } from '@/app/types/github'
+
 export const setLocalStorageValue = (key: string, value: string) => {
   if (typeof window === 'undefined') return
   window.localStorage.setItem(key, value)
@@ -19,3 +21,11 @@ export const numberWithinRange = (
 
 export const isGif = (imagePath: string): boolean =>
   imagePath?.toLowerCase().endsWith('.gif')
+
+export const getGithubLink = (repo: string) => {
+  return `${github.baseUrl}/${github.user}/${repo}`
+}
+
+export const getCommits = (repo: string) => {
+  return `${github.api}/${github.user}/${repo}/${github.commits}`
+}

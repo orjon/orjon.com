@@ -9,12 +9,15 @@ export enum ProjectType {
 interface Project {
   slug: string
   title: string
-  description: string
+  description: {
+    top: string
+    bottom?: string
+  }
   note?: string
   images?: string[]
   imageAutoPlay?: boolean
   technologies: Technology[]
-  github: string
+  repo: string
 }
 
 export type ElectronicsProject = Project & {
