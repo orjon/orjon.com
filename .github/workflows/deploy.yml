@@ -16,6 +16,7 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e
             cd /var/www/staging
             git pull origin staging
             export NVM_DIR="$HOME/.nvm"
