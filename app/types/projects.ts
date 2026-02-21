@@ -14,7 +14,7 @@ interface Project {
     bottom?: string
   }
   note?: string
-  images?: string[]
+  images: string[]
   imageAutoPlay?: boolean
   technologies: Technology[]
   repo: string
@@ -22,7 +22,10 @@ interface Project {
 
 export type ElectronicsProject = Project & {
   projectType: 'electronics'
-  demo?: string
+  demo: {
+    url: string
+    note: string | React.ReactNode
+  }
 }
 
 export type CodeProject = Project & {

@@ -1,4 +1,5 @@
 import { ElectronicsProject, ProjectType, Technology } from '@/app/types'
+import CurrentTime from '@/app/components/CurrentTime'
 
 export const ELECTRONICS_PROJECT_KEY = 'electronics'
 
@@ -11,7 +12,11 @@ export const electronicsProjects: ElectronicsProject[] = [
       top: 'Random pattern clock.',
       bottom: ''
     },
-    demo: '/demo/timeframe/index.html',
+    demo: {
+      url: '/demo/timeframe/index.html',
+      note: <>Current time: <CurrentTime use12Hour={true} /></>,
+    },
+    images: [],
     technologies: [Technology.Electronics, Technology.PIC, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     repo: 'timeframe.web'
   },
@@ -20,10 +25,14 @@ export const electronicsProjects: ElectronicsProject[] = [
     slug: 'colorone',
     title: 'ColorOne',
     description: {
-      top: 'Minimalist color clock.',
+      top: "Minimalist 'single-pixel' color clock.",
       bottom: ''
     },
-    demo: '/demo/colorone/index.html',
+    demo: {
+      url: '/demo/colorone/index.html',
+      note: 'x1000 speed | 1 hour = 3.6 secs',
+    },
+    images: [],
     technologies: [Technology.Electronics, Technology.Arduino, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     repo: 'colorone.web'
   },
@@ -31,7 +40,11 @@ export const electronicsProjects: ElectronicsProject[] = [
     projectType: ProjectType.ELECTRONICS,
     slug: 'colortwo',
     title: 'ColorTwo',
-    demo: '/demo/colortwo/index.html',
+    demo: {
+      url: '/demo/colortwo/index.html',
+      note: 'x1000 speed | 1 hour = 3.6 secs',
+    },
+    images: [],
     description: {
       top: 'Abstract color clock.',
       bottom: ''
@@ -47,6 +60,11 @@ export const electronicsProjects: ElectronicsProject[] = [
       top: 'Approximate clock.',
       bottom: ''
     },
+    demo: {
+      url: '/demo/abouttime/index.html',
+      note: <>Actual time: <CurrentTime use12Hour={false} /></>,
+    },
+    images: [],
     technologies: [Technology.Electronics, Technology.PIC, Technology.ESP32, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
     repo: 'abouttime'
   }

@@ -8,7 +8,7 @@ import Pills from '@/app/components/Pills';
 import { PreviewLinks, GitHubLink } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
 import { imagePath } from '@/app/data'
-import { getGithubLink, getCommits } from '@/app/utils/client'
+import { getGithubLink } from '@/app/utils/client'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
   const { projectType, slug, title, description, images, imageAutoPlay, technologies, repo } = project
@@ -16,15 +16,16 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   const isCodeProject = projectType === ProjectType.CODE
   const hasMultipleImages = images && images.length > 1
 
-  const demo = 'demo' in project ? project.demo : undefined
-  const www = 'www' in project ? project.www : undefined
-  const note = 'note' in project ? project.note : undefined
-  const responsive = 'responsive' in project ? project.responsive : undefined
+  const demo = 'demo' in project ? project.demo : false
+  const www = 'www' in project ? project.www : false
+  const note = 'note' in project ? project.note : false
+  const responsive = 'responsive' in project ? project.responsive : false
   let imageSectionTitle = isCodeProject
     ? (hasMultipleImages ? 'Screenshots' : 'Screenshot')
     : (hasMultipleImages ? 'Images' : 'Image')
 
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
+
 
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
@@ -52,13 +53,10 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
                 <Paragraphs text={description.top} />
               </div>
 
-              {demo && <iframe
-                src={demo}
-                className="w-full aspect-video border-0 rounded-lg"
-              />}
-              {images && images.length > 0 && (
+
+              {(demo || images.length > 0) && (
                 <Section title={imageSectionTitle}>
-                  <ImageCarousel images={images} autoPlay={imageAutoPlay} isActive={isActive} hasBorder={isCodeProject ? true : false} />
+                  <ImageCarousel images={images} demo={demo} autoPlay={imageAutoPlay} isActive={isActive} hasBorder={isCodeProject ? true : false} />
                 </Section>
               )}
               {description.bottom && <div className='text-sm sm:text-base md:text-lg'>
@@ -77,7 +75,6 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
             </Section>
 
             <div className={`Links flex w-full flex-col lg:flex-row lg:justify-between ${sectionGap}`}>
-              commits: {getCommits(repo).length}
               <Section title='Code'>
                 <GitHubLink href={getGithubLink(repo)} />
               </Section>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const CurrentTime = () => {
+const CurrentTime = ({ use12Hour = false }: { use12Hour?: boolean }) => {
   const [currentTime, setCurrentTime] = useState(new Date())
 
   useEffect(() => {
@@ -31,7 +31,11 @@ const CurrentTime = () => {
     }
   }, [])
 
-  return <div>{currentTime.toLocaleTimeString()}</div>
+  return currentTime.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: use12Hour,
+  }).toLocaleLowerCase()
 }
 
 export default CurrentTime

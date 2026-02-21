@@ -16,13 +16,13 @@ const OPTIONS: EmblaOptionsType = {
   watchDrag: false
 }
 
-export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isActive = false }: { images: string[], hasBorder?: boolean, autoPlay?: boolean, isActive?: boolean }) => {
+export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPlay = true, isActive = false }: { images: string[], demo: { url: string, note: string | React.ReactNode } | false, hasBorder?: boolean, autoPlay?: boolean, isActive?: boolean }) => {
 
-  const isSlideshow = images.length > 1
+  const isSlideshow = demo || images.length > 1
 
   const border = {
     padding: hasBorder ? 'p-[1px]' : '',
-    class: hasBorder ? 'drop-shadow-[0_0_1px_black] drop-shadow-[0_0_1px_black] rounded-lg' : '',
+    class: hasBorder ? 'drop-shadow-[0_0_1px_black]' : '',
   }
 
   const autoplay = useRef(
@@ -59,7 +59,12 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isAc
     (autoPlay && isActive) ? autoplay.current.play() : autoplay.current.stop()
   }, [emblaApi, autoplay, autoPlay, isActive])
 
+
   const slides = images.map((image, index) => {
+
+    const isCoverImage = index === 0
+    const loading = isCoverImage ? "eager" : "lazy"
+    const fetchPriority = isCoverImage ? "high" : "auto"
 
     return (
       <div key={index} className={`embla__slide flex-[0_0_100%] flex items-center justify-center ${border.padding}`}>
@@ -68,16 +73,32 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isAc
           alt={`Image ${index}`}
           width={0} height={0}
           sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
-          loading={index === 0 ? 'eager' : 'lazy'}
-          priority={index === 0 && !isGif(image)}
+          preload={isCoverImage}
+          loading={loading}
+          fetchPriority={fetchPriority}
           quality={75}
           unoptimized={isGif(image)}
-          // placeholder={isGif(image) ? undefined : 'blur'}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
           className={`mx-auto object-contain ${border.class}`} />
       </div>
     )
   })
+
+
+  if (demo) {
+    slides.unshift(
+      <div key="demo" className={`embla__slide flex-[0_0_100%] flex items-center justify-center ${border.padding}`}>
+        <div className='w-full h-full flex flex-col max-h-[min(500px,50vh)]'>
+          <iframe
+            src={demo.url}
+            className="w-full h-full border mx-auto relative"
+          />
+          <div className='absolute bottom-0 w-full text-center text-xs sm:text-sm md:text-base -mt-[12px]'>{demo.note}</div>
+        </div>
+      </div>
+    )
+  }
+
 
   useEffect(() => {
     if (!emblaApi) return
@@ -90,39 +111,39 @@ export const ImageCarousel = ({ images, hasBorder = false, autoPlay = true, isAc
   }, [emblaApi])
 
   return (
-    <div className="ImageCarousel w-full flex flex-col items-center">
-      <div className="mx-auto embla flex flex-col items-center">
-        <div ref={emblaImageRef} className="embla__viewport relative overflow-hidden w-full h-full">
-          <div className="embla__container flex w-full h-full max-w-[900px] relative z-0">
-            {slides}
-          </div>
-          {isSlideshow &&
-            <div className="absolute inset-0 z-10 flex pointer-events-none">
-              <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
-              <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
-            </div>
-          }
+
+    <div className="ImageCarousel embla mx-auto w-full h-full flex flex-col items-center">
+      <div ref={emblaImageRef} className="embla__viewport relative overflow-hidden w-full h-full">
+        <div className="embla__container flex w-full h-full max-w-[900px] max-h-[min(500px,50vh)] relative z-0">
+          {slides}
         </div>
-
-
-        {isSlideshow && <div className="ControlButtons pt-2 flex gap-2 md:gap-3 lg:gap-5">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => {
-                autoplay.current.stop()
-                scrollTo(index)
-              }}
-              className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>}
+        {isSlideshow &&
+          <div className="absolute inset-0 z-10 flex pointer-events-none">
+            <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
+            <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
+          </div>
+        }
       </div>
 
+
+      {isSlideshow && <div className="ControlButtons pt-2 flex gap-2 md:gap-3 lg:gap-5">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => {
+              autoplay.current.stop()
+              scrollTo(index)
+            }}
+            className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
+              }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>}
     </div>
+
+
   )
 }
 

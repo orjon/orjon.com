@@ -1,5 +1,5 @@
 $(() => {
-  const animationSpeed = 2400
+  const animationSpeed = 3600
 
   $('.colorFade > div:gt(0)').hide()
   $('.timeOverlay > div:gt(0)').hide()
