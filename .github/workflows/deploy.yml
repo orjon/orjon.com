@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Deploy to Droplet
         uses: appleboy/ssh-action@v1.0.3
@@ -18,12 +18,16 @@ jobs:
           script: |
             set -e
             cd /var/www/staging
+            echo "Pulling latest changes..."
             git pull origin staging
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm install
-            nvm use
+            echo "Checking required Node.js version..."
+            nvm use || nvm install
+            echo "Using Node.js version: $(node -v)"
             npm install
+            echo "Removing .next directory..."
+            rm -rf .next
             echo "Starting build..."
             npm run build || { echo "Build failed! Aborting deployment."; exit 1; }
             echo "Build succeeded. Reloading..."
