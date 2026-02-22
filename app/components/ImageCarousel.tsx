@@ -13,39 +13,37 @@ import { breakpoints } from '@/app/types'
 const OPTIONS: EmblaOptionsType = {
   loop: true,
   skipSnaps: false,
-  watchDrag: false
+  watchDrag: false,
+  containScroll: false, // recommended with Fade when slides are < 100% viewport width
 }
 
-export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPlay = true, isActive = false }: { images: string[], demo: { url: string, note: string | React.ReactNode } | false, hasBorder?: boolean, autoPlay?: boolean, isActive?: boolean }) => {
+export const ImageCarousel = ({ images, demo = false, isActive = false }: { images: string[], demo: { url: string, note: string | React.ReactNode } | false, isActive?: boolean }) => {
 
   const isSlideshow = demo || images.length > 1
 
-  const border = {
-    padding: hasBorder ? 'p-[1px]' : '',
-    class: hasBorder ? 'drop-shadow-[0_0_1px_black]' : '',
-  }
-
-  const autoplay = useRef(
+  const autoplayRef = useRef(
     Autoplay({
       playOnInit: false,
       delay: 4000,
-      stopOnInteraction: false,
+      stopOnInteraction: true,
     })
   )
 
+  let autoPlay = demo ? false : true
+
   const [emblaImageRef, emblaApi] = useEmblaCarousel(OPTIONS, [
-    Fade(), autoplay.current,
+    Fade(), autoplayRef.current,
   ])
 
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const scrollPrev = () => {
-    autoplay.current.stop()
+    autoplayRef.current.stop()
     emblaApi?.scrollPrev()
   }
 
   const scrollNext = () => {
-    autoplay.current.stop()
+    autoplayRef.current.stop()
     emblaApi?.scrollNext()
   }
 
@@ -54,20 +52,22 @@ export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPla
     [emblaApi]
   )
 
+  // Start & stop autoplay
   useEffect(() => {
     if (!emblaApi || !isSlideshow) return
-    (autoPlay && isActive) ? autoplay.current.play() : autoplay.current.stop()
-  }, [emblaApi, autoplay, autoPlay, isActive])
+    (autoPlay && isActive) ? autoplayRef.current.play() : autoplayRef.current.stop()
+  }, [emblaApi, autoplayRef, autoPlay, isActive])
 
 
   const slides = images.map((image, index) => {
 
     const isCoverImage = index === 0
+    autoPlay = (isCoverImage && isGif(image)) ? false : autoPlay
     const loading = isCoverImage ? "eager" : "lazy"
     const fetchPriority = isCoverImage ? "high" : "auto"
 
     return (
-      <div key={index} className={`embla__slide flex-[0_0_100%] flex items-center justify-center ${border.padding}`}>
+      <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
         <Image
           src={image}
           alt={`Image ${index}`}
@@ -79,7 +79,7 @@ export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPla
           quality={75}
           unoptimized={isGif(image)}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
-          className={`mx-auto object-contain ${border.class}`} />
+          className='mx-auto object-contain' />
       </div>
     )
   })
@@ -87,11 +87,11 @@ export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPla
 
   if (demo) {
     slides.unshift(
-      <div key="demo" className={`embla__slide flex-[0_0_100%] flex items-center justify-center ${border.padding}`}>
+      <div key="demo" className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
         <div className='w-full h-full flex flex-col max-h-[min(500px,50vh)]'>
           <iframe
             src={demo.url}
-            className="w-full h-full border mx-auto relative"
+            className="w-full h-full mx-auto relative"
           />
           <div className='absolute bottom-0 w-full text-center text-xs sm:text-sm md:text-base -mt-[12px]'>{demo.note}</div>
         </div>
@@ -120,6 +120,7 @@ export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPla
         {isSlideshow &&
           <div className="absolute inset-0 z-10 flex pointer-events-none">
             <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
+            <div className="flex-1 pointer-events-none" />
             <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
           </div>
         }
@@ -132,7 +133,7 @@ export const ImageCarousel = ({ images, demo = false, hasBorder = false, autoPla
             key={index}
             type="button"
             onClick={() => {
-              autoplay.current.stop()
+              autoplayRef.current.stop()
               scrollTo(index)
             }}
             className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'

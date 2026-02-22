@@ -15,7 +15,7 @@ interface Project {
   }
   note?: string
   images: string[]
-  imageAutoPlay?: boolean
+  // imageAutoPlay?: boolean
   technologies: Technology[]
   repo: string
 }

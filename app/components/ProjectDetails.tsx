@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { CodeProject, ElectronicsProject, ProjectType } from '@/app/types'
+import { CodeProject, ElectronicsProject } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import ImageCarousel from '@/app/components/ImageCarousel'
@@ -11,19 +11,12 @@ import { imagePath } from '@/app/data'
 import { getGithubLink } from '@/app/utils/client'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
-  const { projectType, slug, title, description, images, imageAutoPlay, technologies, repo } = project
-
-  const isCodeProject = projectType === ProjectType.CODE
-  const hasMultipleImages = images && images.length > 1
+  const { slug, title, description, images, technologies, repo } = project
 
   const demo = 'demo' in project ? project.demo : false
   const www = 'www' in project ? project.www : false
   const note = 'note' in project ? project.note : false
   const responsive = 'responsive' in project ? project.responsive : false
-  let imageSectionTitle = isCodeProject
-    ? (hasMultipleImages ? 'Screenshots' : 'Screenshot')
-    : (hasMultipleImages ? 'Images' : 'Image')
-
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
 
@@ -55,9 +48,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
 
               {(demo || images.length > 0) && (
-                <Section title={imageSectionTitle}>
-                  <ImageCarousel images={images} demo={demo} autoPlay={imageAutoPlay} isActive={isActive} hasBorder={isCodeProject ? true : false} />
-                </Section>
+                <ImageCarousel images={images} demo={demo} isActive={isActive} />
               )}
               {description.bottom && <div className='text-sm sm:text-base md:text-lg'>
                 <Paragraphs text={description.bottom} />

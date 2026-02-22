@@ -9,12 +9,19 @@ export const getProjectImages = (projectSlug: string): string[] => {
   const dir = path.join(process.cwd(), 'public', projectImagePath)
 
   try {
-    return fs
+    const imageExt = /\.(png|jpe?g|gif|webp|svg)$/i
+    const files = fs
       .readdirSync(dir)
-      .filter((file) => !file.startsWith('.'))
-      .filter((file) => /\.(png|jpe?g|gif|webp|svg)$/i.test(file))
+      .filter((file) => !file.startsWith('.') && imageExt.test(file))
       .map((file) => path.join(projectImagePath, file))
+
+    const gifs = files
+      .filter((file) => file.toLowerCase().endsWith('.gif'))
       .sort()
+    const rest = files
+      .filter((file) => !file.toLowerCase().endsWith('.gif'))
+      .sort()
+    return [...gifs, ...rest]
   } catch {
     return []
   }
