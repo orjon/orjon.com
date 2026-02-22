@@ -19,6 +19,8 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   const responsive = 'responsive' in project ? project.responsive : false
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
+  console.log('project:', slug, '( images:', images.length, '| demo:', !!demo, ')')
+
 
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>

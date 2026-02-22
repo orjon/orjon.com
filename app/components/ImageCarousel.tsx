@@ -127,7 +127,7 @@ export const ImageCarousel = ({ images, demo = false, isActive = false }: { imag
       </div>
 
 
-      {isSlideshow && <div className="ControlButtons pt-2 flex gap-2 md:gap-3 lg:gap-5">
+      {isSlideshow && <div className="ControlButtons pt-2 flex gap-5">
         {slides.map((_, index) => (
           <button
             key={index}
