@@ -8,10 +8,9 @@ import { getProjectImages } from '@/app/utils/server'
 const CodeProjectsPage = () => {
 
   const projects = codeProjects.map((project) => {
-    const images = getProjectImages(project.slug)
     return {
       ...project,
-      images
+      images: getProjectImages(project.slug)
     }
   })
 
