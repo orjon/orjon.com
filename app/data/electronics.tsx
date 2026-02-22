@@ -14,7 +14,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     },
     demo: {
       url: '/demo/timeframe/index.html',
-      note: <>Current time: <CurrentTime use12Hour={true} /></>,
+      note: <>Current time <span className='font-bold'><CurrentTime use12Hour={true} /></span></>,
     },
     images: [],
     technologies: [Technology.Electronics, Technology.PIC, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
@@ -30,7 +30,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     },
     demo: {
       url: '/demo/colorone/index.html',
-      note: 'x1000 speed | 1 hour = 3.6 secs',
+      note: 'x1000 speed [1 hour = 3.6 secs]',
     },
     images: [],
     technologies: [Technology.Electronics, Technology.Arduino, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
@@ -42,7 +42,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     title: 'ColorTwo',
     demo: {
       url: '/demo/colortwo/index.html',
-      note: 'x1000 speed | 1 hour = 3.6 secs',
+      note: 'x1000 speed [1 hour = 3.6 secs]',
     },
     images: [],
     description: {
@@ -62,7 +62,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     },
     demo: {
       url: '/demo/abouttime/index.html',
-      note: <>Actual time: <CurrentTime use12Hour={false} /></>,
+      note: <>Current time <span className='font-bold'><CurrentTime use12Hour={false} /></span></>,
     },
     images: [],
     technologies: [Technology.Electronics, Technology.PIC, Technology.ESP32, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
