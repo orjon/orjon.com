@@ -25,9 +25,9 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
 
-      <article className={`${slug} flex-1 h-full sm:h-auto flex flex-col sm:flex-row gap-1 sm:gap-6`}>
+      <article className={`${slug} flex-1 h-full md:h-auto flex flex-col md:flex-row gap-1 md:gap-6`}>
 
-        <div className='ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto sm:mx-0 relative'>
+        <div className='ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto md:mx-0 relative'>
           <Image
             src={`${imagePath.projectIcon}/${slug}.png`}
             alt={title}
