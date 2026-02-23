@@ -7,12 +7,11 @@ import ImageCarousel from '@/app/components/ImageCarousel'
 import Pills from '@/app/components/Pills';
 import { PreviewLinks, GitHubLink } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
-import { ProjectType } from '@/app/types/projects'
-import { getGithubLink, getIconPath } from '@/app/utils/client'
+import { imagePath } from '@/app/data'
+import { getGithubLink } from '@/app/utils/client'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
-  const { slug, title, description, images, technologies, repo, projectType } = project
-
+  const { slug, title, description, images, technologies, repo } = project
 
   const demo = 'demo' in project ? project.demo : false
   const www = 'www' in project ? project.www : false
@@ -26,41 +25,23 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
 
-      <article className={`${slug} flex-1 h-full lg:h-auto flex flex-col lg:flex-row gap-1 lg:gap-8`}>
+      <article className={`${slug} flex-1 h-full md:h-auto flex flex-col gap-1 md:gap-6`}>
 
-        <div className="LeftPanel flex flex-1 flex-col items-start justify-between">
-
-          <div className={`ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto lg:mx-0 relative ${projectType === ProjectType.ELECTRONICS ? 'hidden md:block' : ''}`}>
-            <Image
-              src={getIconPath(slug)}
-              alt={title}
-              fill
-              className='w-full h-full object-contain'
-              sizes='500px'
-            />
-          </div>
-
-          <div className={`LinksBlockWide hidden lg:flex w-full flex-col items-start justify-start ${sectionGap}`}>
-
-            <div className={`Links flex w-full flex-col lg:justify-between ${sectionGap}`}>
-              <Section title='Code'>
-                <GitHubLink href={getGithubLink(repo)} />
-              </Section>
-              {www && (
-                <Section title='Preview'>
-                  <PreviewLinks www={www} column={true} responsive={responsive ?? false} />
-                </Section>
-              )}
-            </div>
-          </div>
-
+        <div className='ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto md:mx-0 relative'>
+          <Image
+            src={`${imagePath.projectIcon}/${slug}.png`}
+            alt={title}
+            fill
+            className='w-full h-full object-contain'
+            sizes='500px'
+          />
         </div>
 
         <div className={`ProjectInformation flex w-full h-full sm:h-auto flex-col items-start justify-between sm:justify-start ${sectionGap}`}>
 
           <div className={`DescriptionAndImages flex w-full h-full sm:h-auto flex-col items-start justify-start ${sectionGap}`}>
 
-            <div className='w-full text-center sm:text-left text-2xl md:text-3xl font-bold'>{title}</div>
+            <div className='w-full text-center sm:text-left text-xl sm:text-2xl md:text-3xl font-bold'>{title}</div>
 
             <div className={`flex w-full h-auto flex-col items-start justify-evenly sm:justify-start ${sectionGap}`}>
               <div className='text-sm sm:text-base md:text-lg'>
@@ -86,13 +67,13 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               <Pills data={technologies} responsive={true} />
             </Section>
 
-            <div className={`Links flex lg:hidden w-full flex-col md:flex-row md:justify-between ${sectionGap}`}>
+            <div className={`Links flex w-full flex-col lg:flex-row lg:justify-between ${sectionGap}`}>
               <Section title='Code'>
                 <GitHubLink href={getGithubLink(repo)} />
               </Section>
               {www && (
                 <Section title='Preview'>
-                  <PreviewLinks www={www} column={false} responsive={responsive ?? false} />
+                  <PreviewLinks www={www} responsive={responsive ?? false} />
                 </Section>
               )}
             </div>

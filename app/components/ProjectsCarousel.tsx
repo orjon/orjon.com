@@ -119,7 +119,7 @@ const ProjectsCarousel = ({ projects }: { projects: CodeProject[] | ElectronicsP
       <div
         key={project.slug}
         ref={(el) => { slideRefs.current[index] = el }}
-        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-8 md:p-10 flex flex-col'
+        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-6 sm:p-14 flex flex-col'
       >
         <div className='min-h-full flex items-center justify-center shrink-0'>
           <ProjectDetails project={project} isActive={currentProjectIndex === index} />
