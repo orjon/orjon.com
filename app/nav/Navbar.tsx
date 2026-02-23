@@ -18,9 +18,9 @@ const Navbar = () => {
   }
 
   return (
-    <header className='relative shadow-md'>
+    <header className='relative z-10 shadow-[0_4px_8px_rgba(0,0,0,0.15)]'>
       <nav className='flex flex-col bg-titleBar text-menuText'>
-        <div className='content-1600 flex flex-row justify-between items-center px-2'>
+        <div className='content-1600 flex flex-row justify-between items-center px-2 py-2 sm:py-0'>
           <Link href='/'>
             <h1 className='text-black text-2xl font-bold'>orjon.com</h1>
           </Link>

@@ -1,15 +1,15 @@
 $(() => {
   const animationSpeed = 3600
 
-  $('.colorFade > div:gt(0)').hide()
-  $('.timeOverlay > div:gt(0)').hide()
+  $('.colorFade > picture:gt(0)').hide()
+  $('.timeOverlay > picture:gt(0)').hide()
 
   $('.toggle').click(() => {
     $('.timeOverlay').toggleClass('hidden')
   })
 
   colorFade = () => {
-    $('.colorFade > div:first')
+    $('.colorFade > picture:first')
       .fadeOut(animationSpeed)
       .next()
       .fadeIn()
@@ -18,7 +18,7 @@ $(() => {
   }
 
   timeOverlay = () => {
-    $('.timeOverlay > div:first')
+    $('.timeOverlay > picture:first')
       .fadeOut(animationSpeed)
       .next()
       .fadeIn(animationSpeed)
@@ -28,4 +28,10 @@ $(() => {
 
   setInterval(colorFade, animationSpeed)
   setInterval(timeOverlay, animationSpeed)
+
+  function fadeIn() {
+    $('.colorOne').animate({ opacity: 1 }, 2500)
+  }
+
+  fadeIn()
 })

@@ -12,6 +12,8 @@ import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
 import ProjectDetails from '@/app/components/ProjectDetails'
 import ProjectsCarouselControls from '@/app/components/ProjectsCarouselControls'
 import { CodeProject, ElectronicsProject } from '@/app/types'
+
+
 const defaultProjectIndex = 0
 
 const ProjectsCarousel = ({ projects }: { projects: CodeProject[] | ElectronicsProject[] }) => {

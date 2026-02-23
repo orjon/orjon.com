@@ -78,6 +78,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               )}
             </div>
           </div>
+
         </div>
 
       </article>

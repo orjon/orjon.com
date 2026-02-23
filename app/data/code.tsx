@@ -11,10 +11,10 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.React,
-      Technology.Redux,
-      Technology.CSS,
-      Technology.Sass
+      Technology.react,
+      Technology.redux,
+      Technology.css,
+      Technology.sass
     ],
     repo: 'buttonstyler',
     www: 'https://www.orjon.com/buttonstyler',
@@ -31,15 +31,15 @@ export const codeProjects: CodeProject[] = [
     note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static and no longer updates.',
     images: [],
     technologies: [
-      Technology.React,
-      Technology.Redux,
-      Technology.Node,
-      Technology.Chart,
-      Technology.MongoDB,
-      Technology.Axios,
-      Technology.Express,
-      Technology.Sass,
-      Technology.Heroku
+      Technology.react,
+      Technology.redux,
+      Technology.node,
+      Technology.chart,
+      Technology.mongodb,
+      Technology.axios,
+      Technology.express,
+      Technology.sass,
+      Technology.heroku
     ],
     repo: 'covid19',
     www: 'https://www.orjon.com/covid19',
@@ -55,14 +55,14 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.React,
-      Technology.Redux,
-      Technology.Node,
-      Technology.Axios,
-      Technology.Express,
-      Technology.Sass,
-      Technology.Heroku,
-      Technology.MapBox
+      Technology.react,
+      Technology.redux,
+      Technology.node,
+      Technology.axios,
+      Technology.express,
+      Technology.sass,
+      Technology.heroku,
+      Technology.mapbox
     ],
     repo: 'TubeInfo',
     www: 'https://www.orjon.com/tubeinfo/',
@@ -79,10 +79,10 @@ export const codeProjects: CodeProject[] = [
     note: 'The music and sound effects were kindly written for the game by Joe Lewis.',
     images: [],
     technologies: [
-      Technology.HTML,
-      Technology.Sass,
-      Technology.JavaScript,
-      Technology.jQuery
+      Technology.html,
+      Technology.sass,
+      Technology.javascript,
+      Technology.jquery
     ],
     repo: 'tetris',
     www: 'https://www.orjon.com/tetris/',
@@ -98,10 +98,10 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.HTML,
-      Technology.Sass,
-      Technology.JavaScript,
-      Technology.jQuery
+      Technology.html,
+      Technology.sass,
+      Technology.javascript,
+      Technology.jquery
     ],
     repo: 'colorclock',
     www: 'https://www.orjon.com/colorclock/',
@@ -117,10 +117,10 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.HTML,
-      Technology.Sass,
-      Technology.JavaScript,
-      Technology.jQuery
+      Technology.html,
+      Technology.sass,
+      Technology.javascript,
+      Technology.jquery
     ],
     repo: 'department3D',
     www: 'http://www.department3D.com',
@@ -136,10 +136,10 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.HTML,
-      Technology.Sass,
-      Technology.JavaScript,
-      Technology.jQuery
+      Technology.html,
+      Technology.sass,
+      Technology.javascript,
+      Technology.jquery
     ],
     repo: 'whack-a-mole',
     www: 'https://www.orjon.com/mole/',
@@ -156,14 +156,12 @@ export const codeProjects: CodeProject[] = [
     note: 'Update 2019-06-30: Originally this application displayed global weather data. A change in the OpenWeatherMap API now limits free weather data to 25 square degrees.',
     images: [],
     technologies: [
-      Technology.React,
-      Technology.Sass,
-      Technology.jQuery,
-      Technology.Axios,
-      Technology.MapBox,
-      Technology.OpenWeatherAPI,
-      Technology.Webpack,
-      Technology.Yarn
+      Technology.react,
+      Technology.sass,
+      Technology.axios,
+      Technology.mapbox,
+      Technology.openweatherapi,
+      Technology.webpack,
     ],
     repo: 'weather',
     responsive: true
@@ -177,7 +175,7 @@ export const codeProjects: CodeProject[] = [
       bottom: ''
     },
     images: [],
-    technologies: [Technology.React, Technology.Sass],
+    technologies: [Technology.react, Technology.sass],
     repo: 'striped-horse',
     www: 'http://www.striped-horse.com',
     responsive: true
@@ -192,11 +190,11 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.HTML,
-      Technology.Sass,
-      Technology.JavaScript,
-      Technology.jQuery,
-      Technology.Ajax
+      Technology.html,
+      Technology.sass,
+      Technology.javascript,
+      Technology.jquery,
+      Technology.ajax
     ],
     repo: 'World-Countries',
     www: 'https://www.orjon.com/countries/',
@@ -212,16 +210,15 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.React,
-      Technology.Sass,
-      Technology.Python,
-      Technology.Flask,
-      Technology.Axios,
-      Technology.PostgreSQL,
-      Technology.SQLAlchemy,
-      Technology.Marshmallow,
-      Technology.Heroku,
-      Technology.Yarn
+      Technology.react,
+      Technology.sass,
+      Technology.python,
+      Technology.flask,
+      Technology.axios,
+      Technology.postgresql,
+      Technology.sqlalchemy,
+      Technology.marshmallow,
+      Technology.heroku,
     ],
     repo: 'project4',
     responsive: true
@@ -235,7 +232,7 @@ export const codeProjects: CodeProject[] = [
       bottom: ''
     },
     images: [],
-    technologies: [Technology.HTML, Technology.Sass, Technology.JavaScript],
+    technologies: [Technology.html, Technology.sass, Technology.javascript],
     repo: 'RockPaperScissors',
     www: 'https://www.orjon.com/rockpaperscissors/',
     responsive: true
@@ -250,10 +247,11 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.HTML,
-      Technology.Sass,
-      Technology.JavaScript,
-      Technology.jQuery
+      Technology.next,
+      Technology.react,
+      Technology.tailwind,
+      Technology.typescript,
+      Technology.emblaCarousel
     ],
     repo: 'orjon.com',
     www: 'https://www.orjon.com/',
@@ -269,15 +267,14 @@ export const codeProjects: CodeProject[] = [
     },
     images: [],
     technologies: [
-      Technology.React,
-      Technology.MongoDB,
-      Technology.Mongoose,
-      Technology.Node,
-      Technology.Express,
-      Technology.Axios,
-      Technology.Bulma,
-      Technology.MapBox,
-      Technology.Yarn
+      Technology.react,
+      Technology.mongodb,
+      Technology.mongoose,
+      Technology.node,
+      Technology.express,
+      Technology.axios,
+      Technology.bulma,
+      Technology.mapbox
     ],
     repo: 'booker',
     responsive: true
@@ -291,7 +288,7 @@ export const codeProjects: CodeProject[] = [
       bottom: ''
     },
     images: [],
-    technologies: [Technology.HTML, Technology.CSS, Technology.JavaScript],
+    technologies: [Technology.html, Technology.css, Technology.javascript],
     repo: 'daftpunk',
     www: 'https://www.orjon.com/daftpunk/',
     responsive: false

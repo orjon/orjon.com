@@ -17,8 +17,24 @@ export const electronicsProjects: ElectronicsProject[] = [
       note: <>Current time <span className='font-bold'><CurrentTime use12Hour={true} /></span></>,
     },
     images: [],
-    technologies: [Technology.Electronics, Technology.PIC, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
+    technologies: [Technology.electronics, Technology.pic, Technology.html, Technology.sass, Technology.javascript, Technology.jquery],
     repo: 'timeframe.web'
+  },
+  {
+    projectType: ProjectType.ELECTRONICS,
+    slug: 'colortwo',
+    title: 'ColorTwo',
+    demo: {
+      url: '/demo/colortwo/index.html',
+      note: <><span className='font-bold'>x1000 speed</span> [3.6 secs = 1 hour]</>,
+    },
+    images: [],
+    description: {
+      top: 'Abstract color clock.',
+      bottom: ''
+    },
+    technologies: [Technology.electronics, Technology.arduino, Technology.html, Technology.sass, Technology.javascript, Technology.jquery],
+    repo: 'colortwo.web'
   },
   {
     projectType: ProjectType.ELECTRONICS,
@@ -30,27 +46,11 @@ export const electronicsProjects: ElectronicsProject[] = [
     },
     demo: {
       url: '/demo/colorone/index.html',
-      note: 'x1000 speed [1 hour = 3.6 secs]',
+      note: <><span className='font-bold'>x1000 speed</span> [3.6 secs = 1 hour]</>,
     },
     images: [],
-    technologies: [Technology.Electronics, Technology.Arduino, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
+    technologies: [Technology.electronics, Technology.arduino, Technology.html, Technology.sass, Technology.javascript, Technology.jquery],
     repo: 'colorone.web'
-  },
-  {
-    projectType: ProjectType.ELECTRONICS,
-    slug: 'colortwo',
-    title: 'ColorTwo',
-    demo: {
-      url: '/demo/colortwo/index.html',
-      note: 'x1000 speed [1 hour = 3.6 secs]',
-    },
-    images: [],
-    description: {
-      top: 'Abstract color clock.',
-      bottom: ''
-    },
-    technologies: [Technology.Electronics, Technology.Arduino, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
-    repo: 'colortwo.web'
   },
   {
     projectType: ProjectType.ELECTRONICS,
@@ -65,7 +65,7 @@ export const electronicsProjects: ElectronicsProject[] = [
       note: <>Current time <span className='font-bold'><CurrentTime use12Hour={false} /></span></>,
     },
     images: [],
-    technologies: [Technology.Electronics, Technology.PIC, Technology.ESP32, Technology.HTML, Technology.Sass, Technology.JavaScript, Technology.jQuery],
+    technologies: [Technology.iot, Technology.electronics, Technology.pic, Technology.esp32, Technology.html, Technology.sass, Technology.javascript, Technology.jquery],
     repo: 'abouttime'
   }
 ]
