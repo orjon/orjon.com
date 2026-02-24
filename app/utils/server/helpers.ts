@@ -7,7 +7,13 @@ import { isGif } from '@/app/utils'
 export const getProjectImages = (projectSlug: string): string[] => {
   const projectImagePath = `${imagePath.projectImages}/${projectSlug}`
 
-  const dir = path.join(process.cwd(), imagePath.public, projectImagePath)
+  const dir = path.join(
+    process.cwd(),
+    'public',
+    'images',
+    'projects',
+    projectSlug
+  )
 
   try {
     const imageExt = /\.(png|jpe?g|gif|webp|svg)$/i

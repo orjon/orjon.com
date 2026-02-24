@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -76,7 +77,9 @@ const ButtonMenu = () => {
         <div className={`ButtonMenuCenter-GapLeft ${buttonBaseStyle} relative h-full w-full`}>
           <div className={`relative z-10 pl-2 ${buttonStyle} w-full`}>{zeroWidthSpace}</div>
         </div>
-        <ProjectViewSelector />
+        <Suspense fallback={<div className="h-[40px] w-[40px]" />}>
+          <ProjectViewSelector />
+        </Suspense>
         <div className={`ButtonMenuCenter-GapRight ${buttonBaseStyle} relative h-full`}>
           <div className={`relative z-10 pl-2 ${buttonStyle} w-full rounded-r-none border-r-0`}>{zeroWidthSpace}</div>
         </div>
