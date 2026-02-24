@@ -9,7 +9,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Milan, Italy',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/cisco2015.png'
+    image: 'cisco2015'
   },
   {
     slug: 'nouTable',
@@ -17,7 +17,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Angle Desk',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/nouTable.png'
+    image: 'nouTable'
   },
   {
     slug: 'foreshore',
@@ -25,7 +25,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Cape Town, South Africa',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.SketchUp, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/foreshore.png'
+    image: 'foreshore'
   },
   {
     slug: 'statoil',
@@ -33,7 +33,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Trondheim, Norway',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation],
     software: [Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/statoil.png'
+    image: 'statoil'
   },
   {
     slug: 'emidlands',
@@ -41,7 +41,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'East Midlands Airport',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/emidlands.png'
+    image: 'emidlands'
   },
   {
     slug: 'honestlyGood',
@@ -49,7 +49,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'London, UK',
     scope: [Scopes.Visualisation],
     software: [Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/honestlyGood.png'
+    image: 'honestlyGood'
   },
   {
     slug: 'cisco2016',
@@ -57,7 +57,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Berlin, Germany',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/cisco2016.png'
+    image: 'cisco2016'
   },
   {
     slug: 'cisco2017',
@@ -65,7 +65,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Berlin, Germany',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/cisco2017.png'
+    image: 'cisco2017'
   },
   {
     slug: 'chix',
@@ -73,14 +73,14 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Potchefstroom, South Africa',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/chix.png'
+    image: 'chix'
   },
   {
     slug: 'chess',
     title: 'XLT Chess Set',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.Animation, Scopes.TechnicalDocumentation, Scopes.ThreeDPrint],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/chess.png'
+    image: 'chess'
   },
   {
     slug: 'bhunga',
@@ -88,7 +88,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Cape Town, South Africa',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.Animation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/bhunga.png'
+    image: 'bhunga'
   },
   {
     slug: 'fairmont',
@@ -96,7 +96,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Durban, South Africa',
     scope: [Scopes.Visualisation],
     software: [Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/fairmont.png'
+    image: 'fairmont'
   },
   {
     slug: 'ho1',
@@ -104,7 +104,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'ask Light',
     scope: [Scopes.Design, Scopes.Visualisation],
     software: [Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/ho1.png'
+    image: 'ho1'
   },
   {
     slug: 'infiniti',
@@ -112,7 +112,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'London, UK',
     scope: [Scopes.Design, Scopes.Visualisation],
     software: [Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/infiniti.png'
+    image: 'infiniti'
   },
   {
     slug: 'operaHouse',
@@ -120,7 +120,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Manama, Bahrain',
     scope: [Scopes.Visualisation],
     software: [Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/operaHouse.png'
+    image: 'operaHouse'
   },
   {
     slug: 'knife',
@@ -128,7 +128,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Cape Town, South Africa',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/knife.png'
+    image: 'knife'
   },
   {
     slug: 'knifePlan',
@@ -136,7 +136,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Cape Town, South Africa',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/knifePlan.png'
+    image: 'knifePlan'
   },
   {
     slug: 'laptopStand',
@@ -144,7 +144,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'A4 flatpack laptop stand',
     scope: [Scopes.Design, Scopes.Visualisation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/laptopStand.png'
+    image: 'laptopStand'
   },
   {
     slug: 'office01',
@@ -152,7 +152,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Reticulated Office Furniture',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/office01.png'
+    image: 'office01'
   },
   {
     slug: 'oman',
@@ -160,7 +160,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Blue City,Oman',
     scope: [Scopes.Visualisation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/oman.png'
+    image: 'oman'
   },
   {
     slug: 'ortBridge',
@@ -168,7 +168,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Johannesburg, South Africa',
     scope: [Scopes.Design, Scopes.Visualisation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/ortBridge.png'
+    image: 'ortBridge'
   },
   {
     slug: 'redBull',
@@ -176,7 +176,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Cape Town, South Africa',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/redBull.png'
+    image: 'redBull'
   },
   {
     slug: 'samsung',
@@ -184,7 +184,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Berlin, Germany',
     scope: [Scopes.Design, Scopes.Visualisation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/samsung.png'
+    image: 'samsung'
   },
   {
     slug: 'powerBuoy',
@@ -192,7 +192,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Floating power generator',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/powerBuoy.png'
+    image: 'powerBuoy'
   },
   {
     slug: 'sony',
@@ -200,7 +200,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Cape Town, South Africa',
     scope: [Scopes.Design, Scopes.Visualisation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
-    image: '/images/design/sony.png'
+    image: 'sony'
   },
   {
     slug: 'winxo',
@@ -208,7 +208,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Casablanca, Morocco',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/winxo.png'
+    image: 'winxo'
   },
   {
     slug: 't2Snooze',
@@ -216,7 +216,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Heathrow Terminal 2',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/t2Snooze.png'
+    image: 't2Snooze'
   },
   {
     slug: 'vamiziPlan',
@@ -224,7 +224,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Vamizi Island, Mozambique',
     scope: [Scopes.Visualisation],
     software: [Software.AutoCAD, Software.Photoshop],
-    image: '/images/design/vamiziPlan.png'
+    image: 'vamiziPlan'
   },
   {
     slug: 'kite',
@@ -232,7 +232,7 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Motorized kite launching handles',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/kite.png'
+    image: 'kite'
   },
   {
     slug: 'hermanus',
@@ -240,6 +240,6 @@ export const designProjects: DesignProject[] = [
     subTitle: 'Hermanus, South Africa',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.VRay, Software.Photoshop],
-    image: '/images/design/hermanus.png'
+    image: 'hermanus'
   }
 ]

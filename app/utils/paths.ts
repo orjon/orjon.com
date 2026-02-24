@@ -18,3 +18,7 @@ export const getCommits = (repo: string) => {
 export const getIconPath = (imageType: ImageType, path: string) => {
   return `${imagePath[imageType]}/${path}.png`
 }
+
+export const getImagePath = (imageType: ImageType, file: string) => {
+  return `${imagePath[imageType]}/${file}.png`
+}

@@ -1,12 +1,14 @@
 import { Technology, Scopes, Software } from '@/app/types'
 
-const Pills = ({ data, responsive = false }: { data: Technology[] | Scopes[] | Software[], responsive?: boolean }) => {
+const Pills = ({ data, color = 'menuButton', responsive = false }: { data: Technology[] | Scopes[] | Software[], color: string, responsive?: boolean }) => {
+
+  const backgroundColor = `bg-${color}`
 
   const Pills = data.sort((a, b) => a.localeCompare(b)).map(item => {
     return (
       <li
         key={item}
-        className={`text-white font-medium bg-menuButton rounded-sm px-2 py-px text-sm ${responsive && 'sm:text-base'}`}>
+        className={`text-white font-medium ${backgroundColor} rounded-sm px-2 py-px text-sm ${responsive && 'sm:text-base'}`}>
         {item}
       </li>
     )

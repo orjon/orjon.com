@@ -2,5 +2,6 @@ export enum ImageType {
   NAV_ICON = 'navIcon',
   PROJECT_ICON = 'projectIcon',
   TECHNOLOGY_ICON = 'technologyIcon',
-  PROJECT_IMAGES = 'projectImages'
+  PROJECT_IMAGES = 'projectImages',
+  DESIGN_IMAGES = 'designImages'
 }

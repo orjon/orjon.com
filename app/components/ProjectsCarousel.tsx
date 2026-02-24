@@ -109,11 +109,6 @@ const ProjectsCarousel = ({ projects }: { projects: CodeProject[] | ElectronicsP
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [emblaApi])
 
-  useEffect(() => {
-    if (!emblaApi) return
-    console.log('currentProject:', currentProjectIndex, ' - ', projects[currentProjectIndex].slug)
-  }, [emblaApi, currentProjectIndex])
-
   const allProjects = projects.map((project, index) => {
     return (
       <div

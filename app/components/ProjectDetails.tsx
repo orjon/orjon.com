@@ -25,7 +25,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
 
   return (
-    <div className='ProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
+    <div className='ProjectDetails w-full h-full sm:h-auto bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
 
       <article className={`${slug} flex-1 h-full lg:h-auto flex flex-col lg:flex-row ${isElectronics ? 'gap-0' : 'gap-1 '} lg:gap-8 `}>
 
@@ -84,7 +84,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
           <div className={`TechAndLinks flex w-full flex-col items-start justify-start ${sectionGap}`}>
             <Section title='Technologies'>
-              <Pills data={technologies} responsive={true} />
+              <Pills data={technologies} color='code' responsive={true} />
             </Section>
 
             <div className={`Links flex lg:hidden w-full flex-col md:flex-row md:justify-between ${sectionGap}`}>

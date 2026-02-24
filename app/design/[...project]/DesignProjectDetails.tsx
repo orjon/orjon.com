@@ -1,41 +1,53 @@
 import Image from 'next/image'
 
-import { DesignProject } from '@/app/types'
+import { DesignProject, ImageType } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import Pills from '@/app/components/Pills'
-import { addBuildVersion } from '@/app/utils'
+import Paragraphs from '@/app/components/Paragraphs'
+import { addBuildVersion, getImagePath } from '@/app/utils'
 
+const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
 const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
   const { slug, title, subTitle, scope, software, image } = project
 
+  const imagePath = addBuildVersion(getImagePath(ImageType.DESIGN_IMAGES, image))
+
   return (
-    <div className='DesignProjectDetails w-full bg-white p-6 rounded-2xl shadow-md flex flex-col gap-4 md:gap-6 max-w-[1000px]'>
-      <article className={`${slug} flex w-full flex-col gap-1 md:gap-2`}>
-        <div className="w-full flex flex-col ">
-          <div className='w-full text-xl sm:text-2xl md:text-3xl font-bold'>{title}</div>
-          {subTitle && <div className='text-sm sm:text-base md:text-lg'>{subTitle}</div>}
+    <div className='DesignProjectDetails w-full h-full sm:h-auto bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md  flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
+
+      <article className={`${slug} flex w-full h-full sm:h-auto flex-col items-start justify-between sm:justify-start ${sectionGap}`}>
+
+        <div className={`DescriptionAndImages flex w-full h-full sm:h-auto flex-col items-start justify-start ${sectionGap}`}>
+          <div className='w-full text-center sm:text-left text-2xl md:text-3xl font-bold'>{title}</div>
+
+          {subTitle && <div className='text-sm sm:text-base md:text-lg'> <Paragraphs text={subTitle} /></div>}
+
+
+          <div className='w-full py-2'>
+            <Image
+              src={imagePath}
+              alt={title}
+              // placeholder='blur'
+              // blurDataURL={imagePath}
+              width={1000}
+              height={600}
+              className='w-full h-auto object-contain'
+              sizes='(max-width: 1000px) 100vw, 1000px'
+            />
+          </div>
+
         </div>
 
-        <div className='w-full py-2'>
-          <Image
-            src={addBuildVersion(image)}
-            alt={title}
-            // placeholder='blur'
-            // blurDataURL={imagePath}
-            width={1000}
-            height={600}
-            className='w-full h-auto object-contain'
-            sizes='(max-width: 1000px) 100vw, 1000px'
-          />
+        <div className={`TechAndLinks flex w-full flex-col items-start justify-start ${sectionGap}`}>
+          <Section title="Project scope">
+            <div className='text-sm sm:text-base md:text-lg'>{scope.join(', ')}</div>
+          </Section>
+          <Section title="Software">
+            <Pills data={software} color='design' responsive={true} />
+          </Section>
         </div>
-        <Section title="Project scope">
-          <div className='text-sm sm:text-base md:text-lg'>{scope.join(', ')}</div>
-        </Section>
-        <Section title="Software">
-          <Pills data={software} responsive={true} />
-        </Section>
 
       </article>
     </div>

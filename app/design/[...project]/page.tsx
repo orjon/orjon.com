@@ -1,27 +1,20 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
-import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
 
 import { useMountLogger } from '@/app/hooks/useMountLogger'
+import { useEmblaOpacityTween } from '@/app/hooks/useEmblaOpacityTween'
 
 import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
 
 import DesignProjectCard from '@/app/design/[...project]/DesignProjectDetails'
 import { designProjects, DESIGN_PROJECT_KEY } from '@/app/data/design'
-
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa6"
+import ProjectsCarouselControls from '@/app/components/ProjectsCarouselControls'
 
 const defaultProject = designProjects[0].slug
 
-const TWEEN_FACTOR_BASE = 1
-
-const navArrowStyle = "drop-shadow-md hover:drop-shadow-lg"
-
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max)
 
 const DesignProjectPage = () => {
   const params = useParams()
@@ -56,77 +49,13 @@ const DesignProjectPage = () => {
     skipSnaps: false
   })
 
+  // Shared opacity tween effect for slides
+  useEmblaOpacityTween(emblaApi)
+
   const goToPrev = () => emblaApi?.scrollPrev()
   const goToNext = () => emblaApi?.scrollNext()
 
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
-  const tweenFactor = useRef(0)
-
-  const setTweenFactor = useCallback((api: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * api.scrollSnapList().length
-  }, [])
-
-  const tweenOpacity = useCallback(
-    (api: EmblaCarouselType, event?: EmblaEventType) => {
-      const engine = api.internalEngine()
-      const scrollProgress = api.scrollProgress()
-      const slidesInView = api.slidesInView()
-      const isScrollEvent = event === 'scroll'
-
-      api.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        const slidesInSnap = [snapIndex]
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return
-
-          let diffToTarget = scrollSnap - scrollProgress
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target()
-
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target)
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + scrollProgress)
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - scrollProgress)
-                }
-              }
-            })
-          }
-
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString()
-          const node = api.slideNodes()[slideIndex]
-          if (node) node.style.opacity = opacity
-        })
-      })
-    },
-    []
-  )
-
-  useEffect(() => {
-    if (!emblaApi) return
-
-    setTweenFactor(emblaApi)
-    tweenOpacity(emblaApi)
-
-    emblaApi
-      .on('reInit', setTweenFactor)
-      .on('reInit', tweenOpacity)
-      .on('scroll', tweenOpacity)
-      .on('slideFocus', tweenOpacity)
-
-    return () => {
-      emblaApi.off('reInit', setTweenFactor)
-      emblaApi.off('reInit', tweenOpacity)
-      emblaApi.off('scroll', tweenOpacity)
-      emblaApi.off('slideFocus', tweenOpacity)
-    }
-  }, [emblaApi, setTweenFactor, tweenOpacity])
 
   useEffect(() => {
     console.log('Effect 2')
@@ -176,7 +105,7 @@ const DesignProjectPage = () => {
       <div
         key={project.slug}
         ref={(el) => { slideRefs.current[index] = el }}
-        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-8 md:p-10 flex flex-col'
+        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-6 sm:p-14 flex flex-col'
       >
         <div className='min-h-full flex items-center justify-center shrink-0'>
           <DesignProjectCard project={project} />
@@ -187,7 +116,7 @@ const DesignProjectPage = () => {
 
 
   return (
-    <section className='DesignProjectPage embla relative content-1600 flex-1 max-h-full flex flex-col'>
+    <section className='DesignProjectPage embla relative bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
 
       <div
         ref={emblaProjectRef}
@@ -199,18 +128,7 @@ const DesignProjectPage = () => {
         </div>
       </div>
 
-      <div className="absolute inset-0 z-10 flex items-center justify-between pointer-events-none">
-        <div
-          onClick={goToPrev}
-          className='embla__prev flex cursor-pointer text-4xl md:pl-1 justify-start hover-scale-120 pointer-events-auto'>
-          <FaAngleLeft className={navArrowStyle} />
-        </div>
-        <div
-          onClick={goToNext}
-          className='embla__next flex cursor-pointer text-4xl md:pr-1 justify-end hover-scale-120 pointer-events-auto'>
-          <FaAngleRight className={navArrowStyle} />
-        </div>
-      </div>
+      <ProjectsCarouselControls onPrev={goToPrev} onNext={goToNext} />
 
     </section>
   )

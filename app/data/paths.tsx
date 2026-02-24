@@ -4,4 +4,5 @@ export const imagePath = {
   projectIcon: '/icons/projects',
   technologyIcon: '/icons/tech',
   projectImages: '/images/projects',
+  designImages: '/images/design',
 }
