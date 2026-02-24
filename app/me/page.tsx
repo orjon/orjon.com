@@ -1,7 +1,9 @@
 import Link from 'next/link'
-
-import { technologyIcons, technologyIconPath, contactInfo } from '@/app/data'
 import Image from 'next/image'
+
+import { ImageType } from '@/app/types'
+import { technologyIcons, contactInfo } from '@/app/data'
+import { addBuildVersion, getIconPath } from '@/app/utils'
 
 
 const contactDetails = contactInfo.map((item) => (
@@ -15,11 +17,14 @@ const contactDetails = contactInfo.map((item) => (
   </div>
 ))
 
-const technologyIconList = technologyIcons.map((item) => (
-  <div key={item.name} className='w-full flex justify-center items-center'>
-    <Image src={`${technologyIconPath}/${item.icon}`} alt={item.name} width={100} height={100} />
-  </div>
-))
+const technologyIconList = technologyIcons.map((item) => {
+  const icon = addBuildVersion(getIconPath(ImageType.TECHNOLOGY_ICON, item.icon))
+  return (
+    <div key={item.name} className='w-full flex justify-center items-center'>
+      <Image src={icon} alt={item.name} width={100} height={100} />
+    </div>
+  )
+})
 
 
 const MePage = () => {

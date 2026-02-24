@@ -3,7 +3,6 @@
 import { useSearchParams } from 'next/navigation'
 
 import { codeProjects } from '@/app/data/code'
-import { ProjectType } from '@/app/types'
 
 import ProjectTile from '@/app/components/ProjectTile'
 import ProjectCard from '@/app/components/ProjectCard'

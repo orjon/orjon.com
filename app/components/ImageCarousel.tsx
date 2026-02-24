@@ -7,7 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
-import { isGif } from '@/app/utils/client'
+import { isGif, addBuildVersion } from '@/app/utils'
 import { breakpoints } from '@/app/types'
 
 const OPTIONS: EmblaOptionsType = {
@@ -69,7 +69,7 @@ export const ImageCarousel = ({ images, demo = false, isActive = false }: { imag
     return (
       <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
         <Image
-          src={image}
+          src={addBuildVersion(image)}
           alt={`Image ${index}`}
           width={0} height={0}
           sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}

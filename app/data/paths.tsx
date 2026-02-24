@@ -1,5 +1,7 @@
 export const imagePath = {
-  navIcons: '/icons/nav',
+  public: '/public',
+  navIcon: '/icons/nav',
   projectIcon: '/icons/projects',
+  technologyIcon: '/icons/tech',
   projectImages: '/images/projects',
 }

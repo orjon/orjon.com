@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html className='h-screen bg-blue-200'>
+    <html className='h-full bg-white md:bg-background'>
       <body
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
 
-        <main className='flex-1 w-full max-h-full bg-grey075 flex flex-col overflow-hidden'>
+        <main className='flex-1 w-full bg-background flex flex-col overflow-hidden'>
           {children}
         </main>
 

@@ -4,6 +4,7 @@ import { DesignProject } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import Pills from '@/app/components/Pills'
+import { addBuildVersion } from '@/app/utils'
 
 
 const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
@@ -19,10 +20,10 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
 
         <div className='w-full py-2'>
           <Image
-            src={image}
+            src={addBuildVersion(image)}
             alt={title}
-            placeholder='blur'
-            blurDataURL={image}
+            // placeholder='blur'
+            // blurDataURL={imagePath}
             width={1000}
             height={600}
             className='w-full h-auto object-contain'

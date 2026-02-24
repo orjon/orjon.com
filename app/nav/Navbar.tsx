@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { ImageType } from '@/app/types'
+import { addBuildVersion, getIconPath } from '@/app/utils'
 import ButtonMenu from './ButtonMenu'
 import BurgerMenu from './BurgerMenu'
 
@@ -13,9 +16,12 @@ const Navbar = () => {
   const isMe = pathname === '/me'
   const hideNavbar = pathname?.startsWith('/preview')
 
+
+  // check if needed as we have a second layout page
   if (hideNavbar) {
     return null
   }
+
 
   return (
     <header className='relative z-10 shadow-[0_4px_8px_rgba(0,0,0,0.15)]'>
@@ -32,7 +38,7 @@ const Navbar = () => {
             >
               <div className='relative h-[34px] w-[34px]'>
                 <Image
-                  src='/icons/nav/faceOFF-large.png'
+                  src={addBuildVersion(getIconPath(ImageType.NAV_ICON, 'faceLargeOFF'))}
                   className={`absolute-center size-full object-contain transition-opacity opacity-100 duration-100 ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
                     }`}
                   alt='face'
@@ -41,7 +47,7 @@ const Navbar = () => {
                   style={{ width: 26, height: 26 }}
                 />
                 <Image
-                  src='/icons/nav/faceON-large.png'
+                  src={addBuildVersion(getIconPath(ImageType.NAV_ICON, 'faceLargeON'))}
                   className={`absolute-center size-full object-contain transition-opacity opacity-0 duration-100 ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   alt='face'
@@ -65,7 +71,7 @@ const Navbar = () => {
           >
             <div className='relative h-[34px] w-[24px]'>
               <Image
-                src='/icons/nav/burgerMenu2.png'
+                src={addBuildVersion(getIconPath(ImageType.NAV_ICON, 'burgerMenu'))}
                 className={`absolute-center size-full object-contain transition-opacity ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
                   } duration-150 `}
                 alt='face'
@@ -74,7 +80,7 @@ const Navbar = () => {
                 style={{ width: 26, height: 26 }}
               />
               <Image
-                src='/icons/nav/burgerMenuClose.png'
+                src={addBuildVersion(getIconPath(ImageType.NAV_ICON, 'burgerMenuClose'))}
                 className={`absolute-center size-full object-contain transition-opacity ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
                   } duration-150`}
                 alt='face'

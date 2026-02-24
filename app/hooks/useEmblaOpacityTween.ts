@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react'
 import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
-import { numberWithinRange } from '@/app/utils/client'
+import { numberWithinRange } from '@/app/utils'
 
 const TWEEN_FACTOR_BASE = 1.5
 

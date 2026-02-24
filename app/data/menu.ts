@@ -3,23 +3,25 @@ import { sections } from '@/app/types'
 export const menuItems = [
   {
     name: sections.code,
-    iconOff: '/icons/nav/codeOFF.png',
-    iconOn: '/icons/nav/codeON.png'
+    icon: 'code'
   },
   {
     name: sections.design,
-    iconOff: '/icons/nav/designOFF.png',
-    iconOn: '/icons/nav/designON.png'
+    icon: 'design'
   },
   {
     name: sections.electronics,
-    iconOff: '/icons/nav/electronicsOFF.png',
-    iconOn: '/icons/nav/electronicsON.png'
+    icon: 'electronics'
   },
   {
     name: sections.me,
-    iconOff: '/icons/nav/faceOFF.png',
-    iconOn: '/icons/nav/faceON.png',
+    icon: 'face',
     titleBar: true
   }
 ]
+
+export const views = {
+  TILES: 'tiles',
+  CARDS: 'cards',
+  CAROUSEL: 'carousel'
+}

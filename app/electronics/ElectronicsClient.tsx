@@ -7,8 +7,6 @@ import { electronicsProjects } from '@/app/data'
 import ProjectTile from '@/app/components/ProjectTile'
 import ProjectCard from '@/app/components/ProjectCard'
 
-const path = '/electronics'
-
 const ElectronicsClient = () => {
   const searchParams = useSearchParams()
   const view = searchParams.get('view') || 'tile'

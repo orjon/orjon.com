@@ -5,120 +5,120 @@ export const technologyIconPath = '/icons/tech'
 export const technologyIcons = [
   {
     name: 'React.js',
-    icon: 'react.png'
+    icon: 'react'
   },
   {
     name: 'Python',
-    icon: 'python.png'
+    icon: 'python'
   },
   {
     name: 'Node.js',
-    icon: 'nodejs.png'
+    icon: 'nodejs'
   },
   {
     name: 'JavaScript',
-    icon: 'javascript.png'
+    icon: 'javascript'
   },
   {
     name: 'Redux',
-    icon: 'redux.png'
+    icon: 'redux'
   },
   {
     name: 'Chart.js',
-    icon: 'chartjs.png'
+    icon: 'chartjs'
   },
   {
     name: 'jQuery',
-    icon: 'jquery.png'
+    icon: 'jquery'
   },
   {
     name: 'Sass',
-    icon: 'sass.png'
+    icon: 'sass'
   },
   {
     name: 'HTML',
-    icon: 'html.png'
+    icon: 'html'
   },
   {
     name: 'PostgreSQL',
-    icon: 'postgresql.png'
+    icon: 'postgresql'
   },
   {
     name: 'MongoDB',
-    icon: 'mongodb.png'
+    icon: 'mongodb'
   },
   {
     name: 'Express.js',
-    icon: 'express.png'
+    icon: 'express'
   },
   {
     name: 'Mocha',
-    icon: 'mocha.png'
+    icon: 'mocha'
   },
   {
     name: 'Chai',
-    icon: 'chai.png'
+    icon: 'chai'
   },
   {
     name: 'Babel',
-    icon: 'babel.png'
+    icon: 'babel'
   },
   {
     name: 'Arduino',
-    icon: 'arduino.png'
+    icon: 'arduino'
   },
   {
     name: 'VSCode',
-    icon: 'vscode.png'
+    icon: 'vscode'
   },
   {
     name: 'Atom',
-    icon: 'atom.png'
+    icon: 'atom'
   },
   {
     name: 'Heroku',
-    icon: 'heroku.png'
+    icon: 'heroku'
   },
   {
     name: 'Postman',
-    icon: 'postman.png'
+    icon: 'postman'
   },
   {
     name: 'Insomnia',
-    icon: 'insomnia.png'
+    icon: 'insomnia'
   },
   {
     name: 'Robo 3T',
-    icon: 'robo3t.png'
+    icon: 'robo3t'
   },
   {
     name: '3DS Max',
-    icon: '3dsmax.png'
+    icon: '3dsmax'
   },
 
   {
     name: 'V-Ray',
-    icon: 'vray.png'
+    icon: 'vray'
   },
   {
     name: 'Fusion 360',
-    icon: 'fusion360.png'
+    icon: 'fusion360'
   },
   {
     name: 'AutoCAD',
-    icon: 'autocad.png'
+    icon: 'autocad'
   },
   {
     name: 'Photoshop',
-    icon: 'photoshop.png'
+    icon: 'photoshop'
   },
   {
     name: 'Git',
-    icon: 'git.png'
+    icon: 'git'
   },
   {
     name: 'GitHub',
-    icon: 'github.png'
+    icon: 'github'
   }
 ]
 

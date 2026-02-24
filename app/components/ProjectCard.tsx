@@ -1,14 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { CodeProject, ElectronicsProject } from '@/app/types'
-import { getIconPath } from '@/app/utils/client'
+import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
+import { getIconPath, addBuildVersion } from '@/app/utils'
 
 import Pills from './Pills'
 
 const ProjectCard = ({ project }: { project: CodeProject | ElectronicsProject }) => {
 
   const { projectType, slug, title, description, technologies } = project
+
+  const icon = addBuildVersion(getIconPath(ImageType.PROJECT_ICON, slug))
 
   return (
     <Link
@@ -17,7 +19,7 @@ const ProjectCard = ({ project }: { project: CodeProject | ElectronicsProject })
       <article className="w-full h-full flex flex-col md:flex-row items-center gap-4">
         <div className='flex-none flex flex-col items-center justify-center h-[125px] w-[200px] md:max-w-[25%] relative'>
           <Image
-            src={getIconPath(slug)}
+            src={icon}
             alt={title}
             fill
             className='w-full h-full object-contain'

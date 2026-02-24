@@ -7,10 +7,6 @@
   xl: 1280px */
 
 :root {
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-
   --grey050: #eaeaea;
   --grey075: #d4d4d4;
   --grey100: #b4b4b4;
@@ -26,13 +22,13 @@
   --grey800: #191919;
   --grey900: #111111;
 
-  --background: var(--grey075);
-  --textDefault: var(--grey600);
-
   --code: #ea3ff7;
   --design: #6adbe9;
   --electronics: #99ff3e;
   --me: #ffde00;
+
+  --background: var(--grey075);
+  --textDefault: var(--grey600);
 
   --titleBar: var(--grey050);
 
@@ -98,6 +94,18 @@ body {
   color: var(--textDefault);
   font-family: var(--font-bai-jamjuree), sans-serif;
   /* overflow: scroll; */
+}
+
+.ButtonMenuLeft-buttons,
+.ButtonMenuRight-buttons {
+  display: none;
+}
+
+@media (min-width: 1600px) {
+  .ButtonMenuLeft-buttons,
+  .ButtonMenuRight-buttons {
+    display: block;
+  }
 }
 
 .content-1600 {

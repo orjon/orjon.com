@@ -7,6 +7,7 @@ export const sections = {
   me: 'me'
 }
 
+export * from './images'
 export * from './technologies'
 export * from './projects'
 export * from './scopes'

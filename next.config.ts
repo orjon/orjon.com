@@ -7,7 +7,13 @@ const nextConfig: NextConfig = {
     imageSizes: [50, 150, 300, 575, 655, 900, 1200, 1800],
     deviceSizes: [50, 150, 300, 575, 655, 900, 1200, 1800],
     unoptimized: false,
-    qualities: [24, 40, 60, 75]
+    qualities: [24, 40, 60, 75],
+    localPatterns: [
+      {
+        // Allow query strings on all images in /public
+        pathname: '/**/*.{png,jpg,jpeg,gif,webp,svg}'
+      }
+    ]
   }
 }
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { CodeProject, ElectronicsProject } from '@/app/types'
+import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import ImageCarousel from '@/app/components/ImageCarousel'
@@ -8,11 +8,12 @@ import Pills from '@/app/components/Pills';
 import { PreviewLinks, GitHubLink } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
 import { ProjectType } from '@/app/types/projects'
-import { getGithubLink, getIconPath } from '@/app/utils/client'
+import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
   const { slug, title, description, images, technologies, repo, projectType } = project
 
+  const isElectronics = projectType === ProjectType.ELECTRONICS
 
   const demo = 'demo' in project ? project.demo : false
   const www = 'www' in project ? project.www : false
@@ -20,19 +21,19 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   const responsive = 'responsive' in project ? project.responsive : false
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
-  console.log('project:', slug, '( images:', images.length, '| demo:', !!demo, ')')
+  const icon = addBuildVersion(getIconPath(ImageType.PROJECT_ICON, slug))
 
 
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto sm:bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
 
-      <article className={`${slug} flex-1 h-full lg:h-auto flex flex-col lg:flex-row gap-1 lg:gap-8`}>
+      <article className={`${slug} flex-1 h-full lg:h-auto flex flex-col lg:flex-row ${isElectronics ? 'gap-0' : 'gap-1 '} lg:gap-8 `}>
 
         <div className="LeftPanel flex flex-1 flex-col items-start justify-between">
 
-          <div className={`ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto lg:mx-0 relative ${projectType === ProjectType.ELECTRONICS ? 'hidden md:block' : ''}`}>
+          <div className={`ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto lg:mx-0 relative ${isElectronics ? 'hidden lg:block' : ''}`}>
             <Image
-              src={getIconPath(slug)}
+              src={icon}
               alt={title}
               fill
               className='w-full h-full object-contain'

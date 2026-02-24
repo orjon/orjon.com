@@ -28,6 +28,8 @@ jobs:
             npm install
             echo "Removing .next directory..."
             rm -rf .next
+            export NEXT_PUBLIC_BUILD_VERSION="$(date +%s)"
+            echo "Build version: $NEXT_PUBLIC_BUILD_VERSION"
             echo "Starting build..."
             npm run build || { echo "Build failed! Aborting deployment."; exit 1; }
             echo "Build succeeded. Reloading..."
