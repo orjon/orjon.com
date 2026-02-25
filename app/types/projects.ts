@@ -21,7 +21,7 @@ interface Project {
 }
 
 export type ElectronicsProject = Project & {
-  projectType: 'electronics'
+  projectType: ProjectType.ELECTRONICS
   demo: {
     url: string
     note: string | React.ReactNode
@@ -29,12 +29,13 @@ export type ElectronicsProject = Project & {
 }
 
 export type CodeProject = Project & {
-  projectType: 'code'
+  projectType: ProjectType.CODE
   www?: string
   responsive: boolean
 }
 
 export type DesignProject = {
+  projectType: ProjectType.DESIGN
   slug: string
   title: string
   subTitle?: string

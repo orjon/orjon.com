@@ -24,7 +24,7 @@ const CodeClient = () => {
 
 
   return (
-    <section className='CodePage w-full h-full  pb-0 overflow-y-auto'>
+    <section className='CodePage w-full h-full pb-0 overflow-y-auto'>
       <div className='w-full h-full flex flex-col content-1600 p-4 md:p-8'>
 
         <div className='flex-1 flex items-center pb-4 md:pb-8'>

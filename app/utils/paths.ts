@@ -22,3 +22,9 @@ export const getIconPath = (imageType: ImageType, path: string) => {
 export const getImagePath = (imageType: ImageType, file: string) => {
   return `${imagePath[imageType]}/${file}.png`
 }
+
+export const getNavIcon = (icon: string, isOn: boolean) => {
+  return addBuildVersion(
+    getIconPath(ImageType.NAV_ICON, `${icon}${isOn ? 'ON' : 'OFF'}`)
+  )
+}

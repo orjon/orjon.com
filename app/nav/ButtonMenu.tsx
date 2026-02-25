@@ -3,20 +3,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-import { ImageType } from '@/app/types'
 import { menuItems } from '@/app/data'
-import ProjectViewSelector from './ProjectViewSelector'
-import { addBuildVersion, getIconPath } from '@/app/utils'
+import { getNavIcon } from '@/app/utils'
 
+import ProjectViewSelector from './ProjectViewSelector'
+import RandomProject from './RandomProject'
 
 const buttonBaseStyle =
-  'group bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
+  'bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
 
 const buttonGapStyle =
   'block flex h-[40px] flex-row gap-2 items-center py-1 bg-menuButton duration-100 ease-out transition-[margin] border border-menuButtonDark border-x-0'
 
 const buttonStyle =
-  'group block h-[40px] flex flex-row gap-2 items-center py-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-menuButtonDark'
+  'block h-[40px] flex flex-row gap-2 items-center py-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-menuButtonDark'
 
 const zeroWidthSpace = '\u200B'
 
@@ -30,13 +30,13 @@ const ButtonMenu = () => {
       const href = `/${menuItem.name}`
       const path = pathname.startsWith(href)
       return (
-        <div key={menuItem.name} className={`${buttonBaseStyle} min-w-[150px] `}>
+        <div key={menuItem.name} className={`${buttonBaseStyle} group min-w-[150px] `}>
           <Link
             href={href}
             className={`z-10 ${buttonStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
             <div className="relative size-[30px] shrink-0">
               <Image
-                src={addBuildVersion(getIconPath(ImageType.NAV_ICON, `${menuItem.icon}OFF`))}
+                src={getNavIcon(menuItem.icon, false)}
                 alt={menuItem.name}
                 width={30}
                 height={30}
@@ -44,7 +44,7 @@ const ButtonMenu = () => {
                 style={{ width: 30, height: 30 }}
               />
               <Image
-                src={addBuildVersion(getIconPath(ImageType.NAV_ICON, `${menuItem.icon}ON`))}
+                src={getNavIcon(menuItem.icon, true)}
                 alt={menuItem.name}
                 width={30}
                 height={30}
@@ -75,7 +75,8 @@ const ButtonMenu = () => {
         </div>
         {menu}
         <div className={`ButtonMenuCenter-GapLeft ${buttonBaseStyle} relative h-full w-full`}>
-          <div className={`relative z-10 pl-2 ${buttonStyle} w-full`}>{zeroWidthSpace}</div>
+          {/* <div className={`relative z-10 pl-2 ${buttonStyle} w-full`}>{zeroWidthSpace}</div> */}
+          <div className={`relative z-10 pl-2 ${buttonStyle} w-full`}><RandomProject /></div>
         </div>
         <Suspense fallback={<div className="h-[40px] w-[40px]" />}>
           <ProjectViewSelector />

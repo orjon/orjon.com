@@ -10,8 +10,9 @@ import { useEmblaOpacityTween } from '@/app/hooks/useEmblaOpacityTween'
 import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
 
 import DesignProjectCard from '@/app/design/[...project]/DesignProjectDetails'
-import { designProjects, DESIGN_PROJECT_KEY } from '@/app/data/design'
+import { designProjects } from '@/app/data/design'
 import ProjectsCarouselControls from '@/app/components/ProjectsCarouselControls'
+import { ProjectType } from '@/app/types/projects';
 
 const defaultProject = designProjects[0].slug
 
@@ -29,16 +30,16 @@ const DesignProjectPage = () => {
   const [initialProject] = useState(() => {
     const urlSlug = params.project?.[0]
     if (urlSlug && projectIndex[urlSlug]) {
-      setLocalStorageValue(DESIGN_PROJECT_KEY, urlSlug)
+      setLocalStorageValue(ProjectType.DESIGN, urlSlug)
       return urlSlug
     }
 
     if (typeof window !== 'undefined') {
-      const stored = getLocalStorageValue(DESIGN_PROJECT_KEY)
+      const stored = getLocalStorageValue(ProjectType.DESIGN)
       if (stored && projectIndex[stored]) return stored
     }
 
-    setLocalStorageValue(DESIGN_PROJECT_KEY, defaultProject)
+    setLocalStorageValue(ProjectType.DESIGN, defaultProject)
     return defaultProject
   })
 
@@ -49,7 +50,6 @@ const DesignProjectPage = () => {
     skipSnaps: false
   })
 
-  // Shared opacity tween effect for slides
   useEmblaOpacityTween(emblaApi)
 
   const goToPrev = () => emblaApi?.scrollPrev()
@@ -65,7 +65,7 @@ const DesignProjectPage = () => {
     const updateCurrentProject = () => {
       const index = emblaApi.selectedScrollSnap()
       const slug = designProjects[index].slug
-      setLocalStorageValue(DESIGN_PROJECT_KEY, slug)
+      setLocalStorageValue(ProjectType.DESIGN, slug)
       window.history.replaceState(null, '', `/design/${slug}`)
     }
 

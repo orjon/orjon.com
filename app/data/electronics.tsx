@@ -1,8 +1,6 @@
 import { ElectronicsProject, ProjectType, Technology } from '@/app/types'
 import CurrentTime from '@/app/components/CurrentTime'
 
-export const ELECTRONICS_PROJECT_KEY = 'electronics'
-
 export const electronicsProjects: ElectronicsProject[] = [
   {
     projectType: ProjectType.ELECTRONICS,

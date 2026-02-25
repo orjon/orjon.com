@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
 
-import { ImageType, ProjectType } from '@/app/types'
+import { ProjectType } from '@/app/types'
 import { getLocalStorageValue } from '@/app/utils/client'
-import { hasProject, addBuildVersion, getIconPath } from '@/app/utils'
+import { hasProject, getNavIcon } from '@/app/utils'
 import { codeProjects, electronicsProjects, designProjects, views } from '@/app/data'
 
 const defaultProject = {
@@ -17,10 +17,10 @@ const defaultProject = {
 }
 
 const buttonBaseStyle =
-  'group bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
+  'bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
 
 const buttonStyle =
-  'group block h-[40px] w-[40px] flex items-center align-center justify-center py-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-menuButtonDark'
+  'group relative h-[40px] w-[40px] flex items-center align-center justify-center bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-menuButtonDark'
 
 
 const ProjectViewSelector = () => {
@@ -100,56 +100,83 @@ const ProjectViewSelector = () => {
     [ProjectType.ELECTRONICS]: electronicsCarouselHref
   }
 
-  const iconStyle = { width: 22, height: 22 }
-  const iconClass = 'transition-opacity duration-250'
-
-  const tilesIconOff = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${views.TILES}OFF`))
-  const tilesIconOn = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${views.TILES}ON`))
-  const cardsIconOff = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${views.CARDS}OFF`))
-  const cardsIconOn = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${views.CARDS}ON`))
-  const carouselIconOff = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${views.CAROUSEL}OFF`))
-  const carouselIconOn = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${views.CAROUSEL}ON`))
+  const iconStyle = { width: 24, height: 24 }
+  const iconClassBase = 'absolute inset-0 size-full object-contain transition-opacity duration-250'
+  const iconClassOff = `opacity-100 group-hover:opacity-0`
+  const iconClassOn = `opacity-0 group-hover:opacity-100`
 
   return (
     <div className='ProjectViewSelector flex'>
       <div className={buttonBaseStyle}>
-        <Link href={`/${section}?view=tile`} className={`relative z-10 ${buttonStyle} px-2 ${isTileView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
-          <Image
-            src={`${isTileView ? tilesIconOn : tilesIconOff}`}
-            alt={views.TILES}
-            width={30}
-            height={30}
-            className={`${iconClass} ${disabled || isDesignPage ? 'opacity-25' : ''}`}
-            style={iconStyle}
-          />
+        <Link href={`/${section}?view=tile`} className={`${buttonStyle} ${isTileView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
+          <div className='relative size-[24px]'>
+            <Image
+              src={getNavIcon(views.TILES, false)}
+              alt={views.TILES}
+              width={30}
+              height={30}
+              className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
+              style={iconStyle}
+            />
+            <Image
+              src={getNavIcon(views.TILES, true)}
+              alt={views.TILES}
+              width={30}
+              height={30}
+              className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isTileView ? 'opacity-100' : ''}`}
+              style={iconStyle}
+            />
+          </div>
         </Link>
       </div>
       <div className={buttonBaseStyle}>
-        <Link href={`/${section}?view=card`} className={`relative z-10 ${buttonStyle} px-2 ${isCardView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
-          <Image
-            src={`${isCardView ? cardsIconOn : cardsIconOff}`}
-            alt={views.CARDS}
-            width={30}
-            height={30}
-            className={`${iconClass} ${disabled || isDesignPage ? 'opacity-25' : ''}`}
-            style={iconStyle}
-          />
+        <Link href={`/${section}?view=card`} className={`${buttonStyle} ${isCardView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
+          <div className='relative size-[22px]'>
+            <Image
+              src={getNavIcon(views.CARDS, false)}
+              alt={views.CARDS}
+              width={30}
+              height={30}
+              className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
+              style={iconStyle}
+            />
+            <Image
+              src={getNavIcon(views.CARDS, true)}
+              alt={views.CARDS}
+              width={30}
+              height={30}
+              className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isCardView ? 'opacity-100' : ''}`}
+              style={iconStyle}
+            />
+          </div>
+
         </Link>
       </div>
 
       <div className={buttonBaseStyle}>
-        <Link href={carouselHrefs[section as ProjectType] || ''} className={`relative z-10 ${buttonStyle} px-2 ${isCarouselView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled ? 'cursor-not-allowed' : ''}`}
+        <Link href={carouselHrefs[section as ProjectType] || ''} className={`${buttonStyle} ${isCarouselView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled ? 'cursor-not-allowed' : ''}`}
           onMouseEnter={handleCarouselMouseEnter}
           onClick={handleCarouselClick}
         >
-          <Image
-            src={`${isCarouselView ? carouselIconOn : carouselIconOff}`}
-            alt={views.CAROUSEL}
-            width={30}
-            height={30}
-            className={`${iconClass} ${disabled ? 'opacity-25' : ''}`}
-            style={iconStyle}
-          />
+          <div className='relative size-[22px]'>
+            <Image
+              src={getNavIcon(views.CAROUSEL, false)}
+              alt={views.CAROUSEL}
+              width={30}
+              height={30}
+              className={`${iconClassBase} ${disabled ? 'opacity-25' : `${iconClassOff}`}`}
+              style={iconStyle}
+            />
+            <Image
+              src={getNavIcon(views.CAROUSEL, true)}
+              alt={views.CAROUSEL}
+              width={30}
+              height={30}
+              className={`${iconClassBase} ${disabled ? 'hidden' : `${iconClassOn}`} ${isCarouselView ? 'opacity-100' : ''}`}
+              style={iconStyle}
+            />
+          </div>
+
         </Link>
       </div>
 

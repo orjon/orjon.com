@@ -84,7 +84,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
           <div className={`TechAndLinks flex w-full flex-col items-start justify-start ${sectionGap}`}>
             <Section title='Technologies'>
-              <Pills data={technologies} color='code' responsive={true} />
+              <Pills data={technologies} color={projectType as ProjectType} responsive={true} />
             </Section>
 
             <div className={`Links flex lg:hidden w-full flex-col md:flex-row md:justify-between ${sectionGap}`}>

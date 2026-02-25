@@ -1,9 +1,8 @@
-import { DesignProject, Scopes, Software } from '@/app/types'
-
-export const DESIGN_PROJECT_KEY = 'design'
+import { DesignProject, ProjectType, Scopes, Software } from '@/app/types'
 
 export const designProjects: DesignProject[] = [
   {
+    projectType: ProjectType.DESIGN,
     slug: 'cisco2015',
     title: 'Internet of Everything, CiscoLive! 2015',
     subTitle: 'Milan, Italy',
@@ -12,6 +11,7 @@ export const designProjects: DesignProject[] = [
     image: 'cisco2015'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'nouTable',
     title: 'Angle Desk',
     subTitle: 'Angle Desk',
@@ -20,6 +20,7 @@ export const designProjects: DesignProject[] = [
     image: 'nouTable'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'foreshore',
     title: 'Foreshore Pedestrian Bridge',
     subTitle: 'Cape Town, South Africa',
@@ -28,6 +29,7 @@ export const designProjects: DesignProject[] = [
     image: 'foreshore'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'statoil',
     title: 'Statoil',
     subTitle: 'Trondheim, Norway',
@@ -36,6 +38,7 @@ export const designProjects: DesignProject[] = [
     image: 'statoil'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'emidlands',
     title: 'Aspire Lounge',
     subTitle: 'East Midlands Airport',
@@ -44,6 +47,7 @@ export const designProjects: DesignProject[] = [
     image: 'emidlands'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'honestlyGood',
     title: 'Honestly Good',
     subTitle: 'London, UK',
@@ -52,6 +56,7 @@ export const designProjects: DesignProject[] = [
     image: 'honestlyGood'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'cisco2016',
     title: 'Cisco Campus, CiscoLive! 2016',
     subTitle: 'Berlin, Germany',
@@ -60,6 +65,7 @@ export const designProjects: DesignProject[] = [
     image: 'cisco2016'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'cisco2017',
     title: 'Cisco Campus, CiscoLive! 2017',
     subTitle: 'Berlin, Germany',
@@ -68,6 +74,7 @@ export const designProjects: DesignProject[] = [
     image: 'cisco2017'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'chix',
     title: 'Chix',
     subTitle: 'Potchefstroom, South Africa',
@@ -76,6 +83,7 @@ export const designProjects: DesignProject[] = [
     image: 'chix'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'chess',
     title: 'XLT Chess Set',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.Animation, Scopes.TechnicalDocumentation, Scopes.ThreeDPrint],
@@ -83,6 +91,7 @@ export const designProjects: DesignProject[] = [
     image: 'chess'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'bhunga',
     title: 'Bhunga Pedestrian Bridge',
     subTitle: 'Cape Town, South Africa',
@@ -91,6 +100,7 @@ export const designProjects: DesignProject[] = [
     image: 'bhunga'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'fairmont',
     title: 'Fairmont Apartments',
     subTitle: 'Durban, South Africa',
@@ -99,6 +109,7 @@ export const designProjects: DesignProject[] = [
     image: 'fairmont'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'ho1',
     title: 'Copper & Cement',
     subTitle: 'ask Light',
@@ -107,6 +118,7 @@ export const designProjects: DesignProject[] = [
     image: 'ho1'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'infiniti',
     title: 'Infiniti',
     subTitle: 'London, UK',
@@ -115,6 +127,7 @@ export const designProjects: DesignProject[] = [
     image: 'infiniti'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'operaHouse',
     title: 'Opera House',
     subTitle: 'Manama, Bahrain',
@@ -123,6 +136,7 @@ export const designProjects: DesignProject[] = [
     image: 'operaHouse'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'knife',
     title: 'Knife',
     subTitle: 'Cape Town, South Africa',
@@ -131,6 +145,7 @@ export const designProjects: DesignProject[] = [
     image: 'knife'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'knifePlan',
     title: 'Knife',
     subTitle: 'Cape Town, South Africa',
@@ -139,6 +154,7 @@ export const designProjects: DesignProject[] = [
     image: 'knifePlan'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'laptopStand',
     title: 'Ikea Lapstånd',
     subTitle: 'A4 flatpack laptop stand',
@@ -147,6 +163,7 @@ export const designProjects: DesignProject[] = [
     image: 'laptopStand'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'office01',
     title: 'Office.01',
     subTitle: 'Reticulated Office Furniture',
@@ -155,6 +172,7 @@ export const designProjects: DesignProject[] = [
     image: 'office01'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'oman',
     title: 'Al Madina A Zarqa',
     subTitle: 'Blue City,Oman',
@@ -163,6 +181,7 @@ export const designProjects: DesignProject[] = [
     image: 'oman'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'ortBridge',
     title: 'O.R.Tambo Airport Pedestrian Bridge',
     subTitle: 'Johannesburg, South Africa',
@@ -171,6 +190,7 @@ export const designProjects: DesignProject[] = [
     image: 'ortBridge'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'redBull',
     title: 'Red Bull Offices',
     subTitle: 'Cape Town, South Africa',
@@ -179,6 +199,7 @@ export const designProjects: DesignProject[] = [
     image: 'redBull'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'samsung',
     title: 'Samsung Galaxy Launch',
     subTitle: 'Berlin, Germany',
@@ -187,6 +208,7 @@ export const designProjects: DesignProject[] = [
     image: 'samsung'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'powerBuoy',
     title: 'Power Buoy',
     subTitle: 'Floating power generator',
@@ -195,6 +217,7 @@ export const designProjects: DesignProject[] = [
     image: 'powerBuoy'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'sony',
     title: 'Sony Building Signage',
     subTitle: 'Cape Town, South Africa',
@@ -203,6 +226,7 @@ export const designProjects: DesignProject[] = [
     image: 'sony'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'winxo',
     title: 'Winxo HQ Signage',
     subTitle: 'Casablanca, Morocco',
@@ -211,6 +235,7 @@ export const designProjects: DesignProject[] = [
     image: 'winxo'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 't2Snooze',
     title: 'Swissport Snooze Lounge',
     subTitle: 'Heathrow Terminal 2',
@@ -219,6 +244,7 @@ export const designProjects: DesignProject[] = [
     image: 't2Snooze'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'vamiziPlan',
     title: 'Vamizi Villa Plan',
     subTitle: 'Vamizi Island, Mozambique',
@@ -227,6 +253,7 @@ export const designProjects: DesignProject[] = [
     image: 'vamiziPlan'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'kite',
     title: 'Kite Buddy ',
     subTitle: 'Motorized kite launching handles',
@@ -235,6 +262,7 @@ export const designProjects: DesignProject[] = [
     image: 'kite'
   },
   {
+    projectType: ProjectType.DESIGN,
     slug: 'hermanus',
     title: 'Hermanus Market Stalls',
     subTitle: 'Hermanus, South Africa',

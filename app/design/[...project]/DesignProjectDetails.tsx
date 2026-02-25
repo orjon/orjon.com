@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { DesignProject, ImageType } from '@/app/types'
+import { DesignProject, ImageType, ProjectType } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import Pills from '@/app/components/Pills'
@@ -10,7 +10,7 @@ import { addBuildVersion, getImagePath } from '@/app/utils'
 const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
 const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
-  const { slug, title, subTitle, scope, software, image } = project
+  const { slug, title, subTitle, scope, software, image, projectType } = project
 
   const imagePath = addBuildVersion(getImagePath(ImageType.DESIGN_IMAGES, image))
 
@@ -45,7 +45,7 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
             <div className='text-sm sm:text-base md:text-lg'>{scope.join(', ')}</div>
           </Section>
           <Section title="Software">
-            <Pills data={software} color='design' responsive={true} />
+            <Pills data={software} color={projectType as ProjectType} responsive={true} />
           </Section>
         </div>
 

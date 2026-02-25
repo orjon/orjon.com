@@ -1,8 +1,9 @@
-import { Technology, Scopes, Software } from '@/app/types'
+import { Technology, Scopes, Software, ProjectType } from '@/app/types'
 
-const Pills = ({ data, color = 'menuButton', responsive = false }: { data: Technology[] | Scopes[] | Software[], color: string, responsive?: boolean }) => {
+const Pills = ({ data, color = ProjectType.CODE, responsive = false }: { data: Technology[] | Scopes[] | Software[], color?: ProjectType, responsive?: boolean }) => {
 
-  const backgroundColor = `bg-${color}`
+  // const backgroundColor = color === ProjectType.DESIGN ? 'bg-[#6adbe9]' : 'bg-[#ea3ff7]'
+  const backgroundColor = color === ProjectType.DESIGN ? 'bg-[#00b8e6]' : 'bg-[#ea3ff7]'
 
   const Pills = data.sort((a, b) => a.localeCompare(b)).map(item => {
     return (

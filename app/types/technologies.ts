@@ -40,3 +40,10 @@ export enum Technology {
   angular = 'Angular',
   iot = 'IoT'
 }
+
+export type TechnologyIcon = {
+  slug: string
+  icon: string
+  label: string
+  active: boolean
+}

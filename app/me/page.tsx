@@ -1,9 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { contactInfo } from '@/app/data'
 
-import { ImageType } from '@/app/types'
-import { technologyIcons, contactInfo } from '@/app/data'
-import { addBuildVersion, getIconPath } from '@/app/utils'
+import TechnologyIcons from '../components/TechnologyIcons'
 
 
 const contactDetails = contactInfo.map((item) => (
@@ -17,50 +15,40 @@ const contactDetails = contactInfo.map((item) => (
   </div>
 ))
 
-const technologyIconList = technologyIcons.map((item) => {
-  const icon = addBuildVersion(getIconPath(ImageType.TECHNOLOGY_ICON, item.icon))
-  return (
-    <div key={item.name} className='w-full flex justify-center items-center'>
-      <Image src={icon} alt={item.name} width={100} height={100} />
-    </div>
-  )
-})
-
 
 const MePage = () => {
   return (
-    <section className='me content-1600 h-full p-4 md:p-8 pb-0 overflow-y-auto bg-white sm:bg-background'>
-      <div className='w-full h-full flex flex-col'>
+    <section className='me w-full h-full p-6 md:p-14 overflow-y-auto bg-white sm:bg-background'>
 
-        <div className='flex-1 flex items-center justify-center pb-4 md:pb-8'>
-          <div className='w-full bg-white sm:p-6 rounded-2xl sm:shadow-md flex flex-col gap-2 md:gap-4 max-w-[1000px]'>
-            <div className='text-3xl font-bold'>Orjon</div>
-            <div className='text-xl font-medium'>developer + designer + visualiser + maker</div>
-            <div className='text-lg/6'>
-              <p>Web Development</p>
-              <p>B.Sc.(Hons) Product Design</p>
-            </div>
 
-            <hr className='border-textDefault/25' />
-
-            <div className='bioTextWrapper flex flex-col gap-2'>
-              <p className='bioText'>Hello, I am a full-stack developer, 3D designer, visualiser, and obsessive tinkerer with over twenty years’ experience working with leading brand agencies, architects, developers and product designers in Europe, the Middle East and Africa.</p>
-
-              <p className='bioText'>Get in touch and let's build stuff!</p>
-            </div>
-            <div className='contact flex flex-col gap-1 mx-auto w-fit font-medium'>
-              {contactDetails}
-            </div>
-
-            <hr className='border-textDefault/25' />
-
-            <div className='w-full mb-2 gap-x-4 gap-y-6 grid grid-cols-[repeat(auto-fit,minmax(75px,1fr))]'>
-              {technologyIconList}
-            </div>
-
+      <div className='flex-1 flex items-center content-1600 justify-center'>
+        <div className='w-full bg-white sm:p-6 rounded-2xl sm:shadow-md flex flex-col gap-2 md:gap-4 max-w-[1200px]'>
+          <div className='text-3xl font-bold'>Orjon</div>
+          <div className='text-xl font-medium'>developer + designer + maker</div>
+          <div className='text-lg/6'>
+            <p>Web Development</p>
+            <p>B.Sc.(Hons) Product Design</p>
           </div>
+
+          <hr className='border-textDefault/25 my-2' />
+
+          <div className='bioTextWrapper flex flex-col gap-2 mx-auto max-w-[800px]'>
+            <p className='bioText'>Hello, I am a full-stack developer, 3D designer, and obsessive tinkerer with over 25 years’ experience working with clients in the UK, Europe, the Middle East and Africa.</p>
+
+            <p className='bioText'>Get in touch and let's build stuff!</p>
+          </div>
+          <div className='contact flex flex-col gap-1 mx-auto w-fit font-medium'>
+            {contactDetails}
+          </div>
+
+          <hr className='border-textDefault/25 my-2' />
+
+          <TechnologyIcons />
+
+
         </div>
       </div>
+
 
 
 
