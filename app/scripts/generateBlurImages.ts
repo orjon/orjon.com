@@ -8,6 +8,8 @@ import {
   designProjects
 } from '../data/index.js'
 
+import { ProjectImages } from '@/app/types/projects'
+
 const projectTypes = ['code', 'electronics'] as const
 
 const projects = {
@@ -18,7 +20,7 @@ const projects = {
 
 async function main() {
   for (const projectType of projectTypes) {
-    const result: Record<string, { src: string; blur: string | null }[]> = {}
+    const result: ProjectImages = {}
 
     for (const slug of projects[projectType]) {
       const folder = path.join('public/images/projects', slug)

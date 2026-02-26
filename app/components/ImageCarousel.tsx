@@ -8,7 +8,7 @@ import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
 import { isGif, addBuildVersion } from '@/app/utils'
-import { breakpoints } from '@/app/types'
+import { breakpoints, ProjectImage } from '@/app/types'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -22,13 +22,12 @@ export const ImageCarousel = ({
   demo = false,
   isActive = false,
 }: {
-  images: Record<string, { src: string; blur: string | null }>
+  images: ProjectImage[]
   demo: { url: string; note: string | React.ReactNode } | false
   isActive?: boolean
 }) => {
-  const imageList = Object.keys(images)
 
-  const isSlideshow = demo || imageList.length > 1
+  const isSlideshow = demo || images.length > 1
 
   const autoplayRef = useRef(
     Autoplay({
@@ -68,9 +67,7 @@ export const ImageCarousel = ({
   }, [emblaApi, autoplayRef, autoPlay, isActive])
 
 
-  const slides = imageList.map((imageSlug, index: number) => {
-
-    const image = images[imageSlug]
+  const slides = images.map((image, index) => {
 
     const isCoverImage = index === 0
     const isGifImage = isGif(image.src);
