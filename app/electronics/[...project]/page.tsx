@@ -2,7 +2,7 @@ import { electronicsProjects } from '@/app/data/electronics'
 import blurredImagesElectronics from '@/app/data/blurredImages_electronics.json'
 
 import ProjectsCarousel from '@/app/components/ProjectsCarousel'
-import { getProjectImages } from '@/app/utils/server'
+// import { getProjectImages } from '@/app/utils/server'
 
 
 const ElectronicsProjectsPage = () => {
