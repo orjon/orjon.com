@@ -29,7 +29,9 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "app/utils/client/index.js"
+    "app/utils/client/index.js",
+    "app/types/index.js",
+    "app/scripts/generateBlurImages.js"
   ],
   "exclude": ["node_modules"]
 }

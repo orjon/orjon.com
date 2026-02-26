@@ -110,6 +110,7 @@ const ProjectsCarousel = ({ projects }: { projects: CodeProject[] | ElectronicsP
   }, [emblaApi])
 
   const allProjects = projects.map((project, index) => {
+
     return (
       <div
         key={project.slug}

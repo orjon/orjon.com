@@ -14,7 +14,7 @@ interface Project {
     bottom?: string
   }
   note?: string
-  images: string[]
+  images: { src: string; blur: string | null }[]
   // imageAutoPlay?: boolean
   technologies: Technology[]
   repo: string

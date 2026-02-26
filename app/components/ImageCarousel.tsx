@@ -17,9 +17,18 @@ const OPTIONS: EmblaOptionsType = {
   containScroll: false, // recommended with Fade when slides are < 100% viewport width
 }
 
-export const ImageCarousel = ({ images, demo = false, isActive = false }: { images: string[], demo: { url: string, note: string | React.ReactNode } | false, isActive?: boolean }) => {
+export const ImageCarousel = ({
+  images,
+  demo = false,
+  isActive = false,
+}: {
+  images: Record<string, { src: string; blur: string | null }>
+  demo: { url: string; note: string | React.ReactNode } | false
+  isActive?: boolean
+}) => {
+  const imageList = Object.keys(images)
 
-  const isSlideshow = demo || images.length > 1
+  const isSlideshow = demo || imageList.length > 1
 
   const autoplayRef = useRef(
     Autoplay({
@@ -59,17 +68,20 @@ export const ImageCarousel = ({ images, demo = false, isActive = false }: { imag
   }, [emblaApi, autoplayRef, autoPlay, isActive])
 
 
-  const slides = images.map((image, index) => {
+  const slides = imageList.map((imageSlug, index: number) => {
+
+    const image = images[imageSlug]
 
     const isCoverImage = index === 0
-    autoPlay = (isCoverImage && isGif(image)) ? false : autoPlay
+    const isGifImage = isGif(image.src);
+    autoPlay = (isCoverImage && isGifImage) ? false : autoPlay
     const loading = isCoverImage ? "eager" : "lazy"
     const fetchPriority = isCoverImage ? "high" : "auto"
 
     return (
       <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
         <Image
-          src={addBuildVersion(image)}
+          src={addBuildVersion(image.src)}
           alt={`Image ${index}`}
           width={0} height={0}
           sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
@@ -77,7 +89,9 @@ export const ImageCarousel = ({ images, demo = false, isActive = false }: { imag
           loading={loading}
           fetchPriority={fetchPriority}
           quality={75}
-          unoptimized={isGif(image)}
+          unoptimized={isGifImage}
+          placeholder={isGifImage ? undefined : "blur"}
+          blurDataURL={isGifImage ? undefined : image.blur as string}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
           className='mx-auto object-contain' />
       </div>

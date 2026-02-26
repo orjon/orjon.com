@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
+    "prebuild": "npx tsx app/scripts/generateBlurImages.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -14,6 +15,7 @@
     "embla-carousel-fade": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "next": "16.1.1",
+    "plaiceholder": "^3.0.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0"
@@ -26,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
