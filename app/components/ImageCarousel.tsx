@@ -173,3 +173,20 @@ export default ImageCarousel
   style="color: transparent; max-height: min(500px, 50vh); width: 100%; height: 100%;">
 </img>
 */
+
+
+// const slides = images.map((image, index) => {
+
+//   return (
+//     <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
+//       <Image
+//         src={image}
+//         alt={`Image ${index}`}
+//         width={0} height={0}
+//         sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
+//         quality={75}
+//         style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
+//         className='mx-auto object-contain' />
+//     </div>
+//   )
+// })

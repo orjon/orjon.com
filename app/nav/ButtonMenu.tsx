@@ -75,7 +75,6 @@ const ButtonMenu = () => {
         </div>
         {menu}
         <div className={`ButtonMenuCenter-GapLeft ${buttonBaseStyle} relative h-full w-full`}>
-          {/* <div className={`relative z-10 pl-2 ${buttonStyle} w-full`}>{zeroWidthSpace}</div> */}
           <div className={`relative z-10 pl-2 ${buttonStyle} w-full`}><RandomProject /></div>
         </div>
         <Suspense fallback={<div className="h-[40px] w-[40px]" />}>

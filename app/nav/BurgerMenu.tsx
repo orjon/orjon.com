@@ -3,8 +3,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 import { menuItems } from '@/app/data'
-import { ImageType } from '@/app/types'
-import { addBuildVersion, getIconPath } from '@/app/utils'
+import { getNavIcon } from '@/app/utils'
 
 
 const BurgerMenu = ({
@@ -22,9 +21,6 @@ const BurgerMenu = ({
     const href = `/${menuItem.name}`
     const path = pathname.startsWith(href)
 
-    const iconOff = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${menuItem.icon}OFF`))
-    const iconOn = addBuildVersion(getIconPath(ImageType.NAV_ICON, `${menuItem.icon}ON`))
-
     return (
       <Link
         key={menuItem.name}
@@ -35,7 +31,7 @@ const BurgerMenu = ({
       >
         <div className="relative size-[30px] shrink-0">
           <Image
-            src={iconOff}
+            src={getNavIcon(menuItem.icon, false)}
             alt={menuItem.name}
             width={30}
             height={30}
@@ -43,7 +39,7 @@ const BurgerMenu = ({
             style={{ width: 30, height: 30 }}
           />
           <Image
-            src={iconOn}
+            src={getNavIcon(menuItem.icon, true)}
             alt={menuItem.name}
             width={30}
             height={30}
