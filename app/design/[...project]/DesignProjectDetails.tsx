@@ -34,7 +34,7 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
               width={1000}
               height={600}
               className='w-full h-auto object-contain'
-              sizes='(max-width: 1000px) 100vw, 1000px'
+              sizes='(max-width: 480px) 480px, (max-width: 768px) 600px, (max-width: 1024px) 900px, 1120px'
             />
           </div>
 

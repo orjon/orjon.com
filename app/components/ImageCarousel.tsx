@@ -81,7 +81,8 @@ export const ImageCarousel = ({
           src={addBuildVersion(image.src)}
           alt={`Image ${index}`}
           width={0} height={0}
-          sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
+          // sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
+          sizes='(max-width: 640px) 480px, (max-width: 768px) 600px, (max-width: 1023px) 900px, (max-width: 1120px) 700px, 900px'
           preload={isCoverImage}
           loading={loading}
           fetchPriority={fetchPriority}
@@ -128,13 +129,13 @@ export const ImageCarousel = ({
         <div className="embla__container flex h-full max-w-[900px] max-h-[min(500px,50vh)] relative z-0">
           {slides}
         </div>
-        {isSlideshow &&
-          <div className="absolute inset-0 z-10 flex pointer-events-none b-red">
+        {/* {isSlideshow &&
+          <div className="absolute inset-0 z-10 flex pointer-events-none">
             <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
             <div className="flex-1 pointer-events-none" />
             <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
           </div>
-        }
+        } */}
       </div>
 
 
