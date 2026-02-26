@@ -2,45 +2,45 @@
   "timeframe": [
     {
       "src": "/images/projects/timeframe/timeFrame_01-build.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMklEQVR4nAEnANj/AMrKyt/f3+Xl5e3t7QCdnZ2+vr4BAQFoaGgAdnZ2/v7+vb29+Pj49uwZOes7MQUAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/timeframe/timeFrame_02-circuit.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAPklEQVR4nAEzAMz/AIQ6QjJTKzUvpWVXOa5dcTQA597/NJuB/zaysv8y9OL/OAAmGCYyJwQSLf+jlCz4maUyHvkWFH9tS74AAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "colortwo": [
     {
       "src": "/images/projects/colortwo/colorTwo_explode07.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVR4nGN49OjRvr17q6qqzp07x7B7924DA30xUdFHjx4xXL9+/dy5c//BAADOEBlGAhiD4AAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/colortwo/colorTwo_explode08.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMklEQVR4nAEnANj/AJ+dnw4MDiQjI8XFxQDU09VLSk01NDTx8fIAp6eoJiYpKCcqxcXHO3YQwa6oHLoAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/colortwo/colortwo_LightArtAward-crop.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGMIddb/fyT39vxQdRlhBl8rzf/fOv/fr9SWFGLg52CpTLBoSLXkZWIAAC9gDVHoTJImAAAAAElFTkSuQmCC"
+      "blur": null
     }
   ],
   "colorone": [
     {
       "src": "/images/projects/colorone/colorone_gallery-crop.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APv0/Ypaivz1/QD89P+rjK/++f8AZFtbsqGYvqefABsAAE8nDlYwEhASFVSv23lRAAAAAElFTkSuQmCC"
+      "blur": null
     }
   ],
   "abouttime": [
     {
       "src": "/images/projects/abouttime/aboutTime_01-exploded.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVR4nAEiAN3/AJZXICX/+uCy58KxsFsWACIANQAAJbWYfarcpJ7bpzk5RxJND4INYI8WAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/abouttime/aboutTime_circuit-photo.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAI0lEQVR4nGP4//+Pjb6QOAPDk6dPGX5/ey/JwaCuqvzmzXsApGUMdC+1CCgAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/abouttime/abouttime_03-accesspoint.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nGNgYGBgOHL44KqD+/atBrHB4Ou//2u///u/Di6w79b7VYduvwerAADpsBOETaZjNgAAAABJRU5ErkJggg=="
+      "blur": null
     }
   ]
 }

@@ -25,7 +25,7 @@ const RandomProject = ({ showLabel = true }: { showLabel?: boolean }) => {
     router.push(`/${randomProject.projectType}/${randomProject.slug}`)
   }
 
-  const iconStyle = 'absolute inset-0 size-full object-contain transition-opacity duration-150'
+  const iconStyle = 'absolute inset-0 size-full object-contain transition-opacity duration-250'
 
   return (
     <div className='RandomProject flex gap-2'>
@@ -54,7 +54,7 @@ const RandomProject = ({ showLabel = true }: { showLabel?: boolean }) => {
         </div>
 
       </button>
-      {showLabel && <div className='hidden md:inline opacity-0 transition-opacity duration-150 peer-hover:opacity-100 select-none'>random</div>}
+      {showLabel && <div className='hidden md:inline opacity-0 transition-opacity duration-250 peer-hover:opacity-100 select-none'>random</div>}
     </div>
   )
 }

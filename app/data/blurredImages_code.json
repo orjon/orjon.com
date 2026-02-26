@@ -2,67 +2,67 @@
   "buttonstyler": [
     {
       "src": "/images/projects/buttonstyler/buttonstyler-01.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGNYOHu2hIiIvooqBwcHw4cnj9XEJfdU1klLSjIsWLw4MiYmMDoyISEBAO5UDNFf1xYdAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/buttonstyler/buttonstyler-02.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAL0lEQVR4nGPw9PKTVZC197fn4uFiKCpttvC0Ovv/hJSMFIOPr5eBvoGKvIqJiQkAvrUJp+6lJcMAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/buttonstyler/buttonstyler-03.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGOYO3umuISCrXMCJycXw/+Pr9U07Tds+i8uJsnQ0dUVHx8VEeqdmJgIAAxWDfzFvd+lAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/buttonstyler/buttonstyler-04.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAL0lEQVR4nGPIys9XlJRzVrXm5uRk8A0OtFEw/X/kv7iQOENycrKjq7Olk42npycAwmMKaVQEROsAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "covid19": [
     {
       "src": "/images/projects/covid19/covid19 00.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AP+lpv/WgYb//+Pj//Oanv8ARgAA/7VFTf+9QU7/ZgAL/wCyTlH/PgAA/0sAAP9YAAH/FtMaiYJ5b70AAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/covid19/covid19 01.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AP+np//Yg4j//+Tl//aboP8ARgAA//aQlP/8lJv/YwAC/wC0TlT/SgAA/1kACP9dAAj/RmUcdCW7guMAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/covid19/covid19 02.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AEE7O//Bv7//WFRU/9TU0/8AExAQ/+vp6v98d3f/f35+/wANBQT/VlVV/0RCQ/+wr7D/1t4cKj94hbUAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/covid19/covid19 03.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AEE7O//j4+P/SEJD/+Tk5f8AGhgY/+Xl5/+CgID/lJST/wANBQT/Z2Vi/1lXVv+npab/9I4dQzEPyqYAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/covid19/covid19 04 mobile.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAYAAACk7+45AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAL0lEQVR4nAEkANv/AAYAAvoaGhrrAP/28//d1dX0AMvEwv/n3+TuAF9WWPqfm5zqWTgVTexT4YQAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "tubeinfo": [
     {
       "src": "/images/projects/tubeinfo/tubeinfo 00.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/ALjCz/+zpcX/yrna/+r5+/8AlK3m/+/8///f8f//ZIfU/wAAO5L/AEuc/wAzh/8AAGD/zu4iA8VXFnUAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/tubeinfo/tubeinfo 01.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AAASLP8AByP/AAsk/wAHJf8A0dDP//Du6P//+/b/19jY/wDS19r/5OTk//z9/f+Uk5v/sYMhTGjROxwAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/tubeinfo/tubeinfo 02.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AERMTv9UWWr/QD9g/wkAJv8Aq6yv/9zc4//m7vf/1Ofw/wDZ3N3/+/v7//r9///b4uf/CkgkLBtBqFQAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/tubeinfo/tubeinfo 03.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AL/Bwf/u7+7/7Ovo/6ytrf8ArrGs//r26v/28eH/srSp/wAFEyP/R05d/zM8S/8OHS//17whw/MMQf4AAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/tubeinfo/tubeinfo 10.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AB4dMf8CARlGDhw+SSIjQfkAwL63/3x8fEj4//9L9uLm/gCAi6LyVmZ9QLvH0kKrna/oHRwZeC2n0RwAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/tubeinfo/tubeinfo 11.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AB0mMf8ABhlGT1ZcSXBxdvkA//7//8LF0UivtLZL7+zk/gCJgJTycmh6QDpNZkJteI/oaAsZ3b6ql3UAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "tetris": [
@@ -72,69 +72,69 @@
     },
     {
       "src": "/images/projects/tetris/tetris 1.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJ0lEQVR4nGOwtrb+/+HDh/8TJkz4r6Sk9J8BRNy/f/9/Y2Pjf5AkAEBuEsf4GJghAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/tetris/tetris 2.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAK0lEQVR4nGPQ0dH5v3Pzxv+FBfn/paWl/zMICQn9//nj1//6qvr/+vr6/wEccBFhRsZeOwAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/tetris/tetris 3.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAK0lEQVR4nGPQ0tL6v3Ll0v+pKcn/JSUl/zMICAj8f/fq1f+s+NT/Ghoa/wEPVBB9M5yWlwAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/tetris/tetris 4.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAK0lEQVR4nGPQ0tL6v3zp0v+BfsH/5RXk/zPw8vH9f//y7f+cxKz/uvp6/wEK2BBnUNfznQAAAABJRU5ErkJggg=="
+      "blur": null
     }
   ],
   "colorclock": [
     {
       "src": "/images/projects/colorclock/colorclock-00.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGNgYGD4ryws/l9dUvw/iM0AIv5f+f////0X/7n5uSEC0opq/+XU1cAqANZJEyP1kbxNAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/colorclock/colorclock-01.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALUlEQVR4nGNgYGBQEpVWl5VjYGBgYGNmfr75/7uv/wWF+EF8RU0TbXMLJkZGAIwvB4p4ZzNmAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/colorclock/colorclock-03.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKUlEQVR4nGNgYGAwNVYztNBggID/p/7/f/aflYMVxJEVVhcVVmdiZgIAmF0Hi8JWMWsAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "department3d": [
     {
       "src": "/images/projects/department3d/department3d 1.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPElEQVR4nGOYk+X+//+J8v//P8z+//vA7P8M/e5K/3/sq/n//9Oy/+9W1f1n0GJg+B+vIf0/yVD2P4gNAFmtHd1O6IJEAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/department3d/department3d 3.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AJOLhv9SUFr/x9///+n7//8A//fn/y8hGP81JiD/Nzc9/wDjwqH/cE00/wAFHv8uVG3/I10c0fv7xWkAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/department3d/department3d 7.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AAUEBP8VFRP/GBga/wsMDv8AnaKn/6+2vv/P0db/0dbc/wD3+vz/9fb6/97d3f/19PT/ib4g97OwecoAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/department3d/department3d mobiles.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAPklEQVR4nAEzAMz/AC9Zgf8rToBGgXFTSXdvZfoARHa5/zVPrUjato5L2cOx/gAMECr/AAQmRrGaikn/+un4ROsYZ70PXN0AAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "whackamole": [
     {
       "src": "/images/projects/whackamole/whack-a-mole_01.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPY/aDw8f+p6y9mWUczMCSlSZgxMPgqMGgbMDA8+d/UPFElo5IlsUUAAD/rDllpCfW7AAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/whackamole/whack-a-mole_05.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPIn6uW1y1mEsjAIMzAsPBUQPcO+7hOHlFHBoYn/1un7XPwrWKQ9mIAAPCbDIhZYlRpAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/whackamole/whack-a-mole_06.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPIn6tWOkXeKZ2BQZiBYcWVsIhKBqs4BklPBoYn/1ubVmjbZjBIejAAAOOEC3dvBxtnAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/whackamole/whack-a-mole_08.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AG+dJv9uixb/PF8A/wATAP8AocpO/5nFSf9lkhf/FUEA/wDk/4X/ibI0/xEaAP8WQAD/Yy4YAMLx5uMAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "weather": [
@@ -144,160 +144,185 @@
     },
     {
       "src": "/images/projects/weather/weather-03-usa.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPQ8ojZt3vH7LkLfv/5y8AgpNfeN6W5s//X//8ArGsOSENtuoYAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/weather/weather-04-world.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNQcYtVtHALSi979fU/AwOvLoOEEYO44df//wFrCAkzyFBo4gAAAABJRU5ErkJggg=="
+      "blur": null
     }
   ],
   "stripedhorse": [
     {
       "src": "/images/projects/stripedhorse/striped-horse1.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNgEFZkEVVwDYjKbprCMGX94RvX7//69GXe5qMAbXAMaFnKwjsAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/stripedhorse/striped-horse2.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO4feuml6tZbm62pJw8Q2Fh4eL5sx88fDB/wUIAl+0MoMutSQoAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/stripedhorse/striped-horse3.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJUlEQVR4nAEaAOX/AERERNDP0OHh4ausrAB8fXzb3Nyur7EhIibDpQ5hENmYmgAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/stripedhorse/striped-horse4.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGP4+fMnn4QKA4fi////GU6fPR3n6elmZnXv/n0AplkNAVT02hAAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/stripedhorse/striped-horse6.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJUlEQVR4nAEaAOX/ALm5udrZ2LW9vgAVIAD09PTr6urP0dAcJCLWNw+J13msCAAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/stripedhorse/striped-horse7.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJUlEQVR4nAEaAOX/ABoYGdbU1VdUVCcjJADQz9D////Ozc2npKaWjg39D3LN6AAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/stripedhorse/striped-horse8.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALUlEQVR4nAEiAN3/AA8kM5gACRt32dXTd7a0tpgANTc5lxUVGnf+/vt30tLSmOF6D70bGJrrAAAAAElFTkSuQmCC"
+      "blur": null
     }
   ],
   "countries": [
     {
       "src": "/images/projects/countries/countries 0.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AP/7//8mEBP/fIWa/y4iKv8Adllk/4KJnP/j6///49jq/wArHjb/jafO/7Gfsv/v7v3/EYkg9YR/iuYAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/countries/countries 2.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAEzAMz/AKeUlf+5o7b/t6u+/7ifmv8A9PP0/9jB1v9bVmP/aV5g/wBdaXP/Oz9K/wgQF/8QFx//YWkd32aNGuYAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/countries/countries 6.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALUlEQVR4nGNgYGBg6OmatKqtqW01iA0G/z98X/v/9Yd1cIErr/+vevf3P1gFALL3EqSJ5zZ9AAAAAElFTkSuQmCC"
+      "blur": null
     }
   ],
   "project4": [
     {
       "src": "/images/projects/project4/p4-01-Dashboard.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAJUlEQVR4nAEaAOX/ANDQ1h4AFYuEkMrJzgDr6/Ho4uPx7/X49/7IHRHgxqTrEgAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/project4/p4-02-Projects.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAI0lEQVR4nGNwsHfx9PDT1zMRE5VkOH3qwoP7T48fPzt1ykwAcXgLnmGSzjcAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/project4/p4-02a-ProjectNew.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAI0lEQVR4nGMQEhS9fv3GjRs3eHh4GbS1df7+///58ycVZRUAlogMLPdPX/YAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/project4/p4-03-Invoices.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAI0lEQVR4nGOQEpMw0DEy0DGSk5ZjePLo+etXH16/+vDk0XMAaE0MoMgpSYAAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/project4/p4-04-Clients.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAG0lEQVR4nGMwNbFUUFDR0TZ0sHdlePniHRwBAHPKDU+7WW8VAAAAAElFTkSuQmCC"
+      "blur": null
     },
     {
       "src": "/images/projects/project4/p4-05-Suppliers.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAI0lEQVR4nGMwNDAVFBAVEhSXlpZn+Pjh68cPXz99/P7k8UsAZQgMkn3ZywIAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/project4/p4-06-Expenses.jpg",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAI0lEQVR4nGOQkpTz9PB1dHBzsHdhuHXj3vOnb169evfk8QsAeEkNc3xvUPcAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "rockpaperscissors": [
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors2.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nAXBgQAAAAzDsOvNYyIlmUnZnlzbJIB6QNtt6gOSkwyL6haHQAAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors3.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPI3lS3/eNxBlNx01p/hjnPN817v4XBgJFBjAEAmRMKFZtUQYgAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors4.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNoKgzdsbxbUZghIdCC4d2dA3/eXJYVYFAUZgAAjKIJ9kHAD4UAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors5.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGMo8w1rDozVZuDd0jGR4f+Fm3/OXpuYlp9s5QwAjm0L3eU5hNEAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors7.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAH0lEQVR4nGPYvXv37du3tbV16urqGH6DQWJi4u7duwHL1A/1vvqfegAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors8.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGMoO9C76smuzPmVTaemMWz+fazx4kwGcQaNfCcAvYMMvrL9JooAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/rockpaperscissors/rockPaperScissors9.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGM4MWvxrPQiDQbO+UU1DP8v3Px/4WaZb5i7kjYAo+oMNCYy59kAAAAASUVORK5CYII="
+      "blur": null
     }
   ],
-  "orjoncom": [],
+  "orjoncom": [
+    {
+      "src": "/images/projects/orjoncom/orjon-com_01.png",
+      "blur": null
+    },
+    {
+      "src": "/images/projects/orjoncom/orjon-com_02.png",
+      "blur": null
+    },
+    {
+      "src": "/images/projects/orjoncom/orjon-com_03.png",
+      "blur": null
+    },
+    {
+      "src": "/images/projects/orjoncom/orjon-com_04.png",
+      "blur": null
+    },
+    {
+      "src": "/images/projects/orjoncom/orjon-com_05.png",
+      "blur": null
+    },
+    {
+      "src": "/images/projects/orjoncom/orjon-com_06.png",
+      "blur": null
+    }
+  ],
   "booker": [
     {
       "src": "/images/projects/booker/booker 00 cover.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPgZxKaN33GkpnTt+3cyaDIw9hUXdpbV/H38ycAhaoL8u/PTLgAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 01 cover.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOobGiXkFU1NLdz9w1l+Pr107bt27bv3ffuwwcAhbUNaaJ9zLsAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 02 login.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOwdXTnERQXFpXSNbZg+P///79/f1+8fP7//38AcHYNf4uEFZYAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 03 register.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGPQ0DEUlpSxc/GOS85kqK0ts7G3+Pr16+8/vwBb4Qq48dONuwAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 04 all books.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGPgERTbsGF7dlHN7PWrGX6/f1yZmxno7/fowV0AmYsNQvAaACcAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 05 a book.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNgEBBj4BLOKazIyC1maGxurG9svHzp4v///wFgBAtaf9pPzQAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 06 add a book.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOQV9aQUVQzNLMxMbdleP7s2b9/f//////m7RsAcUYNhzbT4NYAAAAASUVORK5CYII="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 07 libarary location.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJUlEQVR4nAEaAOX/AMTIyCAgIQUDArq9vgDW5enb39vj3NDs8ealww+AVSPIFAAAAABJRU5ErkJggg=="
+      "blur": null
     },
     {
       "src": "/images/projects/booker/booker 08 book loans.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNw8w5kYOVT0TAICI1i+Pz5c0ZK8to1q//9+wsAZywLdvMF+H4AAAAASUVORK5CYII="
+      "blur": null
     }
   ],
   "daftpunk": [
     {
       "src": "/images/projects/daftpunk/daftpunk.png",
-      "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAIklEQVR4nGMQEhIqrqh1cLCTkpJiMDIyfvH7f1hEtLaWFgBYNAesKoD5VwAAAABJRU5ErkJggg=="
+      "blur": null
     }
   ]
 }

@@ -87,8 +87,8 @@ export const ImageCarousel = ({
           fetchPriority={fetchPriority}
           quality={75}
           unoptimized={isGifImage}
-          placeholder={isGifImage ? undefined : "blur"}
-          blurDataURL={isGifImage ? undefined : image.blur as string}
+          // placeholder={isGifImage ? undefined : "blur"}
+          // blurDataURL={isGifImage ? undefined : image.blur as string}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
           className='mx-auto object-contain' />
       </div>
@@ -123,13 +123,13 @@ export const ImageCarousel = ({
 
   return (
 
-    <div className="ImageCarousel embla mx-auto w-full h-full flex flex-col items-center">
-      <div ref={emblaImageRef} className="embla__viewport relative overflow-hidden w-full h-full">
-        <div className="embla__container flex w-full h-full max-w-[900px] max-h-[min(500px,50vh)] relative z-0">
+    <div className="ImageCarousel embla mx-auto h-full flex flex-col items-center">
+      <div ref={emblaImageRef} className="embla__viewport relative overflow-hidden h-full">
+        <div className="embla__container flex h-full max-w-[900px] max-h-[min(500px,50vh)] relative z-0">
           {slides}
         </div>
         {isSlideshow &&
-          <div className="absolute inset-0 z-10 flex pointer-events-none">
+          <div className="absolute inset-0 z-10 flex pointer-events-none b-red">
             <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
             <div className="flex-1 pointer-events-none" />
             <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
@@ -147,7 +147,7 @@ export const ImageCarousel = ({
               autoplayRef.current.stop()
               scrollTo(index)
             }}
-            className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-200 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
+            className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-250 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
               }`}
             aria-label={`Go to slide ${index + 1}`}
           />

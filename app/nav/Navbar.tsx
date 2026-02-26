@@ -21,6 +21,9 @@ const Navbar = () => {
     return null
   }
 
+  const opacityTransitionStyle =
+    'transition-opacity duration-250'
+
 
   return (
     <header className='relative z-10 shadow-[0_4px_8px_rgba(0,0,0,0.15)]'>
@@ -38,7 +41,7 @@ const Navbar = () => {
               <div className='relative h-[34px] w-[34px]'>
                 <Image
                   src={getNavIcon('faceLarge', false)}
-                  className={`absolute-center size-full object-contain transition-opacity opacity-100 duration-100 ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
+                  className={`absolute-center size-full object-contain opacity-100 ${opacityTransitionStyle} ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
                     }`}
                   alt='face'
                   width={26}
@@ -47,7 +50,7 @@ const Navbar = () => {
                 />
                 <Image
                   src={getNavIcon('faceLarge', true)}
-                  className={`absolute-center size-full object-contain transition-opacity opacity-0 duration-100 ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  className={`absolute-center size-full object-contain opacity-0 ${opacityTransitionStyle} ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   alt='face'
                   width={26}
@@ -57,7 +60,7 @@ const Navbar = () => {
               </div>
             </Link>
             <div
-              className={`hidden sm:block ml-1 text-lg select-none font-medium transition-opacity opacity-0 duration-200 ${isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
+              className={`hidden sm:block ml-1 text-lg select-none font-medium opacity-0 ${opacityTransitionStyle} ${isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
                 }`}
             >
               me
@@ -71,8 +74,8 @@ const Navbar = () => {
             <div className='relative h-[34px] w-[24px]'>
               <Image
                 src={getNavIcon('burgerMenu', false)}
-                className={`absolute-center size-full object-contain transition-opacity ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
-                  } duration-150 `}
+                className={`absolute-center size-full object-contain ${opacityTransitionStyle} ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
+                  }`}
                 alt='face'
                 width={26}
                 height={26}
@@ -80,8 +83,8 @@ const Navbar = () => {
               />
               <Image
                 src={getNavIcon('burgerMenu', true)}
-                className={`absolute-center size-full object-contain transition-opacity ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
-                  } duration-150`}
+                className={`absolute-center size-full object-contain ${opacityTransitionStyle} ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
+                  }`}
                 alt='face'
                 width={26}
                 height={26}

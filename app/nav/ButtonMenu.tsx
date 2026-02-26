@@ -13,10 +13,13 @@ const buttonBaseStyle =
   'bg-[linear-gradient(to_bottom,var(--titleBar)_50%,var(--menuButtonDark)_50%)]'
 
 const buttonGapStyle =
-  'block flex h-[40px] flex-row gap-2 items-center py-1 bg-menuButton duration-100 ease-out transition-[margin] border border-menuButtonDark border-x-0'
+  'block flex h-[40px] flex-row gap-2 items-center py-1 bg-menuButton border border-menuButtonDark border-x-0'
 
 const buttonStyle =
-  'block h-[40px] flex flex-row gap-2 items-center py-1 bg-menuButton rounded-[4px] duration-100 ease-out transition-[margin] border border-menuButtonDark'
+  'block h-[40px] flex flex-row gap-2 items-center py-1 bg-menuButton rounded-[4px] border border-menuButtonDark'
+
+const marginTransitionStyle =
+  'transition-[margin] duration-250 ease-out'
 
 const zeroWidthSpace = '\u200B'
 
@@ -33,14 +36,14 @@ const ButtonMenu = () => {
         <div key={menuItem.name} className={`${buttonBaseStyle} group min-w-[150px] `}>
           <Link
             href={href}
-            className={`z-10 ${buttonStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
+            className={`z-10 ${buttonStyle} ${marginTransitionStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
             <div className="relative size-[30px] shrink-0">
               <Image
                 src={getNavIcon(menuItem.icon, false)}
                 alt={menuItem.name}
                 width={30}
                 height={30}
-                className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
+                className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
                 style={{ width: 30, height: 30 }}
               />
               <Image
@@ -48,7 +51,7 @@ const ButtonMenu = () => {
                 alt={menuItem.name}
                 width={30}
                 height={30}
-                className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                 style={{ width: 30, height: 30 }}
               />
             </div>

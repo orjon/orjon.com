@@ -26,7 +26,7 @@ const BurgerMenu = ({
         key={menuItem.name}
         href={href}
         onClick={() => setIsOpen(false)}
-        className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'
+        className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-250 ${isOpen ? 'opacity-100' : 'opacity-0'
           } ${path ? 'bg-menuButton' : 'none'}`}
       >
         <div className="relative size-[30px] shrink-0">
