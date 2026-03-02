@@ -17,6 +17,8 @@ const OPTIONS: EmblaOptionsType = {
   containScroll: false, // recommended with Fade when slides are < 100% viewport width
 }
 
+const loadingBlur = '/images/loading.png'
+
 export const ImageCarousel = ({
   images,
   demo = false,
@@ -83,12 +85,11 @@ export const ImageCarousel = ({
           width={0} height={0}
           sizes='(max-width: 640px) 480px, (max-width: 768px) 600px, (max-width: 1023px) 900px, (max-width: 1120px) 700px, 900px'
           preload={isCoverImage}
-          loading={loading}
-          fetchPriority={fetchPriority}
           quality={imageQualities.images}
           unoptimized={isGifImage}
-          style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
-          className='mx-auto object-contain' />
+          style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%', objectFit: 'contain' }}
+          className='mx-auto'
+        />
       </div>
     )
   })
