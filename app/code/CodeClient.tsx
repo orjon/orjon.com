@@ -19,7 +19,7 @@ const CodeClient = () => {
     )
   })
 
-  const gridCols = view === 'tile' ? 'grid-cols-[repeat(auto-fit,minmax(200px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]'
+  const gridCols = view === 'tile' ? 'grid-cols-[repeat(auto-fit,minmax(200px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(225px,1fr))]'
     : 'grid-cols-[repeat(auto-fit,1fr)] md:grid-cols-[repeat(auto-fit,minmax(550px,1fr))]'
 
 

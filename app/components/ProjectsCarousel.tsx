@@ -16,7 +16,7 @@ import { CodeProject, ElectronicsProject } from '@/app/types'
 
 const defaultProjectIndex = 0
 
-const ProjectsCarousel = ({ projects }: { projects: CodeProject[] | ElectronicsProject[] }) => {
+const ProjectsCarousel = ({ projects }: { projects: (CodeProject | ElectronicsProject)[] }) => {
   const params = useParams()
 
   useMountLogger('ProjectsCarousel ORIGINAL')

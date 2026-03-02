@@ -115,6 +115,7 @@ const ProjectViewSelector = () => {
               alt={views.TILES}
               width={30}
               height={30}
+              sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
             />
@@ -123,6 +124,7 @@ const ProjectViewSelector = () => {
               alt={views.TILES}
               width={30}
               height={30}
+              sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isTileView ? 'opacity-100' : ''}`}
               style={iconStyle}
             />
@@ -137,6 +139,7 @@ const ProjectViewSelector = () => {
               alt={views.CARDS}
               width={30}
               height={30}
+              sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
             />
@@ -145,6 +148,7 @@ const ProjectViewSelector = () => {
               alt={views.CARDS}
               width={30}
               height={30}
+              sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isCardView ? 'opacity-100' : ''}`}
               style={iconStyle}
             />
@@ -164,6 +168,7 @@ const ProjectViewSelector = () => {
               alt={views.CAROUSEL}
               width={30}
               height={30}
+              sizes='30px'
               className={`${iconClassBase} ${disabled ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
             />
@@ -172,6 +177,7 @@ const ProjectViewSelector = () => {
               alt={views.CAROUSEL}
               width={30}
               height={30}
+              sizes='30px'
               className={`${iconClassBase} ${disabled ? 'hidden' : `${iconClassOn}`} ${isCarouselView ? 'opacity-100' : ''}`}
               style={iconStyle}
             />

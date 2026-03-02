@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "prebuild": "npx tsx app/scripts/generateBlurImages.ts",
     "build": "next build",
+    "postbuild": "npx tsx app/scripts/processImages.ts",
     "start": "next start",
     "lint": "eslint"
   },

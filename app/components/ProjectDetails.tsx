@@ -37,7 +37,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               alt={title}
               fill
               className='w-full h-full object-contain'
-              sizes='500px'
+              sizes='250px'
             />
           </div>
 

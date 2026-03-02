@@ -22,7 +22,7 @@ const ProjectTile = ({ project }: { project: CodeProject | ElectronicsProject })
             alt={title}
             fill
             className='w-full h-full object-contain'
-            sizes='500px'
+            sizes='250px'
           />
         </div>
 

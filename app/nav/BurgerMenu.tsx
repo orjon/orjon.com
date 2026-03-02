@@ -35,6 +35,7 @@ const BurgerMenu = ({
             alt={menuItem.name}
             width={30}
             height={30}
+            sizes='30px'
             className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
             style={{ width: 30, height: 30 }}
           />
@@ -43,6 +44,7 @@ const BurgerMenu = ({
             alt={menuItem.name}
             width={30}
             height={30}
+            sizes='30px'
             className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
             style={{ width: 30, height: 30 }}
           />

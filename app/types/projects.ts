@@ -3,12 +3,8 @@ import { Technology, Scopes, Software } from '@/app/types'
 export enum ProjectType {
   ELECTRONICS = 'electronics',
   CODE = 'code',
-  DESIGN = 'design',
+  DESIGN = 'design'
 }
-
-// Per-project image metadata (src + optional blur placeholder)
-export type ProjectImage = { src: string; blur: string | null }
-export type ProjectImages = Record<string, ProjectImage[]>
 
 interface Project {
   slug: string
@@ -18,7 +14,7 @@ interface Project {
     bottom?: string
   }
   note?: string
-  images: ProjectImage[]
+  images: string[]
   technologies: Technology[]
   repo: string
 }

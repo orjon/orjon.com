@@ -8,7 +8,6 @@ import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
 import { isGif, addBuildVersion } from '@/app/utils'
-import { breakpoints, ProjectImage } from '@/app/types'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -22,7 +21,7 @@ export const ImageCarousel = ({
   demo = false,
   isActive = false,
 }: {
-  images: ProjectImage[]
+  images: string[]
   demo: { url: string; note: string | React.ReactNode } | false
   isActive?: boolean
 }) => {
@@ -70,7 +69,7 @@ export const ImageCarousel = ({
   const slides = images.map((image, index) => {
 
     const isCoverImage = index === 0
-    const isGifImage = isGif(image.src);
+    const isGifImage = isGif(image);
     autoPlay = (isCoverImage && isGifImage) ? false : autoPlay
     const loading = isCoverImage ? "eager" : "lazy"
     const fetchPriority = isCoverImage ? "high" : "auto"
@@ -78,18 +77,15 @@ export const ImageCarousel = ({
     return (
       <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
         <Image
-          src={addBuildVersion(image.src)}
+          src={addBuildVersion(image)}
           alt={`Image ${index}`}
           width={0} height={0}
-          // sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
           sizes='(max-width: 640px) 480px, (max-width: 768px) 600px, (max-width: 1023px) 900px, (max-width: 1120px) 700px, 900px'
           preload={isCoverImage}
           loading={loading}
           fetchPriority={fetchPriority}
           quality={75}
           unoptimized={isGifImage}
-          placeholder={isGifImage ? undefined : "blur"}
-          blurDataURL={isGifImage ? undefined : image.blur as string}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
           className='mx-auto object-contain' />
       </div>

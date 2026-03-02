@@ -1,6 +1,6 @@
 import { electronicsProjects } from '@/app/data/electronics'
-import blurredImagesElectronics from '@/app/data/blurredImages_electronics.json'
 
+import { getProjectImages } from '@/app/utils/server/helpers'
 import ProjectsCarousel from '@/app/components/ProjectsCarousel'
 
 
@@ -8,7 +8,7 @@ const ElectronicsProjectsPage = () => {
 
   const projects = electronicsProjects.map((project) => ({
     ...project,
-    images: [...(blurredImagesElectronics[project.slug as keyof typeof blurredImagesElectronics]!)]
+    images: getProjectImages(project.slug)
   }))
 
   return (

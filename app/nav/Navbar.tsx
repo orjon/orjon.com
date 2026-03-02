@@ -46,6 +46,7 @@ const Navbar = () => {
                   alt='face'
                   width={26}
                   height={26}
+                  sizes='30px'
                   style={{ width: 26, height: 26 }}
                 />
                 <Image
@@ -55,6 +56,7 @@ const Navbar = () => {
                   alt='face'
                   width={26}
                   height={26}
+                  sizes='30px'
                   style={{ width: 26, height: 26 }}
                 />
               </div>
@@ -79,6 +81,7 @@ const Navbar = () => {
                 alt='face'
                 width={26}
                 height={26}
+                sizes='30px'
                 style={{ width: 26, height: 26 }}
               />
               <Image
@@ -88,6 +91,7 @@ const Navbar = () => {
                 alt='face'
                 width={26}
                 height={26}
+                sizes='30px'
                 style={{ width: 26, height: 26 }}
               />
             </div>

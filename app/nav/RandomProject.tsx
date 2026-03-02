@@ -40,6 +40,7 @@ const RandomProject = ({ showLabel = true }: { showLabel?: boolean }) => {
             alt='Random project'
             width={30}
             height={30}
+            sizes='30px'
             className={`${iconStyle} opacity-100 group-hover:opacity-0`}
             style={{ width: 30, height: 30 }}
           />
@@ -48,6 +49,7 @@ const RandomProject = ({ showLabel = true }: { showLabel?: boolean }) => {
             alt='Random project'
             width={30}
             height={30}
+            sizes='30px'
             className={`${iconStyle} opacity-0 group-hover:opacity-100`}
             style={{ width: 30, height: 30 }}
           />
