@@ -5,10 +5,10 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? '/staging' : '',
   images: {
     formats: ['image/webp', 'image/avif'],
-    imageSizes: [imageSizes.navIcon, ...imageSizes.projectImage],
+    imageSizes: Object.values(imageSizes).flat(),
     deviceSizes,
     unoptimized: false,
-    qualities: [imageQualities.icons, imageQualities.images],
+    qualities: [imageQualities.navIcons, imageQualities.images],
     localPatterns: [
       {
         // Allow query strings on all images in /public

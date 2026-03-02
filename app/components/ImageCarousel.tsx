@@ -8,6 +8,7 @@ import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
 import { isGif, addBuildVersion } from '@/app/utils'
+import { imageQualities } from '@/app/constants'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -84,7 +85,7 @@ export const ImageCarousel = ({
           preload={isCoverImage}
           loading={loading}
           fetchPriority={fetchPriority}
-          quality={75}
+          quality={imageQualities.images}
           unoptimized={isGifImage}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
           className='mx-auto object-contain' />

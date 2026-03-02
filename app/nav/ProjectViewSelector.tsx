@@ -9,6 +9,7 @@ import { ProjectType } from '@/app/types'
 import { getLocalStorageValue } from '@/app/utils/client'
 import { hasProject, getNavIcon } from '@/app/utils'
 import { codeProjects, electronicsProjects, designProjects, views } from '@/app/data'
+import { imageQualities } from '@/app/constants'
 
 const defaultProject = {
   [ProjectType.CODE]: codeProjects[0].slug,
@@ -118,6 +119,7 @@ const ProjectViewSelector = () => {
               sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
+              quality={imageQualities.navIcons}
             />
             <Image
               src={getNavIcon(views.TILES, true)}
@@ -127,6 +129,7 @@ const ProjectViewSelector = () => {
               sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isTileView ? 'opacity-100' : ''}`}
               style={iconStyle}
+              quality={imageQualities.navIcons}
             />
           </div>
         </Link>
@@ -142,6 +145,7 @@ const ProjectViewSelector = () => {
               sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
+              quality={imageQualities.navIcons}
             />
             <Image
               src={getNavIcon(views.CARDS, true)}
@@ -151,6 +155,7 @@ const ProjectViewSelector = () => {
               sizes='30px'
               className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isCardView ? 'opacity-100' : ''}`}
               style={iconStyle}
+              quality={imageQualities.navIcons}
             />
           </div>
 
@@ -171,6 +176,7 @@ const ProjectViewSelector = () => {
               sizes='30px'
               className={`${iconClassBase} ${disabled ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
+              quality={imageQualities.navIcons}
             />
             <Image
               src={getNavIcon(views.CAROUSEL, true)}
@@ -180,6 +186,7 @@ const ProjectViewSelector = () => {
               sizes='30px'
               className={`${iconClassBase} ${disabled ? 'hidden' : `${iconClassOn}`} ${isCarouselView ? 'opacity-100' : ''}`}
               style={iconStyle}
+              quality={imageQualities.navIcons}
             />
           </div>
 

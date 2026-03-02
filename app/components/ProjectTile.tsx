@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
 import { addBuildVersion, getIconPath } from '@/app/utils'
+import { imageQualities } from '@/app/constants'
 
 const ProjectTile = ({ project }: { project: CodeProject | ElectronicsProject }) => {
 
@@ -23,6 +24,7 @@ const ProjectTile = ({ project }: { project: CodeProject | ElectronicsProject })
             fill
             className='w-full h-full object-contain'
             sizes='250px'
+            quality={imageQualities.images}
           />
         </div>
 

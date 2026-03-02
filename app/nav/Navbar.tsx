@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { getNavIcon } from '@/app/utils'
 import ButtonMenu from './ButtonMenu'
 import BurgerMenu from './BurgerMenu'
+import { imageQualities } from '@/app/constants'
 
 const Navbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
@@ -48,6 +49,7 @@ const Navbar = () => {
                   height={26}
                   sizes='30px'
                   style={{ width: 26, height: 26 }}
+                  quality={imageQualities.navIcons}
                 />
                 <Image
                   src={getNavIcon('faceLarge', true)}
@@ -58,6 +60,7 @@ const Navbar = () => {
                   height={26}
                   sizes='30px'
                   style={{ width: 26, height: 26 }}
+                  quality={imageQualities.navIcons}
                 />
               </div>
             </Link>
@@ -83,6 +86,7 @@ const Navbar = () => {
                 height={26}
                 sizes='30px'
                 style={{ width: 26, height: 26 }}
+                quality={imageQualities.navIcons}
               />
               <Image
                 src={getNavIcon('burgerMenu', true)}
@@ -93,6 +97,7 @@ const Navbar = () => {
                 height={26}
                 sizes='30px'
                 style={{ width: 26, height: 26 }}
+                quality={imageQualities.navIcons}
               />
             </div>
           </button>

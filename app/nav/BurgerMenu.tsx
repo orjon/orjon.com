@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 
 import { menuItems } from '@/app/data'
 import { getNavIcon } from '@/app/utils'
+import { imageQualities } from '@/app/constants'
 
 
 const BurgerMenu = ({
@@ -38,6 +39,7 @@ const BurgerMenu = ({
             sizes='30px'
             className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
             style={{ width: 30, height: 30 }}
+            quality={imageQualities.navIcons}
           />
           <Image
             src={getNavIcon(menuItem.icon, true)}
@@ -47,6 +49,7 @@ const BurgerMenu = ({
             sizes='30px'
             className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
             style={{ width: 30, height: 30 }}
+            quality={imageQualities.navIcons}
           />
         </div>
         <div className="w-30">{menuItem.name}</div>

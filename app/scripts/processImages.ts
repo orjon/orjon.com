@@ -2,13 +2,12 @@ import fs from 'fs/promises'
 import path from 'path'
 
 import { codeProjects, electronicsProjects } from '../data/index.js'
-import { imageSizes, imageQualities } from '@/app/constants/images'
+import { imageSizes, imageQualities } from '@/app/constants'
 
 const BASE_URL =
   process.env.IMAGE_WARM_ORIGIN ??
   process.env.NEXT_PUBLIC_SITE_URL ??
   'http://localhost:3000'
-
 
 const CONCURRENCY = 6
 
@@ -37,13 +36,15 @@ async function collectProjectImages(): Promise<string[]> {
   return Array.from(result)
 }
 
-async function collectNavIcons(): Promise<string[]> {
-  const folder = path.join('public/icons/nav')
+async function collectIconsFromFolder(
+  relativeFolder: string
+): Promise<string[]> {
+  const folder = path.join('public', relativeFolder)
   try {
     const files = (await fs.readdir(folder)).filter((file) =>
       /\.(png|jpe?g|webp)$/i.test(file)
     )
-    return files.map((file) => `/icons/nav/${file}`)
+    return files.map((file) => `/${relativeFolder}/${file}`)
   } catch {
     return []
   }
@@ -64,41 +65,59 @@ async function warmOne(url: string, accept: string) {
   }
 }
 
+const buildNextImageUrl = (src: string, width: number, quality: number) => {
+  const u = new URL('/_next/image', BASE_URL)
+  u.searchParams.set('url', src)
+  u.searchParams.set('w', String(width))
+  u.searchParams.set('q', String(quality))
+  return u.toString()
+}
+
+const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
+  const urls: string[] = []
+
+  for (const src of srcs) {
+    for (const w of widths) {
+      urls.push(buildNextImageUrl(src, w, quality))
+    }
+  }
+  return urls
+}
+
 async function main() {
   const projectSrcs = await collectProjectImages()
-  const iconSrcs = await collectNavIcons()
+  const navIconSrcs = await collectIconsFromFolder('icons/nav')
+  const projectIconSrcs = await collectIconsFromFolder('icons/projects')
+  const techIconSrcs = await collectIconsFromFolder('icons/technology')
 
   const urls: string[] = []
 
-  const buildNextImageUrl = (src: string, width: number, quality: number) => {
-    const u = new URL('/_next/image', BASE_URL)
-    u.searchParams.set('url', src)
-    u.searchParams.set('w', String(width))
-    u.searchParams.set('q', String(quality))
-    return u.toString()
-  }
+  urls.push(
+    ...addImageUrls(projectSrcs, imageSizes.projectImage, imageQualities.images)
+  )
+  urls.push(
+    ...addImageUrls(navIconSrcs, imageSizes.navIcon, imageQualities.navIcons)
+  )
+  urls.push(
+    ...addImageUrls(
+      projectIconSrcs,
+      imageSizes.projectIcon,
+      imageQualities.images
+    )
+  )
+  urls.push(
+    ...addImageUrls(techIconSrcs, imageSizes.techIcons, imageQualities.images)
+  )
 
-  // Project images: all configured widths, image quality
-  for (const src of projectSrcs) {
-    for (const w of imageSizes.projectImage) {
-      urls.push(buildNextImageUrl(src, w, imageQualities.images))
-    }
-  }
-
-  // Nav icons: single small width, icon quality
-  for (const src of iconSrcs) {
-    urls.push(buildNextImageUrl(src, imageSizes.navIcon, imageQualities.icons))
-  }
-
-  console.log(`Warming ${urls.length} image variants against ${BASE_URL}...`)
-
-  // Warm for AVIF and WebP (if enabled in next.config)
   const acceptHeaders = [
     'image/avif,image/webp,image/*,*/*',
     'image/webp,image/*,*/*'
   ]
 
   const totalRequests = urls.length * acceptHeaders.length
+
+  console.log(`Warming ${totalRequests} image variants against ${BASE_URL}...`)
+
   let completed = 0
   let lastPercentLogged = -1
 
@@ -112,7 +131,9 @@ async function main() {
         completed += 1
         const percent = Math.floor((completed / totalRequests) * 100)
         if (percent !== lastPercentLogged && percent % 5 === 0) {
-          console.log(`Warm progress: ${percent}% (${completed}/${totalRequests})`)
+          console.log(
+            `Warm progress: ${percent}% (${completed}/${totalRequests})`
+          )
           lastPercentLogged = percent
         }
       }

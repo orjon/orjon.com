@@ -9,6 +9,7 @@ import { PreviewLinks, GitHubLink } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
 import { ProjectType } from '@/app/types/projects'
 import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
+import { imageQualities } from '@/app/constants'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
   const { slug, title, description, images, technologies, repo, projectType } = project
@@ -38,6 +39,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               fill
               className='w-full h-full object-contain'
               sizes='250px'
+              quality={imageQualities.images}
             />
           </div>
 
