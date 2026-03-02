@@ -9,5 +9,5 @@ export const imageSizes = {
 
 export const imageQualities = {
   navIcons: 100,
-  images: 60
+  images: 65
 }
