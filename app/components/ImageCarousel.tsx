@@ -88,8 +88,8 @@ export const ImageCarousel = ({
           fetchPriority={fetchPriority}
           quality={75}
           unoptimized={isGifImage}
-          // placeholder={isGifImage ? undefined : "blur"}
-          // blurDataURL={isGifImage ? undefined : image.blur as string}
+          placeholder={isGifImage ? undefined : "blur"}
+          blurDataURL={isGifImage ? undefined : image.blur as string}
           style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
           className='mx-auto object-contain' />
       </div>

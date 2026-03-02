@@ -3,6 +3,9 @@
 # source
 /source
 
+# blurred images (re-generated at build time by generateBlurImages.ts)
+/app/data/blurredImages_*.json
+
 # dependencies
 /node_modules
 /.pnp
@@ -43,4 +46,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-app/data/blurredImages_*.json
+
