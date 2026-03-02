@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? '/staging' : '',
   images: {
     formats: ['image/webp', 'image/avif'],
-    imageSizes: Object.values(imageSizes).flat(),
+    imageSizes: Object.values(imageSizes).flat() as number[],
     deviceSizes,
     unoptimized: false,
     qualities: [imageQualities.navIcons, imageQualities.images],
