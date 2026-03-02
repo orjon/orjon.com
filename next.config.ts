@@ -11,7 +11,6 @@ const nextConfig: NextConfig = {
     qualities: [imageQualities.navIcons, imageQualities.images],
     localPatterns: [
       {
-        // Allow query strings on all images in /public
         pathname: '/**/*.{png,jpg,jpeg,gif,webp,svg}'
       }
     ]
