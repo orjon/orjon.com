@@ -33,6 +33,7 @@ async function main() {
         files.map(async (file) => {
           const src = `/images/projects/${slug}/${file}`
 
+          // don't blur
           // return { src, blur: null }
 
           // For GIFs, don't generate a blurred version; keep blur as null.
