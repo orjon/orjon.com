@@ -7,8 +7,8 @@ import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
-import { isGif, addBuildVersion } from '@/app/utils'
-import { imageQualities } from '@/app/constants'
+import { isGif, addBuildVersion, getImageSizes } from '@/app/utils'
+import { imageQualities, projectImageSizes } from '@/app/constants'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -16,8 +16,6 @@ const OPTIONS: EmblaOptionsType = {
   watchDrag: false,
   containScroll: false, // recommended with Fade when slides are < 100% viewport width
 }
-
-const loadingBlur = '/images/loading.png'
 
 export const ImageCarousel = ({
   images,
@@ -74,8 +72,6 @@ export const ImageCarousel = ({
     const isCoverImage = index === 0
     const isGifImage = isGif(image);
     autoPlay = (isCoverImage && isGifImage) ? false : autoPlay
-    const loading = isCoverImage ? "eager" : "lazy"
-    const fetchPriority = isCoverImage ? "high" : "auto"
 
     return (
       <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
@@ -83,7 +79,7 @@ export const ImageCarousel = ({
           src={addBuildVersion(image)}
           alt={`Image ${index}`}
           width={0} height={0}
-          sizes='(max-width: 640px) 480px, (max-width: 768px) 600px, (max-width: 1023px) 900px, (max-width: 1120px) 700px, 900px'
+          sizes={getImageSizes(projectImageSizes)}
           preload={isCoverImage}
           quality={imageQualities.images}
           unoptimized={isGifImage}
@@ -112,13 +108,19 @@ export const ImageCarousel = ({
 
   useEffect(() => {
     if (!emblaApi) return
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
+    const onSelect = () => {
+      const currentIndex = emblaApi.selectedScrollSnap()
+      setSelectedIndex(currentIndex)
+      // const nextImage = images[currentIndex + 1]
+      // if (!nextImage) return
+      // preloadImage(nextImage, projectImageSizes, imageQualities.images)
+    }
 
     emblaApi.on('select', onSelect)
     return () => {
       emblaApi.off('select', onSelect)
     }
-  }, [emblaApi])
+  }, [emblaApi, images])
 
   return (
 
@@ -127,13 +129,13 @@ export const ImageCarousel = ({
         <div className="embla__container flex h-full max-w-[900px] max-h-[min(500px,50vh)] relative z-0">
           {slides}
         </div>
-        {/* {isSlideshow &&
+        {isSlideshow &&
           <div className="absolute inset-0 z-10 flex pointer-events-none">
             <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
             <div className="flex-1 pointer-events-none" />
             <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
           </div>
-        } */}
+        }
       </div>
 
 

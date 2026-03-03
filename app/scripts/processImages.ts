@@ -3,6 +3,7 @@ import path from 'path'
 
 import { codeProjects, electronicsProjects } from '../data/index.js'
 import { imageSizes, imageQualities } from '@/app/constants'
+import { dedupeArray } from '@/app/utils'
 
 const BASE_URL =
   process.env.IMAGE_WARM_ORIGIN ??
@@ -77,7 +78,7 @@ const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
   const urls: string[] = []
 
   for (const src of srcs) {
-    for (const w of widths) {
+    for (const w of dedupeArray(widths)) {
       urls.push(buildNextImageUrl(src, w, quality))
     }
   }
@@ -85,7 +86,8 @@ const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
 }
 
 async function main() {
-  const projectSrcs = await collectProjectImages()
+  const projectImageSrcs = await collectProjectImages()
+  const designImageSrcs = await collectIconsFromFolder('images/design')
   const navIconSrcs = await collectIconsFromFolder('icons/nav')
   const projectIconSrcs = await collectIconsFromFolder('icons/projects')
   const techIconSrcs = await collectIconsFromFolder('icons/technology')
@@ -93,7 +95,18 @@ async function main() {
   const urls: string[] = []
 
   urls.push(
-    ...addImageUrls(projectSrcs, imageSizes.projectImage, imageQualities.images)
+    ...addImageUrls(
+      projectImageSrcs,
+      imageSizes.projectImage,
+      imageQualities.images
+    )
+  )
+  urls.push(
+    ...addImageUrls(
+      designImageSrcs,
+      imageSizes.designImage,
+      imageQualities.images
+    )
   )
   urls.push(
     ...addImageUrls(navIconSrcs, imageSizes.navIcon, imageQualities.navIcons)

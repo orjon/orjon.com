@@ -5,8 +5,8 @@ import { DesignProject, ImageType, ProjectType } from '@/app/types'
 import Section from '@/app/components/Section'
 import Pills from '@/app/components/Pills'
 import Paragraphs from '@/app/components/Paragraphs'
-import { addBuildVersion, getImagePath } from '@/app/utils'
-import { imageQualities } from '@/app/constants'
+import { addBuildVersion, getImagePath, getImageSizes } from '@/app/utils'
+import { imageQualities, designImageSizes } from '@/app/constants'
 
 const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
@@ -33,7 +33,7 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
               width={1000}
               height={600}
               className='w-full h-auto object-contain'
-              sizes='(max-width: 480px) 480px, (max-width: 768px) 600px, (max-width: 1024px) 900px, 1120px'
+              sizes={getImageSizes(designImageSizes)}
               quality={imageQualities.images}
             />
           </div>

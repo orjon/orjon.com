@@ -1,13 +1,29 @@
-export const deviceSizes = [480, 768, 1024, 1280]
+import { getSizes } from '../utils/helpers'
+
+export const projectImageSizes = {
+  640: 480,
+  768: 600,
+  1023: 900,
+  1120: 700,
+  rest: 900
+}
+
+export const designImageSizes = {
+  480: 480,
+  768: 600,
+  1023: 900,
+  rest: 1120
+}
 
 export const imageSizes = {
   navIcon: [30],
   techIcons: [64],
   projectIcon: [250],
-  projectImage: [480, 600, 700, 900, 1120]
+  projectImage: getSizes(projectImageSizes),
+  designImage: getSizes(designImageSizes)
 }
 
 export const imageQualities = {
   navIcons: 100,
-  images: 65
+  images: 75
 }
