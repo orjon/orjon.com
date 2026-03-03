@@ -66,7 +66,7 @@ async function warmOne(url: string, accept: string) {
   }
 }
 
-const buildNextImageUrl = (src: string, width: number, quality: number) => {
+const buildImageUrl = (src: string, width: number, quality: number) => {
   const u = new URL('/_next/image', BASE_URL)
   u.searchParams.set('url', src)
   u.searchParams.set('w', String(width))
@@ -79,7 +79,7 @@ const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
 
   for (const src of srcs) {
     for (const w of dedupeArray(widths)) {
-      urls.push(buildNextImageUrl(src, w, quality))
+      urls.push(buildImageUrl(src, w, quality))
     }
   }
   return urls
