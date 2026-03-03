@@ -97,14 +97,14 @@ async function main() {
   urls.push(
     ...addImageUrls(
       projectImageSrcs,
-      imageSizes.projectImage,
+      [...imageSizes.projectImage, ...imageSizes.designImage],
       imageQualities.images
     )
   )
   urls.push(
     ...addImageUrls(
       designImageSrcs,
-      imageSizes.designImage,
+      [...imageSizes.projectImage, ...imageSizes.designImage],
       imageQualities.images
     )
   )
