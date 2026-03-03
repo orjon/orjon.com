@@ -6,7 +6,7 @@ export const codeProjects: CodeProject[] = [
     slug: 'buttonstyler',
     title: 'Button Styler',
     description: {
-      top: 'An interactive tool for styling buttons to be used in development projects.',
+      top: "A tool for styling buttons and CTA's to be used in development projects.",
       bottom: 'Adjust size, color, text and border styles, corner radii, and shadows through a structured interface that displays changes and the corresponding CSS in real time.\nThe generated CSS is ready to copy directly into your project.'
     },
     images: [],
@@ -48,12 +48,13 @@ export const codeProjects: CodeProject[] = [
   {
     projectType: ProjectType.CODE,
     slug: 'tubeinfo',
-    title: 'London Underground Information',
+    title: 'Tube Info',
     description: {
-      top: 'Full stack real-time London Underground information.',
-      bottom: ''
+      top: 'A handy little app for getting real-time London Underground information.',
+      bottom: 'Uses the TfL Open Data API to get the real-time information about the London Underground networks. You can see the status of each line, and expected arrival times for each line serving a selected station.\nDetailed information is displayed for each station, including station address, facilities, and an interactive map of the surrounding area.\nTo limit API usage, resquest responses are cached on the server for a given period of time.'
     },
     images: [],
+    note: 'Powered by TfL Open Data',
     technologies: [
       Technology.react,
       Technology.redux,
@@ -112,8 +113,8 @@ export const codeProjects: CodeProject[] = [
     slug: 'department3d',
     title: 'department3D',
     description: {
-      top: 'Image-rich company website with clean, minimal navigation and responsive styling.',
-      bottom: ''
+      top: 'Image-rich company website with a simple, clean navigation system and responsive styling.',
+      bottom: 'Department3D is design and visualisation services company  - they wanted images of their work to do the talking.'
     },
     images: [],
     technologies: [
@@ -131,8 +132,8 @@ export const codeProjects: CodeProject[] = [
     slug: 'whackamole',
     title: 'Whack-a-Mole',
     description: {
-      top: 'A 60-second, fast-paced whack-a-mole game with forced-perspective and gratuitously macabre graphics. Hammer popping-up moles before they vanish in this darkly playful test of reflexes.',
-      bottom: ''
+      top: 'A 60-second, fast-paced whack-a-mole game with forced-perspective and gratuitously macabre graphics.',
+      bottom: 'A simple little game built for fun some time ago.'
     },
     images: [],
     technologies: [
@@ -205,8 +206,8 @@ export const codeProjects: CodeProject[] = [
     slug: 'project4',
     title: 'project4',
     description: {
-      top: 'Full stack book-keeping application with unique navigation.',
-      bottom: ''
+      top: 'A book-keeping application for small businesses.',
+      bottom: 'Allows users to track invoices, payments, and expenses - with a uniuqe everything-is-clickable interface.'
     },
     images: [],
     technologies: [
@@ -228,8 +229,8 @@ export const codeProjects: CodeProject[] = [
     slug: 'rockpaperscissors',
     title: 'Rock Paper Scissors',
     description: {
-      top: 'Rock Paper Scissors & Rock Paper Scissors Lizard Spock games.',
-      bottom: ''
+      top: 'Rock Paper Scissors game.',
+      bottom: "A simple little game with a bold interface. Trekies can also select to play Rock Paper Scissors Lizard Spock."
     },
     images: [],
     technologies: [Technology.html, Technology.sass, Technology.javascript],
@@ -243,7 +244,7 @@ export const codeProjects: CodeProject[] = [
     title: 'orjon.com',
     description: {
       top: 'This portfolio website',
-      bottom: ''
+      bottom: 'This portfolio website has been live and actively maintained since 2001.'
     },
     images: [],
     technologies: [
@@ -262,9 +263,10 @@ export const codeProjects: CodeProject[] = [
     slug: 'booker',
     title: 'Booker',
     description: {
-      top: 'Full stack social book-sharing application.',
-      bottom: ''
+      top: 'Book-sharing application.',
+      bottom: 'Users share their book collections with other users of the platform. Registered users upload their book collections to the platform which other users can then browse and request to borrow.'
     },
+    note: 'This was a group project built at General Assembly.',
     images: [],
     technologies: [
       Technology.react,

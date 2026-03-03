@@ -1,47 +1,50 @@
 import Link from 'next/link'
 
-import { HiOutlineDeviceMobile } from "react-icons/hi";
-import { MdOutlineDesktopWindows } from "react-icons/md";
-import { FaGithub } from 'react-icons/fa';
-
-const projectLinkStyle = "flex-1 sm:max-w-[200px] lg:w-[200px] rounded-md p-1 md:p-2 flex items-center justify-center gap-2 font-medium md:font-semibold text-white text-lg duration-250"
+import { ButtonType, buttonTypes } from '@/app/types'
 
 
-const PreviewLinks = ({ www, column, responsive }: { www: string, column: boolean, responsive: boolean }) => {
+const createLink = (type: ButtonType, href: string) => {
+  const { style, icon, label } = buttonTypes[type]
+  return (
+    <Link
+      key={type}
+      href={href}
+      target='_blank'
+      rel='noopener noreferrer'
+      className={style}>
+      {icon}{label}
+    </Link>
+  )
+}
+
+
+const PreviewLinks = ({ href, column, responsive = false }: { href: string, column: boolean, responsive: boolean }) => {
+
+  // Enable once mobile oreview is ready
+  // const links = [
+  //   { type: ButtonType.DESKTOP, href }
+  // ]
+  // responsive && links.push({ type: ButtonType.MOBILE, href })
+
   const links = [
-    { label: 'desktop', href: www, icon: <MdOutlineDesktopWindows /> },
+    { type: ButtonType.WWW, href },
   ]
-  responsive && links.push({ label: 'mobile', href: www, icon: <HiOutlineDeviceMobile /> })
+
 
   return (
     <div className={`PreviewLinks w-full flex items-center gap-3 ${column ? 'flex-col' : 'flex-row'}`}>
-      {links.map(({ label, icon, href }) => (
-        <Link
-          key={label}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${projectLinkStyle} bg-blue-700 hover:bg-blue-600`}>
-          {icon}{label}
-        </Link>
-      ))}
+      {links.map(({ type, href }) => createLink(type, href))}
     </div>
   )
 }
 
-const GitHubLink = ({ href }: { href: string }) => {
-
+const LinkButton = ({ type, href }: { type: ButtonType; href: string }) => {
   return (
-    <div className="GitHubLink w-full flex items-center">
-      <Link
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${projectLinkStyle} bg-black hover:bg-grey400`}>
-        <FaGithub />gitHub
-      </Link>
+    <div className="LinkButton w-full flex items-center">
+      {createLink(type, href)}
     </div>
   )
 }
 
-export { PreviewLinks, GitHubLink }
+
+export { LinkButton, PreviewLinks }

@@ -41,4 +41,5 @@ export type DesignProject = {
   scope: Scopes[]
   software: Software[]
   image: string
+  mapUrl?: string
 }

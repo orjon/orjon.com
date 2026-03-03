@@ -8,7 +8,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     title: 'Time Frame',
     description: {
       top: 'Random pattern clock.',
-      bottom: ''
+      bottom: 'Time Frame displays seemingly random patterns that represent the current time. The time is split into hours, tens of minutes, and minutes, each represented by a randomly generated pattern of blue squares.\nExample: 10:34 = 10–3–4, with the hours pattern illuminated for longer to indicate the start of the sequence.'
     },
     demo: {
       url: '/demo/timeframe/index.html',
@@ -29,7 +29,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     images: [],
     description: {
       top: 'Abstract color clock.',
-      bottom: ''
+      bottom: 'The centre of this clock gradually cycles through the color spectrum over a 12 hour period. At the top of each hour the central colour will precisely match the corresponsing hour indicator, allowing for surpisingly accurate time estimation.'
     },
     technologies: [Technology.electronics, Technology.arduino, Technology.html, Technology.sass, Technology.javascript, Technology.jquery],
     repo: 'colortwo.web'
@@ -40,7 +40,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     title: 'ColorOne',
     description: {
       top: "Minimalist 'single-pixel' color clock.",
-      bottom: ''
+      bottom: 'This clock gradually cycles through the color spectrum over a 12 hour period.'
     },
     demo: {
       url: '/demo/colorone/index.html',
@@ -56,7 +56,7 @@ export const electronicsProjects: ElectronicsProject[] = [
     title: 'About Time',
     description: {
       top: 'Approximate clock.',
-      bottom: ''
+      bottom: 'This digital clock displays the current time with ...some ambiguity.'
     },
     demo: {
       url: '/demo/abouttime/index.html',

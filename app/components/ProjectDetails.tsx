@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
-import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
+import { CodeProject, ElectronicsProject, ImageType, ButtonType } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import ImageCarousel from '@/app/components/ImageCarousel'
 import Pills from '@/app/components/Pills';
-import { PreviewLinks, GitHubLink } from '@/app/components/Links'
+import { PreviewLinks, LinkButton } from '@/app/components/Links'
 import Paragraphs from '@/app/components/Paragraphs'
 import { ProjectType } from '@/app/types/projects'
 import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
@@ -24,40 +24,41 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
   const icon = addBuildVersion(getIconPath(ImageType.PROJECT_ICON, slug))
 
-
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
 
       <article className={`${slug} flex-1 h-full lg:h-auto flex flex-col lg:flex-row ${isElectronics ? 'gap-0' : 'gap-1 '} lg:gap-8 `}>
 
-        <div className="LeftPanel flex flex-1 flex-col items-start justify-between">
+        {!isElectronics &&
+          <div className="LeftPanel flex flex-1 flex-col items-start justify-between">
 
-          <div className={`ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto lg:mx-0 relative ${isElectronics ? 'hidden lg:block' : ''}`}>
-            <Image
-              src={icon}
-              alt={title}
-              fill
-              className='w-full h-full object-contain'
-              sizes='250px'
-              quality={imageQualities.images}
-            />
-          </div>
-
-          <div className={`LinksBlockWide hidden lg:flex w-full flex-col items-start justify-start ${sectionGap}`}>
-
-            <div className={`Links flex w-full flex-col lg:justify-between ${sectionGap}`}>
-              <Section title='Code'>
-                <GitHubLink href={getGithubLink(repo)} />
-              </Section>
-              {www && (
-                <Section title='Preview'>
-                  <PreviewLinks www={www} column={true} responsive={responsive ?? false} />
-                </Section>
-              )}
+            <div className={`ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto lg:mx-0 relative`}>
+              <Image
+                src={icon}
+                alt={title}
+                fill
+                className='w-full h-full object-contain'
+                sizes='250px'
+                quality={imageQualities.images}
+              />
             </div>
-          </div>
 
-        </div>
+            <div className={`LinksBlockWide hidden lg:flex w-full flex-col items-start justify-start ${sectionGap}`}>
+
+              <div className={`Links flex w-full flex-col lg:justify-between ${sectionGap}`}>
+                <Section title='Code'>
+                  <LinkButton type={ButtonType.GITHUB} href={getGithubLink(repo)} />
+                </Section>
+                {www && (
+                  <Section title='Preview'>
+                    <PreviewLinks href={www} column={true} responsive={responsive ?? false} />
+                  </Section>
+                )}
+              </div>
+            </div>
+
+          </div>
+        }
 
         <div className={`ProjectInformation flex w-full h-full sm:h-auto flex-col items-start justify-between sm:justify-start ${sectionGap}`}>
 
@@ -77,7 +78,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               {description.bottom && <div className='text-sm sm:text-base md:text-lg'>
                 <Paragraphs text={description.bottom} />
               </div>}
-              {note && <div className='w-full text-menuButton italic text-xs sm:text-sm md:text-base'>{note}</div>}
+              {note && <div className='w-full text-menuButton italic text-right text-xs sm:text-sm md:text-base'>{note}</div>}
             </div>
 
 
@@ -89,13 +90,13 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               <Pills data={technologies} color={projectType as ProjectType} responsive={true} />
             </Section>
 
-            <div className={`Links flex lg:hidden w-full flex-col md:flex-row md:justify-between ${sectionGap}`}>
+            <div className={`Links 'flex' ${isElectronics ? '' : 'lg:hidden'} w-full flex-col md:flex-row md:justify-between ${sectionGap}`}>
               <Section title='Code'>
-                <GitHubLink href={getGithubLink(repo)} />
+                <LinkButton type={ButtonType.GITHUB} href={getGithubLink(repo)} />
               </Section>
               {www && (
                 <Section title='Preview'>
-                  <PreviewLinks www={www} column={false} responsive={responsive ?? false} />
+                  <PreviewLinks href={www} column={false} responsive={responsive ?? false} />
                 </Section>
               )}
             </div>
