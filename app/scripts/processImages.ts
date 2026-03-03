@@ -77,56 +77,12 @@ const buildImageUrl = (src: string, width: number, quality: number) => {
 const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
   const urls: string[] = []
 
-  const uniqueWidths = dedupeArray(widths)
-
   for (const src of srcs) {
-    for (const w of uniqueWidths) {
+    for (const w of dedupeArray(widths)) {
       urls.push(buildImageUrl(src, w, quality))
     }
   }
   return urls
-}
-
-const ACCEPT_HEADERS = [
-  'image/avif,image/webp,image/*,*/*',
-  'image/webp,image/*,*/*'
-]
-
-async function warmUrls(urls: string[], label: string) {
-  if (!urls.length) {
-    console.log(`Skipping ${label} (no URLs)`)
-    return
-  }
-
-  const totalRequests = urls.length * ACCEPT_HEADERS.length
-  console.log(
-    `Warming ${totalRequests} ${label} variants against ${BASE_URL}...`
-  )
-
-  let completed = 0
-  let lastPercentLogged = -1
-  let index = 0
-
-  const workers = Array.from({ length: CONCURRENCY }, async () => {
-    while (index < urls.length) {
-      const myIndex = index++
-      const url = urls[myIndex]
-      for (const accept of ACCEPT_HEADERS) {
-        await warmOne(url, accept)
-        completed += 1
-        const percent = Math.floor((completed / totalRequests) * 100)
-        if (percent !== lastPercentLogged && percent % 5 === 0) {
-          console.log(
-            `[${label}] Warm progress: ${percent}% (${completed}/${totalRequests})`
-          )
-          lastPercentLogged = percent
-        }
-      }
-    }
-  })
-
-  await Promise.all(workers)
-  console.log(`[${label}] Image cache warm complete ✅`)
 }
 
 async function main() {
@@ -136,38 +92,69 @@ async function main() {
   const projectIconSrcs = await collectIconsFromFolder('icons/projects')
   const techIconSrcs = await collectIconsFromFolder('icons/technology')
 
-  await warmUrls(
-    addImageUrls(
+  const urls: string[] = []
+
+  urls.push(
+    ...addImageUrls(
       projectImageSrcs,
       [...imageSizes.projectImage, ...imageSizes.designImage],
       imageQualities.images
-    ),
-    'project images'
+    )
   )
-
-  await warmUrls(
-    addImageUrls(
+  urls.push(
+    ...addImageUrls(
       designImageSrcs,
       [...imageSizes.projectImage, ...imageSizes.designImage],
       imageQualities.images
-    ),
-    'design images'
+    )
+  )
+  urls.push(
+    ...addImageUrls(navIconSrcs, imageSizes.navIcon, imageQualities.navIcons)
+  )
+  urls.push(
+    ...addImageUrls(
+      projectIconSrcs,
+      imageSizes.projectIcon,
+      imageQualities.images
+    )
+  )
+  urls.push(
+    ...addImageUrls(techIconSrcs, imageSizes.techIcons, imageQualities.images)
   )
 
-  await warmUrls(
-    addImageUrls(navIconSrcs, imageSizes.navIcon, imageQualities.navIcons),
-    'nav icons'
-  )
+  const acceptHeaders = [
+    'image/avif,image/webp,image/*,*/*',
+    'image/webp,image/*,*/*'
+  ]
 
-  await warmUrls(
-    addImageUrls(projectIconSrcs, imageSizes.projectIcon, imageQualities.images),
-    'project icons'
-  )
+  const totalRequests = urls.length * acceptHeaders.length
 
-  await warmUrls(
-    addImageUrls(techIconSrcs, imageSizes.techIcons, imageQualities.images),
-    'technology icons'
-  )
+  console.log(`Warming ${totalRequests} image variants against ${BASE_URL}...`)
+
+  let completed = 0
+  let lastPercentLogged = -1
+
+  let index = 0
+  const workers = Array.from({ length: CONCURRENCY }, async () => {
+    while (index < urls.length) {
+      const myIndex = index++
+      const url = urls[myIndex]
+      for (const accept of acceptHeaders) {
+        await warmOne(url, accept)
+        completed += 1
+        const percent = Math.floor((completed / totalRequests) * 100)
+        if (percent !== lastPercentLogged && percent % 5 === 0) {
+          console.log(
+            `Warm progress: ${percent}% (${completed}/${totalRequests})`
+          )
+          lastPercentLogged = percent
+        }
+      }
+    }
+  })
+
+  await Promise.all(workers)
+  console.log('Image cache warm complete ✅')
 }
 
 main().catch((err) => {
