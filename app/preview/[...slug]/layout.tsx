@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { getSiteTitle } from '@/app/utils/helpers'
+
 import '@/assets/styles/globals.css'
 import { Bai_Jamjuree } from 'next/font/google'
 
@@ -10,7 +12,7 @@ const baiJamjuree = Bai_Jamjuree({
 })
 
 export const metadata: Metadata = {
-  title: 'orjon.com | nextjs',
+  title: getSiteTitle(),
   keywords: ['nextjs', 'website', 'portfolio', 'developer', 'code', 'orjon'],
   description: 'new nextjs website'
 }

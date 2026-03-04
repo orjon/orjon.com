@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import { FirstInteractionProvider } from './context/FirstInteractionContext'
+import { getSiteTitle } from '@/app/utils/helpers'
 
 import Navbar from '@/app/nav/Navbar'
 
@@ -14,7 +15,7 @@ const baiJamjuree = Bai_Jamjuree({
 })
 
 export const metadata: Metadata = {
-  title: 'orjon.com | nextjs',
+  title: getSiteTitle(),
   keywords: ['nextjs', 'website', 'portfolio', 'developer', 'code', 'orjon'],
   description: 'new nextjs website'
 }

@@ -70,7 +70,7 @@ export const designProjects: DesignProject[] = [
     projectType: ProjectType.DESIGN,
     slug: 'knife',
     title: 'Knife',
-    subTitle: 'Interior design and detailing of Knife resaurant in Century City, Cape Town',
+    subTitle: 'Interior design and detailing of Knife restaurant in Century City, Cape Town',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
     image: 'knife'

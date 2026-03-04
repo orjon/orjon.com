@@ -37,3 +37,15 @@ export const getImageSizes = (sizes: Record<string, number>): string => {
 
   return parts.join(', ')
 }
+
+export const getSiteTitle = () => {
+  const baseTitle = 'orjon.com'
+  const envLabel =
+    process.env.NEXT_PUBLIC_ENV ??
+    (process.env.NODE_ENV === 'development' ? 'local' : 'production')
+  return envLabel === 'staging'
+    ? `${baseTitle} | Staging`
+    : envLabel === 'local'
+      ? `${baseTitle} | Local`
+      : baseTitle
+}
