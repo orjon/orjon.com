@@ -29,7 +29,6 @@ jobs:
             echo "Removing .next directory..."
             rm -rf .next
             export NEXT_PUBLIC_BUILD_VERSION="$(date +%s)"
-            export NEXT_PUBLIC_ENV="staging"
             echo "Build version: $NEXT_PUBLIC_BUILD_VERSION"
             echo "Starting build..."
             npm run build || { echo "Build failed! Aborting deployment."; exit 1; }

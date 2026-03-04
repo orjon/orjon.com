@@ -4,7 +4,7 @@ import { imageSizes, imageQualities } from '@/app/constants'
 const allImageSizes = Object.values(imageSizes).flat() as number[]
 
 const nextConfig: NextConfig = {
-  assetPrefix: process.env.NEXT_PUBLIC_ENV === 'staging' ? '/staging' : '',
+  // assetPrefix: process.env.NEXT_PUBLIC_ENV === 'staging' ? '/staging' : '',
   images: {
     formats: ['image/webp', 'image/avif'],
     imageSizes: allImageSizes,
