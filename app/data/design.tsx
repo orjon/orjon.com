@@ -51,7 +51,7 @@ export const designProjects: DesignProject[] = [
     projectType: ProjectType.DESIGN,
     slug: 'bhunga',
     title: 'Bhunga Pedestrian Bridge',
-    subTitle: 'Widening of existing bridge to safely accommodate pedestrians oer N1  Cape Town, South Africa',
+    subTitle: 'Widening of existing bridge to safely accommodate pedestrians and cyclists over N2 highway outside Cape Town',
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.Animation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
     image: 'bhunga',
@@ -70,7 +70,7 @@ export const designProjects: DesignProject[] = [
     projectType: ProjectType.DESIGN,
     slug: 'knife',
     title: 'Knife',
-    subTitle: 'Cape Town, South Africa',
+    subTitle: 'Interior design and detailing of Knife resaurant in Century City, Cape Town',
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
     image: 'knife'
@@ -97,7 +97,7 @@ export const designProjects: DesignProject[] = [
     projectType: ProjectType.DESIGN,
     slug: 'redBull',
     title: 'Red Bull Offices',
-    subTitle: 'Cape Town, South Africa',
+    subTitle: "Interior and furniture design for Red Bull's South African HQ in Cape Town",
     scope: [Scopes.SpacePlanning, Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation, Scopes.OnSiteSupervision],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
     image: 'redBull'
