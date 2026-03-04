@@ -17,7 +17,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             set -e
-            cd /var/www/orjon-com
+            cd /var/www/orjon.com/production
             echo "Pulling latest changes..."
             git pull origin main
             export NVM_DIR="$HOME/.nvm"
@@ -33,4 +33,4 @@ jobs:
             echo "Starting build..."
             npm run build || { echo "Build failed! Aborting deployment."; exit 1; }
             echo "Build succeeded. Reloading..."
-            # pm2 reload orjon-com --update-env
+            # pm2 reload orjon-production --update-env
