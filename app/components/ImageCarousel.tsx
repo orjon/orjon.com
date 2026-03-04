@@ -83,7 +83,7 @@ export const ImageCarousel = ({
           preload={isCoverImage}
           quality={imageQualities.images}
           unoptimized={isGifImage}
-          style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%', objectFit: 'contain' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           className='mx-auto'
         />
       </div>
@@ -111,9 +111,6 @@ export const ImageCarousel = ({
     const onSelect = () => {
       const currentIndex = emblaApi.selectedScrollSnap()
       setSelectedIndex(currentIndex)
-      // const nextImage = images[currentIndex + 1]
-      // if (!nextImage) return
-      // preloadImage(nextImage, projectImageSizes, imageQualities.images)
     }
 
     emblaApi.on('select', onSelect)
@@ -124,9 +121,9 @@ export const ImageCarousel = ({
 
   return (
 
-    <div className="ImageCarousel embla mx-auto h-full flex flex-col items-center">
+    <div className="ImageCarousel embla mx-auto my-2 h-full flex flex-col items-center">
       <div ref={emblaImageRef} className="embla__viewport relative overflow-hidden h-full">
-        <div className="embla__container flex h-full max-w-[900px] max-h-[min(500px,50vh)] relative z-0">
+        <div className="embla__container flex h-full relative z-0">
           {slides}
         </div>
         {isSlideshow &&
@@ -139,7 +136,7 @@ export const ImageCarousel = ({
       </div>
 
 
-      {isSlideshow && <div className="ControlButtons pt-2 flex gap-5">
+      {isSlideshow && <div className="ControlButtons pt-6 sm:pt-5 md:pt-4 flex gap-5">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -148,7 +145,7 @@ export const ImageCarousel = ({
               autoplayRef.current.stop()
               scrollTo(index)
             }}
-            className={`h-3 w-3 cursor-pointer rounded-full hover:scale-125 duration-250 ${index === selectedIndex ? 'bg-textDefault scale-125' : 'bg-menuButton'
+            className={`h-6 w-6 sm:h-5 sm:w-5 md:h-4 md:w-4 cursor-pointer border-2 border-menuButtonDark rounded-full hover:scale-125 duration-250 ${index === selectedIndex ? 'bg-menuButtonDark' : ''
               }`}
             aria-label={`Go to slide ${index + 1}`}
           />

@@ -5,8 +5,8 @@ import { CodeProject, ElectronicsProject, ImageType, ButtonType } from '@/app/ty
 import Section from '@/app/components/Section'
 import ImageCarousel from '@/app/components/ImageCarousel'
 import Pills from '@/app/components/Pills';
-import { PreviewLinks, LinkButton } from '@/app/components/Links'
-import Paragraphs from '@/app/components/Paragraphs'
+import { LinkButton } from '@/app/components/Links'
+import { Summary, Paragraphs, Note } from '@/app/components/Texts'
 import { ProjectType } from '@/app/types/projects'
 import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
 import { imageQualities } from '@/app/constants'
@@ -19,7 +19,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   const demo = 'demo' in project ? project.demo : false
   const www = 'www' in project ? project.www : false
   const note = 'note' in project ? project.note : false
-  const responsive = 'responsive' in project ? project.responsive : false
+  // const responsive = 'responsive' in project ? project.responsive : false
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
   const icon = addBuildVersion(getIconPath(ImageType.PROJECT_ICON, slug))
@@ -51,7 +51,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
                 </Section>
                 {www && (
                   <Section title='Preview'>
-                    <PreviewLinks href={www} column={true} responsive={responsive ?? false} />
+                    <LinkButton type={ButtonType.WWW} href={www} />
                   </Section>
                 )}
               </div>
@@ -67,18 +67,14 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
             <div className='w-full text-center sm:text-left text-2xl md:text-3xl font-bold'>{title}</div>
 
             <div className={`flex w-full h-auto flex-col items-start justify-evenly sm:justify-start ${sectionGap}`}>
-              <div className='text-sm sm:text-base md:text-lg'>
-                <Paragraphs text={description.top} />
-              </div>
 
+              <Summary text={description.top} />
 
               {(demo || images.length > 0) && (
                 <ImageCarousel images={images} demo={demo} isActive={isActive} />
               )}
-              {description.bottom && <div className='text-sm sm:text-base md:text-lg'>
-                <Paragraphs text={description.bottom} />
-              </div>}
-              {note && <div className='w-full text-menuButton italic text-right text-xs sm:text-sm md:text-base'>{note}</div>}
+              {description.bottom && <Paragraphs text={description.bottom} />}
+              {note && <Note text={note} />}
             </div>
 
 
@@ -90,15 +86,17 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               <Pills data={technologies} color={projectType as ProjectType} responsive={true} />
             </Section>
 
-            <div className={`Links 'flex' ${isElectronics ? '' : 'lg:hidden'} w-full flex-col md:flex-row md:justify-between ${sectionGap}`}>
-              <Section title='Code'>
-                <LinkButton type={ButtonType.GITHUB} href={getGithubLink(repo)} />
-              </Section>
-              {www && (
-                <Section title='Preview'>
-                  <PreviewLinks href={www} column={false} responsive={responsive ?? false} />
+            <div className={`Links flex ${isElectronics ? '' : 'lg:hidden'} w-full flex-col xs:flex-row ${sectionGap}`}>
+              <div className='flex-1 flex flex-col items-start justify-start'>
+                <Section title='Code'>
+                  <LinkButton type={ButtonType.GITHUB} href={getGithubLink(repo)} />
                 </Section>
-              )}
+              </div>
+              {www && (<div className='flex-1 flex flex-col items-start justify-start'>
+                <Section title='Preview'>
+                  <LinkButton type={ButtonType.WWW} href={www} />
+                </Section>
+              </div>)}
             </div>
           </div>
 

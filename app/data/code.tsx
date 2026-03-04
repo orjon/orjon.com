@@ -28,7 +28,7 @@ export const codeProjects: CodeProject[] = [
       top: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.',
       bottom: 'Users can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…'
     },
-    note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static and no longer updates.',
+    note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static.',
     images: [],
     technologies: [
       Technology.react,
@@ -154,7 +154,7 @@ export const codeProjects: CodeProject[] = [
       top: 'Explore the world’s weather at a glance with this interactive map.',
       bottom: 'Select a location to see detailed localized weather information, with clear, intuitive icons representing temperature, precipitation, and other conditions in real time.'
     },
-    note: 'Update 2019-06-30: Originally this application displayed global weather data. A change in the OpenWeatherMap API now limits free weather data to 25 square degrees.',
+    note: 'Originally this application displayed global weather data. A change in the OpenWeatherMap API now limits free weather data to 25 square degrees.',
     images: [],
     technologies: [
       Technology.react,

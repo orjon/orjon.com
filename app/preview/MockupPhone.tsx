@@ -81,9 +81,6 @@ const MockupPhone = ({ slug }: { slug: string }) => {
           onClick={(e) => { e.preventDefault(); router.back(); }} className='absolute z-11 opacity-0 transition-opacity duration-500 delay-1000 ease-out' style={{ top: `${logo.top}px`, left: `${logo.left}px`, width: `${logo.width}px`, height: `${logo.height}px`, opacity: `${opacity}` }}>
           <Image src="/images/mockup-phone/logo.webp" alt="Mockup Phone" fill />
         </Link>
-
-
-        {/* <Image src="/images/mockup-phone/logo.webp" alt="Mockup Phone" width={logo.width} height={logo.height} className='absolute z-11 opacity-0 transition-opacity duration-500 delay-1000 ease-out' style={{ top: `${logo.top}px`, left: `${logo.left}px`, width: `${logo.width}px`, height: `${logo.height}px`, opacity: `${opacity}` }} /> */}
         <iframe
           ref={iframeRef}
           src={`https://www.orjon.com/${slug}`}

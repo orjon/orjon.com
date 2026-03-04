@@ -36,7 +36,7 @@ export const designProjects: DesignProject[] = [
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.SketchUp, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
     image: 'foreshore',
-    mapUrl: 'https://www.google.com/maps/place/Bhunga+Ave,+Cape+Town,+South+Africa/@-33.9152661,18.4238228,3a,75y,42.92h,97.36t/data=!3m7!1e1!3m5!1sL5buaSqkBGgoO_dZHYjuWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.3557917360997465%26panoid%3DL5buaSqkBGgoO_dZHYjuWg%26yaw%3D42.91826237908957!7i16384!8i8192!4m6!3m5!1s0x1dcc5ca186c8e395:0x9833f7c437bbe469!8m2!3d-33.9496966!4d18.5158958!16s%2Fg%2F1wk0b5pb?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D'
+    mapUrl: 'https://www.google.com/maps/@?api=1&map_action=pano&pano=0eEtPPWEFRlY8NiRIudGEw&heading=52.76&pitch=-4.88'
   },
   {
     projectType: ProjectType.DESIGN,
@@ -55,7 +55,7 @@ export const designProjects: DesignProject[] = [
     scope: [Scopes.Design, Scopes.Visualisation, Scopes.Animation, Scopes.TechnicalDocumentation],
     software: [Software.AutoCAD, Software.ThreeDSMax, Software.MentalRay, Software.Photoshop],
     image: 'bhunga',
-    mapUrl: 'https://www.google.com/maps/place/Bhunga+Ave,+Cape+Town,+South+Africa/@-33.9503323,18.522028,3a,75y,287.28h,93.22t/data=!3m7!1e1!3m5!1sVTHhUrOdx_gW3dq7ylMsMg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2231606213562145%26panoid%3DVTHhUrOdx_gW3dq7ylMsMg%26yaw%3D287.27909834126416!7i16384!8i8192!4m6!3m5!1s0x1dcc5ca186c8e395:0x9833f7c437bbe469!8m2!3d-33.9496966!4d18.5158958!16s%2Fg%2F1wk0b5pb?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D'
+    mapUrl: 'https://www.google.com/maps/@?api=1&map_action=pano&pano=VTHhUrOdx_gW3dq7ylMsMg&heading=293.82&pitch=-5.06'
   },
   {
     projectType: ProjectType.DESIGN,

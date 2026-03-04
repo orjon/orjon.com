@@ -1,0 +1,36 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Droplet
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DROPLET_IP }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+            cd /var/www/orjon-com
+            echo "Pulling latest changes..."
+            git pull origin main
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            echo "Checking required Node.js version..."
+            nvm use || nvm install
+            echo "Using Node.js version: $(node -v)"
+            npm install
+            echo "Removing .next directory..."
+            rm -rf .next
+            export NEXT_PUBLIC_BUILD_VERSION="$(date +%s)"
+            echo "Build version: $NEXT_PUBLIC_BUILD_VERSION"
+            echo "Starting build..."
+            npm run build || { echo "Build failed! Aborting deployment."; exit 1; }
+            echo "Build succeeded. Reloading..."
+            # pm2 reload orjon-com --update-env

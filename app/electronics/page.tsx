@@ -1,10 +1,11 @@
 import { Suspense } from "react"
-import ElectronicsClient from "@/app/electronics/ElectronicsClient"
+import ProjectGallery from "@/app/components/ProjectGallery"
+import { electronicsProjects } from "@/app/data/electronics"
 
-export default function CodePage() {
+export default function ElectronicsPage() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <ElectronicsClient />
+      <ProjectGallery projects={electronicsProjects} />
     </Suspense>
   )
 }

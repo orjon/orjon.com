@@ -1,20 +1,20 @@
-import { sections } from '@/app/types'
+import { Sections } from '@/app/types'
 
 export const menuItems = [
   {
-    name: sections.code,
+    name: Sections.CODE,
     icon: 'code'
   },
   {
-    name: sections.design,
+    name: Sections.DESIGN,
     icon: 'design'
   },
   {
-    name: sections.electronics,
+    name: Sections.ELECTRONICS,
     icon: 'electronics'
   },
   {
-    name: sections.me,
+    name: Sections.ME,
     icon: 'face',
     titleBar: true
   }

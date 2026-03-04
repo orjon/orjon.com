@@ -1,9 +1,9 @@
-import { Technology, Scopes, Software } from '@/app/types'
+import { Technology, Scopes, Software, Sections } from '@/app/types'
 
 export enum ProjectType {
-  ELECTRONICS = 'electronics',
-  CODE = 'code',
-  DESIGN = 'design'
+  ELECTRONICS = Sections.ELECTRONICS,
+  CODE = Sections.CODE,
+  DESIGN = Sections.DESIGN
 }
 
 interface Project {

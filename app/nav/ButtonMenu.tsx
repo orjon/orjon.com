@@ -34,10 +34,10 @@ const ButtonMenu = () => {
       const href = `/${menuItem.name}`
       const path = pathname.startsWith(href)
       return (
-        <div key={menuItem.name} className={`${buttonBaseStyle} group min-w-[150px] `}>
+        <div key={menuItem.name} className={`${buttonBaseStyle} group min-w-[60px] md:min-w-[150px] `}>
           <Link
             href={href}
-            className={`z-10 ${buttonStyle} ${marginTransitionStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
+            className={`z-10 ${buttonStyle} justify-center md:justify-start ${marginTransitionStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
             <div className="relative size-[30px] shrink-0">
               <Image
                 src={getNavIcon(menuItem.icon, false)}
@@ -60,7 +60,7 @@ const ButtonMenu = () => {
                 quality={imageQualities.navIcons}
               />
             </div>
-            {menuItem.name}
+            <div className='hidden md:block'>{menuItem.name}</div>
           </Link>
         </div>
       )
@@ -89,7 +89,7 @@ const ButtonMenu = () => {
           <ProjectViewSelector />
         </Suspense>
         <div className={`ButtonMenuCenter-GapRight ${buttonBaseStyle} relative h-full`}>
-          <div className={`relative z-10 pl-2 ${buttonStyle} w-full rounded-r-none border-r-0`}>{zeroWidthSpace}</div>
+          <div className={`relative z-10 pl-2 ${buttonStyle} justify-start w-full rounded-r-none border-r-0`}>{zeroWidthSpace}</div>
         </div>
       </div>
 

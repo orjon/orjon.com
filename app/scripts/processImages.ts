@@ -51,7 +51,7 @@ async function collectIconsFromFolder(
   }
 }
 
-async function warmOne(url: string, accept: string) {
+async function processOne(url: string, accept: string) {
   try {
     const res = await fetch(url, {
       headers: {
@@ -59,10 +59,10 @@ async function warmOne(url: string, accept: string) {
       }
     })
     if (!res.ok) {
-      console.error('Warm failed', res.status, url)
+      console.error('Pre-processing failed', res.status, url)
     }
   } catch (err) {
-    console.error('Warm error', url, err)
+    console.error('Pre-processing error', url, err)
   }
 }
 
@@ -129,7 +129,9 @@ async function main() {
 
   const totalRequests = urls.length * acceptHeaders.length
 
-  console.log(`Warming ${totalRequests} image variants against ${BASE_URL}...`)
+  console.log(
+    `Pre-processing ${totalRequests} image variants against ${BASE_URL}...`
+  )
 
   let completed = 0
   let lastPercentLogged = -1
@@ -140,12 +142,12 @@ async function main() {
       const myIndex = index++
       const url = urls[myIndex]
       for (const accept of acceptHeaders) {
-        await warmOne(url, accept)
+        await processOne(url, accept)
         completed += 1
         const percent = Math.floor((completed / totalRequests) * 100)
         if (percent !== lastPercentLogged && percent % 5 === 0) {
           console.log(
-            `Warm progress: ${percent}% (${completed}/${totalRequests})`
+            `Pre-processing progress: ${percent}% (${completed}/${totalRequests})`
           )
           lastPercentLogged = percent
         }
@@ -154,7 +156,7 @@ async function main() {
   })
 
   await Promise.all(workers)
-  console.log('Image cache warm complete ✅')
+  console.log('Image pre-processing complete ✅')
 }
 
 main().catch((err) => {

@@ -6,6 +6,9 @@ export const numberWithinRange = (
   max: number
 ): number => Math.min(Math.max(number, min), max)
 
+export const getRandomArrayItem = (array: any[]): any =>
+  array[Math.floor(Math.random() * array.length)]
+
 export const hasProject = (
   projects: CodeProject[] | ElectronicsProject[] | DesignProject[],
   projectSlug: string

@@ -4,7 +4,7 @@ import { DesignProject, ImageType, ProjectType, ButtonType } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import Pills from '@/app/components/Pills'
-import Paragraphs from '@/app/components/Paragraphs'
+import { Summary, Paragraphs } from '@/app/components/Texts'
 import { addBuildVersion, getImagePath, getImageSizes } from '@/app/utils'
 import { imageQualities, designImageSizes } from '@/app/constants'
 import { LinkButton } from '@/app/components/Links'
@@ -27,8 +27,7 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
         <div className={`DescriptionAndImages flex w-full h-full sm:h-auto flex-col items-start justify-start ${sectionGap}`}>
           <div className='w-full text-center sm:text-left text-2xl md:text-3xl font-bold'>{title}</div>
 
-          {subTitle && <div className='text-sm sm:text-base md:text-lg'> <Paragraphs text={subTitle} /></div>}
-
+          {subTitle && <Summary text={subTitle} />}
 
           <div className='w-full py-2'>
             <Image

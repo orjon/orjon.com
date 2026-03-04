@@ -4,14 +4,13 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
 
-import { useMountLogger } from '@/app/hooks/useMountLogger'
+import { useFirstInteraction } from '@/app/context/FirstInteractionContext'
 import { useEmblaOpacityTween } from '@/app/hooks/useEmblaOpacityTween'
 
+import { CodeProject, ElectronicsProject } from '@/app/types'
 import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
-
 import ProjectDetails from '@/app/components/ProjectDetails'
 import ProjectsCarouselControls from '@/app/components/ProjectsCarouselControls'
-import { CodeProject, ElectronicsProject } from '@/app/types'
 
 
 const defaultProjectIndex = 0
@@ -19,13 +18,12 @@ const defaultProjectIndex = 0
 const ProjectsCarousel = ({ projects }: { projects: (CodeProject | ElectronicsProject)[] }) => {
   const params = useParams()
 
-  useMountLogger('ProjectsCarousel ORIGINAL')
-  console.log('reloading: ProjectsCarousel ORIGINAL')
-
   const defaultProject = projects[defaultProjectIndex].slug
   const section = projects[defaultProjectIndex].projectType
 
   const projectIndex = Object.fromEntries(projects.map((project, index) => [project.slug, index]))
+
+  const { hasFirstInteraction, markInteracted } = useFirstInteraction()
 
   const [isReady, setIsReady] = useState(false)
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(defaultProjectIndex)
@@ -85,11 +83,18 @@ const ProjectsCarousel = ({ projects }: { projects: (CodeProject | ElectronicsPr
       })
     }
 
+    const markFirstInteraction = () => {
+      if (hasFirstInteraction) return
+      markInteracted()
+    }
+
     emblaApi.on('settle', updateCurrentProject)
     emblaApi.on('select', resetScrollPositions)
+    emblaApi.on('scroll', markFirstInteraction)
     return () => {
       emblaApi.off('settle', updateCurrentProject)
       emblaApi.off('select', resetScrollPositions)
+      emblaApi.off('scroll', markFirstInteraction)
     }
 
   }, [emblaApi])

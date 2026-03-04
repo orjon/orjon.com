@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { FirstInteractionProvider } from './context/FirstInteractionContext'
+
 import Navbar from '@/app/nav/Navbar'
 
 import '@/assets/styles/globals.css'
@@ -23,11 +25,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
-
-        <Navbar />
-        <main className='flex-1 w-full bg-background flex flex-col overflow-hidden'>
-          {children}
-        </main>
+        <FirstInteractionProvider>
+          <Navbar />
+          <main className='flex-1 w-full bg-background flex flex-col overflow-hidden'>
+            {children}
+          </main>
+        </FirstInteractionProvider>
 
       </body>
     </html>

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react'
 
-import { useMountLogger } from '@/app/hooks/useMountLogger'
+import { useFirstInteraction } from '@/app/context/FirstInteractionContext'
 import { useEmblaOpacityTween } from '@/app/hooks/useEmblaOpacityTween'
 
 import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
@@ -19,11 +19,9 @@ const defaultProject = designProjects[0].slug
 
 const DesignProjectPage = () => {
   const params = useParams()
-
-  useMountLogger('DesignProjectPage ORIGINAL')
-  console.log('reloading: DesignProjectPage ORIGINAL')
-
   const projectIndex = Object.fromEntries(designProjects.map((project, index) => [project.slug, index]))
+
+  const { hasFirstInteraction, markInteracted } = useFirstInteraction()
 
   const [isReady, setIsReady] = useState(false)
 
@@ -76,11 +74,18 @@ const DesignProjectPage = () => {
       })
     }
 
+    const markFirstInteraction = () => {
+      if (hasFirstInteraction) return
+      markInteracted()
+    }
+
     emblaApi.on('settle', updateCurrentProject)
     emblaApi.on('select', resetScrollPositions)
+    emblaApi.on('scroll', markFirstInteraction)
     return () => {
       emblaApi.off('settle', updateCurrentProject)
       emblaApi.off('select', resetScrollPositions)
+      emblaApi.off('scroll', markFirstInteraction)
     }
 
   }, [emblaApi])

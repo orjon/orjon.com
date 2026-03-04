@@ -4,7 +4,7 @@ const Section = ({ title = undefined, children }: { title?: string, children: Re
 
   return (
     <div className={`Section flex flex-col w-full ${headingGap}`}>
-      {title && <div className='text-base sm:text-lg md:text-xl font-semibold'>{title}</div>}
+      {title && <div className='text-lg md:text-xl font-semibold'>{title}</div>}
       {children}
     </div>
   )

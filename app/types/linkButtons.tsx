@@ -20,7 +20,7 @@ type Button = {
 }
 
 
-const projectLinkStyle = "flex-1 sm:max-w-[200px] lg:w-[200px] rounded-md p-1 md:p-2 flex items-center justify-center gap-2 font-medium md:font-semibold text-white text-lg duration-250"
+const projectLinkStyle = "flex-1 md:max-w-[300px] rounded-md p-1 md:p-2 flex items-center justify-center gap-2 font-medium md:font-semibold text-white text-lg duration-250"
 
 
 export const buttonTypes: Record<ButtonType, Button> = {
@@ -45,7 +45,7 @@ export const buttonTypes: Record<ButtonType, Button> = {
     style: `${projectLinkStyle} bg-black hover:bg-grey400`,
   },
   [ButtonType.MAP]: {
-    label: 'google maps',
+    label: 'Street View',
     icon: <IoMdPin />,
     style: `${projectLinkStyle} bg-green-700 hover:bg-green-600`,
   },

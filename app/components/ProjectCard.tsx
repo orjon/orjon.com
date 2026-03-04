@@ -5,7 +5,7 @@ import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
 import { getIconPath, addBuildVersion } from '@/app/utils'
 import { imageQualities } from '@/app/constants'
 
-import Paragraphs from '@/app/components/Paragraphs'
+import { Paragraphs } from '@/app/components/Texts'
 
 import Pills from './Pills'
 
@@ -34,9 +34,7 @@ const ProjectCard = ({ project }: { project: CodeProject | ElectronicsProject })
         <div className='flex flex-col w-full h-full items-start place-content-between gap-4'>
           <div className="flex flex-col items-start justify-start gap-2">
             <div className='text-l sm:text-xl md:text-2xl font-bold'>{title}</div>
-            <div className='text-sm sm:text-base md:text-lg'>
-              <Paragraphs text={description.top} />
-            </div>
+            <Paragraphs text={description.top} />
           </div>
           <div className="flex flex-col items-start justify-start">
             <Pills data={technologies} color={projectType} />

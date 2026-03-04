@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Sections } from '@/app/types'
 import { getNavIcon } from '@/app/utils'
 import ButtonMenu from './ButtonMenu'
 import BurgerMenu from './BurgerMenu'
@@ -13,14 +14,9 @@ import { imageQualities } from '@/app/constants'
 const Navbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
   const pathname = usePathname()
-  const isMe = pathname === '/me'
-  const hideNavbar = pathname?.startsWith('/preview')
-
-
-  // check if needed as we have a second layout page
-  if (hideNavbar) {
-    return null
-  }
+  const segments = pathname.split('/').filter(Boolean) || []
+  const section = segments[0]
+  const isMe = section === Sections.ME
 
   const opacityTransitionStyle =
     'transition-opacity duration-250'
@@ -28,11 +24,13 @@ const Navbar = () => {
 
   return (
     <header className='relative z-10 shadow-[0_4px_8px_rgba(0,0,0,0.15)]'>
-      <nav className='flex flex-col bg-titleBar text-menuText'>
+      <nav className='flex flex-col bg-menuButton border-b border-menuButtonDark sm:bg-titleBar text-menuText'>
         <div className='content-1600 flex flex-row justify-between items-center px-4 py-2 sm:px-2 sm:py-0'>
-          <Link href='/'>
-            <h1 className='text-black text-2xl font-bold'>orjon.com</h1>
-          </Link>
+
+          <div className='text-black text-2xl flex items-center'>
+            <Link href='/' className='font-bold'>orjon.com</Link>
+            <div className='font-medium md:hidden'>/{section}</div>
+          </div>
 
           <div className='flex flex-row-reverse items-center'>
             <Link
@@ -65,7 +63,7 @@ const Navbar = () => {
               </div>
             </Link>
             <div
-              className={`hidden sm:block ml-1 text-lg select-none font-medium opacity-0 ${opacityTransitionStyle} ${isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
+              className={`hidden md:block ml-1 text-lg select-none font-medium opacity-0 ${opacityTransitionStyle} ${isMe ? 'opacity-100' : 'opacity-0 peer-hover:opacity-100'
                 }`}
             >
               me

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 
 import { menuItems } from '@/app/data'
 import { getNavIcon } from '@/app/utils'
@@ -16,6 +17,24 @@ const BurgerMenu = ({
 }) => {
 
   const pathname = usePathname()
+  const menuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node | null
+      if (!menuRef.current || !target) return
+      if (!menuRef.current.contains(target)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen, setIsOpen])
 
   const burgerMenu = menuItems.map((menuItem) => {
 
@@ -59,6 +78,7 @@ const BurgerMenu = ({
 
   return (
     <div
+      ref={menuRef}
       className={`BurgerMenu absolute left-0 right-0 top-full z-20 sm:hidden text-lg font-medium origin-top transform transition-transform duration-500 gap-4 bg-menuButton cursor-pointer  ${isOpen ? 'scale-y-100' : 'scale-y-0'
         }`}
     >
