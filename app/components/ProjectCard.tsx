@@ -9,7 +9,6 @@ import { Paragraphs } from '@/app/components/Texts'
 
 import Pills from './Pills'
 
-
 const ProjectCard = ({ project }: { project: CodeProject | ElectronicsProject }) => {
 
   const { projectType, slug, title, description, technologies } = project
