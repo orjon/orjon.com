@@ -24,10 +24,10 @@ const ProjectGallery = ({ projects }: { projects: (CodeProject | ElectronicsProj
 
   return (
     <section className='ProjectGallery w-full h-full pb-0 overflow-y-auto'>
-      <div className='w-full h-full flex flex-col content-1600 p-6 md:p-10'>
+      <div className='w-full h-full flex flex-col content-1600 p-6 md:p-10 lg:p-14'>
 
         <div className='flex-1 flex items-center pb-4 md:pb-8'>
-          <div className={`w-full grid gap-6 md:gap-8 place-items-center ${gridCols}`}>
+          <div className={`w-full grid gap-6 md:gap-8 lg:gap-10 place-items-center ${gridCols}`}>
             {projectList}
           </div>
         </div>

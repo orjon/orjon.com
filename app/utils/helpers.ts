@@ -39,13 +39,13 @@ export const getImageSizes = (sizes: Record<string, number>): string => {
 }
 
 export const getSiteTitle = () => {
-  const baseTitle = 'orjon.com'
-  const envLabel =
-    process.env.NEXT_PUBLIC_ENV ??
-    (process.env.NODE_ENV === 'development' ? 'local' : 'production')
-  return envLabel === 'staging'
-    ? `${baseTitle} | Staging`
-    : envLabel === 'local'
-      ? `${baseTitle} | Local`
-      : baseTitle
+  const base = 'orjon.com'
+  switch (process.env.NEXT_PUBLIC_ENV) {
+    case 'staging':
+      return `${base} | Staging`
+    case 'local':
+      return `${base} | Local`
+    default:
+      return base
+  }
 }
