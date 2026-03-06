@@ -74,7 +74,7 @@ export const ImageCarousel = ({
     autoPlay = (isCoverImage && isGifImage) ? false : autoPlay
 
     return (
-      <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
+      <div key={index} className={`embla__slide flex-[0_0_100%] flex items-center justify-center max-h-[min(550px,60vh)]`}>
         <Image
           src={addBuildVersion(image)}
           alt={`Image ${index}`}
@@ -94,7 +94,7 @@ export const ImageCarousel = ({
   if (demo) {
     slides.unshift(
       <div key="demo" className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
-        <div className='w-full h-full flex flex-col max-h-[min(500px,50vh)]'>
+        <div className={`w-full h-full flex flex-col max-h-[min(550px,60vh)]`}>
           <iframe
             src={demo.url}
             className="w-full h-full mx-auto relative"
@@ -129,7 +129,7 @@ export const ImageCarousel = ({
         {isSlideshow &&
           <div className="absolute inset-0 z-10 flex pointer-events-none">
             <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
-            <div className="flex-1 pointer-events-none" />
+            <div className="flex-2 md:flex-1 pointer-events-none" />
             <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
           </div>
         }
@@ -158,44 +158,3 @@ export const ImageCarousel = ({
 }
 
 export default ImageCarousel
-
-/* note for me:
-<img
-  alt="Image 0"
-  loading="eager"
-  width="0"
-  height="0"
-  decoding="async"
-  data-nimg="1"
-  class="mx-auto object-contain drop-shadow-[0_0_1px_black] drop-shadow-[0_0_1px_black] rounded-lg"
-  sizes="100vw"
-  srcset="
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=640&amp;q=60 640w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=750&amp;q=60 750w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=828&amp;q=60 828w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=1080&amp;q=60 1080w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=1200&amp;q=60 1200w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=1920&amp;q=60 1920w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=2048&amp;q=60 2048w,
-  /_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=3840&amp;q=60 3840w"
-  src="/_next/image?url=%2Fimages%2Fprojects%2Ftubeinfo%2Ftubeinfo%2000.png&amp;w=3840&amp;q=60"
-  style="color: transparent; max-height: min(500px, 50vh); width: 100%; height: 100%;">
-</img>
-*/
-
-
-// const slides = images.map((image, index) => {
-
-//   return (
-//     <div key={index} className='embla__slide flex-[0_0_100%] flex items-center justify-center'>
-//       <Image
-//         src={image}
-//         alt={`Image ${index}`}
-//         width={0} height={0}
-//         sizes={`(min-width: ${breakpoints.lg}) 900px, (min-width: ${breakpoints.md}) 655px, 575px`}
-//         quality={75}
-//         style={{ maxHeight: 'min(500px, 50vh)', width: '100%', height: '100%' }}
-//         className='mx-auto object-contain' />
-//     </div>
-//   )
-// })
