@@ -1719,8 +1719,8 @@ const allTechnologyIcons: TechnologyIcon[] = [
   },
   {
     slug: 'postgresql',
-    icon: 'PostgresSQL',
-    label: 'PostgresSQL',
+    icon: 'PostgreSQL',
+    label: 'PostgreSQL',
     active: true,
   },
   {
@@ -2605,6 +2605,18 @@ const allTechnologyIcons: TechnologyIcon[] = [
     slug: 'i18next',
     icon: 'i18next',
     label: 'i18next',
+    active: true,
+  },
+  {
+    slug: 'zendesk',
+    icon: 'Zendesk',
+    label: 'Zendesk',
+    active: true,
+  },
+  {
+    slug: 'customerio',
+    icon: 'CustomerIO',
+    label: 'customer.io',
     active: true,
   }
 ]
