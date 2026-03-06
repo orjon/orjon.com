@@ -18,12 +18,11 @@ $(() => {
 
   const frames = document.querySelectorAll('.timeFrames')
 
-  onload()
-
   function onload() {
     updateTime()
     clockCycle()
     setInterval(clockCycle, 500)
+    fadeIn()
   }
 
   function clockCycle() {
@@ -105,4 +104,10 @@ $(() => {
       $(frames[x]).addClass('turnOff')
     }
   }
+
+  function fadeIn() {
+    $('#timeFrame').animate({ opacity: 1 }, 2500)
+  }
+
+  onload()
 })
