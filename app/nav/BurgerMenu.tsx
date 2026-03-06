@@ -38,35 +38,29 @@ const BurgerMenu = () => {
   const burgerMenu = menuItems.map((menuItem) => {
 
     const href = `/${menuItem.name}`
-    const path = pathname.startsWith(href)
+    const isCurrentPage = pathname.startsWith(href)
 
     return (
       <Link
         key={menuItem.name}
         href={href}
         onClick={() => closeBurgerMenu()}
-        className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-250 ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
-          } ${path ? 'bg-menuButton' : 'none'}`}
+        className={`group py-3 flex items-center justify-center gap-3 transition-opacity duration-250 ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
+          } ${isCurrentPage ? 'bg-menuButton' : 'bg-menuButtonDark'}`}
       >
-        <div className="relative size-[30px] shrink-0">
+        <div className="relative size-[35px] shrink-0">
           <Image
             src={getNavIcon(menuItem.icon, false)}
             alt={menuItem.name}
-            width={30}
-            height={30}
-            sizes='30px'
-            className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
-            style={{ width: 30, height: 30 }}
+            fill
+            className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${isCurrentPage ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
             quality={imageQualities.navIcons}
           />
           <Image
             src={getNavIcon(menuItem.icon, true)}
             alt={menuItem.name}
-            width={30}
-            height={30}
-            sizes='30px'
-            className={`absolute inset-0 size-full object-contain transition-opacity ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-            style={{ width: 30, height: 30 }}
+            fill
+            className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${isCurrentPage ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
             quality={imageQualities.navIcons}
           />
         </div>
@@ -78,7 +72,7 @@ const BurgerMenu = () => {
   return (
     <div
       ref={menuRef}
-      className={`BurgerMenu absolute left-0 right-0 top-full z-20 sm:hidden text-lg font-medium origin-top transform transition-transform duration-500 gap-4 bg-menuButton cursor-pointer  ${isBurgerMenuOpen ? 'scale-y-100' : 'scale-y-0'
+      className={`BurgerMenu absolute left-0 right-0 top-full z-20 sm:hidden text-2xl font-medium origin-top transform transition-transform duration-500 gap-4 bg-menuButton cursor-pointer shadow-[0_4px_8px_rgba(0,0,0,0.15)] ${isBurgerMenuOpen ? 'scale-y-100' : 'scale-y-0'
         }`}
     >
       {burgerMenu}

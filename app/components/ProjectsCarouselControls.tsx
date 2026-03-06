@@ -11,7 +11,7 @@ interface ProjectsCarouselControlsProps {
 const ProjectsCarouselControls = ({ onPrev, onNext }: ProjectsCarouselControlsProps) => {
   return (
     <>
-      <div className="flex w-full bg-menuButton border-t border-menuButton z-10 sm:hidden shadow-[0_-4px_8px_rgba(0,0,0,0.15)]">
+      <div className="flex w-full bg-menuButton border-t border-menuButton z-10 sm:hidden shadow-[0_-4px_8px_rgba(0,0,0,0.15)] pb-[env(safe-area-inset-bottom)]">
         <div
           onClick={onPrev}
           className='embla__prev flex flex-2 justify-center align-center cursor-pointer text-4xl py-2 hover-scale-120'>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 import { AppContextProvider } from './context/AppContexts'
 import { getSiteTitle } from '@/app/utils/helpers'
@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   title: getSiteTitle(),
   keywords: ['nextjs', 'website', 'portfolio', 'developer', 'code', 'orjon'],
   description: 'new nextjs website'
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover'
 }
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
