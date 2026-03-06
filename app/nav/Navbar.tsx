@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { useBurgerMenu } from '@/app/context/BurgerMenuContext'
 
 import { Sections } from '@/app/types'
 import { getNavIcon } from '@/app/utils'
@@ -12,11 +13,13 @@ import BurgerMenu from './BurgerMenu'
 import { imageQualities } from '@/app/constants'
 
 const Navbar = () => {
-  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
+
   const pathname = usePathname()
   const segments = pathname.split('/').filter(Boolean) || []
   const section = segments[0]
   const isMe = section === Sections.ME
+
+  const { isBurgerMenuOpen, openBurgerMenu, closeBurgerMenu } = useBurgerMenu()
 
   const opacityTransitionStyle =
     'transition-opacity duration-250'
@@ -29,7 +32,7 @@ const Navbar = () => {
 
           <div className='text-black text-2xl flex items-center'>
             <Link href='/' className='font-bold'>orjon.com</Link>
-            <div className='font-medium md:hidden'>/{section}</div>
+            <div className='font-medium md:hidden select-none'>/{section}</div>
           </div>
 
           <div className='flex flex-row-reverse items-center'>
@@ -71,7 +74,8 @@ const Navbar = () => {
           </div>
 
           <button
-            onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}
+            id="burger-menu-toggle"
+            onClick={() => isBurgerMenuOpen ? closeBurgerMenu() : openBurgerMenu()}
             className='group cursor-pointer sm:hidden'
           >
             <div className='relative h-[34px] w-[24px]'>
@@ -102,7 +106,7 @@ const Navbar = () => {
         </div>
 
         <ButtonMenu />
-        <BurgerMenu isOpen={isBurgerMenuOpen} setIsOpen={setIsBurgerMenuOpen} />
+        <BurgerMenu />
       </nav>
     </header>
   )

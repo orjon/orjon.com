@@ -3,30 +3,29 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
+import { useBurgerMenu } from '@/app/context/BurgerMenuContext'
+
 import { menuItems } from '@/app/data'
 import { getNavIcon } from '@/app/utils'
 import { imageQualities } from '@/app/constants'
 
 
-const BurgerMenu = ({
-  isOpen,
-  setIsOpen
-}: {
-  isOpen: boolean
-  setIsOpen: (isBurgerMenuOpen: boolean) => void
-}) => {
+const BurgerMenu = () => {
 
   const pathname = usePathname()
   const menuRef = useRef<HTMLDivElement | null>(null)
 
+  const { isBurgerMenuOpen, closeBurgerMenu } = useBurgerMenu()
+
   useEffect(() => {
-    if (!isOpen) return
+    if (!isBurgerMenuOpen) return
 
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node | null
-      if (!menuRef.current || !target) return
+      const target = event.target as HTMLElement | null
+      if (!menuRef.current || !target || target.closest('#burger-menu-toggle')) return
+
       if (!menuRef.current.contains(target)) {
-        setIsOpen(false)
+        closeBurgerMenu()
       }
     }
 
@@ -34,7 +33,7 @@ const BurgerMenu = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isOpen, setIsOpen])
+  }, [isBurgerMenuOpen, closeBurgerMenu])
 
   const burgerMenu = menuItems.map((menuItem) => {
 
@@ -45,8 +44,8 @@ const BurgerMenu = ({
       <Link
         key={menuItem.name}
         href={href}
-        onClick={() => setIsOpen(false)}
-        className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-250 ${isOpen ? 'opacity-100' : 'opacity-0'
+        onClick={() => closeBurgerMenu()}
+        className={`py-2 flex justify-center gap-2 border-b border-menuButtonDark transition-opacity duration-250 ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
           } ${path ? 'bg-menuButton' : 'none'}`}
       >
         <div className="relative size-[30px] shrink-0">
@@ -79,7 +78,7 @@ const BurgerMenu = ({
   return (
     <div
       ref={menuRef}
-      className={`BurgerMenu absolute left-0 right-0 top-full z-20 sm:hidden text-lg font-medium origin-top transform transition-transform duration-500 gap-4 bg-menuButton cursor-pointer  ${isOpen ? 'scale-y-100' : 'scale-y-0'
+      className={`BurgerMenu absolute left-0 right-0 top-full z-20 sm:hidden text-lg font-medium origin-top transform transition-transform duration-500 gap-4 bg-menuButton cursor-pointer  ${isBurgerMenuOpen ? 'scale-y-100' : 'scale-y-0'
         }`}
     >
       {burgerMenu}

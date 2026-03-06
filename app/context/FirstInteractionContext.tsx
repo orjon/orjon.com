@@ -1,6 +1,7 @@
 'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
+import { getLocalStorageValue, setLocalStorageValue } from '@/app/utils/client'
 
 type Ctx = {
   hasFirstInteraction: boolean
@@ -8,11 +9,23 @@ type Ctx = {
 }
 
 const FirstInteractionContext = createContext<Ctx | undefined>(undefined)
+const STORAGE_KEY = 'hasFirstInteraction'
 
 export const FirstInteractionProvider = ({ children }: { children: ReactNode }) => {
   const [hasFirstInteraction, setHasFirstInteraction] = useState(false)
 
-  const markInteracted = () => setHasFirstInteraction(true)
+  useEffect(() => {
+    const stored = getLocalStorageValue(STORAGE_KEY)
+    if (stored === 'true') {
+      setHasFirstInteraction(true)
+    }
+  }, [])
+
+  const markInteracted = () => {
+    if (hasFirstInteraction) return
+    setHasFirstInteraction(true)
+    setLocalStorageValue(STORAGE_KEY, 'true')
+  }
 
   return (
     <FirstInteractionContext.Provider value={{ hasFirstInteraction, markInteracted }}>

@@ -1,16 +1,14 @@
 # orjon.com
 
-### To do
+This is my personal project/portfolio website - online and actively maintained since 2001.
 
-- **MVP**
-  - Notes formatting
-  - Project demos / Image carousel layout - (demo in carousel?)
-
-- **Nice to have**
-  - Mobile carousel switch to Y axis
+### Future features
   - Mobile preview: Detection, project selelection, controls
   - Image optimization / blur placeholder
-  - Technology filter.
+  - Project filtering/re-ordering.
+  - GitHub contribution graph in Me section?
+  - Number of commits/date of last commit.
+  - Year of project?
 
 ### Next.js
 
@@ -28,4 +26,3 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
