@@ -13,7 +13,6 @@ export const codeProjects: CodeProject[] = [
     technologies: [
       Technology.react,
       Technology.redux,
-      Technology.css,
       Technology.sass
     ],
     repo: 'buttonstyler',
@@ -223,6 +222,20 @@ export const codeProjects: CodeProject[] = [
     ],
     repo: 'project4',
     responsive: true
+  },
+  {
+    projectType: ProjectType.CODE,
+    slug: 'kindcycle',
+    title: 'Kind Cycle',
+    description: {
+      top: 'Kind Cycle is an environmental organisation promoting waste reduction by facilitating re-use.',
+      bottom: 'The website is designed to educate, encourage and facilitate the re-homing of household goods through local networks or by donating them to charities.\nImplements QR code tracking to identify access sources. Supports 10 languages.'
+    },
+    images: [],
+    technologies: [Technology.react, Technology.typescript, Technology.i18next, Technology.vitejs, Technology.sass],
+    repo: 'kind-cycle',
+    www: 'https://www.kindcycle.uk/',
+    responsive: false
   },
   {
     projectType: ProjectType.CODE,
