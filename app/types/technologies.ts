@@ -38,7 +38,9 @@ export enum Technology {
   zustand = 'Zustand',
   vue = 'Vue.js',
   angular = 'Angular',
-  iot = 'IoT'
+  iot = 'IoT',
+  i18next = 'i18next',
+  vitejs = 'Vite.js'
 }
 
 export type TechnologyIcon = {
