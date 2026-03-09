@@ -26,6 +26,8 @@ jobs:
             nvm use || nvm install
             echo "Using Node.js version: $(node -v)"
             npm install
+            echo "Running tests..."
+            npm run test
             echo "Removing .next directory..."
             rm -rf .next
             export NEXT_PUBLIC_ENV="staging"
