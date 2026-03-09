@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "postbuild": "npx tsx app/scripts/processImages.ts",
     "start": "next start",
     "lint": "eslint"
@@ -30,6 +32,7 @@
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18"
   }
 }
