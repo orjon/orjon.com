@@ -136,7 +136,7 @@ const ProjectViewSelector = () => {
       </div>
       <div className={buttonBaseStyle}>
         <Link href={`/${section}?view=card`} className={`${buttonStyle} ${isCardView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
-          <div className='relative size-[22px]'>
+          <div className='relative size-[24px]'>
             <Image
               src={getNavIcon(views.CARDS, false)}
               alt={views.CARDS}
@@ -167,7 +167,7 @@ const ProjectViewSelector = () => {
           onMouseEnter={handleCarouselMouseEnter}
           onClick={handleCarouselClick}
         >
-          <div className='relative size-[22px]'>
+          <div className='relative size-[24px]'>
             <Image
               src={getNavIcon(views.CAROUSEL, false)}
               alt={views.CAROUSEL}

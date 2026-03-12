@@ -40,16 +40,15 @@ const Navbar = () => {
               href='/me'
               className='group peer flex-row items-center cursor-pointer hidden sm:flex'
             >
-              <div className='relative h-[34px] w-[34px]'>
+              <div className='relative h-[24px] w-[40px]'>
                 <Image
                   src={getNavIcon('faceLarge', false)}
                   className={`absolute-center size-full object-contain opacity-100 ${opacityTransitionStyle} ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
                     }`}
                   alt='face'
-                  width={26}
-                  height={26}
-                  sizes='30px'
-                  style={{ width: 26, height: 26 }}
+                  width={24}
+                  height={24}
+                  sizes='24px'
                   quality={imageQualities.navIcons}
                 />
                 <Image
@@ -57,10 +56,9 @@ const Navbar = () => {
                   className={`absolute-center size-full object-contain opacity-0 ${opacityTransitionStyle} ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   alt='face'
-                  width={26}
-                  height={26}
-                  sizes='30px'
-                  style={{ width: 26, height: 26 }}
+                  width={24}
+                  height={24}
+                  sizes='24px'
                   quality={imageQualities.navIcons}
                 />
               </div>
@@ -78,16 +76,15 @@ const Navbar = () => {
             onClick={() => isBurgerMenuOpen ? closeBurgerMenu() : openBurgerMenu()}
             className='group cursor-pointer sm:hidden'
           >
-            <div className='relative h-[34px] w-[24px]'>
+            <div className='relative h-[24px] w-[24px]'>
               <Image
                 src={getNavIcon('burgerMenu', false)}
                 className={`absolute-center size-full object-contain ${opacityTransitionStyle} ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
                   }`}
                 alt='face'
-                width={26}
-                height={26}
-                sizes='30px'
-                style={{ width: 26, height: 26 }}
+                width={24}
+                height={24}
+                sizes='24px'
                 quality={imageQualities.navIcons}
               />
               <Image
@@ -95,10 +92,9 @@ const Navbar = () => {
                 className={`absolute-center size-full object-contain ${opacityTransitionStyle} ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
                   }`}
                 alt='face'
-                width={26}
-                height={26}
-                sizes='30px'
-                style={{ width: 26, height: 26 }}
+                width={24}
+                height={24}
+                sizes='24px'
                 quality={imageQualities.navIcons}
               />
             </div>
