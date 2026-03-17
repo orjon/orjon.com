@@ -16,7 +16,7 @@ const baiJamjuree = Bai_Jamjuree({
 
 export const metadata: Metadata = {
   title: getSiteTitle(),
-  keywords: ['nextjs', 'website', 'portfolio', 'developer', 'code', 'orjon'],
+  keywords: ['nextjs', 'website', 'portfolio', 'developer', 'code', 'design', 'orjon', 'department3d'],
   description: 'new nextjs website'
 }
 
