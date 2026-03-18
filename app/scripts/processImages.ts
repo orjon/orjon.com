@@ -51,7 +51,7 @@ async function collectIconsFromFolder(
   }
 }
 
-async function processOne(url: string, accept: string) {
+async function processOne(url: string, accept: string): Promise<boolean> {
   try {
     const res = await fetch(url, {
       headers: {
@@ -60,9 +60,12 @@ async function processOne(url: string, accept: string) {
     })
     if (!res.ok) {
       console.error('Pre-processing failed', res.status, url)
+      return false
     }
+    return true
   } catch (err) {
     console.error('Pre-processing error', url, err)
+    return false
   }
 }
 
@@ -136,6 +139,7 @@ async function main() {
   )
 
   let completed = 0
+  let failed = 0
   let lastPercentLogged = -1
 
   let index = 0
@@ -144,7 +148,8 @@ async function main() {
       const myIndex = index++
       const url = urls[myIndex]
       for (const accept of acceptHeaders) {
-        await processOne(url, accept)
+        const ok = await processOne(url, accept)
+        if (!ok) failed += 1
         completed += 1
         const percent = Math.floor((completed / totalRequests) * 100)
         if (percent !== lastPercentLogged && percent % 5 === 0) {
@@ -158,6 +163,11 @@ async function main() {
   })
 
   await Promise.all(workers)
+  const failedPercent = totalRequests > 0 ? Math.round((failed / totalRequests) * 100) : 0
+  console.log(`Pre-processing progress: 100% (${completed}/${totalRequests})`)
+  if (failed > 0) {
+    console.log(`Failed: ${failedPercent}% (${failed}/${totalRequests})`)
+  }
   console.log('Image pre-processing complete ✅')
 }
 
