@@ -53,6 +53,7 @@ const BurgerMenu = () => {
             src={getNavIcon(menuItem.icon, false)}
             alt={menuItem.name}
             fill
+            sizes='35px'
             className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${isCurrentPage ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
             quality={imageQualities.navIcons}
           />
@@ -60,6 +61,7 @@ const BurgerMenu = () => {
             src={getNavIcon(menuItem.icon, true)}
             alt={menuItem.name}
             fill
+            sizes='35px'
             className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${isCurrentPage ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
             quality={imageQualities.navIcons}
           />

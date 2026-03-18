@@ -27,3 +27,5 @@ export const imageQualities = {
   navIcons: 100,
   images: 75
 }
+
+export const screenMultipliers = [1, 2]

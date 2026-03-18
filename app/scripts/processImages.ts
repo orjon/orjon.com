@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 
 import { codeProjects, electronicsProjects } from '../data/index.js'
-import { imageSizes, imageQualities } from '@/app/constants'
+import { imageSizes, imageQualities, screenMultipliers } from '@/app/constants'
 import { dedupeArray } from '@/app/utils'
 
 const BASE_URL =
@@ -78,8 +78,10 @@ const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
   const urls: string[] = []
 
   for (const src of srcs) {
-    for (const w of dedupeArray(widths)) {
-      urls.push(buildImageUrl(src, w, quality))
+    for (const multiplier of screenMultipliers) {
+      for (const w of dedupeArray(widths)) {
+        urls.push(buildImageUrl(src, w * multiplier, quality))
+      }
     }
   }
   return urls

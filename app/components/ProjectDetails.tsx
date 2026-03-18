@@ -38,7 +38,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
                 alt={title}
                 fill
                 className='w-full h-full object-contain'
-                sizes='250px'
+                sizes='(min-width: 780px) 194px, (min-width: 640px) 125px, 194px'
                 quality={imageQualities.images}
               />
             </div>
