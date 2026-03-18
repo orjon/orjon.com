@@ -6,7 +6,7 @@ import { imageSizes, imageQualities, screenMultipliers } from '@/app/constants'
 import { dedupeArray } from '@/app/utils'
 
 const BASE_URL =
-  process.env.IMAGE_WARM_ORIGIN ??
+  process.env.ORIGIN ??
   process.env.NEXT_PUBLIC_SITE_URL ??
   'http://localhost:3000'
 
@@ -163,7 +163,8 @@ async function main() {
   })
 
   await Promise.all(workers)
-  const failedPercent = totalRequests > 0 ? Math.round((failed / totalRequests) * 100) : 0
+  const failedPercent =
+    totalRequests > 0 ? Math.round((failed / totalRequests) * 100) : 0
   console.log(`Pre-processing progress: 100% (${completed}/${totalRequests})`)
   if (failed > 0) {
     console.log(`Failed: ${failedPercent}% (${failed}/${totalRequests})`)
