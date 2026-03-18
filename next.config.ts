@@ -1,8 +1,7 @@
 import type { NextConfig } from 'next'
 import { imageSizes, imageQualities } from '@/app/constants'
-import { dedupeArray } from '@/app/utils'
 
-const allImageSizes = dedupeArray(Object.values(imageSizes).flat() as number[])
+const allImageSizes = [...new Set(Object.values(imageSizes).flat() as number[])]
 
 const nextConfig: NextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_ENV === 'staging' ? '/staging' : '',
