@@ -7,7 +7,7 @@
     "build": "next build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "postbuild": "npx tsx app/scripts/processImages.ts",
+    "warm-images": "npx tsx app/scripts/processImages.ts",
     "start": "next start",
     "lint": "eslint"
   },

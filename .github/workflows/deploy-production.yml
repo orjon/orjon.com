@@ -38,3 +38,7 @@ jobs:
             npm run build || { echo "Build failed! Aborting deployment."; exit 1; }
             echo "Build succeeded. Reloading..."
             pm2 reload orjon-production --update-env
+            echo "Waiting for server to be ready..."
+            for i in $(seq 1 30); do curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 | grep -q 200 && break; sleep 2; done
+            echo "Starting image cache warming in background..."
+            cd /var/www/orjon.com/production && IMAGE_WARM_ORIGIN=http://localhost:3000 nohup npm run warm-images > /tmp/warm-images.log 2>&1 &
