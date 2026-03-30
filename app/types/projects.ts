@@ -15,6 +15,7 @@ interface Project {
   }
   note?: string
   images: string[]
+  imagesRatio?: { w: number; h: number }
   technologies: Technology[]
   repo: string
 }
