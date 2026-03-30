@@ -21,6 +21,25 @@ export const codeProjects: CodeProject[] = [
   },
   {
     projectType: ProjectType.CODE,
+    slug: 'devbox',
+    title: 'Dev Box',
+    description: {
+      top: "Toolbox for developers to store common code snippets, tools and resources.",
+      bottom: 'This app will allow developers to store common code snippets, tools and resources in a single place.'
+    },
+    note: '2026-03: This is currently in development',
+    images: [],
+    technologies: [
+      Technology.next,
+      Technology.react,
+      Technology.typescript,
+      Technology.tailwind,
+    ],
+    repo: 'DevBox',
+    responsive: false
+  },
+  {
+    projectType: ProjectType.CODE,
     slug: 'covid19',
     title: 'Covid19 Tracker',
     description: {
