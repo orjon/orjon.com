@@ -1,11 +1,3 @@
-export const projectImageSizes = {
-  640: 480,
-  768: 600,
-  1023: 900,
-  1120: 700,
-  rest: 900
-}
-
 export const designImageSizes = {
   480: 480,
   768: 600,
@@ -17,7 +9,7 @@ export const imageSizes = {
   navIcon: [30],
   techIcons: [64],
   projectIcon: [250],
-  projectImage: Object.values(projectImageSizes),
+  projectImage: [480, 600, 700, 900],
   designImage: Object.values(designImageSizes)
 }
 

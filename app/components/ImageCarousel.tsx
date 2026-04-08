@@ -7,8 +7,8 @@ import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
-import { isGif, addBuildVersion, getImageSizes } from '@/app/utils'
-import { imageQualities, projectImageSizes } from '@/app/constants'
+import { isGif, addBuildVersion } from '@/app/utils'
+import { imageQualities } from '@/app/constants'
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -82,8 +82,8 @@ export const ImageCarousel = ({
           alt={`Image ${index}`}
           width={imagesRatio?.w || 16}
           height={imagesRatio?.h || 9}
-          sizes='(min-width: 1720px) 881px, calc(51.36vw + 8px)'
-          preload={isCoverImage}
+          sizes='(max-width: 640px) calc(100vw), (max-width: 768px) 600px, (max-width: 1023px) 900px, (max-width: 1120px) 700px, 900px'
+          priority={isCoverImage}
           quality={imageQualities.images}
           unoptimized={isGifImage}
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}

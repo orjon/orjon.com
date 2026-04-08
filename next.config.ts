@@ -1,15 +1,26 @@
 import type { NextConfig } from 'next'
-import { imageSizes, imageQualities } from '@/app/constants'
+import { imageSizes, imageQualities, screenMultipliers } from '@/app/constants'
 
-const baseSizes = Object.values(imageSizes).flat() as number[]
-const retinaSizes = baseSizes.map((w) => w * 2)
-const allImageSizes = [...new Set([...baseSizes, ...retinaSizes])]
+const withMultipliers = (sizes: number[]) =>
+  screenMultipliers.flatMap(m => sizes.map(s => s * m))
+
+const iconSizes = [...new Set(withMultipliers([
+  ...imageSizes.navIcon,
+  ...imageSizes.techIcons,
+  ...imageSizes.projectIcon,
+]))].sort((a, b) => a - b)
+
+const contentSizes = [...new Set(withMultipliers([
+  ...imageSizes.projectImage,
+  ...imageSizes.designImage,
+]))].sort((a, b) => a - b)
 
 const nextConfig: NextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_ENV === 'staging' ? '/staging' : '',
   images: {
     formats: ['image/webp', 'image/avif'],
-    imageSizes: allImageSizes,
+    imageSizes: iconSizes,
+    deviceSizes: contentSizes,
     unoptimized: false,
     qualities: [imageQualities.navIcons, imageQualities.images],
     localPatterns: [
