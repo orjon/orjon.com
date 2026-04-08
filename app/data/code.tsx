@@ -3,6 +3,25 @@ import { ProjectType, CodeProject, Technology } from '@/app/types'
 export const codeProjects: CodeProject[] = [
   {
     projectType: ProjectType.CODE,
+    slug: 'devbox',
+    title: 'devBox',
+    description: {
+      top: 'Your development toolbox',
+      bottom: 'devBox is a toolbox for developers to store and quickly access the resources they use every day - code snippets, AI prompts, terminal commands, links, notes, and files. Items are organised by type and grouped into collections, giving you a fast, searchable second brain for your dev workflow.'
+    },
+    note: '2026-04: This is currently in development',
+    images: [],
+    technologies: [
+      Technology.next,
+      Technology.react,
+      Technology.typescript,
+      Technology.tailwind,
+    ],
+    repo: 'DevBox',
+    responsive: false
+  },
+  {
+    projectType: ProjectType.CODE,
     slug: 'buttonstyler',
     title: 'Button Styler',
     description: {
@@ -17,25 +36,6 @@ export const codeProjects: CodeProject[] = [
     ],
     repo: 'buttonstyler',
     www: 'https://www.orjon.com/buttonstyler',
-    responsive: false
-  },
-  {
-    projectType: ProjectType.CODE,
-    slug: 'devbox',
-    title: 'Dev Box',
-    description: {
-      top: "Toolbox for developers to store common code snippets, tools and resources.",
-      bottom: 'This app will allow developers to store common code snippets, tools and resources in a single place.'
-    },
-    note: '2026-03: This is currently in development',
-    images: [],
-    technologies: [
-      Technology.next,
-      Technology.react,
-      Technology.typescript,
-      Technology.tailwind,
-    ],
-    repo: 'DevBox',
     responsive: false
   },
   {

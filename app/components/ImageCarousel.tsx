@@ -126,13 +126,13 @@ export const ImageCarousel = ({
         <div className="embla__container flex h-full relative z-0">
           {slides}
         </div>
-        {/* {isSlideshow &&
+        {isSlideshow &&
           <div className="absolute inset-0 z-10 flex pointer-events-none">
             <div className="flex-1 cursor-w-resize pointer-events-auto" onClick={scrollPrev} aria-label="Previous" />
             <div className="flex-2 md:flex-1 pointer-events-none" />
             <div className="flex-1 cursor-e-resize pointer-events-auto" onClick={scrollNext} aria-label="Next" />
           </div>
-        } */}
+        }
       </div>
 
 
