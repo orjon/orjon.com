@@ -3,25 +3,6 @@ import { ProjectType, CodeProject, Technology } from '@/app/types'
 export const codeProjects: CodeProject[] = [
   {
     projectType: ProjectType.CODE,
-    slug: 'devbox',
-    title: 'devBox',
-    description: {
-      top: 'Your development toolbox',
-      bottom: 'devBox is a toolbox for developers to store and quickly access the resources they use every day - code snippets, AI prompts, terminal commands, links, notes, and files. Items are organised by type and grouped into collections, giving you a fast, searchable second brain for your dev workflow.'
-    },
-    note: '2026-04: This is currently in development',
-    images: [],
-    technologies: [
-      Technology.next,
-      Technology.react,
-      Technology.typescript,
-      Technology.tailwind,
-    ],
-    repo: 'DevBox',
-    responsive: false
-  },
-  {
-    projectType: ProjectType.CODE,
     slug: 'buttonstyler',
     title: 'Button Styler',
     description: {
@@ -37,31 +18,6 @@ export const codeProjects: CodeProject[] = [
     repo: 'buttonstyler',
     www: 'https://www.orjon.com/buttonstyler',
     responsive: false
-  },
-  {
-    projectType: ProjectType.CODE,
-    slug: 'covid19',
-    title: 'Covid19 Tracker',
-    description: {
-      top: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.',
-      bottom: 'Users can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…'
-    },
-    note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static.',
-    images: [],
-    technologies: [
-      Technology.react,
-      Technology.redux,
-      Technology.node,
-      Technology.chart,
-      Technology.mongodb,
-      Technology.axios,
-      Technology.express,
-      Technology.sass,
-      Technology.heroku
-    ],
-    repo: 'covid19',
-    www: 'https://www.orjon.com/covid19',
-    responsive: true
   },
   {
     projectType: ProjectType.CODE,
@@ -87,6 +43,52 @@ export const codeProjects: CodeProject[] = [
     www: 'https://www.orjon.com/tubeinfo/',
     responsive: true
   },
+  {
+    projectType: ProjectType.CODE,
+    slug: 'devbox',
+    title: 'devBox',
+    description: {
+      top: 'Your development toolbox',
+      bottom: 'devBox is a toolbox for developers to store and quickly access the resources they use every day - code snippets, AI prompts, terminal commands, links, notes, and files. Items are organised by type and grouped into collections, giving you a fast, searchable second brain for your dev workflow.'
+    },
+    note: '2026-04: This is currently in development',
+    images: [],
+    technologies: [
+      Technology.next,
+      Technology.react,
+      Technology.typescript,
+      Technology.tailwind,
+    ],
+    repo: 'DevBox',
+    responsive: false
+  },
+
+  {
+    projectType: ProjectType.CODE,
+    slug: 'covid19',
+    title: 'Covid19 Tracker',
+    description: {
+      top: 'Developed during the COVID-19 pandemic, this application visualizes global COVID-19 case and death data.',
+      bottom: 'Users can select up to five countries to generate a comparative graph, enabling clear side-by-side analysis of trends over time. Registered users’ selected countries are saved and automatically reloaded when revisiting the site - feature overkill, but I had some time on my hands…'
+    },
+    note: 'The source API stopped providing new data on 7 March 2023; as a result, the dataset is now static.',
+    images: [],
+    technologies: [
+      Technology.react,
+      Technology.redux,
+      Technology.node,
+      Technology.chart,
+      Technology.mongodb,
+      Technology.axios,
+      Technology.express,
+      Technology.sass,
+      Technology.heroku
+    ],
+    repo: 'covid19',
+    www: 'https://www.orjon.com/covid19',
+    responsive: true
+  },
+
   {
     projectType: ProjectType.CODE,
     slug: 'tetris',
