@@ -19,10 +19,12 @@ const OPTIONS: EmblaOptionsType = {
 
 export const ImageCarousel = ({
   images,
+  imagesRatio,
   demo = false,
   isActive = false,
 }: {
   images: string[]
+  imagesRatio?: { w: number; h: number }
   demo: { url: string; note: string | React.ReactNode } | false
   isActive?: boolean
 }) => {
@@ -78,7 +80,8 @@ export const ImageCarousel = ({
         <Image
           src={addBuildVersion(image)}
           alt={`Image ${index}`}
-          width={0} height={0}
+          width={imagesRatio?.w || 16}
+          height={imagesRatio?.h || 9}
           sizes='(min-width: 1720px) 881px, calc(51.36vw + 8px)'
           preload={isCoverImage}
           quality={imageQualities.images}

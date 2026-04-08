@@ -12,7 +12,7 @@ import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
 import { imageQualities } from '@/app/constants'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
-  const { slug, title, description, images, technologies, repo, projectType } = project
+  const { slug, title, description, images, imagesRatio, technologies, repo, projectType } = project
 
   const isElectronics = projectType === ProjectType.ELECTRONICS
 
@@ -71,7 +71,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
               <Summary text={description.top} />
 
               {(demo || images.length > 0) && (
-                <ImageCarousel images={images} demo={demo} isActive={isActive} />
+                <ImageCarousel images={images} imagesRatio={imagesRatio} demo={demo} isActive={isActive} />
               )}
               {description.bottom && <Paragraphs text={description.bottom} />}
               {note && <Note text={note} />}
