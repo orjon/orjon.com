@@ -9,7 +9,7 @@ import { LinkButton } from '@/app/components/Links'
 import { Summary, Paragraphs, Note } from '@/app/components/Texts'
 import { ProjectType } from '@/app/types/projects'
 import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
-import { imageQualities } from '@/app/constants'
+import { imageQuality } from '@/app/constants'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
   const { slug, title, description, images, imagesRatio, technologies, repo, projectType } = project
@@ -39,7 +39,7 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
                 fill
                 className='w-full h-full object-contain'
                 sizes='(min-width: 780px) 194px, (min-width: 640px) 125px, 194px'
-                quality={imageQualities.images}
+                quality={imageQuality}
               />
             </div>
 

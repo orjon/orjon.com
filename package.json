@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate-images": "npx tsx app/scripts/getCodeImages.ts && npx tsx app/scripts/getDesignImages.ts",
+    "predev": "npm run generate-images",
+    "prebuild": "npm run generate-images",
     "dev": "next dev --turbo",
     "build": "next build",
     "test": "vitest run",
     "test:watch": "vitest",
     "warm-images": "npx tsx app/scripts/processImages.ts",
+    "generate-code-project-images": "npx tsx app/scripts/generateCodeProjectImages.ts",
+    "generate-design-project-images": "npx tsx app/scripts/generateDesignProjectImages.ts",
     "start": "next start",
     "lint": "eslint"
   },

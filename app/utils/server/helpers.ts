@@ -3,10 +3,9 @@ import path from 'path'
 
 import { imageSize } from 'image-size'
 
+import { defaultImageRatio } from '@/app/constants/images'
 import { imagePath } from '@/app/data/paths'
 import { isGif } from '@/app/utils'
-
-const DEFAULT_RATIO = { w: 16, h: 9 }
 
 function resolveFilePath(filePath: string): string {
   if (filePath.startsWith('/') && !fs.existsSync(filePath)) {
@@ -50,5 +49,5 @@ export const getImageRatio = (imagePath: string): { w: number; h: number } => {
   if (dimensions.width && dimensions.height) {
     return { w: dimensions.width, h: dimensions.height }
   }
-  return DEFAULT_RATIO
+  return defaultImageRatio
 }

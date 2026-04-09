@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
 import { getIconPath, addBuildVersion } from '@/app/utils'
-import { imageQualities } from '@/app/constants'
+import { imageQuality } from '@/app/constants'
 
 import { Paragraphs } from '@/app/components/Texts'
 
@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: { project: CodeProject | ElectronicsProject })
             fill
             className='w-full h-full object-contain'
             sizes='250px'
-            quality={imageQualities.images}
+            quality={imageQuality}
           />
         </div>
         <div className='flex flex-col w-full h-full items-start place-content-between gap-4'>

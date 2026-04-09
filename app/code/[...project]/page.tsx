@@ -1,23 +1,19 @@
+import ProjectsCarousel from '@/app/components/ProjectsCarousel'
 
 import { codeProjects } from '@/app/data/code'
-
-import { getImageRatio, getProjectImages } from '@/app/utils/server/helpers'
-
-import ProjectsCarousel from '@/app/components/ProjectsCarousel'
+import codeImages from '@/app/data/codeImages.json'
+import { defaultImageRatio } from '@/app/constants/images'
 
 const CodeProjectsPage = () => {
 
   const projects = codeProjects.map((project) => {
-    const images = getProjectImages(project.slug)
+    const entry =
+      codeImages[project.slug as keyof typeof codeImages]
     return {
       ...project,
-      images,
-      imagesRatio: getImageRatio(images[0])
+      images: entry?.images ?? [],
+      imagesRatio: entry?.imagesRatio ?? defaultImageRatio,
     }
-  })
-
-  projects.forEach((project) => {
-    console.log(project.imagesRatio)
   })
 
   return (

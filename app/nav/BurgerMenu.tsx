@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
@@ -7,7 +6,6 @@ import { useBurgerMenu } from '@/app/context/BurgerMenuContext'
 
 import { menuItems } from '@/app/data'
 import { getNavIcon } from '@/app/utils'
-import { imageQualities } from '@/app/constants'
 
 
 const BurgerMenu = () => {
@@ -49,21 +47,20 @@ const BurgerMenu = () => {
           } ${isCurrentPage ? 'bg-menuButton' : 'bg-menuButtonDark'}`}
       >
         <div className="relative size-[35px] shrink-0">
-          <Image
+          <img
             src={getNavIcon(menuItem.icon, false)}
             alt={menuItem.name}
-            fill
-            sizes='35px'
+            width={35}
+            height={35}
             className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${isCurrentPage ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
-            quality={imageQualities.navIcons}
           />
-          <Image
+          <img
             src={getNavIcon(menuItem.icon, true)}
             alt={menuItem.name}
-            fill
-            sizes='35px'
+            width={35}
+            height={35}
+            aria-hidden
             className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${isCurrentPage ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-            quality={imageQualities.navIcons}
           />
         </div>
         <div className="w-30">{menuItem.name}</div>

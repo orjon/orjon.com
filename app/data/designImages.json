@@ -1,0 +1,74 @@
+{
+  "cisco2015": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "kite": {
+    "imagesRatio": {
+      "w": 5000,
+      "h": 2969
+    }
+  },
+  "nouTable": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "foreshore": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "cisco2016": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "bhunga": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "operaHouse": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "knife": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "office01": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "ortBridge": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "redBull": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  },
+  "powerBuoy": {
+    "imagesRatio": {
+      "w": 1691,
+      "h": 1149
+    }
+  }
+}

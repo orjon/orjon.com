@@ -1,0 +1,192 @@
+{
+  "buttonstyler": {
+    "images": [
+      "/images/projects/buttonstyler/buttonstyler-01.png",
+      "/images/projects/buttonstyler/buttonstyler-03.png",
+      "/images/projects/buttonstyler/buttonstyler-04.png"
+    ],
+    "imagesRatio": {
+      "w": 2864,
+      "h": 1790
+    }
+  },
+  "tubeinfo": {
+    "images": [
+      "/images/projects/tubeinfo/tubeinfo 00.png",
+      "/images/projects/tubeinfo/tubeinfo 01.png",
+      "/images/projects/tubeinfo/tubeinfo 02.png",
+      "/images/projects/tubeinfo/tubeinfo 13.png"
+    ],
+    "imagesRatio": {
+      "w": 2880,
+      "h": 1800
+    }
+  },
+  "devbox": {
+    "images": [
+      "/images/projects/devbox/devbox1.png",
+      "/images/projects/devbox/devbox2.png",
+      "/images/projects/devbox/devbox3.png"
+    ],
+    "imagesRatio": {
+      "w": 4038,
+      "h": 2364
+    }
+  },
+  "covid19": {
+    "images": [
+      "/images/projects/covid19/covid19 02.png",
+      "/images/projects/covid19/covid19 04 mobile.png",
+      "/images/projects/covid19/covid19 05.png"
+    ],
+    "imagesRatio": {
+      "w": 2880,
+      "h": 1800
+    }
+  },
+  "tetris": {
+    "images": [
+      "/images/projects/tetris/tetris 0.gif"
+    ],
+    "imagesRatio": {
+      "w": 960,
+      "h": 451
+    }
+  },
+  "colorclock": {
+    "images": [
+      "/images/projects/colorclock/colorclock-00.png",
+      "/images/projects/colorclock/colorclock-01.png",
+      "/images/projects/colorclock/colorclock-03.png"
+    ],
+    "imagesRatio": {
+      "w": 2880,
+      "h": 1800
+    }
+  },
+  "department3d": {
+    "images": [
+      "/images/projects/department3d/department3d 1.png",
+      "/images/projects/department3d/department3d 3.png",
+      "/images/projects/department3d/department3d mobiles.png"
+    ],
+    "imagesRatio": {
+      "w": 2808,
+      "h": 1786
+    }
+  },
+  "whackamole": {
+    "images": [
+      "/images/projects/whackamole/whack-a-mole_01.png",
+      "/images/projects/whackamole/whack-a-mole_05.png",
+      "/images/projects/whackamole/whack-a-mole_06.png"
+    ],
+    "imagesRatio": {
+      "w": 2000,
+      "h": 1281
+    }
+  },
+  "weather": {
+    "images": [
+      "/images/projects/weather/weather-02-asia.gif",
+      "/images/projects/weather/weather-03-usa.png",
+      "/images/projects/weather/weather-04-world.png"
+    ],
+    "imagesRatio": {
+      "w": 1440,
+      "h": 724
+    }
+  },
+  "stripedhorse": {
+    "images": [
+      "/images/projects/stripedhorse/striped-horse1.png",
+      "/images/projects/stripedhorse/striped-horse2.png",
+      "/images/projects/stripedhorse/striped-horse3.png",
+      "/images/projects/stripedhorse/striped-horse8.png"
+    ],
+    "imagesRatio": {
+      "w": 2560,
+      "h": 1308
+    }
+  },
+  "countries": {
+    "images": [
+      "/images/projects/countries/countries 0.png",
+      "/images/projects/countries/countries 6.png"
+    ],
+    "imagesRatio": {
+      "w": 3610,
+      "h": 2346
+    }
+  },
+  "project4": {
+    "images": [
+      "/images/projects/project4/p4-01-Dashboard.jpg",
+      "/images/projects/project4/p4-02-Projects.jpg",
+      "/images/projects/project4/p4-03-Invoices.jpg",
+      "/images/projects/project4/p4-04-db-structure.png"
+    ],
+    "imagesRatio": {
+      "w": 2880,
+      "h": 1578
+    }
+  },
+  "kindcycle": {
+    "images": [
+      "/images/projects/kindcycle/kindcycle-00.png",
+      "/images/projects/kindcycle/kindcycle-01.png",
+      "/images/projects/kindcycle/kindcycle-02.png",
+      "/images/projects/kindcycle/kindcycle-03.png"
+    ],
+    "imagesRatio": {
+      "w": 1200,
+      "h": 771
+    }
+  },
+  "rockpaperscissors": {
+    "images": [
+      "/images/projects/rockpaperscissors/rockPaperScissors2.png",
+      "/images/projects/rockpaperscissors/rockPaperScissors3.png",
+      "/images/projects/rockpaperscissors/rockPaperScissors4.png",
+      "/images/projects/rockpaperscissors/rockPaperScissors5.png"
+    ],
+    "imagesRatio": {
+      "w": 2560,
+      "h": 1308
+    }
+  },
+  "orjoncom": {
+    "images": [
+      "/images/projects/orjoncom/orjon-com_01.png",
+      "/images/projects/orjoncom/orjon-com_02.png",
+      "/images/projects/orjoncom/orjon-com_05.png",
+      "/images/projects/orjoncom/orjon-com_06.png"
+    ],
+    "imagesRatio": {
+      "w": 3592,
+      "h": 2332
+    }
+  },
+  "booker": {
+    "images": [
+      "/images/projects/booker/booker 00 cover.png",
+      "/images/projects/booker/booker 03 register.png",
+      "/images/projects/booker/booker 04 all books.png",
+      "/images/projects/booker/booker 07 libarary location.png",
+      "/images/projects/booker/booker 08 book loans.png"
+    ],
+    "imagesRatio": {
+      "w": 3330,
+      "h": 1942
+    }
+  },
+  "daftpunk": {
+    "images": [
+      "/images/projects/daftpunk/daftpunk.png"
+    ],
+    "imagesRatio": {
+      "w": 2560,
+      "h": 1308
+    }
+  }
+}

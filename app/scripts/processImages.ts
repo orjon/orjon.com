@@ -1,8 +1,9 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-import { codeProjects, electronicsProjects } from '../data/index.js'
-import { imageSizes, imageQualities, screenMultipliers } from '@/app/constants'
+import codeImages from '../data/codeImages.json'
+import { electronicsProjects } from '../data/index.js'
+import { imageSizes, imageQuality, screenMultipliers } from '@/app/constants'
 import { dedupeArray } from '@/app/utils'
 
 const BASE_URL =
@@ -12,32 +13,12 @@ const BASE_URL =
 
 const CONCURRENCY = 6
 
-const projectSlugs = [...codeProjects, ...electronicsProjects].map(
-  (p) => p.slug
-)
+const getCodeImages = (): string[] =>
+  Object.values(codeImages).flatMap((entry) => entry.images)
 
-async function collectProjectImages(): Promise<string[]> {
-  const result = new Set<string>()
+const electronicsProjectSlugs = electronicsProjects.map((p) => p.slug)
 
-  for (const slug of projectSlugs) {
-    const folder = path.join('public/images/projects', slug)
-    let files: string[] = []
-    try {
-      files = (await fs.readdir(folder)).filter((file) =>
-        /\.(png|jpe?g|webp)$/i.test(file)
-      )
-    } catch {
-      continue
-    }
-    for (const file of files) {
-      result.add(`/images/projects/${slug}/${file}`)
-    }
-  }
-
-  return Array.from(result)
-}
-
-async function collectIconsFromFolder(
+async function collectImagesFromFolder(
   relativeFolder: string
 ): Promise<string[]> {
   const folder = path.join('public', relativeFolder)
@@ -49,6 +30,15 @@ async function collectIconsFromFolder(
   } catch {
     return []
   }
+}
+
+async function collectElectronicsImages(): Promise<string[]> {
+  const batches = await Promise.all(
+    electronicsProjectSlugs.map((slug) =>
+      collectImagesFromFolder(`images/projects/${slug}`)
+    )
+  )
+  return batches.flat()
 }
 
 async function processOne(url: string, accept: string): Promise<boolean> {
@@ -80,9 +70,11 @@ const buildImageUrl = (src: string, width: number, quality: number) => {
 const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
   const urls: string[] = []
 
+  const imageWidths = [...imageSizes.base, ...widths]
+
   for (const src of srcs) {
     for (const multiplier of screenMultipliers) {
-      for (const w of dedupeArray(widths)) {
+      for (const w of imageWidths) {
         urls.push(buildImageUrl(src, w * multiplier, quality))
       }
     }
@@ -91,40 +83,24 @@ const addImageUrls = (srcs: string[], widths: number[], quality: number) => {
 }
 
 async function main() {
-  const projectImageSrcs = await collectProjectImages()
-  const designImageSrcs = await collectIconsFromFolder('images/design')
-  const navIconSrcs = await collectIconsFromFolder('icons/nav')
-  const projectIconSrcs = await collectIconsFromFolder('icons/projects')
-  const techIconSrcs = await collectIconsFromFolder('icons/technology')
+  const codeImageSrcs = getCodeImages()
+  const electronicsImageSrcs = await collectElectronicsImages()
+  const designImageSrcs = await collectImagesFromFolder('images/design')
 
   const urls: string[] = []
 
+  urls.push(...addImageUrls(codeImageSrcs, imageSizes.codeImages, imageQuality))
+
   urls.push(
     ...addImageUrls(
-      projectImageSrcs,
-      [...imageSizes.projectImage, ...imageSizes.designImage],
-      imageQualities.images
+      electronicsImageSrcs,
+      imageSizes.electronicsImages,
+      imageQuality
     )
   )
+
   urls.push(
-    ...addImageUrls(
-      designImageSrcs,
-      [...imageSizes.projectImage, ...imageSizes.designImage],
-      imageQualities.images
-    )
-  )
-  urls.push(
-    ...addImageUrls(navIconSrcs, imageSizes.navIcon, imageQualities.navIcons)
-  )
-  urls.push(
-    ...addImageUrls(
-      projectIconSrcs,
-      imageSizes.projectIcon,
-      imageQualities.images
-    )
-  )
-  urls.push(
-    ...addImageUrls(techIconSrcs, imageSizes.techIcons, imageQualities.images)
+    ...addImageUrls(designImageSrcs, imageSizes.designImages, imageQuality)
   )
 
   const acceptHeaders = [
