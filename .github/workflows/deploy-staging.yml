@@ -19,7 +19,8 @@ jobs:
             set -e
             cd /var/www/orjon.com/staging
             echo "Pulling latest changes..."
-            git pull origin staging
+            git fetch origin staging
+            git reset --hard origin/staging
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             echo "Checking required Node.js version..."
