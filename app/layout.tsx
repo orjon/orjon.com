@@ -5,6 +5,7 @@ import { getSiteTitle } from '@/app/utils/helpers'
 
 import Navbar from '@/app/nav/Navbar'
 
+import Analytics from '@/app/components/Analytics'
 import '@/assets/styles/globals.css'
 import { Bai_Jamjuree } from 'next/font/google'
 
@@ -29,6 +30,9 @@ export const viewport: Viewport = {
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html className='h-full bg-white md:bg-background'>
+      <head>
+        <Analytics id={process.env.NEXT_PUBLIC_UMAMI_ID} />
+      </head>
       <body
         className={`${baiJamjuree.variable} flex flex-col antialiased h-dvh`}
       >
