@@ -4,7 +4,6 @@ import path from 'path'
 import codeImages from '../data/codeImages.json'
 import { electronicsProjects } from '../data/index.js'
 import { imageSizes, imageQuality, screenMultipliers } from '@/app/constants'
-import { dedupeArray } from '@/app/utils'
 
 const BASE_URL =
   process.env.ORIGIN ??
@@ -89,18 +88,24 @@ async function main() {
 
   const urls: string[] = []
 
-  urls.push(...addImageUrls(codeImageSrcs, imageSizes.codeImages, imageQuality))
+  urls.push(
+    ...addImageUrls(codeImageSrcs, imageSizes.codeImages, imageQuality.image)
+  )
 
   urls.push(
     ...addImageUrls(
       electronicsImageSrcs,
       imageSizes.electronicsImages,
-      imageQuality
+      imageQuality.image
     )
   )
 
   urls.push(
-    ...addImageUrls(designImageSrcs, imageSizes.designImages, imageQuality)
+    ...addImageUrls(
+      designImageSrcs,
+      imageSizes.designImages,
+      imageQuality.image
+    )
   )
 
   const acceptHeaders = [

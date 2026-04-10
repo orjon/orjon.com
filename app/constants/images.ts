@@ -9,7 +9,7 @@ export const imageSizes = {
 
 export const imageQuality = {
   icon: 85,
-  image: 70
+  image: 75
 }
 
 export const screenMultipliers = [1, 2]
