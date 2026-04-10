@@ -41,6 +41,6 @@ jobs:
             echo "Waiting for server to be ready..."
             for i in $(seq 1 30); do curl -s -o /dev/null -w "%{http_code}" ${ORIGIN} | grep -q 200 && break; sleep 2; done
             echo "Starting image cache warming in background..."
-            nohup npm run warm-images > /tmp/warm-images.log 2>&1 &
+            nohup npm run warm-images > /tmp/warm-images-production.log 2>&1 &
             echo $! > /tmp/warm-images-production.pid
             disown
