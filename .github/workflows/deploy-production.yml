@@ -29,7 +29,8 @@ jobs:
             echo "Running tests..."
             npm run test
             echo "Removing .next directory..."
-            pkill -f "processImages" || true
+            [ -f /tmp/warm-images-production.pid ] && kill $(cat /tmp/warm-images-production.pid) 2>/dev/null || true
+            rm -f /tmp/warm-images-production.pid
             rm -rf .next
             set -a && . ./.env.production 2>/dev/null || true && set +a
             echo "Environment: $NEXT_PUBLIC_ENV"
@@ -41,4 +42,5 @@ jobs:
             for i in $(seq 1 30); do curl -s -o /dev/null -w "%{http_code}" ${ORIGIN} | grep -q 200 && break; sleep 2; done
             echo "Starting image cache warming in background..."
             nohup npm run warm-images > /tmp/warm-images.log 2>&1 &
+            echo $! > /tmp/warm-images-production.pid
             disown
