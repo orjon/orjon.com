@@ -8,7 +8,7 @@ import Pills from '@/app/components/Pills';
 import { LinkButton } from '@/app/components/Links'
 import { Summary, Paragraphs, Note } from '@/app/components/Texts'
 import { ProjectType } from '@/app/types/projects'
-import { addBuildVersion, getGithubLink, getIconPath } from '@/app/utils'
+import { getGithubLink, getIconPath } from '@/app/utils'
 import { imageQuality } from '@/app/constants'
 
 const ProjectDetails = ({ project, isActive }: { project: CodeProject | ElectronicsProject, isActive: boolean }) => {
@@ -22,8 +22,6 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
   // const responsive = 'responsive' in project ? project.responsive : false
   const sectionGap = 'gap-2 md:gap-3 lg:gap-4'
 
-  const icon = addBuildVersion(getIconPath(ImageType.PROJECT_ICON, slug))
-
   return (
     <div className='ProjectDetails w-full h-full sm:h-auto bg-white sm:p-6 md:p-8 lg:p-10 sm:rounded-2xl sm:shadow-md flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-[1200px]'>
 
@@ -34,12 +32,12 @@ const ProjectDetails = ({ project, isActive }: { project: CodeProject | Electron
 
             <div className={`ProjectIcon flex-none flex flex-col items-start justify-center h-[125px] sm:h-[100px] md:h-[125px] w-[200px] sm:w-[125px] md:w-[200px] mx-auto lg:mx-0 relative`}>
               <Image
-                src={icon}
+                src={getIconPath(ImageType.PROJECT_ICON, slug)}
                 alt={title}
                 fill
                 className='w-full h-full object-contain'
                 sizes='(min-width: 780px) 194px, (min-width: 640px) 125px, 194px'
-                quality={imageQuality}
+                quality={imageQuality.icon}
               />
             </div>
 

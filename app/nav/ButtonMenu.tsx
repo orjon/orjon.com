@@ -1,9 +1,12 @@
 import { Suspense } from 'react'
+
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { menuItems } from '@/app/data'
 import { getNavIcon } from '@/app/utils'
+import { imageQuality } from '@/app/constants'
 
 import ProjectViewSelector from './ProjectViewSelector'
 import RandomProject from './RandomProject'
@@ -37,18 +40,22 @@ const ButtonMenu = () => {
             href={href}
             className={`z-10 ${buttonStyle} justify-center md:justify-start ${marginTransitionStyle} px-2 ${path ? 'mb-0 mt-1' : 'mb-2 mt-0'} `}>
             <div className="relative size-[30px] shrink-0">
-              <img
+              <Image
                 src={getNavIcon(menuItem.icon, false)}
                 alt={menuItem.name}
                 width={30}
                 height={30}
+                sizes='30px'
+                quality={imageQuality.icon}
                 className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${path ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`}
               />
-              <img
+              <Image
                 src={getNavIcon(menuItem.icon, true)}
                 alt={menuItem.name}
                 width={30}
                 height={30}
+                sizes='30px'
+                quality={imageQuality.icon}
                 aria-hidden
                 className={`absolute inset-0 size-full object-contain transition-opacity duration-250 ${path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
               />

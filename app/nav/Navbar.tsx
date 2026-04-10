@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -7,6 +8,8 @@ import { useBurgerMenu } from '@/app/context/BurgerMenuContext'
 
 import { Sections } from '@/app/types'
 import { getNavIcon } from '@/app/utils'
+import { imageQuality } from '@/app/constants'
+
 import ButtonMenu from './ButtonMenu'
 import BurgerMenu from './BurgerMenu'
 
@@ -39,21 +42,25 @@ const Navbar = () => {
               className='group peer flex-row items-center cursor-pointer hidden sm:flex'
             >
               <div className='relative h-[24px] w-[40px]'>
-                <img
+                <Image
                   src={getNavIcon('faceLarge', false)}
                   className={`absolute-center size-full object-contain opacity-100 ${opacityTransitionStyle} ${isMe ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
                     }`}
                   alt='face'
                   width={24}
                   height={24}
+                  sizes='24px'
+                  quality={imageQuality.icon}
                 />
-                <img
+                <Image
                   src={getNavIcon('faceLarge', true)}
                   className={`absolute-center size-full object-contain opacity-0 ${opacityTransitionStyle} ${isMe ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   alt='face'
                   width={24}
                   height={24}
+                  sizes='24px'
+                  quality={imageQuality.icon}
                   aria-hidden
                 />
               </div>
@@ -72,15 +79,17 @@ const Navbar = () => {
             className='group cursor-pointer sm:hidden'
           >
             <div className='relative h-[24px] w-[24px]'>
-              <img
+              <Image
                 src={getNavIcon('burgerMenu', false)}
                 className={`absolute-center size-full object-contain ${opacityTransitionStyle} ${isBurgerMenuOpen ? 'opacity-0' : 'opacity-100'
                   }`}
                 alt='menu'
                 width={24}
                 height={24}
+                sizes='24px'
+                quality={imageQuality.icon}
               />
-              <img
+              <Image
                 src={getNavIcon('burgerMenu', true)}
                 className={`absolute-center size-full object-contain ${opacityTransitionStyle} ${isBurgerMenuOpen ? 'opacity-100' : 'opacity-0'
                   }`}
@@ -88,6 +97,8 @@ const Navbar = () => {
                 width={24}
                 height={24}
                 aria-hidden
+                sizes='24px'
+                quality={imageQuality.icon}
               />
             </div>
           </button>
