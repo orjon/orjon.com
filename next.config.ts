@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
     deviceSizes: contentSizes,
     unoptimized: false,
     qualities: [imageQuality.icon, imageQuality.image],
+    minimumCacheTTL: 31536000,
     localPatterns: [
       {
         pathname: '/**/*.{png,jpg,jpeg,gif,webp,svg}'
