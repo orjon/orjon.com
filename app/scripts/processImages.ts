@@ -48,9 +48,10 @@ async function processOne(url: string, accept: string): Promise<boolean> {
       }
     })
     if (!res.ok) {
-      console.error('Pre-processing failed', res.status, url)
+      console.error('FAIL', res.status, url)
       return false
     }
+    console.log('OK  ', url)
     return true
   } catch (err) {
     console.error('Pre-processing error', url, err)
