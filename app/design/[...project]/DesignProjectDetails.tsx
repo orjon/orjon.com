@@ -1,13 +1,13 @@
 import Image from 'next/image'
 
-import { defaultImageRatio } from '@/app/constants/images'
-import { imageQuality } from '@/app/constants'
+
+import { defaultImageRatio, imageQuality } from '@/app/constants'
 import { DesignProject, ImageType, ProjectType, ButtonType } from '@/app/types'
 
 import Section from '@/app/components/Section'
 import Pills from '@/app/components/Pills'
 import { Summary } from '@/app/components/Texts'
-import { addBuildVersion, getImagePath } from '@/app/utils'
+import { getImagePath } from '@/app/utils'
 import { LinkButton } from '@/app/components/Links'
 
 import designImages from '@/app/data/designImages.json'
@@ -19,7 +19,6 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
 
   const mapUrl = 'mapUrl' in project ? project.mapUrl : false
 
-  const imagePath = addBuildVersion(getImagePath(ImageType.DESIGN_IMAGES, image))
   const imageRatio =
     designImages[slug as keyof typeof designImages]?.imagesRatio ??
     defaultImageRatio
@@ -37,13 +36,13 @@ const DesignProjectDetails = ({ project }: { project: DesignProject }) => {
 
           <div className='w-full py-2'>
             <Image
-              src={imagePath}
+              src={getImagePath(ImageType.DESIGN_IMAGES, image)}
               alt={title}
               width={imageRatio.w}
               height={imageRatio.h}
               className='w-full h-auto object-contain'
               sizes='(max-width: 639px) calc(100vw * 591/639), (max-width: 767px) calc(100vw * 607/767), (max-width: 1023px) calc(100vw * 847/1023), (max-width: 1323px) calc(100vw * 1120/1323), 1120px'
-              quality={imageQuality}
+              quality={imageQuality.image}
             />
           </div>
 

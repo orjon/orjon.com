@@ -1,13 +1,13 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { CodeProject, ElectronicsProject, ImageType } from '@/app/types'
-import { addBuildVersion, getIconPath } from '@/app/utils'
+import { getIconPath } from '@/app/utils'
+import { imageQuality } from '@/app/constants'
 
 const ProjectTile = ({ project }: { project: CodeProject | ElectronicsProject }) => {
 
   const { projectType, slug, title } = project
-
-  const icon = addBuildVersion(getIconPath(ImageType.PROJECT_ICON, slug))
 
   return (
     <Link
@@ -16,12 +16,13 @@ const ProjectTile = ({ project }: { project: CodeProject | ElectronicsProject })
     >
       <article className='w-full h-full flex flex-col items-center justify-center gap-6'>
         <div className='flex flex-col items-center justify-center w-3/4 aspect-4/3 relative max-w-[200px]'>
-          <img
-            src={icon}
+          <Image
+            src={getIconPath(ImageType.PROJECT_ICON, slug)}
             alt={title}
-            width={200}
-            height={150}
-            className='absolute inset-0 size-full object-contain'
+            fill
+            className='w-full h-full object-contain'
+            sizes='200px'
+            quality={imageQuality.icon}
           />
         </div>
 

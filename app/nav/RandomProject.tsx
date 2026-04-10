@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 
@@ -7,6 +8,7 @@ import { useFirstInteraction } from '@/app/context/FirstInteractionContext'
 
 import { allProjects } from '@/app/data'
 import { getNavIcon, getRandomArrayItem } from '@/app/utils'
+import { imageQuality } from '@/app/constants'
 
 const RandomProject = ({ showLabel = true }: { showLabel?: boolean }) => {
   const pathname = usePathname()
@@ -51,21 +53,26 @@ const RandomProject = ({ showLabel = true }: { showLabel?: boolean }) => {
         disabled={!hasFirstInteraction}
       >
         <div className="relative size-[30px] shrink-0">
-          <img
+          <Image
             src={getNavIcon('random', false)}
             alt='Random project'
             width={30}
             height={30}
+            sizes='30px'
             className={`${iconStyle} opacity-100 group-hover:opacity-0`}
             style={{ width: 30, height: 30 }}
+            quality={imageQuality.icon}
           />
-          <img
+          <Image
             src={getNavIcon('random', true)}
             alt='Random project'
             width={30}
             height={30}
+            sizes='30px'
             className={`${iconStyle} opacity-0 group-hover:opacity-100`}
             style={{ width: 30, height: 30 }}
+            quality={imageQuality.icon}
+            aria-hidden
           />
         </div>
 

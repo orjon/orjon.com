@@ -1,32 +1,13 @@
 import { describe, it, expect, afterEach } from 'vitest'
 import {
-  addBuildVersion,
   isGif,
   getGithubLink,
   getCommits,
   getIconPath,
   getImagePath,
-  getNavIcon,
+  getNavIcon
 } from './paths'
 import { ImageType } from '@/app/types'
-
-describe('addBuildVersion', () => {
-  const buildVersionOriginal = process.env.NEXT_PUBLIC_BUILD_VERSION
-
-  afterEach(() => {
-    process.env.NEXT_PUBLIC_BUILD_VERSION = buildVersionOriginal
-  })
-
-  it('appends version query string', () => {
-    process.env.NEXT_PUBLIC_BUILD_VERSION = 'abc123'
-    expect(addBuildVersion('/icons/nav/foo.png')).toBe('/icons/nav/foo.png?v=abc123')
-  })
-
-  it('handles undefined build version', () => {
-    delete process.env.NEXT_PUBLIC_BUILD_VERSION
-    expect(addBuildVersion('/path/to/file')).toBe('/path/to/file?v=undefined')
-  })
-})
 
 describe('isGif', () => {
   it('returns true for .gif extension', () => {
@@ -96,23 +77,11 @@ describe('getImagePath', () => {
 })
 
 describe('getNavIcon', () => {
-  const buildVersionOriginal = process.env.NEXT_PUBLIC_BUILD_VERSION
-
-  afterEach(() => {
-    process.env.NEXT_PUBLIC_BUILD_VERSION = buildVersionOriginal
+  it('builds OFF nav icon path', () => {
+    expect(getNavIcon('burgerMenu', false)).toBe('/icons/nav/burgerMenuOFF.png')
   })
 
-  it('builds OFF nav icon path with version', () => {
-    process.env.NEXT_PUBLIC_BUILD_VERSION = 'v1'
-    expect(getNavIcon('burgerMenu', false)).toBe(
-      '/icons/nav/burgerMenuOFF.png?v=v1'
-    )
-  })
-
-  it('builds ON nav icon path with version', () => {
-    process.env.NEXT_PUBLIC_BUILD_VERSION = 'v1'
-    expect(getNavIcon('burgerMenu', true)).toBe(
-      '/icons/nav/burgerMenuON.png?v=v1'
-    )
+  it('builds ON nav icon path', () => {
+    expect(getNavIcon('burgerMenu', true)).toBe('/icons/nav/burgerMenuON.png')
   })
 })

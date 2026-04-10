@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 
@@ -8,6 +10,7 @@ import { ProjectType } from '@/app/types'
 import { getLocalStorageValue } from '@/app/utils/client'
 import { hasProject, getNavIcon } from '@/app/utils'
 import { codeProjects, electronicsProjects, designProjects, views } from '@/app/data'
+import { imageQuality } from '../constants'
 
 const defaultProject = {
   [ProjectType.CODE]: codeProjects[0].slug,
@@ -109,21 +112,26 @@ const ProjectViewSelector = () => {
       <div className={buttonBaseStyle}>
         <Link href={`/${section}?view=tile`} className={`${buttonStyle} ${isTileView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
           <div className='relative size-[24px]'>
-            <img
+            <Image
               src={getNavIcon(views.TILES, false)}
               alt={views.TILES}
-              width={30}
-              height={30}
+              width={24}
+              height={24}
+              sizes='24px'
+              quality={imageQuality.icon}
               className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
             />
-            <img
+            <Image
               src={getNavIcon(views.TILES, true)}
               alt={views.TILES}
-              width={30}
-              height={30}
+              width={24}
+              height={24}
+              sizes='24px'
+              quality={imageQuality.icon}
               className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isTileView ? 'opacity-100' : ''}`}
               style={iconStyle}
+              aria-hidden
             />
           </div>
         </Link>
@@ -131,19 +139,24 @@ const ProjectViewSelector = () => {
       <div className={buttonBaseStyle}>
         <Link href={`/${section}?view=card`} className={`${buttonStyle} ${isCardView ? 'mb-0 mt-1' : 'mb-2 mt-0'} ${disabled || isDesignPage ? 'cursor-not-allowed' : ''}`}>
           <div className='relative size-[24px]'>
-            <img
+            <Image
               src={getNavIcon(views.CARDS, false)}
               alt={views.CARDS}
-              width={30}
-              height={30}
+              width={24}
+              height={24}
+              sizes='24px'
+              quality={imageQuality.icon}
               className={`${iconClassBase} ${disabled || isDesignPage ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
             />
-            <img
+            <Image
               src={getNavIcon(views.CARDS, true)}
               alt={views.CARDS}
-              width={30}
-              height={30}
+              width={24}
+              height={24}
+              sizes='24px'
+              quality={imageQuality.icon}
+              aria-hidden
               className={`${iconClassBase} ${disabled || isDesignPage ? 'hidden' : `${iconClassOn}`} ${isCardView ? 'opacity-100' : ''}`}
               style={iconStyle}
             />
@@ -158,19 +171,24 @@ const ProjectViewSelector = () => {
           onClick={handleCarouselClick}
         >
           <div className='relative size-[24px]'>
-            <img
+            <Image
               src={getNavIcon(views.CAROUSEL, false)}
               alt={views.CAROUSEL}
-              width={30}
-              height={30}
+              width={24}
+              height={24}
+              sizes='24px'
+              quality={imageQuality.icon}
               className={`${iconClassBase} ${disabled ? 'opacity-25' : `${iconClassOff}`}`}
               style={iconStyle}
             />
-            <img
+            <Image
               src={getNavIcon(views.CAROUSEL, true)}
               alt={views.CAROUSEL}
-              width={30}
-              height={30}
+              width={24}
+              height={24}
+              sizes='24px'
+              quality={imageQuality.icon}
+              aria-hidden
               className={`${iconClassBase} ${disabled ? 'hidden' : `${iconClassOn}`} ${isCarouselView ? 'opacity-100' : ''}`}
               style={iconStyle}
             />

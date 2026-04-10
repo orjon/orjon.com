@@ -7,7 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 
 import Image from 'next/image'
-import { isGif, addBuildVersion } from '@/app/utils'
+import { isGif } from '@/app/utils'
 import { imageQuality } from '@/app/constants'
 
 const OPTIONS: EmblaOptionsType = {
@@ -78,13 +78,13 @@ export const ImageCarousel = ({
     return (
       <div key={index} className={`embla__slide flex-[0_0_100%] flex items-center justify-center max-h-[min(550px,60vh)]`}>
         <Image
-          src={addBuildVersion(image)}
+          src={image}
           alt={`Image ${index}`}
           width={imagesRatio?.w || 16}
           height={imagesRatio?.h || 9}
           sizes='(max-width: 639px) calc(100vw * 591/639), (max-width: 767px) calc(100vw * 607/767), (max-width: 1023px) calc(100vw * 847/1023), (max-width: 1323px) calc(100vw * 888/1323), 888px'
           priority={isCoverImage}
-          quality={imageQuality}
+          quality={imageQuality.image}
           unoptimized={isGifImage}
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           className='mx-auto'

@@ -1,9 +1,6 @@
 import { github, ImageType } from '@/app/types'
 import { imagePath } from '@/app/data'
 
-export const addBuildVersion = (file: string) =>
-  `${file}?v=${process.env.NEXT_PUBLIC_BUILD_VERSION}`
-
 export const isGif = (imagePath: string): boolean =>
   imagePath?.toLowerCase().endsWith('.gif')
 
@@ -23,8 +20,5 @@ export const getImagePath = (imageType: ImageType, file: string) => {
   return `${imagePath[imageType]}/${file}.png`
 }
 
-export const getNavIcon = (icon: string, isOn: boolean) => {
-  return addBuildVersion(
-    getIconPath(ImageType.NAV_ICON, `${icon}${isOn ? 'ON' : 'OFF'}`)
-  )
-}
+export const getNavIcon = (icon: string, isOn: boolean) =>
+  getIconPath(ImageType.NAV_ICON, `${icon}${isOn ? 'ON' : 'OFF'}`)
