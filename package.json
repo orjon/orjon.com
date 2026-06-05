@@ -1,11 +1,12 @@
 {
   "name": "nextjs",
+  "packageManager": "pnpm@10",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "generate-images": "npx tsx app/scripts/getCodeImages.ts && npx tsx app/scripts/getDesignImages.ts",
-    "predev": "npm run generate-images",
-    "prebuild": "npm run generate-images",
+    "predev": "pnpm generate-images",
+    "prebuild": "pnpm generate-images",
     "dev": "next dev --turbo",
     "build": "next build",
     "test": "vitest run",
