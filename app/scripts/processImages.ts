@@ -114,7 +114,8 @@ async function main() {
     'image/webp,image/*,*/*'
   ]
 
-  const totalRequests = urls.length * acceptHeaders.length
+  const uniqueUrls = [...new Set(urls)]
+  const totalRequests = uniqueUrls.length * acceptHeaders.length
 
   console.log(
     `Pre-processing ${totalRequests} image variants against ${BASE_URL}...`
@@ -126,9 +127,9 @@ async function main() {
 
   let index = 0
   const workers = Array.from({ length: CONCURRENCY }, async () => {
-    while (index < urls.length) {
+    while (index < uniqueUrls.length) {
       const myIndex = index++
-      const url = urls[myIndex]
+      const url = uniqueUrls[myIndex]
       for (const accept of acceptHeaders) {
         const ok = await processOne(url, accept)
         if (!ok) failed += 1
