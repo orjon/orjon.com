@@ -32,6 +32,9 @@ importers:
       plaiceholder:
         specifier: ^3.0.0
         version: 3.0.0(sharp@0.34.5)
+      pnpm:
+        specifier: ^10.34.1
+        version: 10.34.1
       react:
         specifier: 19.2.3
         version: 19.2.3
@@ -2081,6 +2084,11 @@ packages:
     resolution: {integrity: sha512-jwHxxHPnr1BwRzPCeZgEK2BMsEy2327sWynw3qb6XC/oGgGDUTPtR8pFxFQmNArhMBwhkUbUr5OPhhIJpCa8eQ==}
     peerDependencies:
       sharp: '>= 0.30.6'
+
+  pnpm@10.34.1:
+    resolution: {integrity: sha512-tY+95tymapKVOAIVgfZItFcLbKGbGOfL1/LAenskRUFVOI2s3wjyrzZ46IptH+BPnWCd8kv1FzWgYOoEGzdKtw==}
+    engines: {node: '>=18.12'}
+    hasBin: true
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -4477,6 +4485,8 @@ snapshots:
   plaiceholder@3.0.0(sharp@0.34.5):
     dependencies:
       sharp: 0.34.5
+
+  pnpm@10.34.1: {}
 
   possible-typed-array-names@1.1.0: {}
 
