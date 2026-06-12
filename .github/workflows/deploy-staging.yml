@@ -26,6 +26,7 @@ jobs:
             echo "Checking required Node.js version..."
             nvm use || nvm install
             echo "Using Node.js version: $(node -v)"
+            command -v pnpm >/dev/null 2>&1 || { echo "pnpm not found. Run: npm install -g pnpm on the server."; exit 1; }
             pnpm install --frozen-lockfile
             echo "Running tests..."
             pnpm test
