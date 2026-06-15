@@ -1,13 +1,14 @@
 {
   "buttonstyler": {
     "images": [
-      "/images/projects/buttonstyler/buttonstyler-01.png",
-      "/images/projects/buttonstyler/buttonstyler-03.png",
-      "/images/projects/buttonstyler/buttonstyler-04.png"
+      "/images/projects/buttonstyler/buttonstyler-01-signup.png",
+      "/images/projects/buttonstyler/buttonstyler-02-retrobutton.png",
+      "/images/projects/buttonstyler/buttonstyler-03-hellothere.png",
+      "/images/projects/buttonstyler/buttonstyler-mobile.png"
     ],
     "imagesRatio": {
-      "w": 2864,
-      "h": 1790
+      "w": 2658,
+      "h": 1916
     }
   },
   "tubeinfo": {
