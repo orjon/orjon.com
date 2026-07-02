@@ -3,8 +3,8 @@
 # source
 /source
 
-# blurred images (re-generated at build time by generateBlurImages.ts)
-/app/data/blurredImages_*.json
+# database
+/data
 
 # dependencies
 /node_modules
