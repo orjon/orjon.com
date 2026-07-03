@@ -1,25 +1,26 @@
-'use client'
+"use client"
 
-import { useState, useEffect, useRef } from 'react'
-import { useParams } from 'next/navigation'
-import useEmblaCarousel from 'embla-carousel-react'
+import { useState, useEffect, useRef } from "react"
+import { useParams } from "next/navigation"
+import useEmblaCarousel from "embla-carousel-react"
 
-import { useFirstInteraction } from '@/app/context/FirstInteractionContext'
-import { useEmblaOpacityTween } from '@/app/hooks/useEmblaOpacityTween'
+import { useFirstInteraction } from "@/app/context/FirstInteractionContext"
+import { useEmblaOpacityTween } from "@/app/hooks/useEmblaOpacityTween"
 
-import { setLocalStorageValue, getLocalStorageValue } from '@/app/utils/client'
+import { setLocalStorageValue, getLocalStorageValue } from "@/app/utils/client"
 
-import DesignProjectCard from '@/app/design/[...project]/DesignProjectDetails'
-import { designProjects } from '@/app/data/design'
-import ProjectsCarouselControls from '@/app/components/ProjectsCarouselControls'
-import { ProjectType } from '@/app/types/projects';
+import DesignProjectCard from "@/app/(site)/design/[...project]/DesignProjectDetails"
+import { designProjects } from "@/app/data/design"
+import ProjectsCarouselControls from "@/app/components/ProjectsCarouselControls"
+import { ProjectType } from "@/app/types/projects"
 
 const defaultProject = designProjects[0].slug
 
-
 const DesignProjectPage = () => {
   const params = useParams()
-  const projectIndex = Object.fromEntries(designProjects.map((project, index) => [project.slug, index]))
+  const projectIndex = Object.fromEntries(
+    designProjects.map((project, index) => [project.slug, index]),
+  )
 
   const { hasFirstInteraction, markInteracted } = useFirstInteraction()
 
@@ -32,7 +33,7 @@ const DesignProjectPage = () => {
       return urlSlug
     }
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const stored = getLocalStorageValue(ProjectType.DESIGN)
       if (stored && projectIndex[stored]) return stored
     }
@@ -45,7 +46,7 @@ const DesignProjectPage = () => {
     startIndex: projectIndex[initialProject],
     loop: true,
     duration: 30,
-    skipSnaps: false
+    skipSnaps: false,
   })
 
   useEmblaOpacityTween(emblaApi)
@@ -56,7 +57,7 @@ const DesignProjectPage = () => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
-    console.log('Effect 2')
+    console.log("Effect 2")
     if (!emblaApi) return
     if (!isReady) setIsReady(true)
 
@@ -64,7 +65,7 @@ const DesignProjectPage = () => {
       const index = emblaApi.selectedScrollSnap()
       const slug = designProjects[index].slug
       setLocalStorageValue(ProjectType.DESIGN, slug)
-      window.history.replaceState(null, '', `/design/${slug}`)
+      window.history.replaceState(null, "", `/design/${slug}`)
     }
 
     const resetScrollPositions = () => {
@@ -79,62 +80,62 @@ const DesignProjectPage = () => {
       markInteracted()
     }
 
-    emblaApi.on('settle', updateCurrentProject)
-    emblaApi.on('select', resetScrollPositions)
-    emblaApi.on('scroll', markFirstInteraction)
+    emblaApi.on("settle", updateCurrentProject)
+    emblaApi.on("select", resetScrollPositions)
+    emblaApi.on("scroll", markFirstInteraction)
     return () => {
-      emblaApi.off('settle', updateCurrentProject)
-      emblaApi.off('select', resetScrollPositions)
-      emblaApi.off('scroll', markFirstInteraction)
+      emblaApi.off("settle", updateCurrentProject)
+      emblaApi.off("select", resetScrollPositions)
+      emblaApi.off("scroll", markFirstInteraction)
     }
-
   }, [emblaApi])
 
   useEffect(() => {
     if (!emblaApi) return
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
+      if (e.key === "ArrowLeft") {
         e.preventDefault()
         emblaApi.scrollPrev()
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === "ArrowRight") {
         e.preventDefault()
         emblaApi.scrollNext()
       }
     }
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
   }, [emblaApi])
 
   const allProjects = designProjects.map((project, index) => {
     return (
       <div
         key={project.slug}
-        ref={(el) => { slideRefs.current[index] = el }}
-        className='embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-6 sm:p-14 flex flex-col'
+        ref={(el) => {
+          slideRefs.current[index] = el
+        }}
+        className="embla__slide flex-[0_0_100%] w-full h-full overflow-y-auto p-6 sm:p-14 flex flex-col"
       >
-        <div className='min-h-full flex items-center justify-center shrink-0'>
+        <div className="min-h-full flex items-center justify-center shrink-0">
           <DesignProjectCard project={project} />
         </div>
       </div>
     )
   })
 
-
   return (
-    <section className='DesignProjectPage embla relative bg-white sm:bg-transparent flex-1 max-h-full flex flex-col'>
-
+    <section className="DesignProjectPage embla relative bg-white sm:bg-transparent flex-1 max-h-full flex flex-col">
       <div
         ref={emblaProjectRef}
-        className={`embla__viewport h-full max-h-full overflow-x-hidden min-h-0 ${isReady ? 'opacity-100' : 'opacity-0'} `}>
+        className={`embla__viewport h-full max-h-full overflow-x-hidden min-h-0 ${isReady ? "opacity-100" : "opacity-0"} `}
+      >
         <div
-          className='embla__container h-full max-h-full flex items-start'
-          style={{ touchAction: 'pan-y pinch-zoom' }}>
+          className="embla__container h-full max-h-full flex items-start"
+          style={{ touchAction: "pan-y pinch-zoom" }}
+        >
           {allProjects}
         </div>
       </div>
 
       <ProjectsCarouselControls onPrev={goToPrev} onNext={goToNext} />
-
     </section>
   )
 }
