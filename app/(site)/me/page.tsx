@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { contactInfo } from "@/app/data";
+import Link from "next/link"
+import { contactInfo } from "@/app/data"
 
-import TechnologyIcons from "../components/TechnologyIcons";
+import TechnologyIcons from "@/app/components/TechnologyIcons"
 
 const contactDetails = contactInfo.map((item) => (
   <div className="flex align-center items-center" key={item.href}>
@@ -10,7 +10,7 @@ const contactDetails = contactInfo.map((item) => (
       <div className="ml-2">{item.text}</div>
     </Link>
   </div>
-));
+))
 
 const MePage = () => {
   return (
@@ -47,6 +47,6 @@ const MePage = () => {
         </div>
       </div>
     </section>
-  );
-};
-export default MePage;
+  )
+}
+export default MePage

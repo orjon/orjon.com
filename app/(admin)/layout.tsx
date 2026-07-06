@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next"
 
 import { getSiteTitle } from "@/app/utils/helpers"
 
-import Titlebar from "@/app/nav/TitleBar"
+import Titlebar from "@/app/(admin)/TitleBar"
 
 import "@/assets/styles/globals.css"
 import { Bai_Jamjuree } from "next/font/google"

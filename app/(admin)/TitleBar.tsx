@@ -4,14 +4,13 @@ import { usePathname } from "next/navigation"
 import Link from "next/link"
 
 import { Sections } from "@/app/types"
+import { logout } from "@/app/(admin)/actions"
 
 const Titlebar = () => {
   const pathname = usePathname()
   const segments = pathname.split("/").filter(Boolean) || []
   const section = segments[0]
-  const isMe = section === Sections.ME
-
-  const opacityTransitionStyle = "transition-opacity duration-250"
+  const isAdmin = section === Sections.ADMIN
 
   return (
     <header className="relative z-10 shadow-[0_4px_8px_rgba(0,0,0,0.15)]">
@@ -23,22 +22,19 @@ const Titlebar = () => {
             </Link>
             <div className="font-medium md:hidden select-none">/{section}</div>
           </div>
-
-          <div className="flex flex-row-reverse items-center">
-            <Link
-              href="/me"
-              className="group peer flex-row items-center cursor-pointer hidden sm:flex"
+          {isAdmin && (
+            <form
+              action={logout}
+              className="flex flex-1 flex-row-reverse items-center"
             >
-              <div className="relative h-[24px] w-[40px]"></div>
-            </Link>
-            <div
-              className={`hidden md:block ml-1 text-lg select-none font-medium opacity-0 ${opacityTransitionStyle} ${
-                isMe ? "opacity-100" : "opacity-0 peer-hover:opacity-100"
-              }`}
-            >
-              me
-            </div>
-          </div>
+              <button
+                type="submit"
+                className="w-full max-w-[100px] self-end rounded-sm py-1 px-2 bg-gray-800 text-white font-bold"
+              >
+                Logout
+              </button>
+            </form>
+          )}
         </div>
       </nav>
     </header>

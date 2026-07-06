@@ -1,6 +1,7 @@
 export enum Sections {
-  CODE = 'code',
-  DESIGN = 'design',
-  ELECTRONICS = 'electronics',
-  ME = 'me'
+  CODE = "code",
+  DESIGN = "design",
+  ELECTRONICS = "electronics",
+  ME = "me",
+  ADMIN = "admin",
 }
