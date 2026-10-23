@@ -18,6 +18,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "embla-carousel": "^8.6.0",
     "embla-carousel-auto-height": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-fade": "^8.6.0",
